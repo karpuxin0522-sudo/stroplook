@@ -3,130 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stavebné práce</title>
+<title>StropLook | Interiérové práce</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0f0f0f;
-    color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0f14;
+  color: #fff;
 }
 
-/* HERO */
-header {
-    height: 90vh;
-    background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-header::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .hero {
-    position: relative;
-    z-index: 2;
+  min-height: 92vh;
+  background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85)),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  padding: 25px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.hero h1 {
-    font-size: 48px;
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.hero p {
-    font-size: 20px;
-    color: #ddd;
+.logo span {
+  color: #35d0ff;
 }
 
-/* BUTTON */
+.hero-content {
+  max-width: 760px;
+  margin-bottom: 60px;
+}
+
+.hero-content h1 {
+  font-size: 58px;
+  line-height: 1.05;
+  margin: 0 0 18px;
+}
+
+.hero-content p {
+  font-size: 22px;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
 .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    border-radius: 30px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  padding: 16px 24px;
+  border-radius: 40px;
+  font-weight: 700;
+  display: inline-block;
 }
 
-/* SECTION */
+.btn-main {
+  background: linear-gradient(135deg, #00c6ff, #7b2ff7);
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  color: #07120b;
+}
+
 .section {
-    padding: 60px 20px;
-    text-align: center;
+  padding: 65px 18px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* GALLERY */
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.section-subtitle {
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #121923;
+  border: 1px solid #263241;
+  border-radius: 22px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.card p {
+  color: #bbb;
+  line-height: 1.5;
+}
+
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
 }
 
 .gallery img {
-    width: 100%;
-    border-radius: 15px;
-    height: 220px;
-    object-fit: cover;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 24px;
 }
 
-/* SERVICES */
-.services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.service {
-    background: #1c1c1c;
-    padding: 25px;
-    border-radius: 15px;
-    width: 260px;
-    transition: 0.3s;
-}
-
-.service:hover {
-    transform: translateY(-5px);
-    background: #252525;
-}
-
-/* CONTACT */
 .contact {
-    background: #111;
+  background: linear-gradient(135deg, #101820, #182536);
+  border-radius: 28px;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .phone {
-    font-size: 28px;
-    color: #6a11cb;
-    font-weight: bold;
+  font-size: 34px;
+  font-weight: 800;
+  margin: 18px 0;
+  color: #35d0ff;
 }
 
-/* FOOTER */
 footer {
-    text-align: center;
-    padding: 30px;
-    background: #000;
+  text-align: center;
+  padding: 30px 15px 95px;
+  color: #777;
 }
-</style>
 
-</head>
-<body>
-
-<header>
-    <div class="hero">
-        <h1>Stavebné a interiérové práce</h1>
-        <p>Kvalita • Rýchlosť • Profesionálny prístup</p>
-        <a class="btn" href="tel:+421952277013">📞 Zavolať</a>
-    </div>
-</header>
-
-<section class="section">
-    <h
+.bottom-bar {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(10,15,22,.95);
+  border: 1px solid #263241;
+  border-radius: 24px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000
