@@ -7,80 +7,33 @@
 
 <style>
 *{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#080808;
-  color:white;
-}
+body{margin:0;font-family:Arial,sans-serif;background:#080808;color:white}
 a{text-decoration:none;color:inherit}
 .gold{color:#d6a82f}
 
 .hero{
-  min-height:100vh;
+  min-height:92vh;
   background:
-  linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.45)),
+  linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.35)),
   url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80");
   background-size:cover;
   background-position:center;
   padding:25px 7%;
 }
 
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-.logo{
-  font-size:32px;
-  font-weight:900;
-}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{font-size:32px;font-weight:900}
 .logo span{color:#d6a82f}
-.menu{
-  display:flex;
-  gap:28px;
-  font-size:14px;
-  font-weight:bold;
-}
-.phone-top{
-  border:1px solid #777;
-  padding:14px 22px;
-  border-radius:6px;
-  font-weight:bold;
-}
+.menu{display:flex;gap:28px;font-size:14px;font-weight:bold}
+.phone-top{border:1px solid #777;padding:14px 22px;border-radius:6px;font-weight:bold}
 
-.hero-text{
-  margin-top:130px;
-  max-width:760px;
-}
-.hero-text h1{
-  font-size:64px;
-  line-height:1.05;
-  margin:0 0 20px;
-}
-.hero-text p{
-  font-size:22px;
-  letter-spacing:1px;
-}
-.buttons{
-  display:flex;
-  gap:15px;
-  margin-top:35px;
-  flex-wrap:wrap;
-}
-.btn{
-  padding:17px 30px;
-  border-radius:6px;
-  font-weight:900;
-}
-.btn-gold{
-  background:#d6a82f;
-  color:#111;
-}
-.btn-dark{
-  border:1px solid #aaa;
-}
+.hero-text{margin-top:120px;max-width:760px}
+.hero-text h1{font-size:62px;line-height:1.05;margin:0 0 20px}
+.hero-text p{font-size:22px;letter-spacing:1px}
+.buttons{display:flex;gap:15px;margin-top:35px;flex-wrap:wrap}
+.btn{padding:17px 30px;border-radius:6px;font-weight:900}
+.btn-gold{background:#d6a82f;color:#111}
+.btn-dark{border:1px solid #aaa}
 
 .advantages{
   display:grid;
@@ -91,40 +44,15 @@ a{text-decoration:none;color:inherit}
   border-top:1px solid #2a220f;
   border-bottom:1px solid #2a220f;
 }
-.adv{
-  display:flex;
-  gap:15px;
-  align-items:center;
-}
-.icon{
-  font-size:38px;
-  color:#d6a82f;
-}
-.adv h3{
-  margin:0 0 6px;
-  font-size:16px;
-}
-.adv p{
-  margin:0;
-  color:#bbb;
-  font-size:14px;
-}
+.adv{display:flex;gap:15px;align-items:center}
+.icon{font-size:36px;color:#d6a82f}
+.adv h3{margin:0 0 6px;font-size:16px}
+.adv p{margin:0;color:#bbb;font-size:14px}
 
-.section{
-  padding:65px 7%;
-}
-.section-title{
-  text-align:center;
-  margin-bottom:35px;
-}
-.section-title small{
-  color:#d6a82f;
-  font-weight:bold;
-}
-.section-title h2{
-  font-size:38px;
-  margin:10px 0 0;
-}
+.section{padding:65px 7%}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title small{color:#d6a82f;font-weight:bold}
+.section-title h2{font-size:38px;margin:10px 0 0}
 
 .services{
   display:grid;
@@ -138,30 +66,22 @@ a{text-decoration:none;color:inherit}
   padding:28px 18px;
   text-align:center;
 }
-.service .sicon{
-  font-size:45px;
-  color:#d6a82f;
-}
-.service h3{
-  font-size:18px;
-}
-.service p{
-  color:#bbb;
-  font-size:14px;
-  line-height:1.5;
-}
+.service .sicon{font-size:42px;color:#d6a82f}
+.service h3{font-size:18px}
+.service p{color:#bbb;font-size:14px;line-height:1.5}
 
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:14px;
+  gap:16px;
 }
 .photo{
   position:relative;
-  height:230px;
+  height:240px;
   overflow:hidden;
-  border-radius:8px;
+  border-radius:10px;
   background:#222;
+  border:1px solid #222;
 }
 .photo img{
   width:100%;
@@ -175,32 +95,25 @@ a{text-decoration:none;color:inherit}
   left:0;
   right:0;
   bottom:0;
-  background:rgba(0,0,0,.72);
-  padding:14px;
+  background:rgba(0,0,0,.75);
+  padding:15px;
   text-align:center;
   font-weight:bold;
+  font-size:17px;
 }
 
 .contact{
-  background:
-  linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.85)),
-  url("https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1500&q=80");
-  background-size:cover;
-  background-position:center;
+  background:linear-gradient(135deg,#101010,#1b1b1b);
   padding:60px 7%;
   display:flex;
   justify-content:space-between;
   gap:30px;
   align-items:center;
   flex-wrap:wrap;
+  border-top:1px solid #5f4512;
 }
-.contact h2{
-  font-size:36px;
-  margin:0 0 10px;
-}
-.contact p{
-  color:#ccc;
-}
+.contact h2{font-size:36px;margin:0 0 10px}
+.contact p{color:#ccc}
 
 footer{
   background:#050505;
@@ -225,39 +138,22 @@ footer{
   text-align:center;
   padding:18px;
   font-weight:900;
+  font-size:18px;
 }
-.bottom .call{
-  background:#d6a82f;
-  color:#111;
-}
-.bottom .wa{
-  background:#19b84f;
-  color:white;
-}
+.bottom .call{background:#d6a82f;color:#111}
+.bottom .wa{background:#19b84f;color:white}
 
 @media(max-width:700px){
   .menu,.phone-top{display:none}
-  .hero{
-    padding:22px 5%;
-    min-height:88vh;
-  }
-  .logo{font-size:27px}
-  .hero-text{
-    margin-top:95px;
-  }
-  .hero-text h1{
-    font-size:42px;
-  }
-  .hero-text p{
-    font-size:17px;
-  }
-  .section-title h2{
-    font-size:30px;
-  }
-  .contact{
-    text-align:center;
-    justify-content:center;
-  }
+  .hero{padding:22px 5%;min-height:82vh}
+  .logo{font-size:28px}
+  .hero-text{margin-top:90px}
+  .hero-text h1{font-size:40px}
+  .hero-text p{font-size:17px}
+  .section{padding:50px 5%}
+  .section-title h2{font-size:30px}
+  .photo{height:230px}
+  .contact{text-align:center;justify-content:center}
 }
 </style>
 </head>
@@ -292,19 +188,19 @@ footer{
 <section class="advantages">
   <div class="adv">
     <div class="icon">🛡️</div>
-    <div><h3>KVALITNÉ MATERIÁLY</h3><p>Len overené materiály</p></div>
+    <div><h3>KVALITNÉ MATERIÁLY</h3><p>Overené materiály a čistá práca</p></div>
   </div>
   <div class="adv">
     <div class="icon">⏱️</div>
-    <div><h3>RÝCHLA MONTÁŽ</h3><p>Čistá a rýchla práca</p></div>
+    <div><h3>RÝCHLA MONTÁŽ</h3><p>Bez zbytočného neporiadku</p></div>
   </div>
   <div class="adv">
     <div class="icon">🏅</div>
-    <div><h3>SKÚSENOSTI</h3><p>Roky praxe v interiéroch</p></div>
+    <div><h3>SKÚSENOSTI</h3><p>Moderné riešenia pre interiér</p></div>
   </div>
   <div class="adv">
     <div class="icon">🤝</div>
-    <div><h3>FÉROVÉ CENY</h3><p>Dohoda podľa práce</p></div>
+    <div><h3>FÉROVÉ CENY</h3><p>Dohoda podľa rozsahu práce</p></div>
   </div>
 </section>
 
@@ -318,28 +214,33 @@ footer{
     <div class="service">
       <div class="sicon">▱</div>
       <h3>Napínané stropy</h3>
-      <p>Svetelné línie, pariacie stropy, LED osvetlenie.</p>
+      <p>Svetelné línie, pariacie stropy, LED osvetlenie, skryté garníže.</p>
     </div>
+
     <div class="service">
       <div class="sicon">🎨</div>
       <h3>Maľovanie</h3>
-      <p>Maľovanie interiérov, opravy stien a finálne úpravy.</p>
+      <p>Maľovanie interiérov, opravy stien, finálna úprava.</p>
     </div>
+
     <div class="service">
       <div class="sicon">🏠</div>
       <h3>Sadrokartón</h3>
-      <p>Podhľady, priečky, kastlíky, zakrytie nerovností.</p>
+      <p>Priečky, podhľady, kastlíky, zakrytie nerovností.</p>
     </div>
+
     <div class="service">
       <div class="sicon">🧱</div>
       <h3>Špachtľovanie</h3>
       <p>Stierky, vyrovnávanie stien, príprava na maľovanie.</p>
     </div>
+
     <div class="service">
       <div class="sicon">🧱</div>
       <h3>Omietky</h3>
       <p>Sadrové a vápenocementové omietky.</p>
     </div>
+
     <div class="service">
       <div class="sicon">▥</div>
       <h3>Laminát</h3>
@@ -355,42 +256,52 @@ footer{
   </div>
 
   <div class="gallery">
+
     <div class="photo">
-      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Svetelné línie">
       <span>Svetelné línie</span>
     </div>
+
     <div class="photo">
-      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Pariaci strop">
       <span>Pariaci strop</span>
     </div>
+
     <div class="photo">
-      <img src="https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=900&q=80">
-      <span>Vstavané koľajnice / garníže</span>
+      <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=900&q=80" alt="Vstavané garníže">
+      <span>Vstavané garníže</span>
     </div>
+
     <div class="photo">
-      <img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=900&q=80">
+      <img src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?auto=format&fit=crop&w=900&q=80" alt="Magnetické tracky">
       <span>Magnetické tracky</span>
     </div>
+
     <div class="photo">
-      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80">
+      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80" alt="Čierny lesklý strop">
       <span>Čierny lesklý strop</span>
     </div>
+
     <div class="photo">
-      <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?auto=format&fit=crop&w=900&q=80">
+      <img src="https://images.unsplash.com/photo-1617104678098-de229db51175?auto=format&fit=crop&w=900&q=80" alt="Biely lesklý strop">
       <span>Biely lesklý strop</span>
     </div>
+
     <div class="photo">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80">
-      <span>Matný čierny strop</span>
-    </div>
-    <div class="photo">
-      <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80">
+      <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=80" alt="Matný biely strop">
       <span>Matný biely strop</span>
     </div>
+
     <div class="photo">
-      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80">
+      <img src="https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?auto=format&fit=crop&w=900&q=80" alt="Matný čierny strop">
+      <span>Matný čierny strop</span>
+    </div>
+
+    <div class="photo">
+      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Saténový strop">
       <span>Saténový strop</span>
     </div>
+
   </div>
 </section>
 
