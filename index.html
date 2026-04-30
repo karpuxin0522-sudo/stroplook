@@ -3,120 +3,517 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Napínané stropy | Slovensko</title>
+<title>Prémiové napínané stropy | Slovensko</title>
+<meta name="description" content="Moderné napínané stropy, svetelné línie, tienový profil a LED riešenia na mieru. Slovensko.">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#07080c;color:white}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,Arial,sans-serif;
+  background:#05060a;
+  color:#fff;
+  overflow-x:hidden;
+}
 a{text-decoration:none;color:inherit}
-.wrap{width:min(1150px,92%);margin:auto}
-.hero{min-height:100vh;background:linear-gradient(90deg,#05060bdd,#05060b77),url("https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-76.jpg") center/cover;display:flex;align-items:center}
-h1{font-size:clamp(42px,7vw,86px);line-height:.95;max-width:850px}
-h1 span{color:#00e5ff}
-p{color:#cfd6df;font-size:18px}
-.btn{display:inline-block;margin-top:28px;padding:17px 25px;background:#00e5ff;color:#02040a;border-radius:18px;font-weight:900}
-.top{position:absolute;top:22px;left:0;width:100%}
-.nav{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:24px;font-weight:900}.logo span{color:#00e5ff}
-.phone{padding:12px 18px;border-radius:999px;background:white;color:#05060b;font-weight:900}
-section{padding:80px 0}
-.title{font-size:clamp(34px,5vw,58px);margin-bottom:16px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:35px}
-.card{background:#11141c;border-radius:28px;overflow:hidden;border:1px solid #ffffff18}
-.card img{width:100%;height:270px;object-fit:cover;display:block}
-.card div{padding:22px}
-.card h3{font-size:22px;margin-bottom:8px}
-.services{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:35px}
-.service{background:#11141c;border:1px solid #ffffff18;border-radius:26px;padding:26px}
-.service b{font-size:23px;display:block;margin-bottom:8px;color:#fff}
-.cta{background:linear-gradient(135deg,#00e5ff33,#ffffff08);border:1px solid #ffffff22;border-radius:36px;padding:45px;display:grid;grid-template-columns:1.3fr .7fr;gap:25px;align-items:center}
-.cta a{display:block;text-align:center;margin:10px 0;padding:18px;border-radius:18px;font-weight:900}
-.whatsapp{background:#25D366;color:#041006}.call{background:white;color:#05060b}
-footer{text-align:center;color:#8994a0;padding:30px;border-top:1px solid #ffffff14}
-@media(max-width:850px){.grid,.services,.cta{grid-template-columns:1fr}.nav{flex-direction:column;gap:14px}.phone{width:100%;text-align:center}}
+.wrap{width:min(1200px,92%);margin:auto}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 10%,#00eaff22,transparent 30%),
+    radial-gradient(circle at 80% 30%,#7c3cff22,transparent 28%),
+    radial-gradient(circle at 50% 90%,#00ff9d18,transparent 30%);
+  pointer-events:none;
+  z-index:-2;
+}
+
+.hero{
+  min-height:100vh;
+  position:relative;
+  background:
+    linear-gradient(90deg,#03040a 0%,rgba(3,4,10,.88) 38%,rgba(3,4,10,.2)),
+    url("https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-76.jpg") center/cover;
+}
+
+nav{
+  position:absolute;
+  top:0;left:0;width:100%;
+  z-index:20;
+  padding:24px 0;
+}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-size:26px;
+  font-weight:950;
+  letter-spacing:-1px;
+}
+.logo span{color:#00eaff}
+.nav a{
+  background:#fff;
+  color:#05060a;
+  padding:13px 20px;
+  border-radius:999px;
+  font-weight:900;
+}
+
+.hero-box{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:90px;
+}
+.badge{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid #ffffff2a;
+  background:#ffffff12;
+  backdrop-filter:blur(14px);
+  color:#dffaff;
+  margin-bottom:24px;
+}
+h1{
+  max-width:930px;
+  font-size:clamp(48px,8vw,104px);
+  line-height:.88;
+  letter-spacing:-5px;
+}
+h1 span{
+  background:linear-gradient(90deg,#00eaff,#8affff,#ffffff);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.hero p{
+  max-width:720px;
+  color:#d5dde8;
+  font-size:clamp(18px,2vw,24px);
+  margin:30px 0;
+}
+.buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:18px 28px;
+  border-radius:18px;
+  font-weight:950;
+  background:#00eaff;
+  color:#02040a;
+  box-shadow:0 0 45px #00eaff55;
+}
+.btn.dark{
+  background:#ffffff12;
+  color:white;
+  border:1px solid #ffffff24;
+  box-shadow:none;
+  backdrop-filter:blur(12px);
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:46px;
+  max-width:900px;
+}
+.stat{
+  padding:20px;
+  border-radius:24px;
+  background:#ffffff12;
+  border:1px solid #ffffff1c;
+  backdrop-filter:blur(14px);
+}
+.stat b{
+  display:block;
+  font-size:30px;
+  color:#00eaff;
+}
+.stat small{color:#c8d2dd}
+
+section{padding:95px 0}
+.title{
+  font-size:clamp(38px,5vw,66px);
+  line-height:.95;
+  letter-spacing:-3px;
+  margin-bottom:18px;
+}
+.sub{
+  color:#adb8c6;
+  font-size:19px;
+  max-width:760px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+.card{
+  position:relative;
+  overflow:hidden;
+  min-height:250px;
+  padding:30px;
+  border-radius:34px;
+  background:linear-gradient(145deg,#151927,#070910);
+  border:1px solid #ffffff15;
+}
+.card:before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background:linear-gradient(130deg,#00eaff33,transparent,#ffffff18);
+  opacity:.55;
+  pointer-events:none;
+}
+.card small{
+  color:#00eaff;
+  font-weight:950;
+  position:relative;
+}
+.card h3{
+  font-size:27px;
+  margin:18px 0 12px;
+  position:relative;
+}
+.card p{
+  color:#aeb8c5;
+  position:relative;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:1.2fr .8fr 1fr;
+  gap:18px;
+  margin-top:42px;
+}
+.photo{
+  position:relative;
+  height:330px;
+  border-radius:34px;
+  overflow:hidden;
+  border:1px solid #ffffff18;
+  background:#111;
+}
+.photo.tall{height:680px}
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.6s;
+}
+.photo:hover img{transform:scale(1.08)}
+.photo div{
+  position:absolute;
+  left:0;right:0;bottom:0;
+  padding:26px;
+  background:linear-gradient(transparent,rgba(0,0,0,.9));
+}
+.photo h3{font-size:25px}
+
+.process{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-top:40px;
+}
+.step{
+  padding:28px;
+  border-radius:30px;
+  background:#10131d;
+  border:1px solid #ffffff14;
+}
+.step b{
+  display:flex;
+  width:48px;height:48px;
+  align-items:center;justify-content:center;
+  border-radius:16px;
+  background:#00eaff;
+  color:#02040a;
+  margin-bottom:20px;
+}
+.step h3{font-size:22px;margin-bottom:8px}
+.step p{color:#aeb8c5}
+
+.price{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.price-box{
+  border-radius:36px;
+  padding:36px;
+  background:linear-gradient(145deg,#111827,#070910);
+  border:1px solid #ffffff18;
+}
+.price-box h3{font-size:30px;margin-bottom:12px}
+.price-box p{color:#aeb8c5}
+.price-box b{
+  display:block;
+  font-size:48px;
+  margin:24px 0;
+  color:#00eaff;
+}
+.price-box ul{
+  list-style:none;
+  display:grid;
+  gap:12px;
+  color:#dce5ee;
+}
+.price-box li:before{content:"✓ ";color:#00eaff;font-weight:900}
+
+.cta{
+  padding:60px;
+  border-radius:44px;
+  background:
+    linear-gradient(135deg,#00eaff35,#7c3cff22,#ffffff08),
+    #0b0e16;
+  border:1px solid #ffffff20;
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:30px;
+  align-items:center;
+}
+.cta p{color:#d2dbe6;font-size:19px}
+.cta a{
+  display:block;
+  text-align:center;
+  padding:19px;
+  border-radius:18px;
+  font-weight:950;
+  margin:12px 0;
+}
+.whatsapp{background:#25D366;color:#031006}
+.call{background:white;color:#05060a}
+
+.faq{
+  display:grid;
+  gap:14px;
+  margin-top:36px;
+}
+details{
+  padding:24px;
+  border-radius:24px;
+  background:#10131d;
+  border:1px solid #ffffff14;
+}
+summary{
+  cursor:pointer;
+  font-size:20px;
+  font-weight:900;
+}
+details p{
+  color:#aeb8c5;
+  margin-top:14px;
+}
+
+.float{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:99;
+  background:#25D366;
+  color:#031006;
+  padding:16px 22px;
+  border-radius:999px;
+  font-weight:950;
+  box-shadow:0 14px 40px #0009;
+}
+
+footer{
+  text-align:center;
+  padding:34px;
+  color:#8e99a7;
+  border-top:1px solid #ffffff12;
+}
+
+@media(max-width:950px){
+  .nav{flex-direction:column;gap:14px}
+  .nav a{width:100%;text-align:center}
+  .stats,.cards,.gallery,.process,.price,.cta{grid-template-columns:1fr}
+  .photo,.photo.tall{height:330px}
+  h1{letter-spacing:-2px}
+  section{padding:68px 0}
+  .cta{padding:34px}
+  .float{left:18px;text-align:center}
+}
 </style>
 </head>
+
 <body>
 
-<div class="top">
-  <div class="wrap nav">
-    <div class="logo">Napínané <span>Stropy</span></div>
-    <a class="phone" href="tel:+421952277013">+421 952 277 013</a>
-  </div>
-</div>
+<a class="float" href="https://wa.me/421952277013">WhatsApp</a>
 
 <header class="hero">
-  <div class="wrap">
-    <h1>Moderné napínané stropy <span>na mieru</span></h1>
-    <p>Prémiové stropy, svetelné línie, tienový profil, plávajúce stropy a moderné LED riešenia pre byty, domy a komerčné priestory.</p>
-    <a class="btn" href="https://wa.me/421952277013">Napísať na WhatsApp</a>
+<nav>
+  <div class="wrap nav">
+    <div class="logo">Premium <span>Stropy</span></div>
+    <a href="tel:+421952277013">+421 952 277 013</a>
   </div>
+</nav>
+
+<div class="wrap hero-box">
+  <div>
+    <div class="badge">● Moderné napínané stropy na Slovensku</div>
+    <h1>Strop, ktorý zmení celý <span>interiér</span></h1>
+    <p>Prémiové napínané stropy, svetelné línie, tienový profil, plávajúce LED stropy a skryté garniže na mieru.</p>
+
+    <div class="buttons">
+      <a class="btn" href="https://wa.me/421952277013">Chcem cenovú ponuku</a>
+      <a class="btn dark" href="#galeria">Pozrieť galériu</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>1 deň</b><small>rýchla montáž</small></div>
+      <div class="stat"><b>12 r.</b><small>záruka</small></div>
+      <div class="stat"><b>0</b><small>maľovanie stropu</small></div>
+      <div class="stat"><b>100%</b><small>moderný vzhľad</small></div>
+    </div>
+  </div>
+</div>
 </header>
 
 <section>
-  <div class="wrap">
-    <h2 class="title">Naše služby</h2>
-    <p>Robíme kompletnú montáž napínaných stropov na kľúč.</p>
+<div class="wrap">
+<h2 class="title">Služby na kľúč</h2>
+<p class="sub">Vyberieme vhodné riešenie, zameriame priestor a namontujeme hotový strop bez zbytočného chaosu.</p>
 
-    <div class="services">
-      <div class="service"><b>Napínané stropy</b><p>Rovný, čistý a moderný vzhľad bez zbytočného neporiadku.</p></div>
-      <div class="service"><b>Svetelné línie</b><p>LED línie priamo v strope pre luxusný efekt.</p></div>
-      <div class="service"><b>Tienový profil</b><p>Moderný detail pri stene, ktorý vyzerá prémiovo.</p></div>
-      <div class="service"><b>Plávajúce stropy</b><p>Podsvietenie po obvode a efekt ľahkého stropu.</p></div>
+<div class="cards">
+  <div class="card"><small>01</small><h3>Napínané stropy</h3><p>Dokonale rovný povrch, moderný vzhľad a rýchla montáž.</p></div>
+  <div class="card"><small>02</small><h3>Svetelné línie</h3><p>Luxusné LED línie pre obývačku, kuchyňu alebo chodbu.</p></div>
+  <div class="card"><small>03</small><h3>Tienový profil</h3><p>Prémiový detail pri stene ako v moderných dizajnových bytoch.</p></div>
+  <div class="card"><small>04</small><h3>Plávajúci strop</h3><p>Podsvietenie po obvode a efekt ľahkého stropu.</p></div>
+  <div class="card"><small>05</small><h3>Magnetické lišty</h3><p>Moderné osvetlenie pre luxusné interiéry.</p></div>
+  <div class="card"><small>06</small><h3>Skryté garniže</h3><p>Čisté riešenie pre záclony bez viditeľnej koľajnice.</p></div>
+</div>
+</div>
+</section>
+
+<section id="galeria">
+<div class="wrap">
+<h2 class="title">Realizácie</h2>
+<p class="sub">Len moderné napínané stropy, LED línie a čistý stropný dizajn.</p>
+
+<div class="gallery">
+  <div class="photo tall">
+    <img src="https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-76.jpg">
+    <div><h3>LED línie</h3></div>
+  </div>
+  <div>
+    <div class="photo">
+      <img src="https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-63.jpg">
+      <div><h3>Kuchyňa</h3></div>
+    </div>
+    <br>
+    <div class="photo">
+      <img src="https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-51.jpg">
+      <div><h3>Moderný byt</h3></div>
     </div>
   </div>
+  <div class="photo tall">
+    <img src="https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-57.jpg">
+    <div><h3>Prémiový strop</h3></div>
+  </div>
+</div>
+</div>
 </section>
 
 <section>
-  <div class="wrap">
-    <h2 class="title">Galéria</h2>
-    <p>Fotografie sú vybrané len s napínanými stropmi a LED líniami.</p>
+<div class="wrap">
+<h2 class="title">Ako to funguje</h2>
+<p class="sub">Jednoduchý postup od prvého kontaktu po hotový strop.</p>
 
-    <div class="grid">
-      <div class="card">
-        <img src="https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-76.jpg">
-        <div><h3>Moderná obývačka</h3><p>Čisté línie a prémiové osvetlenie.</p></div>
-      </div>
-      <div class="card">
-        <img src="https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-63.jpg">
-        <div><h3>Kuchyňa</h3><p>Napínaný strop so svetelnou líniou.</p></div>
-      </div>
-      <div class="card">
-        <img src="https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-51.jpg">
-        <div><h3>Dizajnové línie</h3><p>Efektné LED riešenie na strope.</p></div>
-      </div>
-      <div class="card">
-        <img src="https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-57.jpg">
-        <div><h3>Lesklý strop</h3><p>Moderný kontrast a silný vizuálny efekt.</p></div>
-      </div>
-      <div class="card">
-        <img src="https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-76.jpg">
-        <div><h3>Svetelné línie</h3><p>Elegantný štýl pre moderný interiér.</p></div>
-      </div>
-      <div class="card">
-        <img src="https://s3.stroi-news.ru/img/svetovie-linii-na-natyazhnom-potolke-dizai-63.jpg">
-        <div><h3>Strop na mieru</h3><p>Riešenie pre byt, dom aj kanceláriu.</p></div>
-      </div>
-    </div>
-  </div>
+<div class="process">
+  <div class="step"><b>1</b><h3>Napíšete</h3><p>Pošlete rozmery alebo fotku miestnosti.</p></div>
+  <div class="step"><b>2</b><h3>Poradíme</h3><p>Navrhneme najlepšie riešenie pre váš interiér.</p></div>
+  <div class="step"><b>3</b><h3>Cena</h3><p>Dostanete jasnú ponuku bez skrytých poplatkov.</p></div>
+  <div class="step"><b>4</b><h3>Montáž</h3><p>Namontujeme hotový strop na kľúč.</p></div>
+</div>
+</div>
 </section>
 
 <section>
-  <div class="wrap">
-    <div class="cta">
-      <div>
-        <h2 class="title">Chcete nový strop?</h2>
-        <p>Zavolajte alebo napíšte. Dohodneme obhliadku a pripravíme cenovú ponuku.</p>
-      </div>
-      <div>
-        <a class="whatsapp" href="https://wa.me/421952277013">WhatsApp</a>
-        <a class="call" href="tel:+421952277013">Zavolať</a>
-      </div>
-    </div>
+<div class="wrap">
+<h2 class="title">Cenová ponuka</h2>
+<p class="sub">Cena závisí od rozmeru, typu profilu, osvetlenia a náročnosti montáže.</p>
+
+<div class="price">
+  <div class="price-box">
+    <h3>Klasický strop</h3>
+    <p>Pre jednoduché a čisté riešenie.</p>
+    <b>od 25 €/m²</b>
+    <ul>
+      <li>zameranie</li>
+      <li>materiál</li>
+      <li>montáž</li>
+      <li>čistý moderný vzhľad</li>
+    </ul>
   </div>
+
+  <div class="price-box">
+    <h3>Premium LED</h3>
+    <p>Pre dizajnový interiér so svetlom.</p>
+    <b>individuálne</b>
+    <ul>
+      <li>svetelné línie</li>
+      <li>tienový profil</li>
+      <li>plávajúci efekt</li>
+      <li>magnetické lišty</li>
+    </ul>
+  </div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<h2 class="title">Otázky</h2>
+
+<div class="faq">
+  <details>
+    <summary>Ako dlho trvá montáž?</summary>
+    <p>Väčšina miestností sa dá spraviť za jeden deň podľa náročnosti.</p>
+  </details>
+  <details>
+    <summary>Dá sa spraviť LED osvetlenie?</summary>
+    <p>Áno, robíme svetelné línie, podsvietenie, plávajúce stropy aj magnetické lišty.</p>
+  </details>
+  <details>
+    <summary>Robíte aj obhliadku?</summary>
+    <p>Áno, po dohode zameriame priestor a pripravíme riešenie.</p>
+  </details>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="cta">
+  <div>
+    <h2 class="title">Chcete prémiový strop?</h2>
+    <p>Napíšte na WhatsApp a pošlite rozmery alebo fotku miestnosti. Pripravíme vám ponuku.</p>
+  </div>
+  <div>
+    <a class="whatsapp" href="https://wa.me/421952277013">Napísať WhatsApp</a>
+    <a class="call" href="tel:+421952277013">Zavolať teraz</a>
+  </div>
+</div>
+</div>
 </section>
 
 <footer>
-  © 2026 Napínané Stropy | Slovensko | +421 952 277 013
+© 2026 Premium Stropy | Slovensko | +421 952 277 013
 </footer>
 
 </body>
