@@ -3,335 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Stropy & Interiéry | Bratislava</title>
+<title>LOOK STROPY | Bratislava</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial, sans-serif;
   background:#07090d;
-  color:white;
-  overflow-x:hidden;
+  color:#fff;
 }
 a{text-decoration:none;color:inherit}
 
 .hero{
   min-height:100vh;
   background:
-  linear-gradient(120deg,rgba(0,0,0,.85),rgba(0,0,0,.35)),
-  url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1800&q=80") center/cover;
+  linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.5)),
+  url("https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1800&q=80") center/cover;
   display:flex;
   align-items:center;
-  padding:25px;
-  position:relative;
+  padding:30px;
 }
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 70% 30%,rgba(255,190,0,.25),transparent 35%);
-}
-.hero-box{
-  position:relative;
-  z-index:2;
-  max-width:950px;
-  margin-left:5%;
-  animation:fade 1.2s ease;
-}
+
+.hero-box{max-width:900px}
+
 .logo{
-  display:inline-block;
-  padding:10px 20px;
-  border:1px solid rgba(255,190,0,.5);
-  border-radius:50px;
-  color:#ffc400;
-  margin-bottom:25px;
-  background:rgba(0,0,0,.35);
-  backdrop-filter:blur(8px);
-  font-weight:700;
+  color:#00c2ff;
+  margin-bottom:20px;
+  font-weight:bold;
 }
+
 h1{
-  font-size:clamp(42px,8vw,92px);
-  line-height:1;
-  margin-bottom:25px;
-  letter-spacing:-2px;
+  font-size:60px;
+  margin-bottom:20px;
 }
-h1 span{
-  color:#ffc400;
-  text-shadow:0 0 30px rgba(255,196,0,.45);
-}
+
+h1 span{color:#00c2ff}
+
 .hero p{
-  font-size:clamp(18px,2.5vw,26px);
-  color:#e2e2e2;
-  max-width:760px;
-  margin-bottom:35px;
+  font-size:20px;
+  color:#ccc;
+  margin-bottom:30px;
 }
-.buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-}
+
 .btn{
-  padding:16px 26px;
-  border-radius:16px;
-  font-weight:800;
-  transition:.3s;
+  display:inline-block;
+  padding:15px 25px;
+  border-radius:12px;
+  font-weight:bold;
 }
+
 .btn-main{
-  background:linear-gradient(135deg,#ffc400,#ff7b00);
-  color:#111;
-  box-shadow:0 15px 40px rgba(255,196,0,.25);
+  background:linear-gradient(135deg,#00c2ff,#0077ff);
+  color:#000;
 }
-.btn-main:hover{transform:translateY(-4px)}
+
 .btn-line{
-  border:1px solid #ffc400;
-  color:#ffc400;
-  background:rgba(0,0,0,.35);
+  border:1px solid #00c2ff;
+  color:#00c2ff;
 }
-.btn-line:hover{background:#ffc400;color:#111}
 
 section{
-  max-width:1250px;
+  padding:70px 20px;
+  max-width:1200px;
   margin:auto;
-  padding:90px 24px;
 }
-.title{
-  text-align:center;
-  margin-bottom:50px;
-}
-.title small{
-  color:#ffc400;
-  font-weight:800;
-  letter-spacing:2px;
-}
-.title h2{
-  font-size:clamp(32px,5vw,55px);
-  margin-top:8px;
-}
-.title p{
-  color:#aaa;
-  max-width:700px;
-  margin:12px auto 0;
-  font-size:18px;
-}
+
+.title{text-align:center;margin-bottom:40px}
+.title h2{font-size:35px;color:#00c2ff}
 
 .services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
 }
+
 .card{
-  background:linear-gradient(180deg,#121820,#0b0f14);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:26px;
-  padding:30px;
-  min-height:210px;
-  position:relative;
-  overflow:hidden;
-  transition:.35s;
+  background:#111820;
+  padding:25px;
+  border-radius:20px;
+  border:1px solid rgba(0,194,255,.2);
 }
-.card::before{
-  content:"";
-  position:absolute;
-  width:120px;
-  height:120px;
-  background:#ffc400;
-  filter:blur(80px);
-  opacity:.22;
-  right:-30px;
-  top:-30px;
-}
-.card:hover{
-  transform:translateY(-8px);
-  border-color:rgba(255,196,0,.5);
-}
-.icon{
-  font-size:38px;
-  margin-bottom:18px;
-}
-.card h3{
-  color:#ffc400;
-  font-size:24px;
-  margin-bottom:12px;
-}
-.card p{
-  color:#cfcfcf;
-}
+
+.card h3{color:#00c2ff;margin-bottom:10px}
 
 .gallery{
   display:grid;
-  grid-template-columns:repeat(12,1fr);
-  gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:15px;
 }
-.photo{
-  min-height:310px;
-  border-radius:28px;
-  overflow:hidden;
-  position:relative;
-  border:1px solid rgba(255,196,0,.3);
-  background:#111;
-}
-.photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  position:absolute;
-  inset:0;
-  transition:.5s;
-}
-.photo:hover img{transform:scale(1.08)}
-.photo::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(transparent,rgba(0,0,0,.75));
-}
-.photo b{
-  position:absolute;
-  left:20px;
-  bottom:18px;
-  z-index:2;
-  font-size:22px;
-}
-.big{grid-column:span 7}
-.small{grid-column:span 5}
-.mid{grid-column:span 4}
 
-.about-wrap{
+.gallery img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  border-radius:20px;
+  border:2px solid rgba(0,194,255,.3);
+}
+
+.about{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:35px;
-  align-items:center;
-}
-.about-img{
-  height:520px;
-  border-radius:32px;
-  overflow:hidden;
-  border:1px solid rgba(255,196,0,.35);
-}
-.about-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.about-text h2{
-  font-size:48px;
-  color:#ffc400;
-  margin-bottom:20px;
-}
-.about-text p{
-  color:#ddd;
-  font-size:19px;
-  margin-bottom:16px;
-}
-.list{
-  margin-top:25px;
-  display:grid;
-  gap:12px;
-}
-.list div{
-  background:#111820;
-  padding:14px 16px;
-  border-radius:14px;
-  border-left:4px solid #ffc400;
+  gap:30px;
 }
 
-.steps{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+.about img{
+  width:100%;
+  border-radius:20px;
 }
-.step{
-  background:#10161d;
-  padding:28px;
-  border-radius:24px;
-  border:1px solid rgba(255,255,255,.08);
-}
-.step span{
-  color:#ffc400;
-  font-size:40px;
-  font-weight:900;
-}
-.step h3{margin:12px 0}
-.step p{color:#bbb}
+
+.about h2{color:#00c2ff;margin-bottom:15px}
 
 .cta{
-  background:
-  linear-gradient(135deg,rgba(255,196,0,.95),rgba(255,120,0,.95)),
-  url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80") center/cover;
-  color:#111;
+  background:linear-gradient(135deg,#00c2ff,#0077ff);
   text-align:center;
-  border-radius:36px;
-  padding:70px 24px;
-}
-.cta h2{
-  font-size:clamp(34px,5vw,60px);
-  margin-bottom:15px;
-}
-.cta p{
-  font-size:20px;
-  max-width:700px;
-  margin:auto;
-}
-.cta .btn{
-  display:inline-block;
-  margin-top:28px;
-  background:#080808;
-  color:#fff;
+  padding:50px;
+  border-radius:25px;
+  color:#000;
 }
 
 footer{
   text-align:center;
-  padding:35px;
-  background:#05070a;
-  color:#888;
+  padding:25px;
+  color:#777;
 }
+
 .whatsapp{
   position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:99;
+  bottom:20px;
+  right:20px;
   background:#25D366;
-  color:white;
   padding:15px 20px;
   border-radius:50px;
-  font-weight:900;
-  box-shadow:0 10px 35px rgba(0,0,0,.45);
-}
-.topbar{
-  position:absolute;
-  top:20px;
-  left:20px;
-  right:20px;
-  z-index:5;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.brand{
-  font-size:22px;
-  font-weight:900;
-}
-.brand span{color:#ffc400}
-.nav{
-  display:flex;
-  gap:18px;
-  color:#ddd;
-}
-.nav a:hover{color:#ffc400}
-
-@keyframes fade{
-  from{opacity:0;transform:translateY(35px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@media(max-width:850px){
-  .nav{display:none}
-  .hero-box{margin-left:0}
-  .about-wrap{grid-template-columns:1fr}
-  .about-img{height:360px}
-  .big,.small,.mid{grid-column:span 12}
-  section{padding:65px 18px}
+  font-weight:bold;
+  color:#fff;
 }
 </style>
 </head>
@@ -341,168 +145,63 @@ footer{
 <a class="whatsapp" href="https://wa.me/421952277013">WhatsApp</a>
 
 <header class="hero">
-  <div class="topbar">
-    <div class="brand">LOOK <span>STROPY</span></div>
-    <div class="nav">
-      <a href="#sluzby">Služby</a>
-      <a href="#galeria">Galéria</a>
-      <a href="#kontakt">Kontakt</a>
-    </div>
-  </div>
-
-  <div class="hero-box">
-    <div class="logo">BRATISLAVA • OKOLIE • INTERIÉROVÉ PRÁCE</div>
-    <h1>Prémiové <span>stropy</span><br>a moderné interiéry</h1>
-    <p>
-      Natiahnuté stropy, sadrokartón, Armstrong, špachtľovanie a maľovanie.
-      Čistá práca, moderný vzhľad a riešenia pre byty, domy aj firmy.
-    </p>
-    <div class="buttons">
-      <a class="btn btn-main" href="tel:+421952277013">Zavolať +421 952 277 013</a>
-      <a class="btn btn-line" href="#galeria">Pozrieť galériu</a>
-    </div>
-  </div>
+<div class="hero-box">
+<div class="logo">LOOK STROPY • Bratislava</div>
+<h1>Moderné <span>stropy</span><br> a interiérové práce</h1>
+<p>Natiahnuté stropy • Sadrokartón • Armstrong • Maľovanie • Špachtľovanie</p>
+<a class="btn btn-main" href="tel:+421952277013">+421 952 277 013</a>
+</div>
 </header>
 
-<section id="sluzby">
-  <div class="title">
-    <small>NAŠE SLUŽBY</small>
-    <h2>Všetko pre krásny interiér</h2>
-    <p>Robíme kompletné dokončovacie práce od prípravy stien až po moderný strop s osvetlením.</p>
-  </div>
+<section>
+<div class="title">
+<h2>Naše služby</h2>
+</div>
 
-  <div class="services">
-    <div class="card">
-      <div class="icon">✨</div>
-      <h3>Natiahnuté stropy</h3>
-      <p>Matné, lesklé, svetelné línie, LED podsvietenie, tieňové profily a moderné riešenia.</p>
-    </div>
-    <div class="card">
-      <div class="icon">📐</div>
-      <h3>Sadrokartón</h3>
-      <p>Podhľady, priečky, konštrukcie, kazety a dizajnové prvky do interiéru.</p>
-    </div>
-    <div class="card">
-      <div class="icon">⬜</div>
-      <h3>Armstrong stropy</h3>
-      <p>Kazetové stropy pre kancelárie, obchody, sklady a komerčné priestory.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🧱</div>
-      <h3>Špachtľovanie</h3>
-      <p>Tmelenie, brúsenie, vyrovnanie stien a kvalitná príprava povrchov.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🎨</div>
-      <h3>Maľovanie</h3>
-      <p>Maľovanie bytov, domov, kancelárií a priestorov s čistým výsledkom.</p>
-    </div>
-    <div class="card">
-      <div class="icon">🏠</div>
-      <h3>Kompletný interiér</h3>
-      <p>Vieme spojiť viac prác naraz, aby ste mali všetko hotové rýchlo a kvalitne.</p>
-    </div>
-  </div>
-</section>
-
-<section id="galeria">
-  <div class="title">
-    <small>GALÉRIA</small>
-    <h2>Inšpirácia pre váš byt alebo dom</h2>
-    <p>Foto sú vložené priamo z internetu, nič nemusíš nahrávať do GitHubu.</p>
-  </div>
-
-  <div class="gallery">
-    <div class="photo big">
-      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80">
-      <b>Moderný interiér</b>
-    </div>
-    <div class="photo small">
-      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80">
-      <b>Čisté línie</b>
-    </div>
-    <div class="photo mid">
-      <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1000&q=80">
-      <b>Obývačka</b>
-    </div>
-    <div class="photo mid">
-      <img src="https://images.unsplash.com/photo-1600607687644-c94bf47c9c51?auto=format&fit=crop&w=1000&q=80">
-      <b>Dizajnový strop</b>
-    </div>
-    <div class="photo mid">
-      <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80">
-      <b>Interiérové práce</b>
-    </div>
-  </div>
+<div class="services">
+<div class="card"><h3>Stropy</h3><p>Natiahnuté stropy, LED línie, moderný dizajn</p></div>
+<div class="card"><h3>Sadrokartón</h3><p>Konštrukcie, podhľady, priečky</p></div>
+<div class="card"><h3>Armstrong</h3><p>Kancelárie a komerčné priestory</p></div>
+<div class="card"><h3>Špachtľa</h3><p>Stierky, príprava stien</p></div>
+<div class="card"><h3>Maľovanie</h3><p>Byty, domy, interiéry</p></div>
+</div>
 </section>
 
 <section>
-  <div class="about-wrap">
-    <div class="about-img">
-      <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=80">
-    </div>
+<div class="title">
+<h2>Naše práce</h2>
+</div>
 
-    <div class="about-text">
-      <h2>Kvalita, ktorá je vidieť</h2>
-      <p>
-        Pri práci dbáme na presnosť, čistotu a pekný finálny výsledok.
-        Každý priestor riešime individuálne podľa želania zákazníka.
-      </p>
-      <p>
-        Zabezpečíme stropy, sadrokartón, stierky aj maľovanie. Ideálne riešenie,
-        keď chcete mať všetko spravené jednou partiou.
-      </p>
+<div class="gallery">
 
-      <div class="list">
-        <div>✔ Bezplatná konzultácia podľa rozsahu práce</div>
-        <div>✔ Bratislava a okolie</div>
-        <div>✔ Byty, domy, kancelárie, obchody</div>
-        <div>✔ Dohoda termínu a férová cena</div>
-      </div>
-    </div>
-  </div>
+<img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1600607687644-c94bf47c9c51?auto=format&fit=crop&w=800&q=80">
+
+</div>
 </section>
 
-<section>
-  <div class="title">
-    <small>POSTUP</small>
-    <h2>Ako prebieha spolupráca</h2>
-  </div>
+<section class="about">
+<img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=800&q=80">
 
-  <div class="steps">
-    <div class="step">
-      <span>01</span>
-      <h3>Kontakt</h3>
-      <p>Zavoláte alebo napíšete na WhatsApp.</p>
-    </div>
-    <div class="step">
-      <span>02</span>
-      <h3>Obhliadka</h3>
-      <p>Pozrieme priestor a poradíme riešenie.</p>
-    </div>
-    <div class="step">
-      <span>03</span>
-      <h3>Cena</h3>
-      <p>Dostanete jasnú cenovú ponuku.</p>
-    </div>
-    <div class="step">
-      <span>04</span>
-      <h3>Realizácia</h3>
-      <p>Prácu dokončíme čisto a kvalitne.</p>
-    </div>
-  </div>
+<div>
+<h2>Prečo si vybrať nás</h2>
+<p>Pracujeme rýchlo, čisto a kvalitne. Robíme byty, domy aj komerčné priestory.</p>
+<p>Kompletné riešenie interiéru od A po Z.</p>
+</div>
 </section>
 
-<section id="kontakt">
-  <div class="cta">
-    <h2>Chcete krásny strop alebo nový interiér?</h2>
-    <p>Zavolajte alebo napíšte na WhatsApp. Dohodneme obhliadku a cenu.</p>
-    <a class="btn" href="tel:+421952277013">+421 952 277 013</a>
-  </div>
+<section class="cta">
+<h2>Chceš nový strop?</h2>
+<p>Napíš alebo zavolaj</p>
+<a class="btn" href="tel:+421952277013">+421 952 277 013</a>
 </section>
 
 <footer>
-  © 2026 LOOK STROPY • Natiahnuté stropy • Sadrokartón • Armstrong • Maľovanie
+© 2026 LOOK STROPY
 </footer>
 
 </body>
