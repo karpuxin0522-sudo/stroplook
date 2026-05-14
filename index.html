@@ -3,190 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Napínané stropy Bratislava</title>
+<title>Napínané Stropy Bratislava</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f4f7fb;
-  color:#111;
+    font-family:'Montserrat',sans-serif;
+    background:#0d0d0d;
+    color:white;
+    overflow-x:hidden;
 }
+
 header{
-  background:#07111f;
-  color:white;
-  padding:18px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
+    url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
 }
-.logo{
-  font-size:24px;
-  font-weight:900;
-}
-.logo span{color:#14b8ff}
+
 .hero{
-  padding:60px 20px;
-  background:linear-gradient(135deg,#07111f,#123b5c);
-  color:white;
-  text-align:center;
+    max-width:900px;
 }
+
 .hero h1{
-  font-size:42px;
-  margin:0 0 15px;
+    font-size:72px;
+    font-weight:900;
+    line-height:1.1;
+    margin-bottom:20px;
+    text-transform:uppercase;
 }
-.hero h1 span{
-  color:#ffd15c;
+
+.hero span{
+    color:#ff9900;
 }
+
+.hero p{
+    font-size:22px;
+    color:#ddd;
+    margin-bottom:35px;
+}
+
 .btn{
-  display:inline-block;
-  margin:10px;
-  padding:15px 22px;
-  border-radius:12px;
-  font-weight:bold;
-  text-decoration:none;
+    display:inline-block;
+    padding:18px 40px;
+    background:#ff9900;
+    color:black;
+    text-decoration:none;
+    font-weight:700;
+    border-radius:50px;
+    transition:.3s;
+    font-size:20px;
 }
-.call{background:#ffd15c;color:#111}
-.wa{background:#25d366;color:white}
+
+.btn:hover{
+    background:white;
+    transform:scale(1.05);
+}
+
 section{
-  padding:45px 20px;
-  max-width:1100px;
-  margin:auto;
+    padding:90px 8%;
 }
+
+.title{
+    text-align:center;
+    font-size:48px;
+    margin-bottom:60px;
+    font-weight:800;
+}
+
 .cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:18px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
+
 .card{
-  background:white;
-  padding:22px;
-  border-radius:18px;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+    background:#161616;
+    border-radius:25px;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 0 25px rgba(0,0,0,.4);
 }
-.card h3{
-  margin-top:0;
+
+.card:hover{
+    transform:translateY(-10px);
 }
-.price{
-  font-size:28px;
-  font-weight:900;
-  color:#0b88d8;
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
 }
-.calc{
-  background:white;
-  padding:25px;
-  border-radius:20px;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+.card-content{
+    padding:25px;
 }
-input,select{
-  width:100%;
-  padding:14px;
-  margin:8px 0 15px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  font-size:16px;
+
+.card-content h3{
+    margin-bottom:15px;
+    font-size:26px;
 }
-.result{
-  font-size:38px;
-  font-weight:900;
-  color:#0b88d8;
+
+.card-content p{
+    color:#bbb;
+    line-height:1.7;
 }
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:30px;
+    box-shadow:0 0 40px rgba(0,0,0,.5);
+}
+
+.about-text h2{
+    font-size:52px;
+    margin-bottom:25px;
+}
+
+.about-text p{
+    line-height:1.9;
+    color:#ccc;
+    margin-bottom:20px;
+}
+
+.contact{
+    background:#111;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.1);
+}
+
+.contact h2{
+    font-size:50px;
+    margin-bottom:25px;
+}
+
+.phone{
+    font-size:42px;
+    color:#ff9900;
+    font-weight:900;
+    margin-bottom:25px;
+}
+
 footer{
-  background:#07111f;
-  color:white;
-  text-align:center;
-  padding:35px 20px;
+    text-align:center;
+    padding:30px;
+    background:black;
+    color:#888;
+}
+
+@media(max-width:900px){
+
+.hero h1{
+    font-size:42px;
+}
+
+.about{
+    grid-template-columns:1fr;
+}
+
+.title{
+    font-size:36px;
+}
+
+.phone{
+    font-size:28px;
+}
+
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">STROPY <span>BA</span></div>
-  <div>+421 952 277 013</div>
+<div class="hero">
+<h1>Moderné <span>Napínané</span> Stropy</h1>
+<p>Prémiové napínané stropy v Bratislave a okolí. Moderný dizajn, LED línie, plávajúce stropy, magnetické tracky.</p>
+<a href="tel:+421952277013" class="btn">📞 +421952277013</a>
+</div>
 </header>
 
-<div class="hero">
-  <h1>Napínané stropy v Bratislave <span>od 24€/m²</span></h1>
-  <p>Moderné napínané stropy, svetelné línie, tieňové profily a skryté garniže.</p>
-  <a class="btn call" href="tel:+421952277013">Zavolať</a>
-  <a class="btn wa" href="https://wa.me/421952277013">WhatsApp</a>
+<section>
+<h2 class="title">Naše služby</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Matné stropy</h3>
+<p>Elegantný moderný vzhľad pre byt, dom alebo kanceláriu.</p>
+</div>
 </div>
 
-<section>
-  <h2>Naše služby</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Matné stropy</h3>
-      <p>Moderný čistý vzhľad bez odleskov.</p>
-      <div class="price">od 24€/m²</div>
-    </div>
-    <div class="card">
-      <h3>Lesklé stropy</h3>
-      <p>Opticky zväčšia priestor.</p>
-      <div class="price">od 26€/m²</div>
-    </div>
-    <div class="card">
-      <h3>Svetelné línie</h3>
-      <p>Prémiový dizajn pre moderný interiér.</p>
-      <div class="price">individuálne</div>
-    </div>
-  </div>
-</section>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>LED línie</h3>
+<p>Štýlové svetelné línie a moderné osvetlenie 2026.</p>
+</div>
+</div>
 
-<section>
-  <h2>Kalkulácia ceny</h2>
-  <div class="calc">
-    <label>Plocha m²</label>
-    <input id="area" type="number" value="20">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1300&auto=format&fit=crop">
+<div class="card-content">
+<h3>Plávajúce stropy</h3>
+<p>Luxusný efekt plávajúceho stropu s LED podsvietením.</p>
+</div>
+</div>
 
-    <label>Typ stropu</label>
-    <select id="type">
-      <option value="24">Matný — 24€/m²</option>
-      <option value="26">Lesklý — 26€/m²</option>
-      <option value="28">Saténový — 28€/m²</option>
-      <option value="30">Tieňový profil — 30€/m²</option>
-    </select>
-
-    <label>Doplnky</label>
-    <select id="extra">
-      <option value="0">Bez doplnkov</option>
-      <option value="100">Bodové svetlá od 100€</option>
-      <option value="180">LED línie od 180€</option>
-      <option value="250">Magnetické tracky od 250€</option>
-    </select>
-
-    <p>Orientačná cena:</p>
-    <div class="result" id="sum">480€</div>
-  </div>
-</section>
-
-<section>
-  <h2>Prečo my?</h2>
-  <div class="cards">
-    <div class="card"><h3>Zameranie zdarma</h3><p>Prídeme, zmeriame a poradíme.</p></div>
-    <div class="card"><h3>Montáž za 1 deň</h3><p>Rýchlo, čisto a bez veľkej rekonštrukcie.</p></div>
-    <div class="card"><h3>Záruka 12 rokov</h3><p>Kvalitné materiály a profesionálna montáž.</p></div>
-  </div>
-</section>
-
-<footer>
-  <h2>Objednajte zameranie zdarma</h2>
-  <p><b>+421 952 277 013</b></p>
-  <p>Bratislava a okolie</p>
-</footer>
-
-<script>
-function calc(){
-  var area = Number(document.getElementById("area").value) || 0;
-  var type = Number(document.getElementById("type").value) || 24;
-  var extra = Number(document.getElementById("extra").value) || 0;
-  document.getElementById("sum").innerText = Math.round(area * type + extra) + "€";
-}
-document.getElementById("area").addEventListener("input", calc);
-document.getElementById("type").addEventListener("change", calc);
-document.getElementById("extra").addEventListener("change", calc);
-calc();
-</script>
-
-</body>
-</html>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Skrytá garníža</h3>
+<p>Minimalistický dizajn so skrytou
