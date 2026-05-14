@@ -3,158 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STROPLOOK | Napínané stropy Bratislava</title>
-
+<title>LOOK | Napínané stropy Bratislava</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#050505;color:#fff}
-a{text-decoration:none;color:inherit}
-section{padding:100px 7%}
-
-.hero{
-min-height:100vh;
-padding:30px 7%;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-background:
-linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.35)),
-url("https://vipceiling.ru/image/photo/portfolio/natyazhnye-potolki-v-gostinoj-matovye-trek-94_l.jpg");
-background-size:cover;
-background-position:center;
-}
-
-.nav{display:flex;justify-content:space-between;align-items:center;gap:15px}
-.logo{font-size:32px;font-weight:900;letter-spacing:-1px}
-.logo span{color:#dff4ff}
-
-.socials{display:flex;gap:12px;flex-wrap:wrap}
-.btn{
-display:inline-block;
-padding:16px 28px;
-border-radius:50px;
-font-weight:900;
-color:white;
-transition:.3s;
-}
-.btn:hover{transform:translateY(-3px)}
-.whatsapp{background:#25D366}
-.facebook{background:#1877F2}
-.glass{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18)}
-
-.hero-text{max-width:850px;padding-bottom:90px}
-.badge{
-display:inline-block;
-background:rgba(255,255,255,.12);
-padding:12px 18px;
-border-radius:40px;
-margin-bottom:25px;
-backdrop-filter:blur(10px);
-}
-
-h1{
-font-size:clamp(48px,9vw,110px);
-line-height:.9;
-letter-spacing:-5px;
-margin-bottom:30px;
-}
-
-.hero p,.sub{
-font-size:21px;
-line-height:1.7;
-color:#ddd;
-max-width:800px;
-margin-bottom:35px;
-}
-
-.title{
-font-size:clamp(38px,6vw,76px);
-line-height:.95;
-letter-spacing:-3px;
-margin-bottom:18px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:28px;
-}
-
-.card{
-background:#111;
-border:1px solid rgba(255,255,255,.1);
-border-radius:34px;
-overflow:hidden;
-box-shadow:0 30px 80px rgba(0,0,0,.5);
-transition:.35s;
-}
-.card:hover{transform:translateY(-8px)}
-
-.card img{
-width:100%;
-height:430px;
-object-fit:cover;
-display:block;
-background:#111;
-}
-
-.card div{padding:30px}
-.card h3{font-size:30px;margin-bottom:12px}
-.card p{color:#aaa;line-height:1.7;font-size:17px}
-
-.services{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-margin-top:40px;
-}
-
-.service{
-padding:26px;
-border-radius:26px;
-background:#0f0f0f;
-border:1px solid rgba(255,255,255,.1);
-font-weight:800;
-color:#ddd;
-}
-
-.contact{text-align:center}
-.contact-box{
-padding:70px;
-border-radius:40px;
-background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.03));
-border:1px solid rgba(255,255,255,.1);
-}
-.phone{font-size:40px;font-weight:900;margin:25px 0;color:#dff4ff}
-
-.float{
-position:fixed;
-right:22px;
-bottom:22px;
-display:flex;
-flex-direction:column;
-gap:12px;
-z-index:99;
-}
-.float a{
-width:64px;height:64px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-font-size:30px;box-shadow:0 15px 40px rgba(0,0,0,.45);
-}
-
-footer{text-align:center;color:#777;padding:35px}
-
-@media(max-width:900px){
-.grid,.services{grid-template-columns:1fr}
-.card img{height:330px}
-h1{letter-spacing:-2px}
-.phone{font-size:28px}
-.nav{align-items:flex-start}
-}
+body{font-family:Arial,sans-serif;background:#050505;color:white}
+img{width:100%;height:100%;object-fit:cover;display:block}
+section{padding:80px 18px}
+.wrap{max-width:1180px;margin:auto}
+.hero{min-height:100vh;background:linear-gradient(90deg,#000 35%,rgba(0,0,0,.35)),url("https://vipceiling.ru/image/photo/portfolio/natyazhnoj-potolok-na-kuhne-matovyj-tenevoj-96_l.jpg") center/cover;display:flex;align-items:center}
+.logo{font-size:54px;font-weight:900;color:#ffd400;text-shadow:0 0 25px #000}
+.logo small{display:block;font-size:18px;color:white;letter-spacing:4px}
+h1{font-size:clamp(42px,7vw,82px);line-height:.95;margin:30px 0;text-transform:uppercase;max-width:850px}
+h1 span{color:#ffd400}
+p{color:#ddd;font-size:19px;max-width:720px}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{padding:16px 24px;border-radius:16px;font-weight:900;text-decoration:none}
+.yellow{background:#ffd400;color:#000}
+.dark{border:1px solid #555;color:white}
+.title{font-size:clamp(34px,5vw,58px);text-transform:uppercase;margin-bottom:14px}
+.title span{color:#ffd400}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.card{background:#111;border:1px solid #222;border-radius:26px;overflow:hidden}
+.pic{height:260px}
+.info{padding:20px}
+.info h3{color:#ffd400;font-size:24px;margin-bottom:10px}
+.price{background:linear-gradient(135deg,#ffd400,#ff9d00);color:#000;border-radius:34px;padding:42px;margin-top:40px}
+.price h2{font-size:46px}
+.contact{text-align:center;background:#111;border-radius:34px;padding:44px;border:1px solid #222}
+.contact h2{font-size:42px;margin-bottom:14px}
+.float{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:99}
+.float a{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:white;font-size:28px;text-decoration:none;font-weight:900;box-shadow:0 10px 30px #000}
+.wa{background:#25D366}.fb{background:#1877F2}
+footer{text-align:center;color:#777;padding:28px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.hero{padding:100px 18px}.pic{height:300px}}
 </style>
 </head>
-
 <body>
 
-<div class
+<header class="hero">
+  <div class="wrap">
+    <div class="logo">
+      LOOK
+      <small>NAPÍNANÉ STROPY</small>
+    </div>
+    <h1>Moderné <span>napínané stropy</span> v Bratislave</h1>
+    <p>Svetelné línie, plávajúce stropy, magnetické tracky, fototlač a prémiové riešenia na kľúč.</p>
+    <div class="btns">
+      <a class="btn yellow" href="tel:+421952277013">Zavolať +421 952 277 013</a>
+      <a class="btn dark" href="#galeria">Pozrieť galériu</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="title">Naše <span>riešenia</span></h2>
+    <p>Vyberáme moderné stropy tak, aby hlavný efekt robil čistý strop, svetlo a dizajn.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="pic"><img src="https://milana.pro/images/svetovie-linii/svetovie-linii-natyazhnye-potolki-1.jpg" alt="Svetelné línie"></div>
+        <div class="info"><h3>Svetelné línie</h3><p>LED línie v strope pre moderný a luxusný efekt.</p></div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="https://remontkomand.kz/storage/app/uploads/public/676/2c2/778/6762c27781f7f506077227.png" alt="Plávajúce stropy"></div>
+        <div class="info"><h3>Plávajúce stropy</h3><p>Svetelný obvod a efekt stropu, ktorý opticky levituje.</p></div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="https://vipceiling.ru/image/photo/portfolio/natyazhnoj-potolok-na-kuhne-matovyj-tenevoj-96_l.jpg" alt="Magnetické tracky"></div>
+        <div class="info"><h3>Magnetické tracky</h3><p>Čierne trackové osvetlenie v strope pre kuchyne, izby a salóny.</p></div>
+      </div>
+
+      <div class="card">
+        <div class="pic"><img src="https://svetloe-nebo.ru/images/vid_potolkov24/Fotopechat/fotopechat.webp" alt="Fototlač"></div>
+        <div class="info"><h3>Fototlač</h3><p>Obraz alebo vzor priamo na napínanom strope.</p></div>
+      </div>
+    </div>
+
+    <div class="price">
+      <h2>Cena od 24€ / m²</h2>
+      <p style="color:#111">Presná cena podľa typu stropu, osvetlenia, profilov a rozmerov miestnosti.</p>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <h2 class="title">Galéria <span>stropov</span></h2>
+    <div class="grid">
+      <div class="card"><div class="pic"><img src="https://vipceiling.ru/image/photo/portfolio/natyazhnoj-potolok-na-kuhne-matovyj-tenevoj-96_l.jpg"></div></div>
+      <div class="card"><div class="pic"><img src="https://svetloe-nebo.ru/images/vid_potolkov24/Fotopechat/fotopechat.webp"></div></div>
+      <div class="card"><div class="pic"><img src="https://milana.pro/images/svetovie-linii/svetovie-linii-natyazhnye-potolki-1.jpg"></div></div>
+      <div class="card"><div class="pic"><img src="https://remontkomand.kz/storage/app/uploads/public/676/2c2/778/6762c27781f7f506077227.png"></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap contact">
+    <h2>Objednať zameranie</h2>
+    <p>Bratislava a okolie. Zavolajte alebo napíšte cez WhatsApp.</p>
+    <div class="btns" style="justify-content:center">
+      <a class="btn yellow" href="tel:+421952277013">+421 952 277 013</a>
+      <a class="btn dark" href="https://wa.me/421952277013">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<div class="float">
+  <a class="fb" href="https://www.facebook.com/share/1CZVE275gg/" target="_blank">f</a>
+  <a class="wa" href="https://wa.me/421952277013" target="_blank">☏</a>
+</div>
+
+<footer>
+  LOOK — Napínané stropy Bratislava © 2026
+</footer>
+
+</body>
+</html>
