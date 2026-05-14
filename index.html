@@ -3,374 +3,388 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Napínané Stropy Bratislava</title>
+<title>Napínané stropy Bratislava | Premium</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Montserrat',sans-serif;
-    background:#0b0b0b;
-    color:white;
-    overflow-x:hidden;
-}
-
-header{
-    min-height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.8)),
-    url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:20px;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,sans-serif;background:#070707;color:#fff}
+a{text-decoration:none;color:inherit}
 
 .hero{
-    max-width:950px;
+min-height:100vh;
+padding:30px 7%;
+background:
+linear-gradient(120deg,rgba(0,0,0,.92),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1800&auto=format&fit=crop");
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
 }
 
-.hero h1{
-    font-size:72px;
-    font-weight:900;
-    text-transform:uppercase;
-    line-height:1.1;
-    margin-bottom:25px;
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-.hero span{
-    color:#ff9d00;
+.logo{
+font-size:26px;
+font-weight:900;
+letter-spacing:-1px;
 }
+
+.logo span{color:#d6a84f}
+
+.nav a{
+padding:14px 24px;
+border-radius:40px;
+background:#d6a84f;
+color:#000;
+font-weight:800;
+}
+
+.hero-content{
+max-width:850px;
+padding-bottom:90px;
+}
+
+.badge{
+display:inline-block;
+padding:10px 18px;
+border:1px solid rgba(255,255,255,.25);
+border-radius:40px;
+margin-bottom:24px;
+color:#ddd;
+backdrop-filter:blur(10px);
+}
+
+h1{
+font-size:clamp(46px,8vw,105px);
+line-height:.92;
+letter-spacing:-5px;
+font-weight:900;
+margin-bottom:28px;
+}
+
+h1 span{color:#d6a84f}
 
 .hero p{
-    font-size:24px;
-    color:#ddd;
-    line-height:1.7;
-    margin-bottom:40px;
+font-size:22px;
+line-height:1.6;
+color:#ddd;
+max-width:720px;
+margin-bottom:36px;
 }
 
 .buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+display:flex;
+gap:16px;
+flex-wrap:wrap;
 }
 
 .btn{
-    display:inline-block;
-    padding:18px 38px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:700;
-    transition:.3s;
-    font-size:18px;
+padding:18px 32px;
+border-radius:50px;
+font-weight:900;
+font-size:17px;
 }
 
-.call{
-    background:#ff9d00;
-    color:black;
-}
-
-.call:hover{
-    background:white;
-    transform:scale(1.05);
-}
-
-.whatsapp{
-    background:#25D366;
-    color:white;
-}
-
-.whatsapp:hover{
-    transform:scale(1.05);
-}
+.gold{background:#d6a84f;color:#000}
+.dark{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25)}
 
 section{
-    padding:90px 7%;
+padding:110px 7%;
 }
 
-.title{
-    text-align:center;
-    font-size:50px;
-    font-weight:900;
-    margin-bottom:60px;
+.section-title{
+font-size:clamp(36px,5vw,70px);
+font-weight:900;
+letter-spacing:-3px;
+margin-bottom:20px;
 }
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+.section-sub{
+color:#aaa;
+font-size:20px;
+max-width:720px;
+line-height:1.6;
+margin-bottom:55px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
 }
 
 .card{
-    background:#141414;
-    border-radius:25px;
-    overflow:hidden;
-    transition:.4s;
-    box-shadow:0 0 30px rgba(0,0,0,.4);
-}
-
-.card:hover{
-    transform:translateY(-10px);
+background:#111;
+border:1px solid rgba(255,255,255,.08);
+border-radius:32px;
+overflow:hidden;
+box-shadow:0 25px 60px rgba(0,0,0,.45);
 }
 
 .card img{
-    width:100%;
-    height:280px;
-    object-fit:cover;
+width:100%;
+height:330px;
+object-fit:cover;
+display:block;
+background:linear-gradient(135deg,#111,#2c2c2c,#d6a84f);
 }
 
 .card-content{
-    padding:25px;
+padding:26px;
 }
 
-.card-content h3{
-    font-size:28px;
-    margin-bottom:15px;
+.card h3{
+font-size:26px;
+margin-bottom:12px;
 }
 
-.card-content p{
-    color:#bbb;
-    line-height:1.7;
+.card p{
+color:#aaa;
+line-height:1.6;
 }
 
-.about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
+.premium{
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:45px;
+align-items:center;
+background:#0d0d0d;
 }
 
-.about img{
-    width:100%;
-    border-radius:30px;
-    object-fit:cover;
-    height:500px;
+.premium img{
+width:100%;
+height:580px;
+object-fit:cover;
+border-radius:40px;
+box-shadow:0 30px 80px rgba(0,0,0,.7);
 }
 
-.about-text h2{
-    font-size:50px;
-    margin-bottom:25px;
+.list{
+display:grid;
+gap:18px;
+margin-top:30px;
 }
 
-.about-text p{
-    color:#ccc;
-    line-height:1.9;
-    margin-bottom:20px;
-    font-size:18px;
+.item{
+padding:22px;
+border-radius:22px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+font-weight:700;
+}
+
+.price{
+background:
+linear-gradient(120deg,rgba(214,168,79,.95),rgba(255,220,140,.9)),
+url("https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=1600&auto=format&fit=crop");
+background-size:cover;
+background-position:center;
+color:#000;
+border-radius:50px;
+margin:0 7% 100px;
+padding:70px;
+display:flex;
+justify-content:space-between;
+gap:30px;
+align-items:center;
+}
+
+.price h2{
+font-size:52px;
+letter-spacing:-2px;
+}
+
+.price strong{
+font-size:64px;
 }
 
 .contact{
-    background:#101010;
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,.08);
+text-align:center;
+padding-bottom:120px;
 }
 
 .contact h2{
-    font-size:50px;
-    margin-bottom:25px;
+font-size:64px;
+font-weight:900;
+letter-spacing:-3px;
+margin-bottom:22px;
 }
 
 .phone{
-    font-size:42px;
-    color:#ff9d00;
-    font-weight:900;
-    margin-bottom:30px;
+font-size:42px;
+color:#d6a84f;
+font-weight:900;
+margin-bottom:30px;
+}
+
+.whatsapp-float{
+position:fixed;
+right:22px;
+bottom:22px;
+background:#25D366;
+color:white;
+width:68px;
+height:68px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
+box-shadow:0 15px 40px rgba(0,0,0,.45);
+z-index:99;
 }
 
 footer{
-    background:black;
-    text-align:center;
-    padding:30px;
-    color:#777;
+padding:35px;
+text-align:center;
+color:#777;
+background:#030303;
 }
 
 @media(max-width:900px){
-
-.hero h1{
-    font-size:42px;
+.grid{grid-template-columns:1fr}
+.premium{grid-template-columns:1fr}
+.price{flex-direction:column;text-align:center;padding:45px 25px}
+.price h2{font-size:36px}
+.price strong{font-size:46px}
+.hero{padding:24px}
+h1{letter-spacing:-2px}
 }
-
-.hero p{
-    font-size:18px;
-}
-
-.about{
-    grid-template-columns:1fr;
-}
-
-.title{
-    font-size:36px;
-}
-
-.phone{
-    font-size:28px;
-}
-
-}
-
 </style>
 </head>
+
 <body>
 
-<header>
+<a class="whatsapp-float" href="https://wa.me/421952277013">☘</a>
 
-<div class="hero">
+<header class="hero">
+<div class="nav">
+<div class="logo">STROP<span>LOOK</span></div>
+<a href="tel:+421952277013">Zavolať</a>
+</div>
 
-<h1>Moderné <span>Napínané</span> Stropy</h1>
-
-<p>
-Prémiové napínané stropy v Bratislave a okolí.
-LED línie, plávajúce stropy, skryté garníže a moderný dizajn 2026.
-</p>
+<div class="hero-content">
+<div class="badge">Bratislava • Slovensko • Premium montáž</div>
+<h1>Napínané stropy <span>premium</span></h1>
+<p>Moderné napínané stropy, LED línie, plávajúce profily, skryté garníže a magnetické tracky pre byty, domy a kancelárie.</p>
 
 <div class="buttons">
-
-<a href="tel:+421952277013" class="btn call">
-📞 Zavolať
-</a>
-
-<a href="https://wa.me/421952277013" class="btn whatsapp">
-WhatsApp
-</a>
-
+<a class="btn gold" href="tel:+421952277013">📞 +421 952 277 013</a>
+<a class="btn dark" href="https://wa.me/421952277013">WhatsApp</a>
 </div>
-
 </div>
-
 </header>
 
 <section>
+<h2 class="section-title">Naše realizácie</h2>
+<p class="section-sub">Vyberáme moderný čistý dizajn, ktorý vyzerá draho a elegantne. Stropy robíme tak, aby interiér pôsobil luxusne.</p>
 
-<h2 class="title">Naše realizácie</h2>
-
-<div class="gallery">
+<div class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Matné stropy</h3>
+<p>Čistý rovný povrch pre moderný interiér.</p>
+</div>
+</div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1630699144867-37acec97df5d?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1200&auto=format&fit=crop">
 <div class="card-content">
 <h3>LED línie</h3>
-<p>Moderné svetelné línie do bytov a domov.</p>
+<p>Svetelné línie pre prémiový vzhľad miestnosti.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop">
 <div class="card-content">
 <h3>Plávajúci strop</h3>
-<p>Luxusný efekt podsvieteného stropu.</p>
+<p>Elegantné podsvietenie po obvode stropu.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1616594039964-2d0d6c3f0f0d?q=80&w=1200&auto=format&fit=crop">
-<div class="card-content">
-<h3>Čierny lesk</h3>
-<p>Prémiové lesklé napínané stropy.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1200&auto=format&fit=crop">
 <div class="card-content">
 <h3>Skrytá garníža</h3>
-<p>Elegantné minimalistické riešenie.</p>
+<p>Moderné riešenie pre závesy bez viditeľnej lišty.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1200&auto=format&fit=crop">
 <div class="card-content">
-<h3>Matný strop</h3>
-<p>Štýlový moderný interiér.</p>
+<h3>Čierny lesk</h3>
+<p>Luxusný efekt pre dizajnové priestory.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1615874694520-474822394e73?q=80&w=1200&auto=format&fit=crop">
 <div class="card-content">
 <h3>Magnetické tracky</h3>
-<p>Moderné osvetlenie a dizajn.</p>
+<p>Moderné osvetlenie ako v prémiových interiéroch.</p>
 </div>
 </div>
-
 </div>
-
 </section>
 
-<section class="about">
+<section class="premium">
+<img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1400&auto=format&fit=crop">
 
-<img src="https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?q=80&w=1400&auto=format&fit=crop">
+<div>
+<h2 class="section-title">Prečo práve my?</h2>
+<p class="section-sub">Robíme presnú montáž, čisté detaily a moderné riešenia pre Bratislavu a okolie.</p>
 
-<div class="about-text">
-
-<h2>Napínané stropy Bratislava</h2>
-
-<p>
-Profesionálna montáž napínaných stropov v Bratislave a okolí.
-Pracujeme rýchlo, kvalitne a používame moderné materiály.
-</p>
-
-<p>
-LED línie, plávajúce stropy, skryté garníže,
-čierny lesk, matné stropy a moderné dizajnové riešenia.
-</p>
-
-<div class="buttons">
-
-<a href="tel:+421952277013" class="btn call">
-📞 Zavolať
-</a>
-
-<a href="https://wa.me/421952277013" class="btn whatsapp">
-WhatsApp
-</a>
-
+<div class="list">
+<div class="item">✓ Rýchla montáž bez veľkého neporiadku</div>
+<div class="item">✓ Moderné LED línie a plávajúce profily</div>
+<div class="item">✓ Skryté garníže a magnetické tracky</div>
+<div class="item">✓ Cena od 24 € / m²</div>
 </div>
-
 </div>
-
 </section>
+
+<div class="price">
+<div>
+<h2>Cena montáže</h2>
+<p>Napínané stropy v Bratislave a okolí</p>
+</div>
+<strong>od 24 € / m²</strong>
+</div>
 
 <section class="contact">
-
 <h2>Kontakt</h2>
+<div class="phone">+421 952 277 013</div>
 
-<div class="phone">
-+421952277013
+<div class="buttons" style="justify-content:center">
+<a class="btn gold" href="tel:+421952277013">📞 Zavolať</a>
+<a class="btn dark" href="https://wa.me/421952277013">WhatsApp</a>
 </div>
-
-<p style="color:#bbb;font-size:20px;margin-bottom:35px;">
-Bratislava a celé okolie
-</p>
-
-<div class="buttons">
-
-<a href="tel:+421952277013" class="btn call">
-📞 Zavolať
-</a>
-
-<a href="https://wa.me/421952277013" class="btn whatsapp">
-WhatsApp
-</a>
-
-</div>
-
 </section>
 
 <footer>
-Napínané Stropy Bratislava © 2026
+STROPLOOK — Napínané stropy Bratislava © 2026
 </footer>
+
+<script>
+document.querySelectorAll("img").forEach(img=>{
+img.onerror=()=>{
+img.style.display="none";
+img.parentElement.style.minHeight="330px";
+img.parentElement.style.background="linear-gradient(135deg,#111,#2b2b2b,#d6a84f)";
+};
+});
+</script>
 
 </body>
 </html>
