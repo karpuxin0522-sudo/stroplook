@@ -4,244 +4,94 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>STROPLOOK | Napínané stropy Slovensko</title>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,Arial,sans-serif;background:#050505;color:#fff}
+body{font-family:Arial,sans-serif;background:#060606;color:#fff}
 a{text-decoration:none;color:inherit}
-img{width:100%;display:block}
-
-.hero{
-min-height:100vh;
-background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.35)),
-url("https://fixo.com.ua/proj_jpg/h686.webp");
-background-size:cover;
-background-position:center;
-padding:30px 7%;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-}
-
-.nav{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:32px;font-weight:900}
-.logo span{color:#cfeaff}
-
-.whatsapp{
-background:#25D366;
-padding:15px 28px;
-border-radius:50px;
-font-weight:900;
-}
-
-.hero-text{max-width:850px;padding-bottom:90px}
-.badge{
-display:inline-block;
-padding:12px 18px;
-border-radius:40px;
-background:rgba(255,255,255,.12);
-backdrop-filter:blur(12px);
-margin-bottom:25px;
-}
-
-h1{
-font-size:clamp(48px,9vw,110px);
-line-height:.9;
-letter-spacing:-5px;
-margin-bottom:30px;
-}
-
-.hero p{
-font-size:22px;
-line-height:1.7;
-color:#ddd;
-max-width:700px;
-margin-bottom:35px;
-}
-
-.btn{
-display:inline-block;
-background:#25D366;
-color:white;
-padding:18px 38px;
-border-radius:60px;
-font-weight:900;
-font-size:18px;
-}
-
 section{padding:100px 7%}
-.title{
-font-size:clamp(38px,6vw,78px);
-line-height:.95;
-letter-spacing:-3px;
-margin-bottom:18px;
-}
-
-.sub{
-font-size:20px;
-line-height:1.7;
-color:#aaa;
-max-width:780px;
-margin-bottom:60px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:28px;
-}
-
-.card{
-background:#101010;
-border:1px solid rgba(255,255,255,.1);
-border-radius:34px;
-overflow:hidden;
-box-shadow:0 30px 80px rgba(0,0,0,.5);
-}
-
-.card img{
-height:430px;
-object-fit:cover;
-}
-
-.card-content{padding:30px}
-.card h3{font-size:30px;margin-bottom:14px}
-.card p{color:#aaa;line-height:1.7;font-size:17px}
-
-.full{
-display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:45px;
-align-items:center;
-background:#090909;
-}
-
-.full img{
-height:650px;
-object-fit:cover;
-border-radius:38px;
-}
-
-.list{display:grid;gap:18px;margin-top:30px}
-.item{
-padding:22px;
-border-radius:22px;
-background:rgba(255,255,255,.07);
-border:1px solid rgba(255,255,255,.08);
-font-weight:800;
-}
-
-.contact{text-align:center}
-.contact-box{
-padding:70px;
-border-radius:40px;
-background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.03));
-border:1px solid rgba(255,255,255,.1);
-}
-.phone{font-size:40px;font-weight:900;margin:25px 0;color:#cfeaff}
-
-.float{
-position:fixed;
-right:22px;
-bottom:22px;
-width:72px;
-height:72px;
-border-radius:50%;
-background:#25D366;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:34px;
-z-index:99;
-}
-
+.hero{
+min-height:100vh;padding:30px 7%;display:flex;flex-direction:column;justify-content:space-between;
+background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.25)),
+url("https://fixo.com.ua/proj_jpg/h686.webp");
+background-size:cover;background-position:center}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:32px;font-weight:900}.logo span{color:#dff4ff}
+.whatsapp,.btn{background:#25D366;color:white;padding:16px 30px;border-radius:50px;font-weight:900;display:inline-block}
+.hero-text{max-width:850px;padding-bottom:90px}
+.badge{display:inline-block;background:rgba(255,255,255,.12);padding:12px 18px;border-radius:40px;margin-bottom:25px}
+h1{font-size:clamp(50px,9vw,110px);line-height:.9;letter-spacing:-5px;margin-bottom:30px}
+.hero p,.sub{font-size:21px;line-height:1.7;color:#ddd;max-width:760px;margin-bottom:35px}
+.title{font-size:clamp(38px,6vw,76px);line-height:.95;letter-spacing:-3px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.card{background:#111;border:1px solid rgba(255,255,255,.1);border-radius:34px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.card img{width:100%;height:430px;object-fit:cover;display:block}
+.card div{padding:30px}.card h3{font-size:30px;margin-bottom:12px}.card p{color:#aaa;line-height:1.7}
+.contact{text-align:center}.contact-box{padding:70px;border-radius:40px;background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1)}
+.phone{font-size:40px;font-weight:900;margin:25px 0;color:#dff4ff}
+.float{position:fixed;right:22px;bottom:22px;width:72px;height:72px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:34px;z-index:99}
 footer{text-align:center;color:#777;padding:35px}
-
-@media(max-width:900px){
-.grid,.full{grid-template-columns:1fr}
-.card img,.full img{height:330px}
-h1{letter-spacing:-2px}
-.phone{font-size:28px}
-}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.card img{height:330px}h1{letter-spacing:-2px}.phone{font-size:28px}}
 </style>
 </head>
-
 <body>
 
 <a class="float" href="https://wa.me/421952277013">💬</a>
 
 <header class="hero">
-<div class="nav">
-<div class="logo">STROP<span>LOOK</span></div>
-<a class="whatsapp" href="https://wa.me/421952277013">WhatsApp</a>
-</div>
+  <div class="nav">
+    <div class="logo">STROP<span>LOOK</span></div>
+    <a class="whatsapp" href="https://wa.me/421952277013">WhatsApp</a>
+  </div>
 
-<div class="hero-text">
-<div class="badge">Napínané stropy • Bratislava • Slovensko</div>
-<h1>Prémiové napínané stropy</h1>
-<p>Moderné matné, lesklé a saténové stropy. Svetelné línie, plávajúce podsvietenie, magnetické tracky a tienový profil.</p>
-<a class="btn" href="https://wa.me/421952277013">Napísať na WhatsApp</a>
-</div>
+  <div class="hero-text">
+    <div class="badge">Napínané stropy • Bratislava • Slovensko</div>
+    <h1>Prémiové napínané stropy</h1>
+    <p>Svetelné línie, magnetické tracky, plávajúce podsvietenie, tienový profil, matné, lesklé, saténové stropy a fototlač.</p>
+    <a class="btn" href="https://wa.me/421952277013">Napísať na WhatsApp</a>
+  </div>
 </header>
 
 <section>
-<h2 class="title">Moderné riešenia stropov</h2>
-<p class="sub">Len reálne riešenia pre napínané stropy: svetelné línie, magnetické tracky, plávajúci efekt a čistý tienový detail pri stene.</p>
+<h2 class="title">Moderné riešenia</h2>
+<p class="sub">Vybral som iba riešenia, ktoré sa týkajú napínaných stropov — žiadne postele, vane, fasády ani náhodné interiéry.</p>
 
 <div class="grid">
+  <div class="card">
+    <img src="https://fixo.com.ua/proj_jpg/h803.webp">
+    <div><h3>Svetelné línie</h3><p>LED línie v strope, ktoré zvýraznia geometriu miestnosti.</p></div>
+  </div>
 
-<div class="card">
-<img src="https://fixo.com.ua/proj_jpg/h547.webp">
-<div class="card-content">
-<h3>Magnetické tracky</h3>
-<p>Čierne trackové línie so svetlami zapustené do napínaného stropu.</p>
-</div>
-</div>
+  <div class="card">
+    <img src="https://fixo.com.ua/proj_jpg/h552.webp">
+    <div><h3>Magnetické tracky</h3><p>Čierne trackové svetlá integrované do napínaného stropu.</p></div>
+  </div>
 
-<div class="card">
-<img src="https://fixo.com.ua/proj_jpg/h686.webp">
-<div class="card-content">
-<h3>Trackové osvetlenie</h3>
-<p>Moderný prémiový strop s geometrickými líniami a svetelnými modulmi.</p>
-</div>
-</div>
+  <div class="card">
+    <img src="https://fixo.com.ua/foto/artikle/paryashiy_beschelevoy_3.webp">
+    <div><h3>Plávajúci strop</h3><p>Skryté LED podsvietenie pri stene vytvára efekt “parenia”.</p></div>
+  </div>
 
-<div class="card">
-<img src="https://fixo.com.ua/foto/artikle/paryashiy_beschelevoy_3.webp">
-<div class="card-content">
-<h3>Plávajúci strop</h3>
-<p>Skryté LED podsvietenie pri stene vytvára efekt, že strop “pláva”.</p>
-</div>
-</div>
+  <div class="card">
+    <img src="https://fixo.com.ua/proj_jpg/h665.webp">
+    <div><h3>Tienový profil</h3><p>Moderný detail bez plastovej lišty — čistý tieň pri stene.</p></div>
+  </div>
 
-<div class="card">
-<img src="https://fixo.com.ua/proj_jpg/h793.webp">
-<div class="card-content">
-<h3>Tienový profil</h3>
-<p>Elegantná čierna medzera pri stene bez klasickej plastovej lišty.</p>
-</div>
-</div>
+  <div class="card">
+    <img src="https://fixo.com.ua/proj_jpg/h196.webp">
+    <div><h3>Fototlač</h3><p>Individuálny obraz alebo vzor priamo na napínanom strope.</p></div>
+  </div>
 
+  <div class="card">
+    <img src="https://fixo.com.ua/proj_jpg/h826.webp">
+    <div><h3>Prechod línie na stenu</h3><p>Svetelná línia môže plynulo pokračovať zo stropu na stenu.</p></div>
+  </div>
 </div>
 </section>
 
-<section class="full">
-<img src="https://fixo.com.ua/proj_jpg/h547.webp">
-
-<div>
-<h2 class="title">Dizajn ako v prémiových interiéroch</h2>
-<p class="sub">Strop nie je len biela plocha. Je to detail, ktorý robí celý interiér drahším, modernejším a čistejším.</p>
-
-<div class="list">
-<div class="item">✓ Matné napínané stropy</div>
-<div class="item">✓ Lesklé napínané stropy</div>
-<div class="item">✓ Saténové napínané stropy</div>
-<div class="item">✓ Svetelné LED línie</div>
-<div class="item">✓ Magnetické tracky</div>
-<div class="item">✓ Plávajúce podsvietenie</div>
-<div class="item">✓ Tienový profil</div>
-</div>
-</div>
+<section>
+<h2 class="title">Čo montujeme</h2>
+<p class="sub">Matné, lesklé a saténové stropy, svetelné línie, magnetické tracky, plávajúce podsvietenie, tienový profil a fototlač.</p>
+<a class="btn" href="https://wa.me/421952277013">Objednať cez WhatsApp</a>
 </section>
 
 <section class="contact">
