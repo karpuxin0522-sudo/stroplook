@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Napínané Stropy Bratislava</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -15,7 +17,7 @@
 
 body{
     font-family:'Montserrat',sans-serif;
-    background:#0d0d0d;
+    background:#0b0b0b;
     color:white;
     overflow-x:hidden;
 }
@@ -23,8 +25,8 @@ body{
 header{
     min-height:100vh;
     background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.8)),
-    url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop');
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.8)),
+    url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop');
     background-size:cover;
     background-position:center;
     display:flex;
@@ -35,67 +37,87 @@ header{
 }
 
 .hero{
-    max-width:900px;
+    max-width:950px;
 }
 
 .hero h1{
     font-size:72px;
     font-weight:900;
-    line-height:1.1;
-    margin-bottom:20px;
     text-transform:uppercase;
+    line-height:1.1;
+    margin-bottom:25px;
 }
 
 .hero span{
-    color:#ff9900;
+    color:#ff9d00;
 }
 
 .hero p{
-    font-size:22px;
+    font-size:24px;
     color:#ddd;
-    margin-bottom:35px;
+    line-height:1.7;
+    margin-bottom:40px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 .btn{
     display:inline-block;
-    padding:18px 40px;
-    background:#ff9900;
-    color:black;
+    padding:18px 38px;
+    border-radius:50px;
     text-decoration:none;
     font-weight:700;
-    border-radius:50px;
     transition:.3s;
-    font-size:20px;
+    font-size:18px;
 }
 
-.btn:hover{
+.call{
+    background:#ff9d00;
+    color:black;
+}
+
+.call:hover{
     background:white;
     transform:scale(1.05);
 }
 
+.whatsapp{
+    background:#25D366;
+    color:white;
+}
+
+.whatsapp:hover{
+    transform:scale(1.05);
+}
+
 section{
-    padding:90px 8%;
+    padding:90px 7%;
 }
 
 .title{
     text-align:center;
-    font-size:48px;
+    font-size:50px;
+    font-weight:900;
     margin-bottom:60px;
-    font-weight:800;
 }
 
-.cards{
+.gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
     gap:30px;
 }
 
 .card{
-    background:#161616;
+    background:#141414;
     border-radius:25px;
     overflow:hidden;
     transition:.4s;
-    box-shadow:0 0 25px rgba(0,0,0,.4);
+    box-shadow:0 0 30px rgba(0,0,0,.4);
 }
 
 .card:hover{
@@ -113,8 +135,8 @@ section{
 }
 
 .card-content h3{
+    font-size:28px;
     margin-bottom:15px;
-    font-size:26px;
 }
 
 .card-content p{
@@ -132,24 +154,26 @@ section{
 .about img{
     width:100%;
     border-radius:30px;
-    box-shadow:0 0 40px rgba(0,0,0,.5);
+    object-fit:cover;
+    height:500px;
 }
 
 .about-text h2{
-    font-size:52px;
+    font-size:50px;
     margin-bottom:25px;
 }
 
 .about-text p{
-    line-height:1.9;
     color:#ccc;
+    line-height:1.9;
     margin-bottom:20px;
+    font-size:18px;
 }
 
 .contact{
-    background:#111;
+    background:#101010;
     text-align:center;
-    border-top:1px solid rgba(255,255,255,.1);
+    border-top:1px solid rgba(255,255,255,.08);
 }
 
 .contact h2{
@@ -159,22 +183,26 @@ section{
 
 .phone{
     font-size:42px;
-    color:#ff9900;
+    color:#ff9d00;
     font-weight:900;
-    margin-bottom:25px;
+    margin-bottom:30px;
 }
 
 footer{
+    background:black;
     text-align:center;
     padding:30px;
-    background:black;
-    color:#888;
+    color:#777;
 }
 
 @media(max-width:900px){
 
 .hero h1{
     font-size:42px;
+}
+
+.hero p{
+    font-size:18px;
 }
 
 .about{
@@ -190,49 +218,159 @@ footer{
 }
 
 }
+
 </style>
 </head>
 <body>
 
 <header>
+
 <div class="hero">
+
 <h1>Moderné <span>Napínané</span> Stropy</h1>
-<p>Prémiové napínané stropy v Bratislave a okolí. Moderný dizajn, LED línie, plávajúce stropy, magnetické tracky.</p>
-<a href="tel:+421952277013" class="btn">📞 +421952277013</a>
+
+<p>
+Prémiové napínané stropy v Bratislave a okolí.
+LED línie, plávajúce stropy, skryté garníže a moderný dizajn 2026.
+</p>
+
+<div class="buttons">
+
+<a href="tel:+421952277013" class="btn call">
+📞 Zavolať
+</a>
+
+<a href="https://wa.me/421952277013" class="btn whatsapp">
+WhatsApp
+</a>
+
 </div>
+
+</div>
+
 </header>
 
 <section>
-<h2 class="title">Naše služby</h2>
 
-<div class="cards">
+<h2 class="title">Naše realizácie</h2>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
-<div class="card-content">
-<h3>Matné stropy</h3>
-<p>Elegantný moderný vzhľad pre byt, dom alebo kanceláriu.</p>
-</div>
-</div>
+<div class="gallery">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1630699144867-37acec97df5d?q=80&w=1200&auto=format&fit=crop">
 <div class="card-content">
 <h3>LED línie</h3>
-<p>Štýlové svetelné línie a moderné osvetlenie 2026.</p>
+<p>Moderné svetelné línie do bytov a domov.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1300&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=1200&auto=format&fit=crop">
 <div class="card-content">
-<h3>Plávajúce stropy</h3>
-<p>Luxusný efekt plávajúceho stropu s LED podsvietením.</p>
+<h3>Plávajúci strop</h3>
+<p>Luxusný efekt podsvieteného stropu.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+<img src="https://images.unsplash.com/photo-1616594039964-2d0d6c3f0f0d?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Čierny lesk</h3>
+<p>Prémiové lesklé napínané stropy.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=1200&auto=format&fit=crop">
 <div class="card-content">
 <h3>Skrytá garníža</h3>
-<p>Minimalistický dizajn so skrytou
+<p>Elegantné minimalistické riešenie.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Matný strop</h3>
+<p>Štýlový moderný interiér.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Magnetické tracky</h3>
+<p>Moderné osvetlenie a dizajn.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<img src="https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?q=80&w=1400&auto=format&fit=crop">
+
+<div class="about-text">
+
+<h2>Napínané stropy Bratislava</h2>
+
+<p>
+Profesionálna montáž napínaných stropov v Bratislave a okolí.
+Pracujeme rýchlo, kvalitne a používame moderné materiály.
+</p>
+
+<p>
+LED línie, plávajúce stropy, skryté garníže,
+čierny lesk, matné stropy a moderné dizajnové riešenia.
+</p>
+
+<div class="buttons">
+
+<a href="tel:+421952277013" class="btn call">
+📞 Zavolať
+</a>
+
+<a href="https://wa.me/421952277013" class="btn whatsapp">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2>Kontakt</h2>
+
+<div class="phone">
++421952277013
+</div>
+
+<p style="color:#bbb;font-size:20px;margin-bottom:35px;">
+Bratislava a celé okolie
+</p>
+
+<div class="buttons">
+
+<a href="tel:+421952277013" class="btn call">
+📞 Zavolať
+</a>
+
+<a href="https://wa.me/421952277013" class="btn whatsapp">
+WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<footer>
+Napínané Stropy Bratislava © 2026
+</footer>
+
+</body>
+</html>
