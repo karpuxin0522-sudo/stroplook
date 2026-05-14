@@ -4,114 +4,252 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>STROPLOOK | Napínané stropy Slovensko</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#050505;color:white}
+body{font-family:Inter,Arial,sans-serif;background:#050505;color:#fff}
 a{text-decoration:none;color:inherit}
-.hero{min-height:100vh;padding:30px 7%;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.95)),url("https://brand-potolok.ru/upload/iblock/8a5/a5y39xydwguaxmil82omtctmi367yz3z.png");background-size:cover;background-position:center}
+img{width:100%;display:block}
+
+.hero{
+min-height:100vh;
+background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.35)),
+url("https://fixo.com.ua/proj_jpg/h686.webp");
+background-size:cover;
+background-position:center;
+padding:30px 7%;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
 .nav{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:30px;font-weight:900;letter-spacing:-1px}
-.logo span{color:#9fd8ff}
-.whatsapp{background:#25D366;color:white;padding:16px 28px;border-radius:50px;font-weight:800}
-.hero-box{max-width:900px;padding-bottom:90px}
-.badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:12px 18px;border-radius:40px;margin-bottom:25px}
-h1{font-size:clamp(48px,9vw,115px);line-height:.9;letter-spacing:-4px;margin-bottom:30px}
-h1 span{color:#dff4ff}
-.hero p{font-size:22px;line-height:1.7;color:#ddd;max-width:720px;margin-bottom:35px}
-.btn{display:inline-block;background:white;color:black;padding:18px 36px;border-radius:60px;font-weight:900}
+.logo{font-size:32px;font-weight:900}
+.logo span{color:#cfeaff}
+
+.whatsapp{
+background:#25D366;
+padding:15px 28px;
+border-radius:50px;
+font-weight:900;
+}
+
+.hero-text{max-width:850px;padding-bottom:90px}
+.badge{
+display:inline-block;
+padding:12px 18px;
+border-radius:40px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(12px);
+margin-bottom:25px;
+}
+
+h1{
+font-size:clamp(48px,9vw,110px);
+line-height:.9;
+letter-spacing:-5px;
+margin-bottom:30px;
+}
+
+.hero p{
+font-size:22px;
+line-height:1.7;
+color:#ddd;
+max-width:700px;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+background:#25D366;
+color:white;
+padding:18px 38px;
+border-radius:60px;
+font-weight:900;
+font-size:18px;
+}
+
 section{padding:100px 7%}
-.title{font-size:clamp(38px,6vw,74px);line-height:1;font-weight:900;letter-spacing:-3px;margin-bottom:20px}
-.sub{font-size:20px;color:#aaa;max-width:760px;line-height:1.7;margin-bottom:55px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.card{background:#101010;border:1px solid rgba(255,255,255,.1);border-radius:32px;overflow:hidden;box-shadow:0 25px 70px rgba(0,0,0,.5)}
-.card img{width:100%;height:340px;object-fit:cover;display:block;background:#111}
-.card div{padding:26px}
-.card h3{font-size:26px;margin-bottom:12px}
-.card p{color:#aaa;line-height:1.7}
-.dark{background:#080808}
+.title{
+font-size:clamp(38px,6vw,78px);
+line-height:.95;
+letter-spacing:-3px;
+margin-bottom:18px;
+}
+
+.sub{
+font-size:20px;
+line-height:1.7;
+color:#aaa;
+max-width:780px;
+margin-bottom:60px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:28px;
+}
+
+.card{
+background:#101010;
+border:1px solid rgba(255,255,255,.1);
+border-radius:34px;
+overflow:hidden;
+box-shadow:0 30px 80px rgba(0,0,0,.5);
+}
+
+.card img{
+height:430px;
+object-fit:cover;
+}
+
+.card-content{padding:30px}
+.card h3{font-size:30px;margin-bottom:14px}
+.card p{color:#aaa;line-height:1.7;font-size:17px}
+
+.full{
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:45px;
+align-items:center;
+background:#090909;
+}
+
+.full img{
+height:650px;
+object-fit:cover;
+border-radius:38px;
+}
+
+.list{display:grid;gap:18px;margin-top:30px}
+.item{
+padding:22px;
+border-radius:22px;
+background:rgba(255,255,255,.07);
+border:1px solid rgba(255,255,255,.08);
+font-weight:800;
+}
+
 .contact{text-align:center}
-.contact-box{background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1);border-radius:40px;padding:65px}
-.phone{font-size:40px;font-weight:900;margin:25px 0;color:#dff4ff}
-.float{position:fixed;right:22px;bottom:22px;width:70px;height:70px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:34px;z-index:99}
+.contact-box{
+padding:70px;
+border-radius:40px;
+background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.03));
+border:1px solid rgba(255,255,255,.1);
+}
+.phone{font-size:40px;font-weight:900;margin:25px 0;color:#cfeaff}
+
+.float{
+position:fixed;
+right:22px;
+bottom:22px;
+width:72px;
+height:72px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
+z-index:99;
+}
+
 footer{text-align:center;color:#777;padding:35px}
-@media(max-width:900px){.grid{grid-template-columns:1fr}h1{letter-spacing:-2px}.phone{font-size:28px}}
+
+@media(max-width:900px){
+.grid,.full{grid-template-columns:1fr}
+.card img,.full img{height:330px}
+h1{letter-spacing:-2px}
+.phone{font-size:28px}
+}
 </style>
 </head>
+
 <body>
 
 <a class="float" href="https://wa.me/421952277013">💬</a>
 
 <header class="hero">
-  <div class="nav">
-    <div class="logo">STROP<span>LOOK</span></div>
-    <a class="whatsapp" href="https://wa.me/421952277013">WhatsApp</a>
-  </div>
+<div class="nav">
+<div class="logo">STROP<span>LOOK</span></div>
+<a class="whatsapp" href="https://wa.me/421952277013">WhatsApp</a>
+</div>
 
-  <div class="hero-box">
-    <div class="badge">Napínané stropy • Bratislava • Slovensko</div>
-    <h1>Prémiové napínané stropy</h1>
-    <p>Matné, lesklé a saténové stropy. Svetelné línie, magnetické tracky, plávajúce podsvietenie a tienový profil.</p>
-    <a class="btn" href="https://wa.me/421952277013">Napísať na WhatsApp</a>
-  </div>
+<div class="hero-text">
+<div class="badge">Napínané stropy • Bratislava • Slovensko</div>
+<h1>Prémiové napínané stropy</h1>
+<p>Moderné matné, lesklé a saténové stropy. Svetelné línie, plávajúce podsvietenie, magnetické tracky a tienový profil.</p>
+<a class="btn" href="https://wa.me/421952277013">Napísať na WhatsApp</a>
+</div>
 </header>
 
 <section>
-  <h2 class="title">Realizácie a riešenia</h2>
-  <p class="sub">Tu sú iba riešenia, ktoré patria k napínaným stropom: línie, tracky, profily, podsvietenie a povrchy stropov.</p>
+<h2 class="title">Moderné riešenia stropov</h2>
+<p class="sub">Len reálne riešenia pre napínané stropy: svetelné línie, magnetické tracky, plávajúci efekt a čistý tienový detail pri stene.</p>
 
-  <div class="grid">
-    <div class="card">
-      <img src="https://brand-potolok.ru/upload/iblock/8a5/a5y39xydwguaxmil82omtctmi367yz3z.png">
-      <div><h3>Svetelné línie</h3><p>Moderné LED línie priamo v napínanom strope.</p></div>
-    </div>
+<div class="grid">
 
-    <div class="card">
-      <img src="https://brand-potolok.ru/upload/iblock/fc8/30p5df1f25xc9pm6loc6odwtfkbtudbk.jpg">
-      <div><h3>LED geometria</h3><p>Prémiový dizajn so svetelným rámom a čistou plochou.</p></div>
-    </div>
+<div class="card">
+<img src="https://fixo.com.ua/proj_jpg/h547.webp">
+<div class="card-content">
+<h3>Magnetické tracky</h3>
+<p>Čierne trackové línie so svetlami zapustené do napínaného stropu.</p>
+</div>
+</div>
 
-    <div class="card">
-      <img src="https://brand-potolok.ru/upload/iblock/0ce/gqn6zw91xp6t1om1ez66ol6bmihii4f1.jpg">
-      <div><h3>Technické línie</h3><p>Svetelné línie pripravené pre moderný interiér.</p></div>
-    </div>
+<div class="card">
+<img src="https://fixo.com.ua/proj_jpg/h686.webp">
+<div class="card-content">
+<h3>Trackové osvetlenie</h3>
+<p>Moderný prémiový strop s geometrickými líniami a svetelnými modulmi.</p>
+</div>
+</div>
 
-    <div class="card">
-      <img src="https://napinacie-stropy.sk/wp-content/uploads/2025/09/Svetelny-strop-v-kombinacii-s-linearnym-osvetlenim-150x150.webp">
-      <div><h3>Lineárne osvetlenie</h3><p>Napínaný strop kombinovaný s LED líniami.</p></div>
-    </div>
+<div class="card">
+<img src="https://fixo.com.ua/foto/artikle/paryashiy_beschelevoy_3.webp">
+<div class="card-content">
+<h3>Plávajúci strop</h3>
+<p>Skryté LED podsvietenie pri stene vytvára efekt, že strop “pláva”.</p>
+</div>
+</div>
 
-    <div class="card">
-      <img src="https://napinacie-stropy.sk/wp-content/uploads/2024/03/Napinaci-strop-s-fototlacou_03-150x150.jpg.webp">
-      <div><h3>Dizajnový strop</h3><p>Napínaný strop ako prémiový prvok interiéru.</p></div>
-    </div>
+<div class="card">
+<img src="https://fixo.com.ua/proj_jpg/h793.webp">
+<div class="card-content">
+<h3>Tienový profil</h3>
+<p>Elegantná čierna medzera pri stene bez klasickej plastovej lišty.</p>
+</div>
+</div>
 
-    <div class="card">
-      <img src="https://brand-potolok.ru/upload/iblock/8a5/a5y39xydwguaxmil82omtctmi367yz3z.png">
-      <div><h3>Tienový profil</h3><p>Čistý detail pri stene bez klasickej lišty.</p></div>
-    </div>
-  </div>
+</div>
 </section>
 
-<section class="dark">
-  <h2 class="title">Čo montujeme</h2>
-  <p class="sub">Moderné riešenia pre byty, domy, kancelárie a komerčné priestory.</p>
+<section class="full">
+<img src="https://fixo.com.ua/proj_jpg/h547.webp">
 
-  <div class="grid">
-    <div class="card"><div><h3>Matné stropy</h3><p>Rovný čistý povrch bez odleskov.</p></div></div>
-    <div class="card"><div><h3>Lesklé stropy</h3><p>Efekt hĺbky a luxusný odraz svetla.</p></div></div>
-    <div class="card"><div><h3>Saténové stropy</h3><p>Jemný elegantný povrch medzi matom a leskom.</p></div></div>
-    <div class="card"><div><h3>Magnetické tracky</h3><p>Moderné bodové a lineárne osvetlenie.</p></div></div>
-    <div class="card"><div><h3>Plávajúci strop</h3><p>Podsvietenie po obvode pre efekt luxusu.</p></div></div>
-    <div class="card"><div><h3>Svetelné línie</h3><p>Najmodernejší trend pre napínané stropy.</p></div></div>
-  </div>
+<div>
+<h2 class="title">Dizajn ako v prémiových interiéroch</h2>
+<p class="sub">Strop nie je len biela plocha. Je to detail, ktorý robí celý interiér drahším, modernejším a čistejším.</p>
+
+<div class="list">
+<div class="item">✓ Matné napínané stropy</div>
+<div class="item">✓ Lesklé napínané stropy</div>
+<div class="item">✓ Saténové napínané stropy</div>
+<div class="item">✓ Svetelné LED línie</div>
+<div class="item">✓ Magnetické tracky</div>
+<div class="item">✓ Plávajúce podsvietenie</div>
+<div class="item">✓ Tienový profil</div>
+</div>
+</div>
 </section>
 
 <section class="contact">
-  <div class="contact-box">
-    <h2 class="title">Kontakt</h2>
-    <div class="phone">+421 952 277 013</div>
-    <a class="btn" href="https://wa.me/421952277013">WhatsApp</a>
-  </div>
+<div class="contact-box">
+<h2 class="title">Kontakt</h2>
+<div class="phone">+421 952 277 013</div>
+<a class="btn" href="https://wa.me/421952277013">WhatsApp</a>
+</div>
 </section>
 
 <footer>STROPLOOK © 2026 • Napínané stropy Slovensko</footer>
