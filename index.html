@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STROP LOOK | Bratislava</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>STROP LOOK | Napínané stropy Bratislava</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -13,156 +13,316 @@ a{text-decoration:none;color:inherit}
 img{width:100%;height:100%;object-fit:cover;display:block}
 .wrap{max-width:1240px;margin:auto;padding:0 22px}
 
-.nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(5,4,3,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:18px 22px}
-.city{font-size:12px;letter-spacing:7px;color:#c89b63;font-weight:900;margin-bottom:8px}
-.logo-main{font-size:42px;font-weight:1000;letter-spacing:2px}
-.logo-main span{color:#e8c28a;text-shadow:0 0 25px rgba(232,194,138,.35)}
-.phone{background:#e8c28a;color:#080808;padding:13px 20px;border-radius:999px;font-weight:900}
+body:before{content:"";position:fixed;width:700px;height:700px;background:radial-gradient(circle,#e8c28a22,transparent 70%);top:-260px;right:-240px;filter:blur(45px);pointer-events:none;z-index:-1}
 
-.hero{
-min-height:100vh;display:flex;align-items:center;
-background:linear-gradient(90deg,rgba(5,4,3,.96),rgba(5,4,3,.38)),
-url("https://potolki-loft.ru/wp-content/themes/loft-2.0/img/site/raboty/ehksklyuzivnye-natyazhnye-potolki/natyazhnye-potolki-magnitnymi-trekami/natyazhnye-potolki-magnitnymi-trekami-1/natyazhnye-potolki-magnitnymi-trekami-1-1.webp") center/cover;
-}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(5,4,3,.82);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:16px 22px}
+.city{font-size:11px;letter-spacing:6px;color:#c89b63;font-weight:900;margin-bottom:6px}
+.logo-main{font-size:36px;font-weight:1000;letter-spacing:2px}
+.logo-main span{color:#e8c28a;text-shadow:0 0 25px rgba(232,194,138,.35)}
+.nav-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.nav-right a,.langs button{padding:11px 15px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:white;font-weight:800;cursor:pointer}
+.nav-right a:hover,.langs button.active{background:#e8c28a;color:#080808}
+.langs{display:flex;gap:6px}
+
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;background:linear-gradient(90deg,rgba(5,4,3,.96),rgba(5,4,3,.35)),url("public/images/Плаваючі1.png") center/cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#050403 4%,transparent);pointer-events:none}
+.hero .wrap{position:relative;z-index:2}
 .badge{display:inline-block;padding:11px 16px;border-radius:999px;background:rgba(232,194,138,.12);border:1px solid rgba(232,194,138,.38);color:#e8c28a;margin-bottom:28px;font-weight:900}
-h1{font-size:clamp(50px,8vw,104px);line-height:.88;text-transform:uppercase;max-width:1000px;margin-bottom:28px}
-h1 span{color:#e8c28a;text-shadow:0 0 35px rgba(232,194,138,.3)}
+h1{font-size:clamp(48px,8vw,104px);line-height:.9;text-transform:uppercase;max-width:1000px;margin-bottom:28px}
+h1 span,.title span{color:#e8c28a;text-shadow:0 0 35px rgba(232,194,138,.3)}
 p{font-size:19px;line-height:1.8;color:#d5d5d5;max-width:780px}
-.btns{display:flex;gap:15px;flex-wrap:wrap;margin-top:38px}
-.btn{padding:18px 26px;border-radius:18px;font-weight:900;transition:.3s}
+.btns{display:flex;gap:15px;flex-wrap:wrap;margin-top:36px}
+.btn{padding:18px 26px;border-radius:18px;font-weight:900;transition:.3s;display:inline-block}
 .btn:hover{transform:translateY(-4px)}
 .main{background:#e8c28a;color:#080808}
 .dark{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14)}
 
 section{padding:95px 0}
 .title{font-size:clamp(40px,5vw,72px);line-height:1;text-transform:uppercase;margin-bottom:20px}
-.title span{color:#e8c28a}
 .sub{color:#bdbdbd;font-size:19px;line-height:1.8;max-width:780px}
 
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:46px}
-.card{background:linear-gradient(145deg,#15120f,#080808);border:1px solid rgba(232,194,138,.16);border-radius:34px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.55)}
-.pic{height:340px;overflow:hidden}
-.card img{transition:1s}
-.card:hover img{transform:scale(1.06)}
-.info{padding:26px}
-.info small{color:#e8c28a;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-.info h3{font-size:30px;margin:14px 0}
-.info p{font-size:17px;color:#c8c8c8}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
+.stat{padding:30px;border-radius:28px;background:linear-gradient(145deg,#15120f,#080808);border:1px solid rgba(232,194,138,.16)}
+.stat b{font-size:48px;color:#e8c28a}
+.stat span{display:block;color:#bdbdbd;margin-top:8px}
 
-.contact{text-align:center;padding:60px;border-radius:40px;background:linear-gradient(145deg,#15120f,#060606);border:1px solid rgba(232,194,138,.16);box-shadow:0 30px 100px rgba(0,0,0,.5)}
-.contact h2{font-size:56px;text-transform:uppercase;margin-bottom:16px}
+.filters{display:flex;gap:14px;flex-wrap:wrap;margin:42px 0}
+.filters button{padding:14px 22px;border:none;border-radius:999px;background:#111;color:white;cursor:pointer;font-weight:900;transition:.3s}
+.filters button:hover,.filters button.active{background:#e8c28a;color:#080808}
 
-.float{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:14px;z-index:200}
-.float a{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font-size:24px;font-weight:900;color:white}
-.fb{background:#1877F2}.wa{background:#25D366}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:250px;gap:22px}
+.project{position:relative;overflow:hidden;border-radius:34px;background:#111;border:1px solid rgba(232,194,138,.16);cursor:pointer;box-shadow:0 30px 90px rgba(0,0,0,.45)}
+.project:nth-child(1),.project:nth-child(6),.project:nth-child(11){grid-column:span 7;grid-row:span 2}
+.project:nth-child(2),.project:nth-child(3),.project:nth-child(7),.project:nth-child(8),.project:nth-child(12){grid-column:span 5}
+.project:nth-child(4),.project:nth-child(5),.project:nth-child(9),.project:nth-child(10){grid-column:span 6}
+.project img{transition:1s}
+.project:hover img{transform:scale(1.08)}
+.overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9),transparent);display:flex;align-items:flex-end;padding:28px;opacity:0;transition:.35s}
+.project:hover .overlay{opacity:1}
+.overlay small{color:#e8c28a;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+.overlay h3{font-size:30px;margin-top:8px}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.service{padding:32px;border-radius:32px;background:linear-gradient(145deg,#15120f,#080808);border:1px solid rgba(232,194,138,.16)}
+.service h3{font-size:28px;margin-bottom:12px;color:#e8c28a}
+
+.form-box{display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:44px;border-radius:40px;background:linear-gradient(145deg,#15120f,#060606);border:1px solid rgba(232,194,138,.18)}
+input,select,textarea{width:100%;padding:17px 18px;margin-bottom:14px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:#0b0b0b;color:white;font-size:16px}
+textarea{min-height:130px}
+.submit{width:100%;border:none;padding:18px;border-radius:18px;background:#e8c28a;color:#080808;font-weight:1000;cursor:pointer;font-size:16px}
+
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:999;padding:22px}
+.modal.active{display:flex}
+.modal img{max-width:94vw;max-height:86vh;object-fit:contain;border-radius:22px}
+.close{position:absolute;top:24px;right:28px;font-size:42px;cursor:pointer}
+
 footer{text-align:center;color:#777;padding:34px;border-top:1px solid rgba(255,255,255,.06)}
 
-@media(max-width:950px){
-.grid{grid-template-columns:1fr}
-.phone{display:none}
-.pic{height:380px}
-.hero{padding:120px 0 80px}
-.logo-main{font-size:34px}
-.contact h2{font-size:42px}
+@media(max-width:900px){
+.nav .wrap{align-items:flex-start;gap:12px;flex-direction:column}
+.gallery,.services,.stats,.form-box{grid-template-columns:1fr}
+.project,.project:nth-child(n){grid-column:span 1;grid-row:span 1}
+.gallery{grid-auto-rows:340px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="nav">
+<nav class="nav">
   <div class="wrap">
     <div>
       <div class="city">BRATISLAVA</div>
       <div class="logo-main">STROP <span>LOOK</span></div>
     </div>
-    <a class="phone" href="tel:+421952277013">+421 952 277 013</a>
+
+    <div class="nav-right">
+      <div class="langs">
+        <button class="active" onclick="setLang('sk')">SK</button>
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('uk')">UA</button>
+        <button onclick="setLang('ru')">RU</button>
+      </div>
+      <a href="https://wa.me/421952277013" target="_blank">WhatsApp</a>
+      <a href="https://www.facebook.com/people/Napínacie-stropy-SK/61572213579804/" target="_blank">Facebook</a>
+      <a href="tel:+421952277013">+421 952 277 013</a>
+    </div>
   </div>
-</div>
+</nav>
 
 <header class="hero">
   <div class="wrap">
-    <div class="badge">Premium napínané stropy</div>
-    <h1>Moderné <span>stropy</span><br>pre luxusný interiér</h1>
-    <p>Svetelné línie, magnetické tracky, plávajúce stropy, tieňové profily, fototlač, matné aj lesklé riešenia pre Bratislavu a okolie.</p>
+    <div class="badge" data-i="badge">Premium napínané stropy</div>
+    <h1 data-i="heroTitle">Moderné <span>stropy</span><br>pre luxusný interiér</h1>
+    <p data-i="heroText">Svetelné línie, plávajúce stropy, lesklé riešenia, fototlač a moderný dizajn pre Bratislavu a okolie.</p>
     <div class="btns">
-      <a class="btn main" href="tel:+421952277013">Zavolať</a>
-      <a class="btn dark" href="#gallery">Galéria</a>
+      <a class="btn main" href="#request" data-i="cta">Bezplatná kalkulácia</a>
+      <a class="btn dark" href="#gallery" data-i="galleryBtn">Pozrieť práce</a>
     </div>
   </div>
 </header>
 
 <section>
   <div class="wrap">
-    <h2 class="title">Premium <span>riešenia</span></h2>
-    <p class="sub">Moderné napínané stropy s dôrazom na svetlo, čistý detail, elegantný profil a prémiový vzhľad interiéru.</p>
+    <h2 class="title" data-i="whyTitle">Prečo <span>STROP LOOK</span></h2>
+    <p class="sub" data-i="whyText">Čistý detail, moderné osvetlenie a profesionálny výsledok bez lacného vzhľadu.</p>
 
-    <div class="grid">
-      <div class="card">
-        <div class="pic"><img src="https://potolki-loft.ru/wp-content/themes/loft-2.0/img/site/raboty/ehksklyuzivnye-natyazhnye-potolki/natyazhnye-potolki-magnitnymi-trekami/natyazhnye-potolki-magnitnymi-trekami-1/natyazhnye-potolki-magnitnymi-trekami-1-1.webp"></div>
-        <div class="info"><small>TRACK</small><h3>Magnetické tracky</h3><p>Čierne trackové osvetlenie zabudované priamo do napínaného stropu.</p></div>
-      </div>
-
-      <div class="card">
-        <div class="pic"><img src="https://potolok-pro.by/potolki/svetovye-linii/natyazhnye_potolki_baner.jpg"></div>
-        <div class="info"><small>LED</small><h3>Svetelné línie</h3><p>Moderné svetelné línie ako hlavný dizajnový prvok miestnosti.</p></div>
-      </div>
-
-      <div class="card">
-        <div class="pic"><img src="https://potolki5.by/wp-content/uploads/2024/01/natyazhnoj-potolok-v-kuhnyu-s-magnitnym-trekovym-osveshcheniem-5.jpg"></div>
-        <div class="info"><small>FLOAT</small><h3>Plávajúce stropy</h3><p>Efekt jemného podsvietenia po obvode pre luxusný vzhľad stropu.</p></div>
-      </div>
-
-      <div class="card">
-        <div class="pic"><img src="https://stelya.pro/images/svet-linii.jpg"></div>
-        <div class="info"><small>GLOSS</small><h3>Lesklé stropy</h3><p>Elegantný odraz svetla a výrazný efekt pre moderný interiér.</p></div>
-      </div>
-
-      <div class="card">
-        <div class="pic"><img src="https://svetloe-nebo.ru/images/vid_potolkov24/Fotopechat/fotopechat.webp"></div>
-        <div class="info"><small>PRINT</small><h3>Fototlač</h3><p>Fototlač na strope: nebo, vzory alebo individuálny dizajn.</p></div>
-      </div>
-
-      <div class="card">
-        <div class="pic"><img src="https://potolki-loft.ru/wp-content/themes/loft-2.0/img/site/raboty/ehksklyuzivnye-natyazhnye-potolki/natyazhnye-potolki-magnitnymi-trekami/natyazhnye-potolki-magnitnymi-trekami-1/natyazhnye-potolki-magnitnymi-trekami-1-2.webp"></div>
-        <div class="info"><small>SHADOW</small><h3>Tieňový profil</h3><p>Čistý minimalistický okraj bez lacného plastového vzhľadu.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="gallery">
-  <div class="wrap">
-    <h2 class="title">Galéria <span>stropov</span></h2>
-
-    <div class="grid">
-      <div class="card"><div class="pic"><img src="https://potolki-loft.ru/wp-content/themes/loft-2.0/img/site/raboty/ehksklyuzivnye-natyazhnye-potolki/natyazhnye-potolki-magnitnymi-trekami/natyazhnye-potolki-magnitnymi-trekami-1/natyazhnye-potolki-magnitnymi-trekami-1-3.webp"></div></div>
-      <div class="card"><div class="pic"><img src="https://svetloe-nebo.ru/images/vid_potolkov24/Fotopechat/fotopechat.webp"></div></div>
-      <div class="card"><div class="pic"><img src="https://potolok-pro.by/potolki/svetovye-linii/natyazhnye_potolki_baner.jpg"></div></div>
+    <div class="stats">
+      <div class="stat"><b>100+</b><span data-i="stat1">realizovaných projektov</span></div>
+      <div class="stat"><b>24h</b><span data-i="stat2">rýchla konzultácia</span></div>
+      <div class="stat"><b>SK</b><span data-i="stat3">Bratislava a okolie</span></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="contact">
-      <h2>STROP LOOK</h2>
-      <p>Bratislava a okolie • napínané stropy • svetelné línie • magnetické tracky</p>
-      <div class="btns" style="justify-content:center">
-        <a class="btn main" href="tel:+421952277013">+421 952 277 013</a>
-        <a class="btn dark" href="https://wa.me/421952277013" target="_blank">WhatsApp</a>
-      </div>
+    <h2 class="title" data-i="servicesTitle">Premium <span>riešenia</span></h2>
+    <p class="sub" data-i="servicesText">Vyberte si štýl stropu podľa interiéru — od minimalistického matného až po výrazný lesklý alebo dizajnový print.</p>
+
+    <div class="services">
+      <div class="service"><h3>LED línie</h3><p>Svetelné línie ako hlavný dizajnový prvok miestnosti.</p></div>
+      <div class="service"><h3>Lesklé stropy</h3><p>Luxusný odraz svetla a moderný efekt priestoru.</p></div>
+      <div class="service"><h3>Fototlač</h3><p>Individuálny dizajn, mapa, nebo alebo vlastný motív.</p></div>
     </div>
   </div>
 </section>
 
-<div class="float">
-  <a class="fb" href="https://www.facebook.com/share/1CZVE275gg/" target="_blank">f</a>
-  <a class="wa" href="https://wa.me/421952277013" target="_blank">☏</a>
+<section id="gallery">
+  <div class="wrap">
+    <h2 class="title" data-i="galleryTitle">Galéria <span>prác</span></h2>
+    <p class="sub" data-i="galleryText">Vybrané realizácie napínaných stropov, LED línií, lesklých stropov a fototlače.</p>
+
+    <div class="filters">
+      <button class="active" onclick="filterProjects('all',this)">Všetko</button>
+      <button onclick="filterProjects('gloss',this)">Lesklé</button>
+      <button onclick="filterProjects('led',this)">LED línie</button>
+      <button onclick="filterProjects('float',this)">Plávajúce</button>
+      <button onclick="filterProjects('print',this)">Fototlač</button>
+    </div>
+
+    <div class="gallery" id="projects"></div>
+  </div>
+</section>
+
+<section id="request">
+  <div class="wrap">
+    <div class="form-box">
+      <div>
+        <h2 class="title" data-i="formTitle">Nezáväzná <span>kalkulácia</span></h2>
+        <p data-i="formText">Vyplňte krátku žiadosť a ozveme sa vám cez WhatsApp alebo telefonicky.</p>
+      </div>
+
+      <form onsubmit="sendWhatsApp(event)">
+        <input id="name" placeholder="Meno" required>
+        <input id="phone" placeholder="Telefón" required>
+        <select id="type">
+          <option>LED línie</option>
+          <option>Lesklý strop</option>
+          <option>Plávajúci strop</option>
+          <option>Fototlač</option>
+          <option>Iné riešenie</option>
+        </select>
+        <textarea id="msg" placeholder="Správa / rozloha / mesto"></textarea>
+        <button class="submit" data-i="sendBtn">Odoslať cez WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  STROP LOOK © 2026 · Bratislava · 
+  <a href="tel:+421952277013">+421 952 277 013</a>
+</footer>
+
+<div class="modal" id="modal" onclick="closeModal()">
+  <span class="close">×</span>
+  <img id="modalImg">
 </div>
 
-<footer>STROP LOOK © 2026</footer>
+<script>
+const projects = [
+  {src:"public/images/photo_5226781981998260339_y.jpg",cat:"gloss",title:"Lesklý strop",tag:"GLOSS"},
+  {src:"public/images/photo_5226781981998260340_y.jpg",cat:"gloss",title:"Lesklý strop",tag:"GLOSS"},
+  {src:"public/images/photo_5226781981998260341_y.jpg",cat:"gloss",title:"Lesklé riešenie",tag:"GLOSS"},
+  {src:"public/images/photo_5226781981998260342_y.jpg",cat:"gloss",title:"Moderný lesklý strop",tag:"GLOSS"},
+  {src:"public/images/photo_5226781981998260343_y.jpg",cat:"gloss",title:"Prémiový lesklý strop",tag:"GLOSS"},
+  {src:"public/images/photo_5226781981998260344_y.jpg",cat:"gloss",title:"Čierny lesklý strop",tag:"GLOSS"},
+  {src:"public/images/photo_5226781981998260345_y.jpg",cat:"gloss",title:"Luxusný odraz",tag:"GLOSS"},
+
+  {src:"public/images/Плаваючі1.png",cat:"float",title:"Plávajúci strop",tag:"FLOAT"},
+  {src:"public/images/Плаваючі2.png",cat:"float",title:"Podsvietený strop",tag:"FLOAT"},
+  {src:"public/images/Плаваючі3.png",cat:"float",title:"Moderné podsvietenie",tag:"FLOAT"},
+  {src:"public/images/Плаваючі4.png",cat:"float",title:"Plávajúce riešenie",tag:"FLOAT"},
+
+  {src:"public/images/Світовілінії1.jpg",cat:"led",title:"Svetelné línie",tag:"LED"},
+  {src:"public/images/Світовілінії2.jpg",cat:"led",title:"LED línie",tag:"LED"},
+  {src:"public/images/Світовілінії3.jpg",cat:"led",title:"Dizajnové LED línie",tag:"LED"},
+  {src:"public/images/Світовілінії4.jpg",cat:"led",title:"Moderné osvetlenie",tag:"LED"},
+  {src:"public/images/Світовілінії5.jpg",cat:"led",title:"Svetelný detail",tag:"LED"},
+
+  {src:"public/images/PhotoTlac1.png",cat:"print",title:"Strop s vlastnou potlačou",tag:"PRINT"},
+  {src:"public/images/PhotoTlac2.png",cat:"print",title:"Fototlač na strope",tag:"PRINT"}
+];
+
+function renderProjects(filter="all"){
+  const box=document.getElementById("projects");
+  box.innerHTML="";
+  projects.filter(p=>filter==="all"||p.cat===filter).forEach(p=>{
+    box.innerHTML+=`
+      <div class="project" onclick="openModal('${p.src}')">
+        <img src="${p.src}" alt="${p.title}">
+        <div class="overlay">
+          <div>
+            <small>${p.tag}</small>
+            <h3>${p.title}</h3>
+          </div>
+        </div>
+      </div>`;
+  });
+}
+renderProjects();
+
+function filterProjects(cat,btn){
+  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  renderProjects(cat);
+}
+
+function openModal(src){
+  document.getElementById("modalImg").src=src;
+  document.getElementById("modal").classList.add("active");
+}
+function closeModal(){
+  document.getElementById("modal").classList.remove("active");
+}
+
+function sendWhatsApp(e){
+  e.preventDefault();
+  const text=`Dobrý deň, mám záujem o kalkuláciu.%0A
+Meno: ${name.value}%0A
+Telefón: ${phone.value}%0A
+Typ: ${type.value}%0A
+Správa: ${msg.value}`;
+  window.open(`https://wa.me/421952277013?text=${text}`,"_blank");
+}
+
+const t={
+sk:{
+badge:"Premium napínané stropy",
+heroTitle:"Moderné <span>stropy</span><br>pre luxusný interiér",
+heroText:"Svetelné línie, plávajúce stropy, lesklé riešenia, fototlač a moderný dizajn pre Bratislavu a okolie.",
+cta:"Bezplatná kalkulácia",galleryBtn:"Pozrieť práce",
+whyTitle:"Prečo <span>STROP LOOK</span>",whyText:"Čistý detail, moderné osvetlenie a profesionálny výsledok bez lacného vzhľadu.",
+stat1:"realizovaných projektov",stat2:"rýchla konzultácia",stat3:"Bratislava a okolie",
+servicesTitle:"Premium <span>riešenia</span>",servicesText:"Vyberte si štýl stropu podľa interiéru — od minimalistického matného až po výrazný lesklý alebo dizajnový print.",
+galleryTitle:"Galéria <span>prác</span>",galleryText:"Vybrané realizácie napínaných stropov, LED línií, lesklých stropov a fototlače.",
+formTitle:"Nezáväzná <span>kalkulácia</span>",formText:"Vyplňte krátku žiadosť a ozveme sa vám cez WhatsApp alebo telefonicky.",sendBtn:"Odoslať cez WhatsApp"
+},
+en:{
+badge:"Premium stretch ceilings",
+heroTitle:"Modern <span>ceilings</span><br>for luxury interiors",
+heroText:"Light lines, floating ceilings, glossy solutions, photo print and modern design for Bratislava and nearby areas.",
+cta:"Free quote",galleryBtn:"View projects",
+whyTitle:"Why <span>STROP LOOK</span>",whyText:"Clean details, modern lighting and a professional result without a cheap look.",
+stat1:"completed projects",stat2:"fast consultation",stat3:"Bratislava and nearby",
+servicesTitle:"Premium <span>solutions</span>",servicesText:"Choose a ceiling style for your interior — from minimal matte to glossy or custom print.",
+galleryTitle:"Project <span>gallery</span>",galleryText:"Selected projects with stretch ceilings, LED lines, glossy ceilings and photo print.",
+formTitle:"Free <span>quote</span>",formText:"Send a short request and we will contact you by WhatsApp or phone.",sendBtn:"Send via WhatsApp"
+},
+uk:{
+badge:"Преміальні натяжні стелі",
+heroTitle:"Сучасні <span>стелі</span><br>для стильного інтер’єру",
+heroText:"Світлові лінії, парящі стелі, глянцеві рішення, фотодрук та сучасний дизайн у Братиславі.",
+cta:"Безкоштовний розрахунок",galleryBtn:"Дивитись роботи",
+whyTitle:"Чому <span>STROP LOOK</span>",whyText:"Акуратні деталі, сучасне світло та професійний результат без дешевого вигляду.",
+stat1:"реалізованих проєктів",stat2:"швидка консультація",stat3:"Братислава та околиці",
+servicesTitle:"Преміальні <span>рішення</span>",servicesText:"Оберіть стиль стелі під інтер’єр — від мінімалістичної матової до глянцевої або з принтом.",
+galleryTitle:"Галерея <span>робіт</span>",galleryText:"Обрані реалізації натяжних стель, LED-ліній, глянцевих стель і фотодруку.",
+formTitle:"Безкоштовний <span>розрахунок</span>",formText:"Заповніть коротку заявку, і ми зв’яжемося з вами через WhatsApp або телефоном.",sendBtn:"Надіслати через WhatsApp"
+},
+ru:{
+badge:"Премиальные натяжные потолки",
+heroTitle:"Современные <span>потолки</span><br>для стильного интерьера",
+heroText:"Световые линии, парящие потолки, глянцевые решения, фотопечать и современный дизайн в Братиславе.",
+cta:"Бесплатный расчёт",galleryBtn:"Смотреть работы",
+whyTitle:"Почему <span>STROP LOOK</span>",whyText:"Чистые детали, современный свет и профессиональный результат без дешёвого вида.",
+stat1:"реализованных проектов",stat2:"быстрая консультация",stat3:"Братислава и окрестности",
+servicesTitle:"Премиальные <span>решения</span>",servicesText:"Выберите стиль потолка под интерьер — от минималистичного матового до глянцевого или с принтом.",
+galleryTitle:"Галерея <span>работ</span>",galleryText:"Избранные работы: натяжные потолки, LED-линии, глянцевые потолки и фотопечать.",
+formTitle:"Бесплатный <span>расчёт</span>",formText:"Оставьте короткую заявку, и мы свяжемся с вами через WhatsApp или по телефону.",sendBtn:"Отправить через WhatsApp"
+}
+};
+
+function setLang(lang){
+  document.querySelectorAll(".langs button").forEach(b=>b.classList.remove("active"));
+  event.target.classList.add("active");
+  document.querySelectorAll("[data-i]").forEach(el=>{
+    el.innerHTML=t[lang][el.dataset.i];
+  });
+}
+</script>
 
 </body>
 </html>
