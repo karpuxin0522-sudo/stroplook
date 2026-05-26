@@ -630,6 +630,23 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
   .ba-mini-card{height:360px;border-radius:24px}
 }
 
+
+.static-gallery .g{
+  display:block!important;
+}
+.static-gallery .g img{
+  opacity:1!important;
+}
+.static-gallery .g img[src=""],
+.static-gallery .g img:not([src]){
+  display:none!important;
+}
+.static-gallery video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
 </style>
 </head>
 <body>
@@ -736,7 +753,105 @@ slider.addEventListener('input',e=>update(e.target.value));
   </div>
 </section>
 
-<section class="section fade" id="gallery"><div class="wrap"><div class="gallery-top"><div><h2 class="title">Галерея <span class="gold">работ</span></h2><p class="sub">Фильтр работает по категориям. Сначала показываются 3 фото, дальше открываются ещё.</p><div class="count" id="galleryCount">Показано 0</div></div><div class="filter-box"><button class="filter-btn" onclick="toggleFilter()"><span id="filterLabel">Все работы</span><span>▾</span></button><div class="filter-menu" id="filterMenu"></div></div></div><div class="gallery" id="galleryGrid"></div><div class="gallery-actions"><button class="btn main" id="moreBtn" onclick="loadMoreGallery()">Показать ещё</button><button class="btn dark" onclick="resetGallery()">Скрыть обратно</button></div></div></section>
+
+<section class="section fade show" id="gallery">
+  <div class="wrap">
+    <div class="gallery-top">
+      <div>
+        <h2 class="title">Галерея <span class="gold">работ</span></h2>
+        <p class="sub">Реальные фото выполненных работ STROP LOOK.</p>
+        <div class="count">Галерея обновлена</div>
+      </div>
+    </div>
+
+    <div class="gallery static-gallery">
+
+      <div class="g">
+        <img src="Public/Images/Плаваючі.png" alt="Plávajúci strop 1">
+        <div class="g-info"><small>FLOAT</small><h3>Plávajúci strop 1</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/Плаваючі2.png" alt="Plávajúci strop 2">
+        <div class="g-info"><small>FLOAT</small><h3>Plávajúci strop 2</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/Плаваючі3.png" alt="Plávajúci strop 3">
+        <div class="g-info"><small>FLOAT</small><h3>Plávajúci strop 3</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/Плаваючі4.png" alt="Plávajúci strop 4">
+        <div class="g-info"><small>FLOAT</small><h3>Plávajúci strop 4</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/svitlo-posle.jpg" alt="Svetelné línie 1">
+        <div class="g-info"><small>LED</small><h3>Svetelné línie 1</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/photo_5235840351493364333_y.jpg" alt="Svetelné línie 2">
+        <div class="g-info"><small>LED</small><h3>Svetelné línie 2</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/photo_5235840351493364335_y.jpg" alt="Svetelné línie 3">
+        <div class="g-info"><small>LED</small><h3>Svetelné línie 3</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/photo_5226781981998260341_y.jpg" alt="Svetelné línie 4">
+        <div class="g-info"><small>LED</small><h3>Svetelné línie 4</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/photo_5226781981998260342_y.jpg" alt="Svetelné línie 5">
+        <div class="g-info"><small>LED</small><h3>Svetelné línie 5</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/photo_5226781981998260343_y.jpg" alt="Realizácia 1">
+        <div class="g-info"><small>WORK</small><h3>Realizácia 1</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/photo_5226781981998260344_y.jpg" alt="Realizácia 2">
+        <div class="g-info"><small>WORK</small><h3>Realizácia 2</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/photo_5226781981998260345_y.jpg" alt="Realizácia 3">
+        <div class="g-info"><small>WORK</small><h3>Realizácia 3</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/LUSTREA.jpg" alt="Lesklý strop">
+        <div class="g-info"><small>GLOSS</small><h3>Lesklý strop</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/PhotoTlac1.png" alt="Fototlač 1">
+        <div class="g-info"><small>PHOTO</small><h3>Fototlač 1</h3></div>
+      </div>
+
+      <div class="g">
+        <img src="Public/Images/PhotoTlac2.png" alt="Fototlač 2">
+        <div class="g-info"><small>PHOTO</small><h3>Fototlač 2</h3></div>
+      </div>
+
+      <div class="g video-card">
+        <video controls playsinline preload="metadata">
+          <source src="Public/Images/Video/result.mp4" type="video/mp4">
+        </video>
+        <div class="g-info"><small>VIDEO</small><h3>Video realizácie</h3></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="section fade"><div class="wrap"><div class="head"><h2 class="title">Как мы <span class="gold">работаем</span></h2><p class="sub">Простая схема для клиента: без лишних звонков и непонятных этапов.</p></div><div class="grid3"><div class="card step"><h3>Заявка</h3><p>Клиент оставляет номер, тип потолка и комментарий.</p></div><div class="card step"><h3>Замер</h3><p>Уточняем детали, размеры, освещение и материалы.</p></div><div class="card step"><h3>Монтаж</h3><p>Аккуратная установка и финальная проверка результата.</p></div></div></div></section>
 <section class="section fade" id="request"><div class="wrap"><div class="head"><h2 class="title">Оставить <span class="gold">заявку</span></h2><p class="sub">Оставьте заявку — мы быстро свяжемся с вами и подскажем лучший вариант потолка под ваш интерьер.</p></div><div class="request-box"><div class="request-info"><h3 style="font-size:34px;margin-bottom:12px">Быстрый расчёт</h3><p class="sub">Оставьте данные, и мы свяжемся с вами для консультации.</p><ul><li>Имя и телефон клиента</li><li>Тип потолка / услуги</li><li>Комментарий и город</li><li>Быстрый ответ и консультация</li></ul><div class="btns"><a class="btn dark" target="_blank" href="https://wa.me/421952277013">Написать в WhatsApp</a></div></div><form class="form" id="leadForm"><div class="row"><input id="leadName" placeholder="Имя" required><input id="leadPhone" placeholder="Телефон" required></div><div class="row"><select id="leadType"><option>Световые линии</option><option>Парящий потолок</option><option>Глянцевый потолок</option><option>Фотопечать</option><option>Нужна консультация</option></select><input id="leadCity" placeholder="Город / район"></div><div class="row"><input id="leadArea" placeholder="Площадь, м²"><input id="leadDate" placeholder="Когда нужен монтаж?"></div><textarea id="leadMessage" placeholder="Комментарий: размеры, комната, пожелания"></textarea><button class="btn main" style="width:100%" type="submit">Отправить заявку</button><small>Мы свяжемся с вами после получения заявки.</small></form></div></div></section>
 <section class="section fade reviews-premium" id="reviews"><div class="wrap"><div class="reviews-head"><h2 class="title">Отзывы <span class="gold">клиентов</span></h2><p class="sub">Отзывы клиентов после выполненных работ.</p></div><div class="reviews-slider-wrap"><div class="reviews-list" id="reviewsGrid"><div class="empty">Загрузка отзывов...</div></div></div><div class="reviews-slider-nav"><button class="review-arrow" type="button" onclick="scrollReviews(-1)" aria-label="Назад">‹</button><button class="review-arrow" type="button" onclick="scrollReviews(1)" aria-label="Вперёд">›</button></div><div class="reviews-actions"><button class="btn main open-review-btn" id="openReviewBtn" type="button" onclick="openReviewModal()">Оставить отзыв</button></div><div class="review-modal" id="reviewModal" aria-hidden="true"><div class="review-modal-box"><button class="review-modal-close" type="button" onclick="closeReviewModal()" aria-label="Close">×</button><form class="form" id="reviewForm"><h3 style="font-size:30px;margin-bottom:10px">Оставить отзыв</h3><div class="stars" id="stars"><button type="button" data-star="1">★</button><button type="button" data-star="2">★</button><button type="button" data-star="3">★</button><button type="button" data-star="4">★</button><button type="button" data-star="5">★</button></div><input id="reviewName" placeholder="Имя" required><input id="reviewWork" placeholder="Что было сделано" required><textarea id="reviewText" placeholder="Ваш отзыв" required></textarea><button class="btn main" style="width:100%" type="submit">Отправить отзыв</button><small>Спасибо за ваш отзыв — он появится на сайте после проверки.</small></form></div></div></div></section>
@@ -1143,186 +1258,6 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
     document.addEventListener('DOMContentLoaded', initPremiumBA);
   }else{
     initPremiumBA();
-  }
-})();
-</script>
-
-
-<script>
-(function(){
-  const fixedGalleryItems = [
-  {
-    "type": "image",
-    "cat": "led",
-    "src": "Public/Images/svitlo-posle.jpg",
-    "title": "Svetelné línie 1"
-  },
-  {
-    "type": "image",
-    "cat": "led",
-    "src": "Public/Images/photo_5235840351493364333_y.jpg",
-    "title": "Svetelné línie 2"
-  },
-  {
-    "type": "image",
-    "cat": "led",
-    "src": "Public/Images/photo_5235840351493364335_y.jpg",
-    "title": "Svetelné línie 3"
-  },
-  {
-    "type": "image",
-    "cat": "led",
-    "src": "Public/Images/photo_5226781981998260341_y.jpg",
-    "title": "Svetelné línie 4"
-  },
-  {
-    "type": "image",
-    "cat": "led",
-    "src": "Public/Images/photo_5226781981998260342_y.jpg",
-    "title": "Svetelné línie 5"
-  },
-  {
-    "type": "image",
-    "cat": "led",
-    "src": "Public/Images/photo_5226781981998260343_y.jpg",
-    "title": "Svetelné línie 6"
-  },
-  {
-    "type": "image",
-    "cat": "float",
-    "src": "Public/Images/Плаваючі.png",
-    "title": "Plávajúci strop 1"
-  },
-  {
-    "type": "image",
-    "cat": "float",
-    "src": "Public/Images/Плаваючі2.png",
-    "title": "Plávajúci strop 2"
-  },
-  {
-    "type": "image",
-    "cat": "float",
-    "src": "Public/Images/Плаваючі3.png",
-    "title": "Plávajúci strop 3"
-  },
-  {
-    "type": "image",
-    "cat": "float",
-    "src": "Public/Images/Плаваючі4.png",
-    "title": "Plávajúci strop 4"
-  },
-  {
-    "type": "image",
-    "cat": "gloss",
-    "src": "Public/Images/LUSTREA.jpg",
-    "title": "Lesklý strop"
-  },
-  {
-    "type": "image",
-    "cat": "print",
-    "src": "Public/Images/PhotoTlac1.png",
-    "title": "Fototlač 1"
-  },
-  {
-    "type": "image",
-    "cat": "print",
-    "src": "Public/Images/PhotoTlac2.png",
-    "title": "Fototlač 2"
-  },
-  {
-    "type": "image",
-    "cat": "gloss",
-    "src": "Public/Images/photo_5226781981998260339_y.jpg",
-    "title": "Realizácia 1"
-  },
-  {
-    "type": "image",
-    "cat": "gloss",
-    "src": "Public/Images/photo_5226781981998260340_y.jpg",
-    "title": "Realizácia 2"
-  },
-  {
-    "type": "image",
-    "cat": "gloss",
-    "src": "Public/Images/photo_5226781981998260341_y.jpg",
-    "title": "Realizácia 3"
-  },
-  {
-    "type": "image",
-    "cat": "gloss",
-    "src": "Public/Images/photo_5226781981998260342_y.jpg",
-    "title": "Realizácia 4"
-  },
-  {
-    "type": "image",
-    "cat": "gloss",
-    "src": "Public/Images/photo_5226781981998260343_y.jpg",
-    "title": "Realizácia 5"
-  },
-  {
-    "type": "image",
-    "cat": "gloss",
-    "src": "Public/Images/photo_5226781981998260344_y.jpg",
-    "title": "Realizácia 6"
-  },
-  {
-    "type": "image",
-    "cat": "gloss",
-    "src": "Public/Images/photo_5226781981998260345_y.jpg",
-    "title": "Realizácia 7"
-  },
-  {
-    "type": "image",
-    "cat": "gloss",
-    "src": "Public/Images/photo_5235840351493364333_y.jpg",
-    "title": "Realizácia 8"
-  },
-  {
-    "type": "image",
-    "cat": "gloss",
-    "src": "Public/Images/photo_5235840351493364335_y.jpg",
-    "title": "Realizácia 9"
-  },
-  {
-    "type": "video",
-    "cat": "video",
-    "src": "Public/Images/Video/result.mp4",
-    "title": "Video realizácie"
-  }
-];
-
-  function renderFixedGallery(){
-    const grid = document.getElementById('galleryGrid');
-    const count = document.getElementById('galleryCount');
-    if(!grid) return;
-
-    const cards = fixedGalleryItems.map((item, index) => {
-      if(item.type === 'video'){
-        return `<div class="g video-card" onclick="openPhoto(${index})">
-          <video muted playsinline preload="metadata">
-            <source src="${item.src}" type="video/mp4">
-          </video>
-          <div class="play-badge">▶</div>
-          <div class="g-info"><small>VIDEO</small><h3>${item.title}</h3></div>
-        </div>`;
-      }
-      return `<div class="g" onclick="openPhoto(${index})">
-        <img src="${item.src}" alt="${item.title}" loading="lazy" onerror="this.closest('.g').style.display='none'">
-        <div class="g-info"><small>${(item.cat || 'WORK').toUpperCase()}</small><h3>${item.title}</h3></div>
-      </div>`;
-    }).join('');
-
-    grid.innerHTML = cards;
-    if(count) count.textContent = 'Показано ' + fixedGalleryItems.length;
-    window.currentGallery = fixedGalleryItems;
-    window.galleryItems = fixedGalleryItems;
-    window.photos = fixedGalleryItems;
-  }
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', renderFixedGallery);
-  }else{
-    renderFixedGallery();
   }
 })();
 </script>
