@@ -122,6 +122,17 @@ function closeReviewModal(){$('reviewModal').classList.remove('active');$('revie
 document.addEventListener('click',e=>{if(!e.target.closest('.filter-box'))closeFilter();if(!e.target.closest('.lang-box'))closeLang();if(e.target&&e.target.id==='reviewModal')closeReviewModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePhoto();closeReviewModal()}if($('photoModal').classList.contains('active')&&e.key==='ArrowLeft')prevPhoto();if($('photoModal').classList.contains('active')&&e.key==='ArrowRight')nextPhoto()});renderGallery();
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.fade').forEach(el=>io.observe(el));
 function renderStars(){document.querySelectorAll('#stars button').forEach(b=>b.classList.toggle('active',Number(b.dataset.star)<=selectedStars))}document.querySelectorAll('#stars button').forEach(b=>b.addEventListener('click',()=>{selectedStars=Number(b.dataset.star);window.selectedStars=selectedStars;renderStars()}));renderStars();applyLang();
+
+function scrollReviews(direction){
+  const grid=document.getElementById('reviewsGrid');
+  if(!grid) return;
+  const card=grid.querySelector('.review');
+  const gap=22;
+  const step=card ? (card.getBoundingClientRect().width + gap) : Math.max(280, grid.clientWidth/3);
+  grid.scrollBy({left: direction * step, behavior:'smooth'});
+}
+window.scrollReviews=scrollReviews;
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="module">
@@ -170,24 +181,12 @@ await Promise.all([addDoc(collection(db,'requests'),requestData), sendLeadEmail(
 notifyTelegram({type:'request',...requestData});
 leadForm.reset();showToast(LANGS[currentLang].sentReq);}catch(err){console.error(err);showToast('Ошибка отправки. Попробуйте ещё раз.');}finally{btn.disabled=false;btn.textContent=LANGS[currentLang].sendRequest;}});
 function reviewCard(r){return `<div class="review"><div class="review-top"><div class="review-stars">${stars(r.rating||5)}</div><div class="avatar">${initials(r.name)}</div><div class="review-work">"${esc(r.work||'STROP LOOK')}"</div></div><p>${esc(r.text)}</p><div class="review-name">${esc(r.name||LANGS[currentLang].client)}</div><div class="verified-badge">✅ Проверенный отзыв</div></div>`}
-let approvedReviews=[];let reviewsVisible=3;
+let approvedReviews=[];
 function renderApprovedReviews(){
-  const shown=approvedReviews.slice(0,reviewsVisible);
-  reviewsGrid.innerHTML=shown.length?shown.map(r=>reviewCard(r)).join(''):`<div class="empty">${LANGS[currentLang].emptyReviews}</div>`;
-  let btn=document.getElementById('reviewsMoreBtn');
-  if(!btn){
-    btn=document.createElement('button');
-    btn.id='reviewsMoreBtn';
-    btn.type='button';
-    btn.className='btn main';
-    btn.style.marginTop='18px';
-    btn.onclick=()=>{reviewsVisible+=3;renderApprovedReviews();};
-    reviewsGrid.insertAdjacentElement('afterend',btn);
-  }
-  btn.textContent=LANGS[currentLang].showMore||'Показать ещё';
-  btn.style.display=approvedReviews.length>reviewsVisible?'inline-flex':'none';
+  reviewsGrid.innerHTML=approvedReviews.length?approvedReviews.map(r=>reviewCard(r)).join(''):`<div class="empty">${LANGS[currentLang].emptyReviews}</div>`;
+  setTimeout(()=>{ reviewsGrid.scrollTo({left:0,behavior:'auto'}); }, 0);
 }
-try{const q=query(collection(db,'reviews'),where('approved','==',true));onSnapshot(q,snap=>{approvedReviews=snap.docs.map(d=>d.data()).sort((a,b)=>{const ta=a.createdAt&&a.createdAt.toMillis?a.createdAt.toMillis():0;const tb=b.createdAt&&b.createdAt.toMillis?b.createdAt.toMillis():0;return tb-ta;});reviewsVisible=3;renderApprovedReviews();},err=>{console.error('Reviews Firebase error:',err);reviewsGrid.innerHTML=`<div class="empty">Не удалось загрузить отзывы. Проверь Firebase rules и поле approved:true.</div>`})}catch(e){console.error(e);reviewsGrid.innerHTML=`<div class="empty">Не удалось загрузить отзывы. Проверь Firebase rules.</div>`}
+try{const q=query(collection(db,'reviews'),where('approved','==',true));onSnapshot(q,snap=>{approvedReviews=snap.docs.map(d=>d.data()).sort((a,b)=>{const ta=a.createdAt&&a.createdAt.toMillis?a.createdAt.toMillis():0;const tb=b.createdAt&&b.createdAt.toMillis?b.createdAt.toMillis():0;return tb-ta;});renderApprovedReviews();},err=>{console.error('Reviews Firebase error:',err);reviewsGrid.innerHTML=`<div class="empty">Не удалось загрузить отзывы. Проверь Firebase rules и поле approved:true.</div>`})}catch(e){console.error(e);reviewsGrid.innerHTML=`<div class="empty">Не удалось загрузить отзывы. Проверь Firebase rules.</div>`}
 reviewForm.addEventListener('submit',async e=>{e.preventDefault();const btn=reviewForm.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent=LANGS[currentLang].sending;try{const reviewData={name:reviewName.value.trim(),work:reviewWork.value.trim(),text:reviewText.value.trim(),rating:window.selectedStars||5,approved:false,rejected:false,createdAt:serverTimestamp(),source:'stroplook-site'};
 await addDoc(collection(db,'reviews'),reviewData);
 notifyTelegram({type:'review',...reviewData});
