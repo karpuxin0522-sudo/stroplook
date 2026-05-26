@@ -162,7 +162,7 @@ function renderApprovedReviews(){
   btn.textContent=LANGS[currentLang].showMore||'Показать ещё';
   btn.style.display=approvedReviews.length>reviewsVisible?'inline-flex':'none';
 }
-try{const q=query(collection(db,'reviews'),where('approved','==',true),orderBy('createdAt','desc'));onSnapshot(q,snap=>{approvedReviews=snap.docs.map(d=>d.data());reviewsVisible=3;renderApprovedReviews();},err=>{console.error(err);reviewsGrid.innerHTML=`<div class="empty">${LANGS[currentLang].emptyReviews}</div>`})}catch(e){console.error(e)}
+try{const q=query(collection(db,'reviews'),where('approved','==',true));onSnapshot(q,snap=>{approvedReviews=snap.docs.map(d=>d.data()).sort((a,b)=>{const ta=a.createdAt&&a.createdAt.toMillis?a.createdAt.toMillis():0;const tb=b.createdAt&&b.createdAt.toMillis?b.createdAt.toMillis():0;return tb-ta;});reviewsVisible=3;renderApprovedReviews();},err=>{console.error('Reviews Firebase error:',err);reviewsGrid.innerHTML=`<div class="empty">Не удалось загрузить отзывы. Проверь Firebase rules и поле approved:true.</div>`})}catch(e){console.error(e);reviewsGrid.innerHTML=`<div class="empty">Не удалось загрузить отзывы. Проверь Firebase rules.</div>`}
 reviewForm.addEventListener('submit',async e=>{e.preventDefault();const btn=reviewForm.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent=LANGS[currentLang].sending;try{const reviewData={name:reviewName.value.trim(),work:reviewWork.value.trim(),text:reviewText.value.trim(),rating:window.selectedStars||5,approved:false,rejected:false,createdAt:serverTimestamp(),source:'stroplook-site'};
 await addDoc(collection(db,'reviews'),reviewData);
 notifyTelegram({type:'review',...reviewData});
