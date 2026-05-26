@@ -308,6 +308,196 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 @media(max-width:980px){.stba-section{padding:82px 0 62px}.stba-head{display:block}.stba-head .sub{margin-top:14px}.stba-tabs{justify-content:flex-start;margin-top:20px}.stba-layout{grid-template-columns:1fr}.stba-card{min-height:540px}.stba-side{grid-template-columns:repeat(2,1fr);max-height:none;padding-right:0}}
 @media(max-width:560px){.stba-section{padding:66px 0 50px}.stba-tab{padding:11px 13px;font-size:13px}.stba-card{min-height:450px;border-radius:28px}.stba-handle{width:62px;height:62px;font-size:22px}.stba-label{top:15px;font-size:11px}.stba-label.before{left:14px}.stba-label.after{right:14px}.stba-range{left:18px;right:18px;bottom:84px;width:calc(100% - 36px)}.stba-info{left:18px;right:18px;bottom:18px;display:block}.stba-info h3{font-size:27px}.stba-info p{font-size:14px}.stba-info .btn{margin-top:12px;width:100%}.stba-side{grid-template-columns:1fr}.stba-small{min-height:116px;border-radius:22px}}
 
+
+/* ===== FINAL WORKING BEFORE / AFTER BLOCK ===== */
+.final-ba-section{
+  padding:100px 0 78px;
+  position:relative;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  transform:none!important;
+  z-index:2;
+}
+.final-ba-section:before{
+  content:"";
+  position:absolute;
+  right:-180px;
+  top:30px;
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(216,183,122,.20),transparent 66%);
+  pointer-events:none;
+}
+.final-ba-head{
+  text-align:center;
+  margin-bottom:42px;
+}
+.final-ba-head h2{
+  font-family:Playfair Display,serif;
+  font-size:clamp(42px,6vw,78px);
+  line-height:.95;
+  letter-spacing:-2px;
+}
+.final-ba-head p{
+  max-width:760px;
+  margin:16px auto 0;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7;
+}
+.final-ba-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+}
+.final-ba-card{
+  position:relative;
+  height:540px;
+  overflow:hidden;
+  border-radius:36px;
+  background:#080705;
+  border:1px solid rgba(240,214,164,.28);
+  box-shadow:0 34px 100px rgba(0,0,0,.50);
+  user-select:none;
+  touch-action:none;
+}
+.final-ba-card img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.final-ba-after{z-index:1}
+.final-ba-before{
+  z-index:2;
+  clip-path:inset(0 50% 0 0);
+}
+.final-ba-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:3;
+  background:linear-gradient(to top,rgba(0,0,0,.70),transparent 48%),
+             linear-gradient(90deg,rgba(0,0,0,.22),transparent 32%,transparent 68%,rgba(0,0,0,.22));
+  pointer-events:none;
+}
+.final-ba-line{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:3px;
+  background:linear-gradient(to bottom,transparent,rgba(255,255,255,.96),transparent);
+  transform:translateX(-50%);
+  z-index:5;
+  pointer-events:none;
+}
+.final-ba-handle{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:74px;
+  height:74px;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:linear-gradient(135deg,var(--champagne2),var(--champagne));
+  color:#120f0b;
+  display:grid;
+  place-items:center;
+  font-size:28px;
+  font-weight:1000;
+  z-index:6;
+  box-shadow:0 18px 55px rgba(0,0,0,.45),0 0 0 8px rgba(255,255,255,.13);
+  pointer-events:none;
+}
+.final-ba-label{
+  position:absolute;
+  top:20px;
+  z-index:7;
+  padding:10px 15px;
+  border-radius:999px;
+  background:rgba(8,7,5,.74);
+  border:1px solid rgba(240,214,164,.34);
+  color:var(--champagne2);
+  font-size:12px;
+  font-weight:1000;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  backdrop-filter:blur(12px);
+}
+.final-ba-label.before{left:20px}
+.final-ba-label.after{right:20px}
+.final-ba-title{
+  position:absolute;
+  left:24px;
+  right:24px;
+  bottom:24px;
+  z-index:7;
+}
+.final-ba-title h3{
+  font-family:Playfair Display,serif;
+  font-size:32px;
+  line-height:1.05;
+  margin-bottom:6px;
+}
+.final-ba-title p{
+  color:#eadfce;
+  font-weight:800;
+  line-height:1.45;
+}
+.final-ba-slider{
+  position:absolute;
+  left:22px;
+  right:22px;
+  bottom:92px;
+  z-index:8;
+  width:calc(100% - 44px);
+  appearance:none;
+  height:5px;
+  border-radius:999px;
+  background:rgba(255,255,255,.36);
+  outline:none;
+  cursor:ew-resize;
+  margin:0;
+  padding:0;
+}
+.final-ba-slider::-webkit-slider-thumb{
+  appearance:none;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--champagne);
+  border:4px solid rgba(255,255,255,.86);
+  box-shadow:0 8px 24px rgba(0,0,0,.42);
+}
+.final-ba-slider::-moz-range-thumb{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--champagne);
+  border:4px solid rgba(255,255,255,.86);
+  box-shadow:0 8px 24px rgba(0,0,0,.42);
+}
+@media(max-width:980px){
+  .final-ba-grid{grid-template-columns:1fr}
+  .final-ba-card{height:500px;border-radius:30px}
+}
+@media(max-width:560px){
+  .final-ba-section{padding:70px 0 52px}
+  .final-ba-head{text-align:left;margin-bottom:28px}
+  .final-ba-head p{margin-left:0}
+  .final-ba-card{height:430px;border-radius:26px}
+  .final-ba-handle{width:62px;height:62px;font-size:22px}
+  .final-ba-title{left:18px;right:18px;bottom:18px}
+  .final-ba-title h3{font-size:26px}
+  .final-ba-title p{font-size:14px}
+  .final-ba-slider{left:18px;right:18px;bottom:82px;width:calc(100% - 36px)}
+}
+
 </style>
 </head>
 <body>
@@ -319,38 +509,90 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 
 
 
-<section class="stba-section" id="before-after">
+
+<section class="final-ba-section" id="before-after">
   <div class="wrap">
-    <div class="stba-head">
-      <div>
-        <h2 class="title">До / <span class="gold">После</span></h2>
-        <p class="sub">Реальные работы STROP LOOK. Двигайте ползунок по центру и смотрите разницу до и после монтажа.</p>
-      </div>
-      <div class="stba-tabs" id="stbaTabs"></div>
+    <div class="final-ba-head">
+      <h2>До / <span class="gold">После</span></h2>
+      <p>Реальные работы STROP LOOK. Двигайте ползунок по центру и смотрите разницу до и после монтажа.</p>
     </div>
 
-    <div class="stba-layout">
-      <div class="stba-card" id="stbaCard">
-        <img class="stba-img stba-after" id="stbaAfter" src="Svitlolinii posle.jpg" alt="После">
-        <img class="stba-img stba-before" id="stbaBefore" src="Світлолінії до.jpg" alt="До">
-        <span class="stba-label before">До</span>
-        <span class="stba-label after">После</span>
-        <div class="stba-line" id="stbaLine"></div>
-        <div class="stba-handle" id="stbaHandle">↔</div>
-        <input class="stba-range" id="stbaRange" type="range" min="0" max="100" value="50" aria-label="Сравнение до и после">
-        <div class="stba-info">
-          <div>
-            <h3 id="stbaTitle">Световые линии</h3>
-            <p id="stbaText">Современный свет и чистая геометрия</p>
-          </div>
-          <a class="btn main" href="#request">Хочу такой потолок</a>
-        </div>
-      </div>
+    <div class="final-ba-grid">
 
-      <div class="stba-side" id="stbaSide"></div>
+      <article class="final-ba-card">
+        <img class="final-ba-after" src="SvitloLinii posle.jpg" alt="После — световые линии">
+        <img class="final-ba-before" src="Svtitloliniido.jpg" alt="До — световые линии">
+        <span class="final-ba-label before">До</span>
+        <span class="final-ba-label after">После</span>
+        <div class="final-ba-line"></div>
+        <div class="final-ba-handle">↔</div>
+        <input class="final-ba-slider" type="range" min="0" max="100" value="50" aria-label="До и после">
+        <div class="final-ba-title">
+          <h3>Световые линии</h3>
+          <p>Современный свет и чистая геометрия</p>
+        </div>
+      </article>
+
+      <article class="final-ba-card">
+        <img class="final-ba-after" src="1 FAJNA POSLE.jpg" alt="После — premium потолок">
+        <img class="final-ba-before" src="1 Fajna do.jpg" alt="До — premium потолок">
+        <span class="final-ba-label before">До</span>
+        <span class="final-ba-label after">После</span>
+        <div class="final-ba-line"></div>
+        <div class="final-ba-handle">↔</div>
+        <input class="final-ba-slider" type="range" min="0" max="100" value="50" aria-label="До и после">
+        <div class="final-ba-title">
+          <h3>Premium потолок</h3>
+          <p>Аккуратный результат после монтажа</p>
+        </div>
+      </article>
+
+      <article class="final-ba-card">
+        <img class="final-ba-after" src="2 FAJNA POSLE.jpg" alt="После — ровный потолок">
+        <img class="final-ba-before" src="2 FAJNA DO.jpg" alt="До — ровный потолок">
+        <span class="final-ba-label before">До</span>
+        <span class="final-ba-label after">После</span>
+        <div class="final-ba-line"></div>
+        <div class="final-ba-handle">↔</div>
+        <input class="final-ba-slider" type="range" min="0" max="100" value="50" aria-label="До и после">
+        <div class="final-ba-title">
+          <h3>Ровный потолок</h3>
+          <p>До ремонта и финальный вид</p>
+        </div>
+      </article>
+
+      <article class="final-ba-card">
+        <img class="final-ba-after" src="Svetlo posle.jpg" alt="После — световой эффект">
+        <img class="final-ba-before" src="Svetlo do.jpg" alt="До — световой эффект">
+        <span class="final-ba-label before">До</span>
+        <span class="final-ba-label after">После</span>
+        <div class="final-ba-line"></div>
+        <div class="final-ba-handle">↔</div>
+        <input class="final-ba-slider" type="range" min="0" max="100" value="50" aria-label="До и после">
+        <div class="final-ba-title">
+          <h3>Световой эффект</h3>
+          <p>Комната выглядит дороже и современнее</p>
+        </div>
+      </article>
+
+      <article class="final-ba-card">
+        <img class="final-ba-after" src="kRISHA POSLE.jpg" alt="После — сложный объект">
+        <img class="final-ba-before" src="kRISHA DO.jpg" alt="До — сложный объект">
+        <span class="final-ba-label before">До</span>
+        <span class="final-ba-label after">После</span>
+        <div class="final-ba-line"></div>
+        <div class="final-ba-handle">↔</div>
+        <input class="final-ba-slider" type="range" min="0" max="100" value="50" aria-label="До и после">
+        <div class="final-ba-title">
+          <h3>Сложный объект</h3>
+          <p>Красивое решение даже для сложной формы</p>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
+
 <section class="section fade" id="gallery"><div class="wrap"><div class="gallery-top"><div><h2 class="title">Галерея <span class="gold">работ</span></h2><p class="sub">Фильтр работает по категориям. Сначала показываются 3 фото, дальше открываются ещё.</p><div class="count" id="galleryCount">Показано 0</div></div><div class="filter-box"><button class="filter-btn" onclick="toggleFilter()"><span id="filterLabel">Все работы</span><span>▾</span></button><div class="filter-menu" id="filterMenu"></div></div></div><div class="gallery" id="galleryGrid"></div><div class="gallery-actions"><button class="btn main" id="moreBtn" onclick="loadMoreGallery()">Показать ещё</button><button class="btn dark" onclick="resetGallery()">Скрыть обратно</button></div></div></section>
 <section class="section fade"><div class="wrap"><div class="head"><h2 class="title">Как мы <span class="gold">работаем</span></h2><p class="sub">Простая схема для клиента: без лишних звонков и непонятных этапов.</p></div><div class="grid3"><div class="card step"><h3>Заявка</h3><p>Клиент оставляет номер, тип потолка и комментарий.</p></div><div class="card step"><h3>Замер</h3><p>Уточняем детали, размеры, освещение и материалы.</p></div><div class="card step"><h3>Монтаж</h3><p>Аккуратная установка и финальная проверка результата.</p></div></div></div></section>
 <section class="section fade" id="request"><div class="wrap"><div class="head"><h2 class="title">Оставить <span class="gold">заявку</span></h2><p class="sub">Оставьте заявку — мы быстро свяжемся с вами и подскажем лучший вариант потолка под ваш интерьер.</p></div><div class="request-box"><div class="request-info"><h3 style="font-size:34px;margin-bottom:12px">Быстрый расчёт</h3><p class="sub">Оставьте данные, и мы свяжемся с вами для консультации.</p><ul><li>Имя и телефон клиента</li><li>Тип потолка / услуги</li><li>Комментарий и город</li><li>Быстрый ответ и консультация</li></ul><div class="btns"><a class="btn dark" target="_blank" href="https://wa.me/421952277013">Написать в WhatsApp</a></div></div><form class="form" id="leadForm"><div class="row"><input id="leadName" placeholder="Имя" required><input id="leadPhone" placeholder="Телефон" required></div><div class="row"><select id="leadType"><option>Световые линии</option><option>Парящий потолок</option><option>Глянцевый потолок</option><option>Фотопечать</option><option>Нужна консультация</option></select><input id="leadCity" placeholder="Город / район"></div><div class="row"><input id="leadArea" placeholder="Площадь, м²"><input id="leadDate" placeholder="Когда нужен монтаж?"></div><textarea id="leadMessage" placeholder="Комментарий: размеры, комната, пожелания"></textarea><button class="btn main" style="width:100%" type="submit">Отправить заявку</button><small>Мы свяжемся с вами после получения заявки.</small></form></div></div></section>
@@ -686,6 +928,68 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
 
     setWork(0);
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  function initFinalBeforeAfter(){
+    document.querySelectorAll('.final-ba-card').forEach(function(card){
+      const slider = card.querySelector('.final-ba-slider');
+      const before = card.querySelector('.final-ba-before');
+      const line = card.querySelector('.final-ba-line');
+      const handle = card.querySelector('.final-ba-handle');
+
+      if(!slider || !before || !line || !handle) return;
+
+      function update(value){
+        value = Math.max(0, Math.min(100, Number(value) || 50));
+        before.style.clipPath = 'inset(0 ' + (100 - value) + '% 0 0)';
+        line.style.left = value + '%';
+        handle.style.left = value + '%';
+        slider.value = value;
+      }
+
+      update(50);
+
+      slider.addEventListener('input', function(e){
+        update(e.target.value);
+      });
+
+      function move(clientX){
+        const rect = card.getBoundingClientRect();
+        update(((clientX - rect.left) / rect.width) * 100);
+      }
+
+      let dragging = false;
+
+      card.addEventListener('pointerdown', function(e){
+        if(e.target === slider) return;
+        dragging = true;
+        card.setPointerCapture(e.pointerId);
+        move(e.clientX);
+      });
+
+      card.addEventListener('pointermove', function(e){
+        if(dragging) move(e.clientX);
+      });
+
+      card.addEventListener('pointerup', function(){
+        dragging = false;
+      });
+
+      card.addEventListener('pointercancel', function(){
+        dragging = false;
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initFinalBeforeAfter);
+  }else{
+    initFinalBeforeAfter();
+  }
 })();
 </script>
 
