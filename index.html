@@ -700,6 +700,59 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
   .sticky-social .sticky-wa:after,.sticky-social .sticky-fb:after{display:none}
 }
 
+
+
+/* ===== PATCH: Galéria prác — 3 photos first + perfect mobile ===== */
+#gallery{scroll-margin-top:110px}
+#gallery .gallery{align-items:stretch}
+#gallery .g{height:410px;border-radius:36px;transform:translateZ(0)}
+#gallery .g-info h3{font-size:28px;line-height:1.05}
+#gallery .gallery-actions{position:relative;z-index:2;margin-top:28px}
+#gallery .gallery-actions .btn{min-width:190px;min-height:56px}
+#galleryCount{font-weight:900}
+@media(max-width:980px){
+  #gallery{scroll-margin-top:92px}
+  #gallery .gallery-top{gap:16px}
+  #gallery .gallery{grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+  #gallery .g{height:340px;border-radius:28px}
+  #gallery .g-info h3{font-size:24px}
+}
+@media(max-width:640px){
+  .navin{height:60px;border-radius:24px}
+  .mobile-menu{top:76px}
+  #gallery{padding-top:62px;scroll-margin-top:76px}
+  #gallery .gallery-top{display:block}
+  #gallery .title{font-size:40px;line-height:1.02;letter-spacing:-1px}
+  #gallery .sub{font-size:15px;line-height:1.6;margin-top:12px}
+  #galleryCount{width:100%;justify-content:center;margin-top:16px;padding:12px 14px;font-size:13px}
+  #gallery .filter-box{width:100%;margin-top:18px}
+  #gallery .filter-btn{width:100%;height:54px;border-radius:18px;justify-content:center;gap:10px}
+  #gallery .filter-menu{top:62px;width:100%;border-radius:20px}
+  #gallery .gallery{grid-template-columns:1fr;gap:14px;margin-top:20px}
+  #gallery .g,#gallery .g.video-card{height:360px;border-radius:26px;box-shadow:0 22px 60px rgba(0,0,0,.38)}
+  #gallery .g-info{left:18px;right:18px;bottom:18px}
+  #gallery .g-info small{font-size:11px;letter-spacing:1.6px}
+  #gallery .g-info h3{font-size:24px;line-height:1.05}
+  #gallery .gallery-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:20px}
+  #gallery .gallery-actions .btn{width:100%;min-height:56px;border-radius:18px;padding:16px 18px}
+  .modal{padding:10px}.viewer{height:72vh}.close{top:-48px;right:4px}.arrow{width:44px;height:44px}
+}
+@media(max-width:390px){
+  #gallery .g,#gallery .g.video-card{height:320px}
+  #gallery .title{font-size:36px}
+}
+
+
+
+/* ==== NEW PREMIUM DO / PO BLOCK ==== */
+.doafter-pro{padding:92px 0 78px;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);background:radial-gradient(circle at 50% 0,rgba(216,183,122,.08),transparent 38%)}
+.doafter-pro:before{content:"";position:absolute;inset:0;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3"/></filter><rect width="160" height="160" filter="url(%23n)" opacity=".13"/></svg>');opacity:.22;pointer-events:none}
+.doafter-head{text-align:center;margin-bottom:34px;position:relative;z-index:1}.section-kicker{display:block;color:var(--champagne);font-weight:1000;letter-spacing:5px;font-size:13px;margin-bottom:10px}.doafter-head h2{font-family:Playfair Display,serif;font-size:clamp(46px,6vw,78px);line-height:.95;letter-spacing:-2px}.doafter-head p{color:var(--muted);font-size:18px;line-height:1.6;margin:14px auto 0;max-width:760px}
+.doafter-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px;align-items:start}.doafter-card{display:none}.doafter-card.doafter-visible{display:block}.compare-box{position:relative;height:270px;border-radius:20px;overflow:hidden;background:#080705;border:1px solid rgba(255,255,255,.65);box-shadow:0 22px 70px rgba(0,0,0,.38);touch-action:none;user-select:none}.compare-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}.compare-after{z-index:1}.compare-before{z-index:2;clip-path:inset(0 50% 0 0)}.compare-box:after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(to top,rgba(0,0,0,.28),transparent 48%);pointer-events:none}.compare-badge{position:absolute;top:14px;z-index:8;height:34px;min-width:54px;padding:0 13px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-weight:1000;letter-spacing:.8px;color:white;background:rgba(8,7,5,.78);box-shadow:0 8px 22px rgba(0,0,0,.25);backdrop-filter:blur(10px)}.compare-do{left:14px}.compare-po{right:14px;background:linear-gradient(135deg,var(--champagne2),var(--champagne));color:#17100a}.compare-line{position:absolute;top:0;bottom:0;left:50%;z-index:6;width:3px;background:rgba(255,255,255,.95);transform:translateX(-50%);box-shadow:0 0 18px rgba(255,255,255,.85),0 0 44px rgba(216,183,122,.55);pointer-events:none}.compare-handle{position:absolute;left:50%;top:50%;z-index:7;width:48px;height:48px;border-radius:50%;transform:translate(-50%,-50%);display:grid;place-items:center;background:#fff;color:#17100a;font-weight:1000;font-size:23px;box-shadow:0 12px 34px rgba(0,0,0,.42);pointer-events:none}.compare-range{position:absolute;inset:0;z-index:9;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}.doafter-card h3{text-align:center;margin-top:16px;color:#f3dfbd;font-size:18px;font-weight:1000;letter-spacing:.4px}.doafter-actions{position:relative;z-index:1;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.doafter-actions .btn{min-width:245px}
+@media(max-width:1180px){.doafter-grid{grid-template-columns:repeat(3,1fr)}.compare-box{height:280px}}
+@media(max-width:760px){.doafter-pro{padding:66px 0 52px}.doafter-head{text-align:left;margin-bottom:24px}.section-kicker{font-size:11px;letter-spacing:3px}.doafter-head p{font-size:15px;margin-left:0}.doafter-grid{display:flex;overflow-x:auto;gap:14px;scroll-snap-type:x mandatory;padding:0 2px 16px;margin:0 -2px;-webkit-overflow-scrolling:touch}.doafter-grid::-webkit-scrollbar{height:6px}.doafter-grid::-webkit-scrollbar-thumb{background:rgba(240,214,164,.38);border-radius:999px}.doafter-card{min-width:86%;scroll-snap-align:center}.doafter-card.doafter-visible{display:block}.compare-box{height:330px;border-radius:24px}.compare-badge{top:12px;height:36px;min-width:58px;font-size:14px}.compare-do{left:12px}.compare-po{right:12px}.compare-handle{width:54px;height:54px;font-size:24px}.doafter-card h3{font-size:17px;margin-top:12px}.doafter-actions .btn{width:100%;min-width:0}}
+@media(max-width:420px){.compare-box{height:285px}.doafter-card{min-width:90%}}
+
 </style>
 </head>
 <body>
@@ -742,70 +795,89 @@ slider.addEventListener('input',e=>update(e.target.value));
 </script>
 
 
-<section class="premium-ba" id="before-after">
+
+<section class="doafter-pro" id="before-after">
   <div class="wrap">
-    <div class="premium-ba-head">
-      <h2>До / <span class="gold">После</span></h2>
-      <p>Новые реальные фото из папки <b>do-posle</b>. Двигайте линию сравнения и смотрите результат монтажа.</p>
+    <div class="doafter-head">
+      <span class="section-kicker">PREMENA, KTORÚ VIDNO</span>
+      <h2>DO / <span class="gold">PO</span></h2>
+      <p>Skutočný rozdiel pred a po montáži napínaného stropu. Posuňte bielu linku na fotke.</p>
     </div>
 
-    <div class="ba-main-card" id="baMainCard">
-      <img class="ba-main-after" src="Public/Images/do-posle/Koľajnicové svietidlá POSLE.jpg" alt="После — Коляйниковые светильники">
-      <img class="ba-main-before" src="Public/Images/do-posle/Koľajnicové svietidlá DO.jpg" alt="До — Коляйниковые светильники">
+    <div class="doafter-grid" id="doAfterGrid">
+      <article class="doafter-card doafter-visible" data-before="Public/Images/do-posle/Koľajnicové svietidlá DO.jpg" data-after="Public/Images/do-posle/Koľajnicové svietidlá POSLE.jpg">
+        <div class="compare-box">
+          <img class="compare-after" src="Public/Images/do-posle/Koľajnicové svietidlá POSLE.jpg" alt="PO — Koľajnicové svietidlá">
+          <img class="compare-before" src="Public/Images/do-posle/Koľajnicové svietidlá DO.jpg" alt="DO — Koľajnicové svietidlá">
+          <span class="compare-badge compare-do">DO</span><span class="compare-badge compare-po">PO</span>
+          <span class="compare-line"></span><span class="compare-handle">‹›</span>
+          <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="DO PO porovnanie">
+        </div>
+        <h3>Koľajnicové svietidlá</h3>
+      </article>
 
-      <span class="ba-main-label before">До</span>
-      <span class="ba-main-label after">После</span>
+      <article class="doafter-card doafter-visible" data-before="Public/Images/do-posle/Plavajuci strop do.jpg" data-after="Public/Images/do-posle/Plavajuci strop posle.jpg">
+        <div class="compare-box">
+          <img class="compare-after" src="Public/Images/do-posle/Plavajuci strop posle.jpg" alt="PO — Plávajúci strop">
+          <img class="compare-before" src="Public/Images/do-posle/Plavajuci strop do.jpg" alt="DO — Plávajúci strop">
+          <span class="compare-badge compare-do">DO</span><span class="compare-badge compare-po">PO</span>
+          <span class="compare-line"></span><span class="compare-handle">‹›</span>
+          <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="DO PO porovnanie">
+        </div>
+        <h3>Plávajúci strop</h3>
+      </article>
 
-      <div class="ba-scan-glow" id="baScanLine"></div>
-      <div class="ba-main-handle" id="baMainHandle">↔</div>
-      <input class="ba-main-range" id="baMainRange" type="range" min="0" max="100" value="50" aria-label="До и после">
+      <article class="doafter-card doafter-visible" data-before="Public/Images/do-posle/Plavajuci strop1 do.jpg" data-after="Public/Images/do-posle/Plavajuci strop1 posle.jpg">
+        <div class="compare-box">
+          <img class="compare-after" src="Public/Images/do-posle/Plavajuci strop1 posle.jpg" alt="PO — Plávajúci strop">
+          <img class="compare-before" src="Public/Images/do-posle/Plavajuci strop1 do.jpg" alt="DO — Plávajúci strop">
+          <span class="compare-badge compare-do">DO</span><span class="compare-badge compare-po">PO</span>
+          <span class="compare-line"></span><span class="compare-handle">‹›</span>
+          <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="DO PO porovnanie">
+        </div>
+        <h3>Plávajúci strop</h3>
+      </article>
 
-      <div class="ba-main-info">
-        <div><h3>Коляйниковые светильники</h3><p>Трековое освещение и ровная линия потолка</p></div>
-        <a class="btn main" href="#request">Хочу такой потолок</a>
-      </div>
+      <article class="doafter-card doafter-visible" data-before="Public/Images/do-posle/Svetelni ciare do.jpg" data-after="Public/Images/do-posle/Svetelne ciare posle.jpg">
+        <div class="compare-box">
+          <img class="compare-after" src="Public/Images/do-posle/Svetelne ciare posle.jpg" alt="PO — Svetelné čiary">
+          <img class="compare-before" src="Public/Images/do-posle/Svetelni ciare do.jpg" alt="DO — Svetelné čiary">
+          <span class="compare-badge compare-do">DO</span><span class="compare-badge compare-po">PO</span>
+          <span class="compare-line"></span><span class="compare-handle">‹›</span>
+          <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="DO PO porovnanie">
+        </div>
+        <h3>Svetelné línie</h3>
+      </article>
+
+      <article class="doafter-card doafter-visible" data-before="Public/Images/do-posle/Svetelni ciare1 do.jpg" data-after="Public/Images/do-posle/Svetelnne ciare1 posle.jpg">
+        <div class="compare-box">
+          <img class="compare-after" src="Public/Images/do-posle/Svetelnne ciare1 posle.jpg" alt="PO — Svetelné čiary">
+          <img class="compare-before" src="Public/Images/do-posle/Svetelni ciare1 do.jpg" alt="DO — Svetelné čiary">
+          <span class="compare-badge compare-do">DO</span><span class="compare-badge compare-po">PO</span>
+          <span class="compare-line"></span><span class="compare-handle">‹›</span>
+          <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="DO PO porovnanie">
+        </div>
+        <h3>Svetelné línie</h3>
+      </article>
+
+      <article class="doafter-card" data-before="Public/Images/do-posle/napínaný strop s dekoratívnym osvetlením DO .jpg" data-after="Public/Images/do-posle/napínaný strop s dekoratívnym osvetlením POSLE.jpg">
+        <div class="compare-box">
+          <img class="compare-after" src="Public/Images/do-posle/napínaný strop s dekoratívnym osvetlením POSLE.jpg" alt="PO — Dekoratívne osvetlenie">
+          <img class="compare-before" src="Public/Images/do-posle/napínaný strop s dekoratívnym osvetlením DO .jpg" alt="DO — Dekoratívne osvetlenie">
+          <span class="compare-badge compare-do">DO</span><span class="compare-badge compare-po">PO</span>
+          <span class="compare-line"></span><span class="compare-handle">‹›</span>
+          <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="DO PO porovnanie">
+        </div>
+        <h3>Dekoratívne osvetlenie</h3>
+      </article>
     </div>
 
-    <div class="ba-more-actions">
-      <button class="btn main" type="button" id="baMoreBtn">Показать ещё работы</button>
-      <button class="btn dark" type="button" id="baHideBtn" style="display:none">Скрыть обратно</button>
-    </div>
-
-    <div class="ba-more-grid" id="baMoreGrid">
-      <article class="ba-mini-card">
-        <img class="mini-before" src="Public/Images/do-posle/Plavajuci strop do.jpg" alt="До — Парящий потолок">
-        <img class="mini-after" src="Public/Images/do-posle/Plavajuci strop posle.jpg" alt="После — Парящий потолок">
-        <span class="ba-mini-pill">Нажми / наведи</span>
-        <div class="ba-mini-title"><h3>Парящий потолок</h3><p>Подсветка по периметру делает комнату визуально дороже</p></div>
-      </article>
-      <article class="ba-mini-card">
-        <img class="mini-before" src="Public/Images/do-posle/Plavajuci strop1 do.jpg" alt="До — Парящий потолок 2">
-        <img class="mini-after" src="Public/Images/do-posle/Plavajuci strop1 posle.jpg" alt="После — Парящий потолок 2">
-        <span class="ba-mini-pill">Нажми / наведи</span>
-        <div class="ba-mini-title"><h3>Парящий потолок 2</h3><p>Чистая геометрия и аккуратный монтаж</p></div>
-      </article>
-      <article class="ba-mini-card">
-        <img class="mini-before" src="Public/Images/do-posle/Svetelni ciare do.jpg" alt="До — Световые линии">
-        <img class="mini-after" src="Public/Images/do-posle/Svetelne ciare posle.jpg" alt="После — Световые линии">
-        <span class="ba-mini-pill">Нажми / наведи</span>
-        <div class="ba-mini-title"><h3>Световые линии</h3><p>Современный свет и premium-визуал</p></div>
-      </article>
-      <article class="ba-mini-card">
-        <img class="mini-before" src="Public/Images/do-posle/Svetelni ciare1 do.jpg" alt="До — Световые линии 2">
-        <img class="mini-after" src="Public/Images/do-posle/Svetelnne ciare1 posle.jpg" alt="После — Световые линии 2">
-        <span class="ba-mini-pill">Нажми / наведи</span>
-        <div class="ba-mini-title"><h3>Световые линии 2</h3><p>Комната выглядит светлее и современнее</p></div>
-      </article>
-      <article class="ba-mini-card">
-        <img class="mini-before" src="Public/Images/do-posle/napínaný strop s dekoratívnym osvetlením DO .jpg" alt="До — Декоративное освещение">
-        <img class="mini-after" src="Public/Images/do-posle/napínaný strop s dekoratívnym osvetlením POSLE.jpg" alt="После — Декоративное освещение">
-        <span class="ba-mini-pill">Нажми / наведи</span>
-        <div class="ba-mini-title"><h3>Декоративное освещение</h3><p>Красивое решение для современного интерьера</p></div>
-      </article>
+    <div class="doafter-actions">
+      <button class="btn main" type="button" id="doAfterMoreBtn">Zobraziť všetky premeny</button>
+      <button class="btn dark" type="button" id="doAfterHideBtn" style="display:none">Skryť späť</button>
     </div>
   </div>
 </section>
-
 <section class="section fade" id="gallery"><div class="wrap"><div class="gallery-top"><div><h2 class="title">Галерея <span class="gold">работ</span></h2><p class="sub">Фильтр работает по категориям. Сначала показываются 3 фото, дальше открываются ещё.</p><div class="count" id="galleryCount">Показано 0</div></div><div class="filter-box"><button class="filter-btn" onclick="toggleFilter()"><span id="filterLabel">Все работы</span><span>▾</span></button><div class="filter-menu" id="filterMenu"></div></div></div><div class="gallery" id="galleryGrid"></div><div class="gallery-actions"><button class="btn main" id="moreBtn" onclick="loadMoreGallery()">Показать ещё</button><button class="btn dark" onclick="resetGallery()">Скрыть обратно</button></div></div></section>
 <section class="section fade"><div class="wrap"><div class="head"><h2 class="title">Как мы <span class="gold">работаем</span></h2><p class="sub">Простая схема для клиента: без лишних звонков и непонятных этапов.</p></div><div class="grid3"><div class="card step"><h3>Заявка</h3><p>Клиент оставляет номер, тип потолка и комментарий.</p></div><div class="card step"><h3>Замер</h3><p>Уточняем детали, размеры, освещение и материалы.</p></div><div class="card step"><h3>Монтаж</h3><p>Аккуратная установка и финальная проверка результата.</p></div></div></div></section>
 <section class="section fade" id="request"><div class="wrap"><div class="head"><h2 class="title">Оставить <span class="gold">заявку</span></h2><p class="sub">Оставьте заявку — мы быстро свяжемся с вами и подскажем лучший вариант потолка под ваш интерьер.</p></div><div class="request-box"><div class="request-info"><h3 style="font-size:34px;margin-bottom:12px">Быстрый расчёт</h3><p class="sub">Оставьте данные, и мы свяжемся с вами для консультации.</p><ul><li>Имя и телефон клиента</li><li>Тип потолка / услуги</li><li>Комментарий и город</li><li>Быстрый ответ и консультация</li></ul><div class="btns"><a class="btn dark" target="_blank" href="https://wa.me/421952277013">Написать в WhatsApp</a></div></div><form class="form" id="leadForm"><div class="row"><input id="leadName" placeholder="Имя" required><input id="leadPhone" placeholder="Телефон" required></div><div class="row"><select id="leadType"><option>Световые линии</option><option>Парящий потолок</option><option>Глянцевый потолок</option><option>Фотопечать</option><option>Нужна консультация</option></select><input id="leadCity" placeholder="Город / район"></div><div class="row"><input id="leadArea" placeholder="Площадь, м²"><input id="leadDate" placeholder="Когда нужен монтаж?"></div><textarea id="leadMessage" placeholder="Комментарий: размеры, комната, пожелания"></textarea><button class="btn main" style="width:100%" type="submit">Отправить заявку</button><small>Мы свяжемся с вами после получения заявки.</small></form></div></div></section>
@@ -955,14 +1027,14 @@ const galleryPhotos=[
 {src:'Public/Images/fototlac/Fototlač2.jpg',cat:'print',title:'Фотопечать 2',tag:'FOTOTLAČ'}
 ];
 
-let currentCat='all',visibleCount=12,currentList=[],currentIndex=0,selectedStars=5;
+let currentCat='all',visibleCount=3,currentList=[],currentIndex=0,selectedStars=5;
 
  window.selectedStars=selectedStars;
 const $=id=>document.getElementById(id);function showToast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),3600)}function toggleMobile(force){$('mobileMenu').classList.toggle('active', typeof force==='boolean'?force:undefined)}
-function toggleFilter(){buildFilter();$('filterMenu').classList.toggle('active')}function closeFilter(){$('filterMenu').classList.remove('active')}function buildFilter(){$('filterMenu').innerHTML=categories.map(c=>`<button class="${c.id===currentCat?'active':''}" onclick="setCategory('${c.id}')">${catLabel(c.id)}</button>`).join('')}function setCategory(id){currentCat=id;visibleCount=12;$('filterLabel').textContent=catLabel(id);closeFilter();renderGallery()}function filtered(){return currentCat==='all'?galleryPhotos:galleryPhotos.filter(p=>p.cat===currentCat)}
+function toggleFilter(){buildFilter();$('filterMenu').classList.toggle('active')}function closeFilter(){$('filterMenu').classList.remove('active')}function buildFilter(){$('filterMenu').innerHTML=categories.map(c=>`<button class="${c.id===currentCat?'active':''}" onclick="setCategory('${c.id}')">${catLabel(c.id)}</button>`).join('')}function setCategory(id){currentCat=id;visibleCount=3;$('filterLabel').textContent=catLabel(id);closeFilter();renderGallery()}function filtered(){return currentCat==='all'?galleryPhotos:galleryPhotos.filter(p=>p.cat===currentCat)}
 function videoSources(){return `<source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4">`}
 function galleryMedia(p){return p.type==='video'?`<video muted playsinline preload="metadata">${videoSources()}</video><div class="play-badge">▶</div>`:`<img src="${p.src}" alt="${photoTitle(p)}" loading="lazy">`}
-function renderGallery(){buildFilter();currentList=filtered();const shown=currentList.slice(0,visibleCount);$('galleryCount').textContent=`${tr().shown} ${shown.length} ${tr().from} ${currentList.length}`;$('galleryGrid').innerHTML=shown.map((p,i)=>`<article class="g ${p.type==='video'?'video-card':''}" onclick="openPhoto(${i})">${galleryMedia(p)}<div class="g-info"><small>${p.tag}</small><h3>${photoTitle(p)}</h3></div></article>`).join('');$('moreBtn').style.display=visibleCount>=currentList.length?'none':'inline-flex'}function loadMoreGallery(){visibleCount+=6;renderGallery()}function resetGallery(){visibleCount=12;renderGallery();$('gallery').scrollIntoView({behavior:'smooth'})}
+function renderGallery(){buildFilter();currentList=filtered();window.currentList=currentList;window.visibleCount=visibleCount;const shown=currentList.slice(0,visibleCount);$('galleryCount').textContent=`${tr().shown} ${shown.length} ${tr().from} ${currentList.length}`;$('galleryGrid').innerHTML=shown.map((p,i)=>`<article class="g ${p.type==='video'?'video-card':''}" onclick="openPhoto(${i})">${galleryMedia(p)}<div class="g-info"><small>${p.tag}</small><h3>${photoTitle(p)}</h3></div></article>`).join('');$('moreBtn').style.display=visibleCount>=currentList.length?'none':'inline-flex';const hideBtn=document.querySelector('#gallery .gallery-actions .dark'); if(hideBtn) hideBtn.style.display=visibleCount<=3?'none':'inline-flex'}function loadMoreGallery(){visibleCount+=6;renderGallery()}function resetGallery(){visibleCount=3;renderGallery();$('gallery').scrollIntoView({behavior:'smooth',block:'start'})}
 function setModalMedia(p){const img=$('modalImg'),video=$('modalVideo');if(video){video.pause();video.innerHTML='';video.removeAttribute('src');video.load()}if(p.type==='video'){img.style.display='none';if(video){video.style.display='block';video.innerHTML=videoSources();video.load();video.play().catch(()=>{});}}else{if(video)video.style.display='none';img.style.display='block';img.src=p.src;}}
 function openPhoto(i){currentIndex=i;setModalMedia(currentList[i]);$('photoModal').classList.add('active')}function closePhoto(){$('photoModal').classList.remove('active');const video=$('modalVideo');if(video)video.pause()}function prevPhoto(){currentIndex=(currentIndex-1+currentList.length)%currentList.length;setModalMedia(currentList[currentIndex])}function nextPhoto(){currentIndex=(currentIndex+1)%currentList.length;setModalMedia(currentList[currentIndex])}
 function openReviewModal(){$('reviewModal').classList.add('active');$('reviewModal').setAttribute('aria-hidden','false')}
@@ -1436,7 +1508,7 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
 
     const count=document.getElementById('galleryCount');
     if(count && window.currentList){
-      const shown=Math.min((window.visibleCount||12), window.currentList.length);
+      const shown=Math.min((window.visibleCount||3), window.currentList.length);
       count.textContent=`${t.shown} ${shown} ${t.from} ${window.currentList.length}`;
     }
 
@@ -1458,6 +1530,43 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
     });
   });
   setTimeout(applyFullTranslations,300);
+})();
+</script>
+
+
+<script>
+(function(){
+  function initDoAfterPro(){
+    document.querySelectorAll('.compare-box').forEach(function(box){
+      const before=box.querySelector('.compare-before');
+      const line=box.querySelector('.compare-line');
+      const handle=box.querySelector('.compare-handle');
+      const range=box.querySelector('.compare-range');
+      function set(v){
+        v=Math.max(0,Math.min(100,Number(v)||50));
+        if(before) before.style.clipPath='inset(0 '+(100-v)+'% 0 0)';
+        if(line) line.style.left=v+'%';
+        if(handle) handle.style.left=v+'%';
+        if(range) range.value=v;
+      }
+      function move(clientX){const r=box.getBoundingClientRect();set(((clientX-r.left)/r.width)*100)}
+      set(50);
+      if(range) range.addEventListener('input',function(e){set(e.target.value)});
+      let drag=false;
+      box.addEventListener('pointerdown',function(e){drag=true;box.setPointerCapture(e.pointerId);move(e.clientX)});
+      box.addEventListener('pointermove',function(e){if(drag)move(e.clientX)});
+      box.addEventListener('pointerup',function(){drag=false});
+      box.addEventListener('pointercancel',function(){drag=false});
+    });
+    const more=document.getElementById('doAfterMoreBtn');
+    const hide=document.getElementById('doAfterHideBtn');
+    const cards=[].slice.call(document.querySelectorAll('.doafter-card'));
+    if(more&&hide&&cards.length){
+      more.addEventListener('click',function(){cards.forEach(c=>c.classList.add('doafter-visible'));more.style.display='none';hide.style.display='inline-flex';});
+      hide.addEventListener('click',function(){cards.forEach((c,i)=>c.classList.toggle('doafter-visible',i<5));hide.style.display='none';more.style.display='inline-flex';document.getElementById('before-after')?.scrollIntoView({behavior:'smooth',block:'start'});});
+    }
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initDoAfterPro);else initDoAfterPro();
 })();
 </script>
 
