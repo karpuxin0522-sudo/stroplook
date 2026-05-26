@@ -308,194 +308,61 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 @media(max-width:980px){.stba-section{padding:82px 0 62px}.stba-head{display:block}.stba-head .sub{margin-top:14px}.stba-tabs{justify-content:flex-start;margin-top:20px}.stba-layout{grid-template-columns:1fr}.stba-card{min-height:540px}.stba-side{grid-template-columns:repeat(2,1fr);max-height:none;padding-right:0}}
 @media(max-width:560px){.stba-section{padding:66px 0 50px}.stba-tab{padding:11px 13px;font-size:13px}.stba-card{min-height:450px;border-radius:28px}.stba-handle{width:62px;height:62px;font-size:22px}.stba-label{top:15px;font-size:11px}.stba-label.before{left:14px}.stba-label.after{right:14px}.stba-range{left:18px;right:18px;bottom:84px;width:calc(100% - 36px)}.stba-info{left:18px;right:18px;bottom:18px;display:block}.stba-info h3{font-size:27px}.stba-info p{font-size:14px}.stba-info .btn{margin-top:12px;width:100%}.stba-side{grid-template-columns:1fr}.stba-small{min-height:116px;border-radius:22px}}
 
-
-/* ===== HOVER/TAP ДО-ПОСЛЕ BLOCK ===== */
-.transform-ba{
-  padding:100px 0 80px;
-  position:relative;
-  display:block!important;
-  visibility:visible!important;
-  opacity:1!important;
-  transform:none!important;
-}
-.transform-ba:before{
-  content:"";
-  position:absolute;
-  right:-180px;
-  top:30px;
-  width:520px;
-  height:520px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(216,183,122,.20),transparent 66%);
-  pointer-events:none;
-}
-.transform-ba-head{
-  text-align:center;
-  margin-bottom:44px;
-}
-.transform-ba-head h2{
-  font-family:Playfair Display,serif;
-  font-size:clamp(42px,6vw,78px);
-  line-height:.95;
-  letter-spacing:-2px;
-}
-.transform-ba-head p{
-  max-width:760px;
-  margin:16px auto 0;
-  color:var(--muted);
-  font-size:18px;
-  line-height:1.7;
-}
-.transform-ba-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:24px;
-}
-.transform-card{
-  position:relative;
-  height:520px;
-  border-radius:36px;
-  overflow:hidden;
-  background:#080705;
-  border:1px solid rgba(240,214,164,.28);
-  box-shadow:0 34px 100px rgba(0,0,0,.50);
-  cursor:pointer;
-  isolation:isolate;
-}
-.transform-card img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:opacity .72s ease, transform .72s ease, filter .72s ease;
-}
-.transform-card .ba-before{
-  z-index:1;
-  opacity:1;
-  transform:scale(1);
-}
-.transform-card .ba-after{
-  z-index:2;
-  opacity:0;
-  transform:scale(1.05);
-}
-.transform-card:hover .ba-after,
-.transform-card.active .ba-after{
-  opacity:1;
-  transform:scale(1);
-}
-.transform-card:hover .ba-before,
-.transform-card.active .ba-before{
-  opacity:0;
-  transform:scale(1.04);
-}
-.transform-card:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:3;
-  background:linear-gradient(to top,rgba(0,0,0,.74),transparent 52%);
-  pointer-events:none;
-}
-.transform-label{
-  position:absolute;
-  top:20px;
-  z-index:5;
-  padding:10px 16px;
-  border-radius:999px;
-  background:rgba(8,7,5,.72);
-  border:1px solid rgba(240,214,164,.34);
-  color:var(--champagne2);
-  font-size:12px;
-  font-weight:1000;
-  letter-spacing:1.3px;
-  text-transform:uppercase;
-  backdrop-filter:blur(12px);
-  transition:.45s;
-}
-.transform-label.before{left:20px}
-.transform-label.after{right:20px;opacity:0}
-.transform-card:hover .transform-label.after,
-.transform-card.active .transform-label.after{opacity:1}
-.transform-card:hover .transform-label.before,
-.transform-card.active .transform-label.before{opacity:0}
-.transform-icon{
-  position:absolute;
-  left:50%;
-  top:50%;
-  z-index:5;
-  width:82px;
-  height:82px;
-  border-radius:50%;
-  transform:translate(-50%,-50%);
-  background:linear-gradient(135deg,var(--champagne2),var(--champagne));
-  color:#120f0b;
-  display:grid;
-  place-items:center;
-  font-size:30px;
-  font-weight:1000;
-  box-shadow:0 18px 55px rgba(0,0,0,.45),0 0 0 8px rgba(255,255,255,.12);
-  transition:.45s;
-}
-.transform-card:hover .transform-icon,
-.transform-card.active .transform-icon{
-  transform:translate(-50%,-50%) scale(.92);
-  opacity:.82;
-}
-.transform-info{
-  position:absolute;
-  left:24px;
-  right:24px;
-  bottom:24px;
-  z-index:5;
-}
-.transform-info h3{
-  font-family:Playfair Display,serif;
-  font-size:32px;
-  line-height:1.05;
-  margin-bottom:7px;
-}
-.transform-info p{
-  color:#eadfce;
-  font-weight:800;
-  line-height:1.45;
-}
-.transform-hint{
-  display:inline-flex;
-  margin-top:12px;
-  padding:9px 13px;
-  border-radius:999px;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.14);
-  color:#fff8ee;
-  font-size:13px;
-  font-weight:900;
-}
-@media(max-width:980px){
-  .transform-ba-grid{grid-template-columns:1fr}
-  .transform-card{height:500px;border-radius:30px}
-}
-@media(max-width:560px){
-  .transform-ba{padding:70px 0 52px}
-  .transform-ba-head{text-align:left;margin-bottom:28px}
-  .transform-ba-head p{margin-left:0}
-  .transform-card{height:430px;border-radius:26px}
-  .transform-icon{width:66px;height:66px;font-size:24px}
-  .transform-info{left:18px;right:18px;bottom:18px}
-  .transform-info h3{font-size:26px}
-  .transform-info p{font-size:14px}
-}
-
 </style>
 </head>
 <body>
 <nav class="nav"><div class="wrap navin"><a class="logo" href="#top"><small>BRATISLAVA</small><b>STROP <span class="gold">LOOK</span></b></a><div class="navlinks"><a href="#services">Услуги</a><a href="#gallery">Работы</a><a href="#request">Заявка</a><a href="#reviews">Отзывы</a><a href="#faq">FAQ</a></div><div class="navright"><div class="lang-box"><button class="lang-btn" onclick="toggleLang(event)">🌐 <span id="langLabel">RU</span> ▾</button><div class="lang-menu" id="langMenu"><button onclick="setLang('sk')">SK · Slovensky</button><button onclick="setLang('ua')">UA · Українська</button><button onclick="setLang('ru')">RU · Русский</button><button onclick="setLang('en')">EN · English</button></div></div><a class="ico" target="_blank" href="https://wa.me/421952277013">☏</a><a class="ico" target="_blank" href="https://www.facebook.com/people/Napínacie-stropy-SK/61572213579804/">f</a><a class="phone" href="tel:+421952277013">+421 952 277 013</a><button class="mobile-menu-btn" onclick="toggleMobile()">☰</button></div></div></nav>
 <div class="mobile-menu" id="mobileMenu"><a href="#services" onclick="toggleMobile(false)">Услуги</a><a href="#gallery" onclick="toggleMobile(false)">Работы</a><a href="#request" onclick="toggleMobile(false)">Оставить заявку</a><a href="#reviews" onclick="toggleMobile(false)">Отзывы</a></div>
-<header class="hero" id="top"><div class="hero-bg"><img src="svitlo-posle.jpg" alt="Натяжные потолки STROP LOOK" loading="eager"></div><div class="wrap"><div class="badge">Premium napínané stropy · Bratislava</div><h1>Натяжные <span class="gold">потолки</span><br>без дешёвого вида</h1><p>Световые линии, парящие потолки, глянцевые решения и фотопечать. Аккуратный монтаж, premium-визуал и быстрая заявка прямо через сайт.</p><div class="btns"><a class="btn main" href="#request">Оставить заявку →</a><a class="btn dark" href="#gallery">Смотреть работы</a></div><div class="hero-cards"><div class="mini"><b>€</b><span>расчёт по проекту</span></div><div class="mini"><b>Clean</b><span>чистый монтаж</span></div><div class="mini"><b>SK</b><span>Bratislava и окрестности</span></div></div></div></header>
+<header class="hero" id="top"><div class="hero-bg"><img src="Svitlolinii posle.jpg" alt="Натяжные потолки STROP LOOK" loading="eager"></div><div class="wrap"><div class="badge">Premium napínané stropy · Bratislava</div><h1>Натяжные <span class="gold">потолки</span><br>без дешёвого вида</h1><p>Световые линии, парящие потолки, глянцевые решения и фотопечать. Аккуратный монтаж, premium-визуал и быстрая заявка прямо через сайт.</p><div class="btns"><a class="btn main" href="#request">Оставить заявку →</a><a class="btn dark" href="#gallery">Смотреть работы</a></div><div class="hero-cards"><div class="mini"><b>€</b><span>расчёт по проекту</span></div><div class="mini"><b>Clean</b><span>чистый монтаж</span></div><div class="mini"><b>SK</b><span>Bratislava и окрестности</span></div></div></div></header>
 
 <section class="section fade" id="value"><div class="wrap"><div class="head"><h2 class="title">Стоимость <span class="gold">без сюрпризов</span></h2><p class="sub">Мы не ставим случайную цену “за метр”, потому что итог зависит от комнаты, света, углов, полотна и сложности монтажа. Поэтому сначала уточняем детали и даём понятный расчёт.</p></div><div class="grid3"><div class="card"><span class="num">01</span><h3>Площадь и форма</h3><p>Размер комнаты, количество углов, трубы, ниши и сложность доступа влияют на финальную стоимость.</p></div><div class="card"><span class="num">02</span><h3>Свет и профиль</h3><p>Световые линии, парящий эффект, треки и LED-подсветка считаются индивидуально под интерьер.</p></div><div class="card"><span class="num">03</span><h3>Материал и эффект</h3><p>Матовый, глянцевый, фотопечать или комбинированное решение — подбираем под стиль квартиры.</p></div></div><div class="price-note"><b>Лучший вариант для клиента:</b> отправьте площадь, город и фото комнаты — мы быстро подскажем ориентир и предложим красивое решение без лишнего давления.</div></div></section>
+
+
+
+
+
+<section class="before-after-new" id="before-after">
+<div class="wrap">
+<h2 class="ba-title">До / После</h2>
+
+<div class="ba-grid">
+
+<div class="ba-card">
+<img src="svitlo-posle.jpg" class="after">
+<img src="svitlo-do.jpg" class="before">
+<div class="line"></div>
+<div class="handle">↔</div>
+<input type="range" min="0" max="100" value="50" class="slider">
+</div>
+
+<div class="ba-card">
+<img src="fajna1-posle.jpg" class="after">
+<img src="fajna1-do.jpg" class="before">
+<div class="line"></div>
+<div class="handle">↔</div>
+<input type="range" min="0" max="100" value="50" class="slider">
+</div>
+
+<div class="ba-card">
+<img src="fajna2-posle.jpg" class="after">
+<img src="fajna2-do.jpg" class="before">
+<div class="line"></div>
+<div class="handle">↔</div>
+<input type="range" min="0" max="100" value="50" class="slider">
+</div>
+
+<div class="ba-card">
+<img src="krisha-posle.jpg" class="after">
+<img src="krisha-do.jpg" class="before">
+<div class="line"></div>
+<div class="handle">↔</div>
+<input type="range" min="0" max="100" value="50" class="slider">
+</div>
+
+</div>
+</div>
+</section>
+
 <style>
 .before-after-new{padding:100px 0}
 .ba-title{text-align:center;font-size:70px;margin-bottom:40px;color:#fff}
@@ -528,70 +395,6 @@ slider.addEventListener('input',e=>update(e.target.value));
 });
 </script>
 
-
-<section class="transform-ba" id="before-after">
-  <div class="wrap">
-    <div class="transform-ba-head">
-      <h2>До / <span class="gold">После</span></h2>
-      <p>Наведи мышкой или нажми на карточку, чтобы увидеть результат после монтажа.</p>
-    </div>
-
-    <div class="transform-ba-grid">
-      <article class="transform-card">
-        <img src="svitlo-do.jpg" class="ba-before" alt="До — световые линии">
-        <img src="svitlo-posle.jpg" class="ba-after" alt="После — световые линии">
-        <span class="transform-label before">До</span>
-        <span class="transform-label after">После</span>
-        <div class="transform-icon">↔</div>
-        <div class="transform-info">
-          <h3>Световые линии</h3>
-          <p>Современный свет и чистая геометрия</p>
-          <span class="transform-hint">Нажми / наведи</span>
-        </div>
-      </article>
-
-      <article class="transform-card">
-        <img src="fajna1-do.jpg" class="ba-before" alt="До — premium потолок">
-        <img src="fajna1-posle.jpg" class="ba-after" alt="После — premium потолок">
-        <span class="transform-label before">До</span>
-        <span class="transform-label after">После</span>
-        <div class="transform-icon">↔</div>
-        <div class="transform-info">
-          <h3>Premium потолок</h3>
-          <p>Аккуратный результат после монтажа</p>
-          <span class="transform-hint">Нажми / наведи</span>
-        </div>
-      </article>
-
-      <article class="transform-card">
-        <img src="fajna2-do.jpg" class="ba-before" alt="До — ровный потолок">
-        <img src="fajna2-posle.jpg" class="ba-after" alt="После — ровный потолок">
-        <span class="transform-label before">До</span>
-        <span class="transform-label after">После</span>
-        <div class="transform-icon">↔</div>
-        <div class="transform-info">
-          <h3>Ровный потолок</h3>
-          <p>До ремонта и финальный вид</p>
-          <span class="transform-hint">Нажми / наведи</span>
-        </div>
-      </article>
-
-      <article class="transform-card">
-        <img src="krisha-do.jpg" class="ba-before" alt="До — сложный объект">
-        <img src="krisha-posle.jpg" class="ba-after" alt="После — сложный объект">
-        <span class="transform-label before">До</span>
-        <span class="transform-label after">После</span>
-        <div class="transform-icon">↔</div>
-        <div class="transform-info">
-          <h3>Сложный объект</h3>
-          <p>Красивое решение даже для сложной формы</p>
-          <span class="transform-hint">Нажми / наведи</span>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
 <section class="section fade" id="gallery"><div class="wrap"><div class="gallery-top"><div><h2 class="title">Галерея <span class="gold">работ</span></h2><p class="sub">Фильтр работает по категориям. Сначала показываются 3 фото, дальше открываются ещё.</p><div class="count" id="galleryCount">Показано 0</div></div><div class="filter-box"><button class="filter-btn" onclick="toggleFilter()"><span id="filterLabel">Все работы</span><span>▾</span></button><div class="filter-menu" id="filterMenu"></div></div></div><div class="gallery" id="galleryGrid"></div><div class="gallery-actions"><button class="btn main" id="moreBtn" onclick="loadMoreGallery()">Показать ещё</button><button class="btn dark" onclick="resetGallery()">Скрыть обратно</button></div></div></section>
 <section class="section fade"><div class="wrap"><div class="head"><h2 class="title">Как мы <span class="gold">работаем</span></h2><p class="sub">Простая схема для клиента: без лишних звонков и непонятных этапов.</p></div><div class="grid3"><div class="card step"><h3>Заявка</h3><p>Клиент оставляет номер, тип потолка и комментарий.</p></div><div class="card step"><h3>Замер</h3><p>Уточняем детали, размеры, освещение и материалы.</p></div><div class="card step"><h3>Монтаж</h3><p>Аккуратная установка и финальная проверка результата.</p></div></div></div></section>
 <section class="section fade" id="request"><div class="wrap"><div class="head"><h2 class="title">Оставить <span class="gold">заявку</span></h2><p class="sub">Оставьте заявку — мы быстро свяжемся с вами и подскажем лучший вариант потолка под ваш интерьер.</p></div><div class="request-box"><div class="request-info"><h3 style="font-size:34px;margin-bottom:12px">Быстрый расчёт</h3><p class="sub">Оставьте данные, и мы свяжемся с вами для консультации.</p><ul><li>Имя и телефон клиента</li><li>Тип потолка / услуги</li><li>Комментарий и город</li><li>Быстрый ответ и консультация</li></ul><div class="btns"><a class="btn dark" target="_blank" href="https://wa.me/421952277013">Написать в WhatsApp</a></div></div><form class="form" id="leadForm"><div class="row"><input id="leadName" placeholder="Имя" required><input id="leadPhone" placeholder="Телефон" required></div><div class="row"><select id="leadType"><option>Световые линии</option><option>Парящий потолок</option><option>Глянцевый потолок</option><option>Фотопечать</option><option>Нужна консультация</option></select><input id="leadCity" placeholder="Город / район"></div><div class="row"><input id="leadArea" placeholder="Площадь, м²"><input id="leadDate" placeholder="Когда нужен монтаж?"></div><textarea id="leadMessage" placeholder="Комментарий: размеры, комната, пожелания"></textarea><button class="btn main" style="width:100%" type="submit">Отправить заявку</button><small>Мы свяжемся с вами после получения заявки.</small></form></div></div></section>
@@ -622,14 +425,14 @@ function applyLang(){const t=tr();document.documentElement.lang=currentLang;docu
 const galleryPhotos=[
 {src:'PhotoTlac1.png',cat:'print',title:'Фотопечать 1',tag:'PRINT'},{src:'PhotoTlac2.png',cat:'print',title:'Фотопечать 2',tag:'PRINT'},
 {src:'photo_5226781981998260339_y.jpg',cat:'gloss',title:'Глянцевый потолок 1',tag:'GLOSS'},
-{src:'public/video/result.mp4',cat:'video',type:'video',title:'Video 1',tag:'VIDEO'},
+{src:'Public/Images/Video/result.mp4',cat:'video',type:'video',title:'Video 1',tag:'VIDEO'},
 {src:'photo_5226781981998260340_y.jpg',cat:'gloss',title:'Глянцевый потолок 2',tag:'GLOSS'},{src:'photo_5226781981998260341_y.jpg',cat:'gloss',title:'Глянцевый потолок 3',tag:'GLOSS'},{src:'photo_5226781981998260342_y.jpg',cat:'gloss',title:'Глянцевый потолок 4',tag:'GLOSS'},{src:'photo_5226781981998260343_y.jpg',cat:'gloss',title:'Глянцевый потолок 5',tag:'GLOSS'},{src:'photo_5226781981998260344_y.jpg',cat:'gloss',title:'Глянцевый потолок 6',tag:'GLOSS'},{src:'photo_5226781981998260345_y.jpg',cat:'gloss',title:'Глянцевый потолок 7',tag:'GLOSS'},
 {src:'Плаваючі.png',cat:'float',title:'Парящий потолок 1',tag:'FLOAT'},{src:'Плаваючі2.png',cat:'float',title:'Парящий потолок 2',tag:'FLOAT'},{src:'Плаваючі3.png',cat:'float',title:'Парящий потолок 3',tag:'FLOAT'},{src:'Плаваючі4.png',cat:'float',title:'Парящий потолок 4',tag:'FLOAT'},
-{src:'svitlo-posle.jpg',cat:'led',title:'Световые линии 1',tag:'LED'},{src:'svitlo-posle.jpg',cat:'led',title:'Световые линии 2',tag:'LED'},{src:'svitlo-posle.jpg',cat:'led',title:'Световые линии 3',tag:'LED'},{src:'svitlo-posle.jpg',cat:'led',title:'Световые линии 4',tag:'LED'},{src:'svitlo-posle.jpg',cat:'led',title:'Световые линии 5',tag:'LED'}];
+{src:'Svitlolinii posle.jpg',cat:'led',title:'Световые линии 1',tag:'LED'},{src:'Svitlolinii posle.jpg',cat:'led',title:'Световые линии 2',tag:'LED'},{src:'Svitlolinii posle.jpg',cat:'led',title:'Световые линии 3',tag:'LED'},{src:'Svitlolinii posle.jpg',cat:'led',title:'Световые линии 4',tag:'LED'},{src:'Svitlolinii posle.jpg',cat:'led',title:'Световые линии 5',tag:'LED'}];
 let currentCat='all',visibleCount=3,currentList=[],currentIndex=0,selectedStars=5; window.selectedStars=selectedStars;
 const $=id=>document.getElementById(id);function showToast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),3600)}function toggleMobile(force){$('mobileMenu').classList.toggle('active', typeof force==='boolean'?force:undefined)}
 function toggleFilter(){buildFilter();$('filterMenu').classList.toggle('active')}function closeFilter(){$('filterMenu').classList.remove('active')}function buildFilter(){$('filterMenu').innerHTML=categories.map(c=>`<button class="${c.id===currentCat?'active':''}" onclick="setCategory('${c.id}')">${catLabel(c.id)}</button>`).join('')}function setCategory(id){currentCat=id;visibleCount=3;$('filterLabel').textContent=catLabel(id);closeFilter();renderGallery()}function filtered(){return currentCat==='all'?galleryPhotos:galleryPhotos.filter(p=>p.cat===currentCat)}
-function videoSources(){return `<source src="public/video/result.mp4" type="video/mp4"><source src="public/video/result.mp4" type="video/mp4"><source src="public/video/result.mp4" type="video/mp4"><source src="/public/video/result.mp4" type="video/mp4">`}
+function videoSources(){return `<source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4">`}
 function galleryMedia(p){return p.type==='video'?`<video muted playsinline preload="metadata">${videoSources()}</video><div class="play-badge">▶</div>`:`<img src="${p.src}" alt="${photoTitle(p)}" loading="lazy">`}
 function renderGallery(){buildFilter();currentList=filtered();const shown=currentList.slice(0,visibleCount);$('galleryCount').textContent=`${tr().shown} ${shown.length} ${tr().from} ${currentList.length}`;$('galleryGrid').innerHTML=shown.map((p,i)=>`<article class="g ${p.type==='video'?'video-card':''}" onclick="openPhoto(${i})">${galleryMedia(p)}<div class="g-info"><small>${p.tag}</small><h3>${photoTitle(p)}</h3></div></article>`).join('');$('moreBtn').style.display=visibleCount>=currentList.length?'none':'inline-flex'}function loadMoreGallery(){visibleCount+=3;renderGallery()}function resetGallery(){visibleCount=3;renderGallery();$('gallery').scrollIntoView({behavior:'smooth'})}
 function setModalMedia(p){const img=$('modalImg'),video=$('modalVideo');if(video){video.pause();video.innerHTML='';video.removeAttribute('src');video.load()}if(p.type==='video'){img.style.display='none';if(video){video.style.display='block';video.innerHTML=videoSources();video.load();video.play().catch(()=>{});}}else{if(video)video.style.display='none';img.style.display='block';img.src=p.src;}}
@@ -809,32 +612,32 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
       {
         title:'Световые линии',
         text:'Современный свет и чистая геометрия',
-        before:['svitlo-do.jpg','Svitlolinii do.jpg','svitlo-do.jpg'],
-        after:['svitlo-posle.jpg','svitlo-posle.jpg','svitlo-posle.jpg']
+        before:['Світлолінії до.jpg','Svitlolinii do.jpg','Світлолінії до.jpg'],
+        after:['Svitlolinii posle.jpg','Світлолінії після.jpg','Svitlolinii posle.jpg']
       },
       {
         title:'Premium потолок',
         text:'Аккуратный результат после монтажа',
-        before:['fajna1-do.jpg'],
-        after:['fajna1-posle.jpg']
+        before:['1 Fajna do.jpg'],
+        after:['1 FAJNA POSLE.jpg']
       },
       {
         title:'Ровный потолок',
         text:'До ремонта и финальный вид',
-        before:['fajna2-do.jpg'],
-        after:['fajna2-posle.jpg']
+        before:['2 FAJNA DO.jpg'],
+        after:['2 FAJNA POSLE.jpg']
       },
       {
         title:'Сложный объект',
         text:'Красивое решение даже для сложной формы',
-        before:['krisha-do.jpg'],
-        after:['krisha-posle.jpg']
+        before:['kRISHA DO.jpg'],
+        after:['kRISHA POSLE.jpg']
       },
       {
         title:'Световой эффект',
         text:'Комната выглядит дороже и современнее',
-        before:['svetlo-do.jpg'],
-        after:['svetlo-posle.jpg']
+        before:['Svetlo do.jpg'],
+        after:['Svetlo posle.jpg']
       }
     ];
 
@@ -927,24 +730,6 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
 
     setWork(0);
   });
-})();
-</script>
-
-
-<script>
-(function(){
-  function initTransformCards(){
-    document.querySelectorAll('.transform-card').forEach(function(card){
-      card.addEventListener('click', function(){
-        card.classList.toggle('active');
-      });
-    });
-  }
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', initTransformCards);
-  } else {
-    initTransformCards();
-  }
 })();
 </script>
 
