@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<link rel="icon" type="image/png" href="stroplook/Public/Images/favicon.png">
+<link rel="icon" type="image/png" href="Public/Images/favicon.png">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Napínané stropy Bratislava | STROP LOOK</title>
@@ -328,32 +328,32 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 <div class="ba-grid">
 
 <div class="ba-card">
-<img src="stroplook/Public/Images/svitlo-posle.jpg" class="after">
-<img src="stroplook/Public/Images/svitlo-do.jpg" class="before">
+<img src="Public/Images/svitlo-posle.jpg" class="after">
+<img src="Public/Images/svitlo-do.jpg" class="before">
 <div class="line"></div>
 <div class="handle">↔</div>
 <input type="range" min="0" max="100" value="50" class="slider">
 </div>
 
 <div class="ba-card">
-<img src="stroplook/Public/Images/fajna1-posle.jpg" class="after">
-<img src="stroplook/Public/Images/fajna1-do.jpg" class="before">
+<img src="Public/Images/fajna1-posle.jpg" class="after">
+<img src="Public/Images/fajna1-do.jpg" class="before">
 <div class="line"></div>
 <div class="handle">↔</div>
 <input type="range" min="0" max="100" value="50" class="slider">
 </div>
 
 <div class="ba-card">
-<img src="stroplook/Public/Images/fajna2-posle.jpg" class="after">
-<img src="stroplook/Public/Images/fajna2-do.jpg" class="before">
+<img src="Public/Images/fajna2-posle.jpg" class="after">
+<img src="Public/Images/fajna2-do.jpg" class="before">
 <div class="line"></div>
 <div class="handle">↔</div>
 <input type="range" min="0" max="100" value="50" class="slider">
 </div>
 
 <div class="ba-card">
-<img src="stroplook/Public/Images/krisha-posle.jpg" class="after">
-<img src="stroplook/Public/Images/krisha-do.jpg" class="before">
+<img src="Public/Images/krisha-posle.jpg" class="after">
+<img src="Public/Images/krisha-do.jpg" class="before">
 <div class="line"></div>
 <div class="handle">↔</div>
 <input type="range" min="0" max="100" value="50" class="slider">
@@ -423,16 +423,16 @@ function tr(){return LANGS[currentLang]||LANGS.ru}function catLabel(id){return t
 function applyLang(){const t=tr();document.documentElement.lang=currentLang;document.title=currentLang==='sk'?'STROP LOOK | Premium napínané stropy Bratislava':currentLang==='en'?'STROP LOOK | Premium stretch ceilings Bratislava':currentLang==='ua'?'STROP LOOK | Premium натяжні стелі Bratislava':'STROP LOOK | Premium натяжные потолки Bratislava';$('langLabel').textContent=t.code;document.querySelectorAll('#langMenu button').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes(`'${currentLang}'`)));document.querySelectorAll('.navlinks a').forEach((a,i)=>a.textContent=t.nav[i]);document.querySelectorAll('#mobileMenu a').forEach((a,i)=>a.textContent=t.mobile[i]);document.querySelector('.badge').textContent=t.badge;document.querySelector('h1').innerHTML=t.heroTitle;document.querySelector('.hero p').textContent=t.heroText;document.querySelector('.hero .btns a:nth-child(1)').textContent=t.cta;document.querySelector('.hero .btns a:nth-child(2)').textContent=t.works;document.querySelectorAll('.mini span').forEach((el,i)=>el.textContent=t.mini[i]);document.querySelector('#services .title').innerHTML=t.servicesTitle;document.querySelector('#services .sub').textContent=t.servicesSub;document.querySelectorAll('#services .card h3').forEach((el,i)=>el.textContent=t.servH[i]);document.querySelectorAll('#services .card p').forEach((el,i)=>el.textContent=t.servP[i]);document.querySelector('#gallery .title').innerHTML=t.galleryTitle;document.querySelector('#gallery .sub').textContent=t.gallerySub;$('moreBtn').textContent=t.showMore;document.querySelector('#gallery .gallery-actions .dark').textContent=t.hideBack;$('filterLabel').textContent=catLabel(currentCat);document.querySelector('#request .title').innerHTML=t.requestTitle;document.querySelector('#request .head .sub').textContent=t.requestSub;document.querySelector('.request-info h3').textContent=t.calc;document.querySelector('.request-info .sub').textContent=t.calcP;document.querySelectorAll('.request-info li').forEach((el,i)=>el.textContent=t.list[i]);document.querySelector('.request-info .btn').textContent=t.wa;leadName.placeholder=t.ph[0];leadPhone.placeholder=t.ph[1];leadCity.placeholder=t.ph[2];leadMessage.placeholder=t.ph[3];Array.from(leadType.options).forEach((o,i)=>o.textContent=t.types[i]);document.querySelector('#leadForm button[type="submit"]').textContent=t.sendRequest;document.querySelector('#leadForm small').innerHTML=t.reqSmall;document.querySelector('#reviews .title').innerHTML=t.reviewsTitle;document.querySelector('#reviews .sub').textContent=t.reviewsSub;const reviewCta={ru:['Ваш отзыв важен','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.','Оставить отзыв'],sk:['Váš názor je dôležitý','Napíšte, ako prebehla montáž. Po kontrole sa recenzia zobrazí na stránke.','Pridať recenziu'],ua:['Ваш відгук важливий','Розкажіть, як пройшов монтаж. Після перевірки відгук з’явиться на сайті.','Залишити відгук'],en:['Your review matters','Tell us how the installation went. After checking, the review will appear on the website.','Leave a review']}[currentLang]||['Ваш отзыв важен','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.','Оставить отзыв'];if($('reviewCtaTitle'))$('reviewCtaTitle').textContent=reviewCta[0];if($('reviewCtaText'))$('reviewCtaText').textContent=reviewCta[1];if($('openReviewBtn'))$('openReviewBtn').textContent=reviewCta[2];document.querySelector('#reviewForm h3').textContent=t.leaveReview;reviewName.placeholder=t.reviewPh[0];reviewWork.placeholder=t.reviewPh[1];reviewText.placeholder=t.reviewPh[2];document.querySelector('#reviewForm button[type="submit"]').textContent=t.sendReview;document.querySelector('#reviewForm small').innerHTML=t.revSmall;document.querySelector('#faq .title').innerHTML=t.faqTitle;document.querySelector('#faq .sub').textContent=t.faqSub;document.querySelectorAll('#faq summary').forEach((el,i)=>el.textContent=t.faqQ[i]);document.querySelectorAll('#faq details p').forEach((el,i)=>el.textContent=t.faqA[i]);applyExtraLang();renderGallery();if(typeof renderApprovedReviews==='function')renderApprovedReviews();}
 
 const galleryPhotos=[
-{src:'stroplook/Public/Images/PhotoTlac1.png',cat:'print',title:'Фотопечать 1',tag:'PRINT'},{src:'stroplook/Public/Images/PhotoTlac2.png',cat:'print',title:'Фотопечать 2',tag:'PRINT'},
-{src:'stroplook/Public/Images/photo_5226781981998260339_y.jpg',cat:'gloss',title:'Глянцевый потолок 1',tag:'GLOSS'},
-{src:'stroplook/Public/Images/Video/result.mp4',cat:'video',type:'video',title:'Video 1',tag:'VIDEO'},
-{src:'stroplook/Public/Images/photo_5226781981998260340_y.jpg',cat:'gloss',title:'Глянцевый потолок 2',tag:'GLOSS'},{src:'stroplook/Public/Images/photo_5226781981998260341_y.jpg',cat:'gloss',title:'Глянцевый потолок 3',tag:'GLOSS'},{src:'stroplook/Public/Images/photo_5226781981998260342_y.jpg',cat:'gloss',title:'Глянцевый потолок 4',tag:'GLOSS'},{src:'stroplook/Public/Images/photo_5226781981998260343_y.jpg',cat:'gloss',title:'Глянцевый потолок 5',tag:'GLOSS'},{src:'stroplook/Public/Images/photo_5226781981998260344_y.jpg',cat:'gloss',title:'Глянцевый потолок 6',tag:'GLOSS'},{src:'stroplook/Public/Images/photo_5226781981998260345_y.jpg',cat:'gloss',title:'Глянцевый потолок 7',tag:'GLOSS'},
-{src:'stroplook/Public/Images/Плаваючі.png',cat:'float',title:'Парящий потолок 1',tag:'FLOAT'},{src:'stroplook/Public/Images/Плаваючі2.png',cat:'float',title:'Парящий потолок 2',tag:'FLOAT'},{src:'stroplook/Public/Images/Плаваючі3.png',cat:'float',title:'Парящий потолок 3',tag:'FLOAT'},{src:'stroplook/Public/Images/Плаваючі4.png',cat:'float',title:'Парящий потолок 4',tag:'FLOAT'},
+{src:'Public/Images/PhotoTlac1.png',cat:'print',title:'Фотопечать 1',tag:'PRINT'},{src:'Public/Images/PhotoTlac2.png',cat:'print',title:'Фотопечать 2',tag:'PRINT'},
+{src:'Public/Images/photo_5226781981998260339_y.jpg',cat:'gloss',title:'Глянцевый потолок 1',tag:'GLOSS'},
+{src:'Public/Images/Video/result.mp4',cat:'video',type:'video',title:'Video 1',tag:'VIDEO'},
+{src:'Public/Images/photo_5226781981998260340_y.jpg',cat:'gloss',title:'Глянцевый потолок 2',tag:'GLOSS'},{src:'Public/Images/photo_5226781981998260341_y.jpg',cat:'gloss',title:'Глянцевый потолок 3',tag:'GLOSS'},{src:'Public/Images/photo_5226781981998260342_y.jpg',cat:'gloss',title:'Глянцевый потолок 4',tag:'GLOSS'},{src:'Public/Images/photo_5226781981998260343_y.jpg',cat:'gloss',title:'Глянцевый потолок 5',tag:'GLOSS'},{src:'Public/Images/photo_5226781981998260344_y.jpg',cat:'gloss',title:'Глянцевый потолок 6',tag:'GLOSS'},{src:'Public/Images/photo_5226781981998260345_y.jpg',cat:'gloss',title:'Глянцевый потолок 7',tag:'GLOSS'},
+{src:'Public/Images/Плаваючі.png',cat:'float',title:'Парящий потолок 1',tag:'FLOAT'},{src:'Public/Images/Плаваючі2.png',cat:'float',title:'Парящий потолок 2',tag:'FLOAT'},{src:'Public/Images/Плаваючі3.png',cat:'float',title:'Парящий потолок 3',tag:'FLOAT'},{src:'Public/Images/Плаваючі4.png',cat:'float',title:'Парящий потолок 4',tag:'FLOAT'},
 {src:'Svitlolinii posle.jpg',cat:'led',title:'Световые линии 1',tag:'LED'},{src:'Svitlolinii posle.jpg',cat:'led',title:'Световые линии 2',tag:'LED'},{src:'Svitlolinii posle.jpg',cat:'led',title:'Световые линии 3',tag:'LED'},{src:'Svitlolinii posle.jpg',cat:'led',title:'Световые линии 4',tag:'LED'},{src:'Svitlolinii posle.jpg',cat:'led',title:'Световые линии 5',tag:'LED'}];
 let currentCat='all',visibleCount=3,currentList=[],currentIndex=0,selectedStars=5; window.selectedStars=selectedStars;
 const $=id=>document.getElementById(id);function showToast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),3600)}function toggleMobile(force){$('mobileMenu').classList.toggle('active', typeof force==='boolean'?force:undefined)}
 function toggleFilter(){buildFilter();$('filterMenu').classList.toggle('active')}function closeFilter(){$('filterMenu').classList.remove('active')}function buildFilter(){$('filterMenu').innerHTML=categories.map(c=>`<button class="${c.id===currentCat?'active':''}" onclick="setCategory('${c.id}')">${catLabel(c.id)}</button>`).join('')}function setCategory(id){currentCat=id;visibleCount=3;$('filterLabel').textContent=catLabel(id);closeFilter();renderGallery()}function filtered(){return currentCat==='all'?galleryPhotos:galleryPhotos.filter(p=>p.cat===currentCat)}
-function videoSources(){return `<source src="stroplook/Public/Images/Video/result.mp4" type="video/mp4"><source src="stroplook/Public/Images/Video/result.mp4" type="video/mp4"><source src="stroplook/Public/Images/Video/result.mp4" type="video/mp4"><source src="stroplook/Public/Images/Video/result.mp4" type="video/mp4">`}
+function videoSources(){return `<source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4">`}
 function galleryMedia(p){return p.type==='video'?`<video muted playsinline preload="metadata">${videoSources()}</video><div class="play-badge">▶</div>`:`<img src="${p.src}" alt="${photoTitle(p)}" loading="lazy">`}
 function renderGallery(){buildFilter();currentList=filtered();const shown=currentList.slice(0,visibleCount);$('galleryCount').textContent=`${tr().shown} ${shown.length} ${tr().from} ${currentList.length}`;$('galleryGrid').innerHTML=shown.map((p,i)=>`<article class="g ${p.type==='video'?'video-card':''}" onclick="openPhoto(${i})">${galleryMedia(p)}<div class="g-info"><small>${p.tag}</small><h3>${photoTitle(p)}</h3></div></article>`).join('');$('moreBtn').style.display=visibleCount>=currentList.length?'none':'inline-flex'}function loadMoreGallery(){visibleCount+=3;renderGallery()}function resetGallery(){visibleCount=3;renderGallery();$('gallery').scrollIntoView({behavior:'smooth'})}
 function setModalMedia(p){const img=$('modalImg'),video=$('modalVideo');if(video){video.pause();video.innerHTML='';video.removeAttribute('src');video.load()}if(p.type==='video'){img.style.display='none';if(video){video.style.display='block';video.innerHTML=videoSources();video.load();video.play().catch(()=>{});}}else{if(video)video.style.display='none';img.style.display='block';img.src=p.src;}}
