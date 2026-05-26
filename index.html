@@ -635,6 +635,71 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 #gallery .g img{width:100%;height:100%;object-fit:cover;display:block}
 #gallery .g video{width:100%;height:100%;object-fit:cover;display:block}
 
+
+/* floating WhatsApp + Facebook buttons */
+.sticky-social{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:45;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:flex-end;
+}
+.sticky-social .sticky-wa,
+.sticky-social .sticky-fb{
+  position:relative!important;
+  right:auto!important;
+  bottom:auto!important;
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  text-decoration:none;
+  border:0;
+  box-shadow:0 18px 55px rgba(0,0,0,.45);
+  transition:.25s;
+}
+.sticky-social .sticky-wa{background:#25D366;font-size:0}
+.sticky-social .sticky-fb{
+  background:#1877F2;
+  font-family:Arial,sans-serif;
+  font-size:38px;
+  font-weight:900;
+  line-height:1;
+}
+.sticky-social .sticky-wa:hover,
+.sticky-social .sticky-fb:hover{transform:translateY(-4px) scale(1.04);filter:brightness(1.05)}
+.sticky-social .sticky-wa svg{width:34px;height:34px;display:block;fill:#fff}
+.sticky-social .sticky-fb:after,
+.sticky-social .sticky-wa:after{
+  position:absolute;
+  right:76px;
+  top:50%;
+  transform:translateY(-50%);
+  padding:10px 13px;
+  border-radius:999px;
+  background:rgba(18,15,11,.78);
+  border:1px solid rgba(255,255,255,.14);
+  font-size:13px;
+  font-weight:1000;
+  color:#fff;
+  white-space:nowrap;
+  backdrop-filter:blur(14px);
+}
+.sticky-social .sticky-wa:after{content:"WhatsApp"}
+.sticky-social .sticky-fb:after{content:"Facebook"}
+@media(max-width:560px){
+  .sticky-social{right:14px;bottom:14px;gap:10px}
+  .sticky-social .sticky-wa,.sticky-social .sticky-fb{width:56px;height:56px}
+  .sticky-social .sticky-wa svg{width:29px;height:29px}
+  .sticky-social .sticky-fb{font-size:34px}
+  .sticky-social .sticky-wa:after,.sticky-social .sticky-fb:after{display:none}
+}
+
 </style>
 </head>
 <body>
@@ -747,7 +812,7 @@ slider.addEventListener('input',e=>update(e.target.value));
 <section class="section fade reviews-premium" id="reviews"><div class="wrap"><div class="reviews-head"><h2 class="title">Отзывы <span class="gold">клиентов</span></h2><p class="sub">Отзывы клиентов после выполненных работ.</p></div><div class="reviews-slider-wrap"><div class="reviews-list" id="reviewsGrid"><div class="empty">Загрузка отзывов...</div></div></div><div class="reviews-slider-nav"><button class="review-arrow" type="button" onclick="scrollReviews(-1)" aria-label="Назад">‹</button><button class="review-arrow" type="button" onclick="scrollReviews(1)" aria-label="Вперёд">›</button></div><div class="reviews-actions"><button class="btn main open-review-btn" id="openReviewBtn" type="button" onclick="openReviewModal()">Оставить отзыв</button></div><div class="review-modal" id="reviewModal" aria-hidden="true"><div class="review-modal-box"><button class="review-modal-close" type="button" onclick="closeReviewModal()" aria-label="Close">×</button><form class="form" id="reviewForm"><h3 style="font-size:30px;margin-bottom:10px">Оставить отзыв</h3><div class="stars" id="stars"><button type="button" data-star="1">★</button><button type="button" data-star="2">★</button><button type="button" data-star="3">★</button><button type="button" data-star="4">★</button><button type="button" data-star="5">★</button></div><input id="reviewName" placeholder="Имя" required><input id="reviewWork" placeholder="Что было сделано" required><textarea id="reviewText" placeholder="Ваш отзыв" required></textarea><button class="btn main" style="width:100%" type="submit">Отправить отзыв</button><small>Спасибо за ваш отзыв — он появится на сайте после проверки.</small></form></div></div></div></section>
 <section class="section fade" id="faq"><div class="wrap"><div class="head"><h2 class="title">FAQ</h2><p class="sub">Короткие ответы на частые вопросы клиентов.</p></div><div class="faq"><details open><summary>Сколько стоит натяжной потолок?</summary><p>Цена зависит от площади, типа полотна, освещения, количества углов и сложности монтажа. Оставьте заявку — мы уточним детали.</p></details><details><summary>Можно ли сделать световые линии?</summary><p>Да, световые линии и парящие потолки — один из главных premium-вариантов для современного интерьера.</p></details><details><summary>Где вы работаете?</summary><p>Bratislava и окрестности. Другие города можно обсудить отдельно.</p></details></div></div></section>
 <footer class="footer"><div class="wrap foot"><div><b>STROP <span class="gold">LOOK</span></b><br>Premium napínané stropy · Bratislava</div><div><a href="tel:+421952277013">+421 952 277 013</a></div></div></footer>
-<a class="sticky-wa" target="_blank" href="https://wa.me/421952277013" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3.2A12.78 12.78 0 0 0 5.1 22.55L3.6 28.8l6.4-1.49a12.8 12.8 0 1 0 6.04-24.11Zm0 23.27c-2.08 0-4.02-.61-5.65-1.67l-.4-.25-3.8.89.9-3.7-.27-.42a10.32 10.32 0 1 1 9.22 5.15Zm5.96-7.75c-.33-.16-1.94-.96-2.24-1.07-.3-.11-.52-.16-.74.16-.22.33-.85 1.07-1.04 1.29-.19.22-.38.25-.71.08-.33-.16-1.38-.51-2.63-1.62-.97-.87-1.63-1.94-1.82-2.27-.19-.33-.02-.51.14-.67.15-.15.33-.38.49-.57.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.57-.08-.16-.74-1.79-1.02-2.45-.27-.65-.54-.56-.74-.57h-.63c-.22 0-.57.08-.87.41-.3.33-1.15 1.13-1.15 2.75s1.18 3.18 1.34 3.4c.16.22 2.32 3.55 5.63 4.98.79.34 1.4.54 1.88.69.79.25 1.51.22 2.08.13.63-.09 1.94-.79 2.22-1.56.27-.76.27-1.42.19-1.56-.08-.14-.3-.22-.63-.38Z"/></svg></a><div class="modal" id="photoModal"><div class="viewer"><span class="close" onclick="closePhoto()">×</span><button class="arrow prev" onclick="prevPhoto()">‹</button><img id="modalImg" alt="STROP LOOK project"><video id="modalVideo" controls playsinline preload="metadata" style="display:none">Ваш браузер не поддерживает видео.</video><button class="arrow next" onclick="nextPhoto()">›</button></div></div><div class="toast" id="toast"></div>
+<div class="sticky-social"><a class="sticky-wa" target="_blank" href="https://wa.me/421952277013" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3.2A12.78 12.78 0 0 0 5.1 22.55L3.6 28.8l6.4-1.49a12.8 12.8 0 1 0 6.04-24.11Zm0 23.27c-2.08 0-4.02-.61-5.65-1.67l-.4-.25-3.8.89.9-3.7-.27-.42a10.32 10.32 0 1 1 9.22 5.15Zm5.96-7.75c-.33-.16-1.94-.96-2.24-1.07-.3-.11-.52-.16-.74.16-.22.33-.85 1.07-1.04 1.29-.19.22-.38.25-.71.08-.33-.16-1.38-.51-2.63-1.62-.97-.87-1.63-1.94-1.82-2.27-.19-.33-.02-.51.14-.67.15-.15.33-.38.49-.57.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.57-.08-.16-.74-1.79-1.02-2.45-.27-.65-.54-.56-.74-.57h-.63c-.22 0-.57.08-.87.41-.3.33-1.15 1.13-1.15 2.75s1.18 3.18 1.34 3.4c.16.22 2.32 3.55 5.63 4.98.79.34 1.4.54 1.88.69.79.25 1.51.22 2.08.13.63-.09 1.94-.79 2.22-1.56.27-.76.27-1.42.19-1.56-.08-.14-.3-.22-.63-.38Z"/></svg></a><a class="sticky-fb" target="_blank" href="https://www.facebook.com/people/Nap%C3%ADnacie-stropy-SK/61572213579804/?rdid=BnES0KGviN1eusKH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CZVE275gg%2F" aria-label="Facebook">f</a></div><div class="modal" id="photoModal"><div class="viewer"><span class="close" onclick="closePhoto()">×</span><button class="arrow prev" onclick="prevPhoto()">‹</button><img id="modalImg" alt="STROP LOOK project"><video id="modalVideo" controls playsinline preload="metadata" style="display:none">Ваш браузер не поддерживает видео.</video><button class="arrow next" onclick="nextPhoto()">›</button></div></div><div class="toast" id="toast"></div>
 <script>
 
 const LANGS={
@@ -769,7 +834,8 @@ function tr(){return LANGS[currentLang]||LANGS.ru}function catLabel(id){return t
 function applyLang(){const t=tr();document.documentElement.lang=currentLang;document.title=currentLang==='sk'?'STROP LOOK | Premium napínané stropy Bratislava':currentLang==='en'?'STROP LOOK | Premium stretch ceilings Bratislava':currentLang==='ua'?'STROP LOOK | Premium натяжні стелі Bratislava':'STROP LOOK | Premium натяжные потолки Bratislava';$('langLabel').textContent=t.code;document.querySelectorAll('#langMenu button').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes(`'${currentLang}'`)));document.querySelectorAll('.navlinks a').forEach((a,i)=>a.textContent=t.nav[i]);document.querySelectorAll('#mobileMenu a').forEach((a,i)=>a.textContent=t.mobile[i]);document.querySelector('.badge').textContent=t.badge;document.querySelector('h1').innerHTML=t.heroTitle;document.querySelector('.hero p').textContent=t.heroText;document.querySelector('.hero .btns a:nth-child(1)').textContent=t.cta;document.querySelector('.hero .btns a:nth-child(2)').textContent=t.works;document.querySelectorAll('.mini span').forEach((el,i)=>el.textContent=t.mini[i]);document.querySelector('#services .title').innerHTML=t.servicesTitle;document.querySelector('#services .sub').textContent=t.servicesSub;document.querySelectorAll('#services .card h3').forEach((el,i)=>el.textContent=t.servH[i]);document.querySelectorAll('#services .card p').forEach((el,i)=>el.textContent=t.servP[i]);document.querySelector('#gallery .title').innerHTML=t.galleryTitle;document.querySelector('#gallery .sub').textContent=t.gallerySub;$('moreBtn').textContent=t.showMore;document.querySelector('#gallery .gallery-actions .dark').textContent=t.hideBack;$('filterLabel').textContent=catLabel(currentCat);document.querySelector('#request .title').innerHTML=t.requestTitle;document.querySelector('#request .head .sub').textContent=t.requestSub;document.querySelector('.request-info h3').textContent=t.calc;document.querySelector('.request-info .sub').textContent=t.calcP;document.querySelectorAll('.request-info li').forEach((el,i)=>el.textContent=t.list[i]);document.querySelector('.request-info .btn').textContent=t.wa;leadName.placeholder=t.ph[0];leadPhone.placeholder=t.ph[1];leadCity.placeholder=t.ph[2];leadMessage.placeholder=t.ph[3];Array.from(leadType.options).forEach((o,i)=>o.textContent=t.types[i]);document.querySelector('#leadForm button[type="submit"]').textContent=t.sendRequest;document.querySelector('#leadForm small').innerHTML=t.reqSmall;document.querySelector('#reviews .title').innerHTML=t.reviewsTitle;document.querySelector('#reviews .sub').textContent=t.reviewsSub;const reviewCta={ru:['Ваш отзыв важен','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.','Оставить отзыв'],sk:['Váš názor je dôležitý','Napíšte, ako prebehla montáž. Po kontrole sa recenzia zobrazí na stránke.','Pridať recenziu'],ua:['Ваш відгук важливий','Розкажіть, як пройшов монтаж. Після перевірки відгук з’явиться на сайті.','Залишити відгук'],en:['Your review matters','Tell us how the installation went. After checking, the review will appear on the website.','Leave a review']}[currentLang]||['Ваш отзыв важен','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.','Оставить отзыв'];if($('reviewCtaTitle'))$('reviewCtaTitle').textContent=reviewCta[0];if($('reviewCtaText'))$('reviewCtaText').textContent=reviewCta[1];if($('openReviewBtn'))$('openReviewBtn').textContent=reviewCta[2];document.querySelector('#reviewForm h3').textContent=t.leaveReview;reviewName.placeholder=t.reviewPh[0];reviewWork.placeholder=t.reviewPh[1];reviewText.placeholder=t.reviewPh[2];document.querySelector('#reviewForm button[type="submit"]').textContent=t.sendReview;document.querySelector('#reviewForm small').innerHTML=t.revSmall;document.querySelector('#faq .title').innerHTML=t.faqTitle;document.querySelector('#faq .sub').textContent=t.faqSub;document.querySelectorAll('#faq summary').forEach((el,i)=>el.textContent=t.faqQ[i]);document.querySelectorAll('#faq details p').forEach((el,i)=>el.textContent=t.faqA[i]);applyExtraLang();renderGallery();if(typeof renderApprovedReviews==='function')renderApprovedReviews();}
 
 
-const galleryPhotos = [
+
+const galleryPhotos=[
 {src:'Public/Images/photo_5226781981998260339_y.jpg',cat:'gloss',title:'Глянцевый потолок 1',tag:'GLOSS'},
 {src:'Public/Images/photo_5226781981998260340_y.jpg',cat:'gloss',title:'Глянцевый потолок 2',tag:'GLOSS'},
 {src:'Public/Images/photo_5226781981998260341_y.jpg',cat:'gloss',title:'Глянцевый потолок 3',tag:'GLOSS'},
@@ -777,6 +843,8 @@ const galleryPhotos = [
 {src:'Public/Images/photo_5226781981998260343_y.jpg',cat:'gloss',title:'Глянцевый потолок 5',tag:'GLOSS'},
 {src:'Public/Images/photo_5226781981998260344_y.jpg',cat:'gloss',title:'Глянцевый потолок 6',tag:'GLOSS'},
 {src:'Public/Images/photo_5226781981998260345_y.jpg',cat:'gloss',title:'Глянцевый потолок 7',tag:'GLOSS'},
+{src:'Public/Images/photo_5235840351493364333_y.jpg',cat:'gloss',title:'Глянцевый потолок 8',tag:'GLOSS'},
+{src:'Public/Images/photo_5235840351493364335_y.jpg',cat:'gloss',title:'Глянцевый потолок 9',tag:'GLOSS'},
 {src:'Public/Images/LUSTREA.jpg',cat:'gloss',title:'Premium глянец',tag:'GLOSS'},
 
 {src:'Public/Images/SvitlovaLinia1.jpg',cat:'led',title:'Световые линии 1',tag:'LED'},
@@ -794,13 +862,16 @@ const galleryPhotos = [
 {src:'Public/Images/Плаваючі.png',cat:'float',title:'Парящий потолок 1',tag:'FLOAT'},
 {src:'Public/Images/Плаваючі2.png',cat:'float',title:'Парящий потолок 2',tag:'FLOAT'},
 {src:'Public/Images/Плаваючі3.png',cat:'float',title:'Парящий потолок 3',tag:'FLOAT'},
-{src:'Public/Images/Плаваючі4.png',cat:'float',title:'Парящий потолок 4',tag:'FLOAT'}
+{src:'Public/Images/Плаваючі4.png',cat:'float',title:'Парящий потолок 4',tag:'FLOAT'},
+
+{src:'Public/Images/Video/result.mp4',cat:'video',type:'video',title:'Видео монтаж',tag:'VIDEO'}
 ];
 
 let currentCat='all',visibleCount=12,currentList=[],currentIndex=0,selectedStars=5;
+
  window.selectedStars=selectedStars;
 const $=id=>document.getElementById(id);function showToast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),3600)}function toggleMobile(force){$('mobileMenu').classList.toggle('active', typeof force==='boolean'?force:undefined)}
-function toggleFilter(){buildFilter();$('filterMenu').classList.toggle('active')}function closeFilter(){$('filterMenu').classList.remove('active')}function buildFilter(){$('filterMenu').innerHTML=categories.map(c=>`<button class="${c.id===currentCat?'active':''}" onclick="setCategory('${c.id}')">${catLabel(c.id)}</button>`).join('')}function setCategory(id){currentCat=id;visibleCount=3;$('filterLabel').textContent=catLabel(id);closeFilter();renderGallery()}function filtered(){return currentCat==='all'?galleryPhotos:galleryPhotos.filter(p=>p.cat===currentCat)}
+function toggleFilter(){buildFilter();$('filterMenu').classList.toggle('active')}function closeFilter(){$('filterMenu').classList.remove('active')}function buildFilter(){$('filterMenu').innerHTML=categories.map(c=>`<button class="${c.id===currentCat?'active':''}" onclick="setCategory('${c.id}')">${catLabel(c.id)}</button>`).join('')}function setCategory(id){currentCat=id;visibleCount=12;$('filterLabel').textContent=catLabel(id);closeFilter();renderGallery()}function filtered(){return currentCat==='all'?galleryPhotos:galleryPhotos.filter(p=>p.cat===currentCat)}
 function videoSources(){return `<source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4">`}
 function galleryMedia(p){return p.type==='video'?`<video muted playsinline preload="metadata">${videoSources()}</video><div class="play-badge">▶</div>`:`<img src="${p.src}" alt="${photoTitle(p)}" loading="lazy">`}
 function renderGallery(){buildFilter();currentList=filtered();const shown=currentList.slice(0,visibleCount);$('galleryCount').textContent=`${tr().shown} ${shown.length} ${tr().from} ${currentList.length}`;$('galleryGrid').innerHTML=shown.map((p,i)=>`<article class="g ${p.type==='video'?'video-card':''}" onclick="openPhoto(${i})">${galleryMedia(p)}<div class="g-info"><small>${p.tag}</small><h3>${photoTitle(p)}</h3></div></article>`).join('');$('moreBtn').style.display=visibleCount>=currentList.length?'none':'inline-flex'}function loadMoreGallery(){visibleCount+=6;renderGallery()}function resetGallery(){visibleCount=12;renderGallery();$('gallery').scrollIntoView({behavior:'smooth'})}
@@ -1178,76 +1249,121 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
 
 <script>
 (function(){
-  const safePhotos = 
-[
-  {src:"Public/Images/Плаваючі.png",cat:"float",title:"Plávajúci strop 1"},
-  {src:"Public/Images/Плаваючі2.png",cat:"float",title:"Plávajúci strop 2"},
-  {src:"Public/Images/Плаваючі3.png",cat:"float",title:"Plávajúci strop 3"},
-  {src:"Public/Images/Плаваючі4.png",cat:"float",title:"Plávajúci strop 4"},
+  const FULL_TRANSLATIONS={
+    ru:{
+      baTitle:'До / <span class="gold">После</span>',
+      baSub:'Один главный проект с красивым сравнением. Двигайте световую линию, а остальные работы открываются кнопкой ниже.',
+      baMainTitle:'Световые линии',
+      baMainText:'Современный свет, ровная геометрия и дорогой визуал комнаты после монтажа.',
+      want:'Хочу такой потолок',
+      moreWorks:'Показать ещё работы',
+      hideWorks:'Скрыть обратно',
+      before:'До',
+      after:'После',
+      tap:'Нажми / наведи',
+      miniTitles:['Premium потолок','Ровный потолок','Крыша / сложный монтаж','Световые линии'],
+      miniTexts:['Аккуратный результат после монтажа','До ремонта и финальный вид','Результат после установки','Современный свет и ровная геометрия'],
+      shown:'Показано',
+      from:'из'
+    },
+    sk:{
+      baTitle:'Pred / <span class="gold">Po</span>',
+      baSub:'Jeden hlavný projekt s krásnym porovnaním. Posuňte svetelnú líniu a ďalšie práce otvoríte tlačidlom nižšie.',
+      baMainTitle:'Svetelné línie',
+      baMainText:'Moderné svetlo, rovná geometria a prémiový vzhľad miestnosti po montáži.',
+      want:'Chcem taký strop',
+      moreWorks:'Zobraziť ďalšie práce',
+      hideWorks:'Skryť späť',
+      before:'Pred',
+      after:'Po',
+      tap:'Kliknite / prejdite myšou',
+      miniTitles:['Premium strop','Rovný strop','Strecha / náročná montáž','Svetelné línie'],
+      miniTexts:['Precízny výsledok po montáži','Pred rekonštrukciou a finálny vzhľad','Výsledok po montáži','Moderné svetlo a rovná geometria'],
+      shown:'Zobrazené',
+      from:'z'
+    },
+    ua:{
+      baTitle:'До / <span class="gold">Після</span>',
+      baSub:'Один головний проєкт із красивим порівнянням. Рухайте світлову лінію, а інші роботи відкриваються кнопкою нижче.',
+      baMainTitle:'Світлові лінії',
+      baMainText:'Сучасне світло, рівна геометрія і дорогий вигляд кімнати після монтажу.',
+      want:'Хочу таку стелю',
+      moreWorks:'Показати ще роботи',
+      hideWorks:'Сховати назад',
+      before:'До',
+      after:'Після',
+      tap:'Натисни / наведи',
+      miniTitles:['Premium стеля','Рівна стеля','Дах / складний монтаж','Світлові лінії'],
+      miniTexts:['Акуратний результат після монтажу','До ремонту і фінальний вигляд','Результат після встановлення','Сучасне світло і рівна геометрія'],
+      shown:'Показано',
+      from:'з'
+    },
+    en:{
+      baTitle:'Before / <span class="gold">After</span>',
+      baSub:'One main project with a beautiful comparison. Move the light line, and open the other works with the button below.',
+      baMainTitle:'Light lines',
+      baMainText:'Modern lighting, clean geometry and a premium room look after installation.',
+      want:'I want this ceiling',
+      moreWorks:'Show more works',
+      hideWorks:'Hide again',
+      before:'Before',
+      after:'After',
+      tap:'Tap / hover',
+      miniTitles:['Premium ceiling','Flat ceiling','Roof / complex installation','Light lines'],
+      miniTexts:['Clean result after installation','Before renovation and final look','Result after installation','Modern light and clean geometry'],
+      shown:'Shown',
+      from:'of'
+    }
+  };
 
-  {src:"Public/Images/SvitlovaLinia1.jpg",cat:"led",title:"Svetelné línie 1"},
-  {src:"Public/Images/SvitlovaLinia2.jpg",cat:"led",title:"Svetelné línie 2"},
-  {src:"Public/Images/SvitlovaLinia3.jpg",cat:"led",title:"Svetelné línie 3"},
-  {src:"Public/Images/SvitlovaLinia4.jpg",cat:"led",title:"Svetelné línie 4"},
-  {src:"Public/Images/SvitlovaLinia5.jpg",cat:"led",title:"Svetelné línie 5"},
-  {src:"Public/Images/SvitlovaLinia 6.jpg",cat:"led",title:"Svetelné línie 6"},
-  {src:"Public/Images/SvitlovaLinia7.jpg",cat:"led",title:"Svetelné línie 7"},
-  {src:"Public/Images/SvitlovaLinia8.jpg",cat:"led",title:"Svetelné línie 8"},
-
-  {src:"Public/Images/LUSTREA.jpg",cat:"gloss",title:"Lesklý strop"},
-  {src:"Public/Images/PhotoTlac1.png",cat:"print",title:"Fototlač 1"},
-  {src:"Public/Images/PhotoTlac2.png",cat:"print",title:"Fototlač 2"},
-
-  {src:"Public/Images/photo_5226781981998260339_y.jpg",cat:"gloss",title:"Realizácia 1"},
-  {src:"Public/Images/photo_5226781981998260340_y.jpg",cat:"gloss",title:"Realizácia 2"},
-  {src:"Public/Images/photo_5226781981998260341_y.jpg",cat:"gloss",title:"Realizácia 3"},
-  {src:"Public/Images/photo_5226781981998260342_y.jpg",cat:"gloss",title:"Realizácia 4"},
-  {src:"Public/Images/photo_5226781981998260343_y.jpg",cat:"gloss",title:"Realizácia 5"},
-  {src:"Public/Images/photo_5226781981998260344_y.jpg",cat:"gloss",title:"Realizácia 6"},
-  {src:"Public/Images/photo_5226781981998260345_y.jpg",cat:"gloss",title:"Realizácia 7"},
-  {src:"Public/Images/photo_5235840351493364333_y.jpg",cat:"gloss",title:"Realizácia 8"},
-  {src:"Public/Images/photo_5235840351493364335_y.jpg",cat:"gloss",title:"Realizácia 9"},
-
-  {src:"Public/Images/Video/result.mp4",cat:"video",title:"Video realizácie",type:"video"}
-]
-;
-
-  function catName(cat){
-    const map = {float:"FLOAT", led:"LED", gloss:"GLOSS", print:"PHOTO", video:"VIDEO"};
-    return map[cat] || "WORK";
+  function currentSiteLang(){
+    return localStorage.getItem('stropLang') || window.currentLang || document.documentElement.lang || 'ru';
   }
 
-  function renderSafeGallery(){
-    const grid = document.getElementById("galleryGrid");
-    const count = document.getElementById("galleryCount");
-    if(!grid) return;
+  function applyFullTranslations(){
+    const lang=currentSiteLang();
+    const t=FULL_TRANSLATIONS[lang]||FULL_TRANSLATIONS.ru;
 
-    grid.innerHTML = safePhotos.map((p, i)=>{
-      if(p.type === "video" || p.cat === "video"){
-        return `<div class="g video-card" data-index="${i}">
-          <video controls playsinline preload="metadata">
-            <source src="${p.src}" type="video/mp4">
-          </video>
-          <div class="g-info"><small>${catName(p.cat)}</small><h3>${p.title}</h3></div>
-        </div>`;
-      }
-      return `<div class="g" data-index="${i}">
-        <img src="${p.src}" alt="${p.title}" loading="lazy">
-        <div class="g-info"><small>${catName(p.cat)}</small><h3>${p.title}</h3></div>
-      </div>`;
-    }).join("");
+    const ba=document.querySelector('#before-after');
+    if(ba){
+      const h=ba.querySelector('.premium-ba-head h2'); if(h)h.innerHTML=t.baTitle;
+      const p=ba.querySelector('.premium-ba-head p'); if(p)p.textContent=t.baSub;
+      ba.querySelectorAll('.ba-main-label.before,.ba-label.before,.dp-label.before').forEach(el=>el.textContent=t.before);
+      ba.querySelectorAll('.ba-main-label.after,.ba-label.after,.dp-label.after').forEach(el=>el.textContent=t.after);
+      const mt=ba.querySelector('.ba-main-info h3'); if(mt)mt.textContent=t.baMainTitle;
+      const mp=ba.querySelector('.ba-main-info p'); if(mp)mp.textContent=t.baMainText;
+      const want=ba.querySelector('.ba-main-info .btn'); if(want)want.textContent=t.want;
+      const more=document.getElementById('baMoreBtn'); if(more)more.textContent=t.moreWorks;
+      const hide=document.getElementById('baHideBtn'); if(hide)hide.textContent=t.hideWorks;
+      ba.querySelectorAll('.ba-mini-pill').forEach(el=>el.textContent=t.tap);
+      ba.querySelectorAll('.ba-mini-title h3').forEach((el,i)=>{ if(t.miniTitles[i]) el.textContent=t.miniTitles[i]; });
+      ba.querySelectorAll('.ba-mini-title p').forEach((el,i)=>{ if(t.miniTexts[i]) el.textContent=t.miniTexts[i]; });
+    }
 
-    if(count) count.textContent = "Показано " + safePhotos.length;
-    window.photos = safePhotos;
-    window.currentGallery = safePhotos;
+    const count=document.getElementById('galleryCount');
+    if(count && window.currentList){
+      const shown=Math.min((window.visibleCount||12), window.currentList.length);
+      count.textContent=`${t.shown} ${shown} ${t.from} ${window.currentList.length}`;
+    }
+
+    document.querySelectorAll('.sticky-fb').forEach(a=>a.setAttribute('aria-label','Facebook'));
   }
 
-  if(document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", renderSafeGallery);
-  }else{
-    renderSafeGallery();
+  const oldApply=window.applyLang;
+  if(typeof oldApply==='function'){
+    window.applyLang=function(){
+      oldApply();
+      setTimeout(applyFullTranslations,0);
+    };
   }
-  setTimeout(renderSafeGallery, 300);
+
+  document.addEventListener('DOMContentLoaded',function(){
+    applyFullTranslations();
+    document.querySelectorAll('#langMenu button').forEach(btn=>{
+      btn.addEventListener('click',()=>setTimeout(applyFullTranslations,50));
+    });
+  });
+  setTimeout(applyFullTranslations,300);
 })();
 </script>
 
