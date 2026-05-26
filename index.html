@@ -88,113 +88,176 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 @media(max-width:560px){.before-after-section{padding:72px 0 10px}.ba-copy{padding:24px;border-radius:28px}.ba-card{min-height:470px;border-radius:30px}.ba-bottom{display:block}.ba-bottom h3{font-size:28px}.ba-handle{width:62px;height:62px;font-size:22px}.ba-label{top:16px;font-size:12px}.ba-label.before{left:14px}.ba-label.after{right:14px}.ba-range{bottom:86px;left:16px;right:16px}}
 
 
-/* ===== NEW WORKING ДО / ПОСЛЕ BLOCK ===== */
-.dp-section{
-  padding:96px 0 72px;
+/* ===== PREMIUM ДО / ПОСЛЕ — новый рабочий блок ===== */
+.ba2-section{
+  padding:110px 0 82px;
   position:relative;
+  overflow:hidden;
+  isolation:isolate;
   display:block!important;
+  visibility:visible!important;
   opacity:1!important;
   transform:none!important;
-  visibility:visible!important;
 }
-.dp-section:before{
+.ba2-section:before{
   content:"";
   position:absolute;
-  width:520px;
-  height:520px;
-  right:-180px;
-  top:40px;
+  inset:0;
+  z-index:-2;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(216,183,122,.18),transparent 32%),
+    radial-gradient(circle at 88% 10%,rgba(139,146,113,.16),transparent 30%),
+    linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,0));
+}
+.ba2-section:after{
+  content:"";
+  position:absolute;
+  width:720px;
+  height:720px;
+  right:-310px;
+  bottom:-310px;
+  z-index:-1;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(216,183,122,.18),transparent 67%);
+  background:radial-gradient(circle,rgba(240,214,164,.16),transparent 65%);
   pointer-events:none;
 }
-.dp-head{
-  text-align:center;
+.ba2-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:26px;
   margin-bottom:34px;
 }
-.dp-head .sub{
-  margin:16px auto 0;
+.ba2-head .sub{max-width:610px}
+.ba2-tabs{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
 }
-.dp-grid{
+.ba2-tab{
+  border:1px solid rgba(240,214,164,.22);
+  background:rgba(255,255,255,.07);
+  color:#fff8ee;
+  border-radius:999px;
+  padding:13px 17px;
+  font-weight:1000;
+  cursor:pointer;
+  transition:.25s;
+}
+.ba2-tab:hover,.ba2-tab.active{
+  transform:translateY(-2px);
+  background:linear-gradient(135deg,var(--champagne2),var(--champagne));
+  color:#120f0b;
+}
+.ba2-layout{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-columns:1.25fr .75fr;
   gap:24px;
+  align-items:stretch;
 }
-.dp-item{
-  display:none;
-}
-.dp-item.dp-visible{
-  display:block;
-}
-.dp-card{
+.ba2-card{
   position:relative;
-  height:520px;
-  border-radius:36px;
+  min-height:610px;
+  border-radius:42px;
   overflow:hidden;
   background:#080705;
-  border:1px solid rgba(240,214,164,.25);
-  box-shadow:0 30px 90px rgba(0,0,0,.44);
-  user-select:none;
+  border:1px solid rgba(240,214,164,.28);
+  box-shadow:0 34px 100px rgba(0,0,0,.50);
   touch-action:none;
+  user-select:none;
+  cursor:ew-resize;
 }
-.dp-card img{
+.ba2-img{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:center;
 }
-.dp-after{
-  z-index:1;
-}
-.dp-before{
-  z-index:2;
-  clip-path:inset(0 50% 0 0);
-}
-.dp-card:after{
+.ba2-after{z-index:1}
+.ba2-before{z-index:2;clip-path:inset(0 50% 0 0)}
+.ba2-card:after{
   content:"";
   position:absolute;
   inset:0;
   z-index:3;
-  background:linear-gradient(to top,rgba(0,0,0,.66),transparent 44%),linear-gradient(90deg,rgba(0,0,0,.24),transparent 32%,transparent 68%,rgba(0,0,0,.24));
+  background:
+    linear-gradient(to top,rgba(0,0,0,.76),transparent 48%),
+    linear-gradient(90deg,rgba(0,0,0,.30),transparent 28%,transparent 72%,rgba(0,0,0,.30));
   pointer-events:none;
 }
-.dp-line{
+.ba2-line{
   position:absolute;
   top:0;
   bottom:0;
   left:50%;
-  width:3px;
-  background:linear-gradient(to bottom,transparent,rgba(255,255,255,.96),transparent);
   z-index:5;
+  width:3px;
   transform:translateX(-50%);
+  background:linear-gradient(to bottom,transparent,rgba(255,255,255,.98),transparent);
   pointer-events:none;
 }
-.dp-handle{
+.ba2-handle{
   position:absolute;
   left:50%;
   top:50%;
   z-index:6;
-  width:72px;
-  height:72px;
-  border-radius:50%;
+  width:82px;
+  height:82px;
   transform:translate(-50%,-50%);
-  background:linear-gradient(135deg,var(--champagne2),var(--champagne));
-  color:#120f0b;
+  border-radius:50%;
   display:grid;
   place-items:center;
-  font-size:27px;
+  background:linear-gradient(135deg,var(--champagne2),var(--champagne));
+  color:#120f0b;
+  font-size:30px;
   font-weight:1000;
-  box-shadow:0 18px 52px rgba(0,0,0,.45),0 0 0 8px rgba(255,255,255,.12);
+  box-shadow:0 20px 60px rgba(0,0,0,.48),0 0 0 10px rgba(255,255,255,.12);
   pointer-events:none;
 }
-.dp-range{
+.ba2-label{
   position:absolute;
-  left:22px;
-  right:22px;
-  bottom:86px;
+  top:22px;
+  z-index:7;
+  padding:11px 16px;
+  border-radius:999px;
+  background:rgba(8,7,5,.72);
+  border:1px solid rgba(240,214,164,.32);
+  color:var(--champagne2);
+  backdrop-filter:blur(14px);
+  font-size:12px;
+  font-weight:1000;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+}
+.ba2-label.before{left:22px}.ba2-label.after{right:22px}
+.ba2-info{
+  position:absolute;
+  left:26px;
+  right:26px;
+  bottom:25px;
+  z-index:7;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:18px;
+}
+.ba2-info h3{
+  font-family:Playfair Display,serif;
+  font-size:38px;
+  line-height:1.02;
+  margin-bottom:8px;
+}
+.ba2-info p{color:#eadfce;font-weight:850;line-height:1.45}
+.ba2-range{
+  position:absolute;
+  left:26px;
+  right:26px;
+  bottom:105px;
   z-index:8;
-  width:calc(100% - 44px);
+  width:calc(100% - 52px);
   appearance:none;
   height:5px;
   border-radius:999px;
@@ -204,78 +267,57 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
   margin:0;
   padding:0;
 }
-.dp-range::-webkit-slider-thumb{
+.ba2-range::-webkit-slider-thumb{
   appearance:none;
-  width:30px;
-  height:30px;
+  width:32px;
+  height:32px;
   border-radius:50%;
   background:var(--champagne);
-  border:4px solid rgba(255,255,255,.82);
+  border:4px solid rgba(255,255,255,.86);
   box-shadow:0 8px 24px rgba(0,0,0,.42);
 }
-.dp-range::-moz-range-thumb{
-  width:30px;
-  height:30px;
+.ba2-range::-moz-range-thumb{
+  width:32px;
+  height:32px;
   border-radius:50%;
   background:var(--champagne);
-  border:4px solid rgba(255,255,255,.82);
+  border:4px solid rgba(255,255,255,.86);
   box-shadow:0 8px 24px rgba(0,0,0,.42);
 }
-.dp-label{
+.ba2-side{
+  display:grid;
+  gap:14px;
+}
+.ba2-small{
+  position:relative;
+  min-height:142px;
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid rgba(240,214,164,.18);
+  background:#090806;
+  cursor:pointer;
+  box-shadow:0 22px 55px rgba(0,0,0,.28);
+  transition:.25s;
+}
+.ba2-small:hover,.ba2-small.active{transform:translateY(-3px);border-color:rgba(240,214,164,.55)}
+.ba2-small img{width:100%;height:100%;object-fit:cover;filter:brightness(.68);transition:.35s}
+.ba2-small:hover img,.ba2-small.active img{filter:brightness(.9);transform:scale(1.04)}
+.ba2-small span{
   position:absolute;
-  top:18px;
-  z-index:7;
-  padding:10px 15px;
-  border-radius:999px;
-  background:rgba(8,7,5,.72);
-  border:1px solid rgba(240,214,164,.32);
-  color:var(--champagne2);
-  backdrop-filter:blur(12px);
-  font-size:12px;
+  left:16px;
+  right:16px;
+  bottom:14px;
+  z-index:2;
+  color:#fff8ee;
   font-weight:1000;
-  letter-spacing:1.4px;
-  text-transform:uppercase;
+  text-shadow:0 8px 20px rgba(0,0,0,.6);
 }
-.dp-label.before{left:18px}
-.dp-label.after{right:18px}
-.dp-title{
-  position:absolute;
-  left:22px;
-  right:22px;
-  bottom:22px;
-  z-index:7;
-}
-.dp-title h3{
-  font-family:Playfair Display,serif;
-  font-size:30px;
-  line-height:1.05;
-  margin-bottom:6px;
-}
-.dp-title p{
-  color:#eadfce;
-  font-weight:800;
-  line-height:1.45;
-}
-.dp-more{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
+.ba2-small:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.76),transparent 64%)}
 @media(max-width:980px){
-  .dp-grid{grid-template-columns:1fr;gap:18px}
-  .dp-card{height:500px;border-radius:30px}
+  .ba2-section{padding:82px 0 62px}.ba2-head{display:block}.ba2-head .sub{margin-top:14px}.ba2-tabs{justify-content:flex-start;margin-top:20px}.ba2-layout{grid-template-columns:1fr}.ba2-card{min-height:540px}.ba2-side{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:560px){
-  .dp-section{padding:66px 0 48px}
-  .dp-head{text-align:left}
-  .dp-head .sub{margin-left:0}
-  .dp-card{height:430px;border-radius:26px}
-  .dp-handle{width:60px;height:60px;font-size:22px}
-  .dp-title h3{font-size:25px}
-  .dp-title p{font-size:14px}
-  .dp-range{bottom:78px;left:16px;right:16px;width:calc(100% - 32px)}
+  .ba2-section{padding:66px 0 50px}.ba2-tabs{gap:8px}.ba2-tab{padding:11px 13px;font-size:13px}.ba2-card{min-height:450px;border-radius:28px}.ba2-handle{width:62px;height:62px;font-size:22px}.ba2-label{top:15px;font-size:11px}.ba2-label.before{left:14px}.ba2-label.after{right:14px}.ba2-info{left:18px;right:18px;bottom:18px;display:block}.ba2-info h3{font-size:27px}.ba2-info p{font-size:14px}.ba2-range{left:18px;right:18px;bottom:84px;width:calc(100% - 36px)}.ba2-side{grid-template-columns:1fr}.ba2-small{min-height:116px;border-radius:22px}
 }
 
 </style>
@@ -287,98 +329,35 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 
 <section class="section fade" id="value"><div class="wrap"><div class="head"><h2 class="title">Стоимость <span class="gold">без сюрпризов</span></h2><p class="sub">Мы не ставим случайную цену “за метр”, потому что итог зависит от комнаты, света, углов, полотна и сложности монтажа. Поэтому сначала уточняем детали и даём понятный расчёт.</p></div><div class="grid3"><div class="card"><span class="num">01</span><h3>Площадь и форма</h3><p>Размер комнаты, количество углов, трубы, ниши и сложность доступа влияют на финальную стоимость.</p></div><div class="card"><span class="num">02</span><h3>Свет и профиль</h3><p>Световые линии, парящий эффект, треки и LED-подсветка считаются индивидуально под интерьер.</p></div><div class="card"><span class="num">03</span><h3>Материал и эффект</h3><p>Матовый, глянцевый, фотопечать или комбинированное решение — подбираем под стиль квартиры.</p></div></div><div class="price-note"><b>Лучший вариант для клиента:</b> отправьте площадь, город и фото комнаты — мы быстро подскажем ориентир и предложим красивое решение без лишнего давления.</div></div></section>
 
-<section class="dp-section" id="before-after">
+<section class="ba2-section" id="before-after">
   <div class="wrap">
-    <div class="dp-head">
-      <h2 class="title">До / <span class="gold">После</span></h2>
-      <p class="sub">Реальные трансформации STROP LOOK. Двигайте ползунок, чтобы увидеть результат до и после монтажа.</p>
+    <div class="ba2-head">
+      <div>
+        <h2 class="title">До / <span class="gold">После</span></h2>
+        <p class="sub">Реальные работы STROP LOOK. Двигайте ползунок по центру и смотрите разницу до и после монтажа.</p>
+      </div>
+      <div class="ba2-tabs" id="ba2Tabs"></div>
     </div>
 
-    <div class="dp-grid" id="dpGrid">
-
-      <article class="dp-item dp-visible">
-        <div class="dp-card">
-          <img class="dp-after" src="public/images/Світлолінії після.jpg" alt="После — световые линии">
-          <img class="dp-before" src="public/images/Світлолінії до.jpg" alt="До — световые линии">
-          <span class="dp-label before">До</span>
-          <span class="dp-label after">После</span>
-          <div class="dp-line"></div>
-          <div class="dp-handle">↔</div>
-          <input class="dp-range" type="range" min="0" max="100" value="50" aria-label="До и после">
-          <div class="dp-title"><h3>Световые линии</h3><p>Современный свет и чистая геометрия</p></div>
+    <div class="ba2-layout">
+      <div class="ba2-card" id="ba2Card">
+        <img class="ba2-img ba2-after" id="ba2After" src="public/images/Світлолінії після.jpg" alt="После">
+        <img class="ba2-img ba2-before" id="ba2Before" src="public/images/Світлолінії до.jpg" alt="До">
+        <span class="ba2-label before">До</span>
+        <span class="ba2-label after">После</span>
+        <div class="ba2-line" id="ba2Line"></div>
+        <div class="ba2-handle" id="ba2Handle">↔</div>
+        <input class="ba2-range" id="ba2Range" type="range" min="0" max="100" value="50" aria-label="Сравнение до и после">
+        <div class="ba2-info">
+          <div>
+            <h3 id="ba2Title">Световые линии</h3>
+            <p id="ba2Text">Современный свет и чистая геометрия</p>
+          </div>
+          <a class="btn main" href="#request">Хочу такой потолок</a>
         </div>
-      </article>
+      </div>
 
-      <article class="dp-item dp-visible">
-        <div class="dp-card">
-          <img class="dp-after" src="public/images/1 FAJNA POSLE.jpg" alt="После — проект 1">
-          <img class="dp-before" src="public/images/1 Fajna do.jpg" alt="До — проект 1">
-          <span class="dp-label before">До</span>
-          <span class="dp-label after">После</span>
-          <div class="dp-line"></div>
-          <div class="dp-handle">↔</div>
-          <input class="dp-range" type="range" min="0" max="100" value="50" aria-label="До и после">
-          <div class="dp-title"><h3>Premium потолок</h3><p>Аккуратный результат после монтажа</p></div>
-        </div>
-      </article>
-
-      <article class="dp-item">
-        <div class="dp-card">
-          <img class="dp-after" src="public/images/2 FAJNA POSLE.jpg" alt="После — проект 2">
-          <img class="dp-before" src="public/images/2 FAJNA DO.jpg" alt="До — проект 2">
-          <span class="dp-label before">До</span>
-          <span class="dp-label after">После</span>
-          <div class="dp-line"></div>
-          <div class="dp-handle">↔</div>
-          <input class="dp-range" type="range" min="0" max="100" value="50" aria-label="До и после">
-          <div class="dp-title"><h3>Ровный потолок</h3><p>До ремонта и финальный вид</p></div>
-        </div>
-      </article>
-
-      <article class="dp-item">
-        <div class="dp-card">
-          <img class="dp-after" src="public/images/kRISHA POSLE.jpg" alt="После — крыша">
-          <img class="dp-before" src="public/images/kRISHA DO.jpg" alt="До — крыша">
-          <span class="dp-label before">До</span>
-          <span class="dp-label after">После</span>
-          <div class="dp-line"></div>
-          <div class="dp-handle">↔</div>
-          <input class="dp-range" type="range" min="0" max="100" value="50" aria-label="До и после">
-          <div class="dp-title"><h3>Сложный объект</h3><p>Красивое решение даже для сложной формы</p></div>
-        </div>
-      </article>
-
-      <article class="dp-item">
-        <div class="dp-card">
-          <img class="dp-after" src="public/images/Svetlo posle.jpg" alt="После — свет">
-          <img class="dp-before" src="public/images/Svetlo do.jpg" alt="До — свет">
-          <span class="dp-label before">До</span>
-          <span class="dp-label after">После</span>
-          <div class="dp-line"></div>
-          <div class="dp-handle">↔</div>
-          <input class="dp-range" type="range" min="0" max="100" value="50" aria-label="До и после">
-          <div class="dp-title"><h3>Световой эффект</h3><p>Комната выглядит дороже и современнее</p></div>
-        </div>
-      </article>
-
-      <article class="dp-item">
-        <div class="dp-card">
-          <img class="dp-after" src="public/images/photo_5226781981998260345_y.jpg" alt="После — глянцевый потолок">
-          <img class="dp-before" src="public/images/LUSTREA.jpg" alt="До — люстра">
-          <span class="dp-label before">До</span>
-          <span class="dp-label after">После</span>
-          <div class="dp-line"></div>
-          <div class="dp-handle">↔</div>
-          <input class="dp-range" type="range" min="0" max="100" value="50" aria-label="До и после">
-          <div class="dp-title"><h3>Глянцевый потолок</h3><p>Визуально больше пространства и света</p></div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="dp-more">
-      <button class="btn main" id="dpMoreBtn" type="button" onclick="showMoreBeforeAfter()">Показать больше</button>
-      <button class="btn dark" id="dpHideBtn" type="button" onclick="hideBeforeAfter()" style="display:none">Скрыть обратно</button>
+      <div class="ba2-side" id="ba2Side"></div>
     </div>
   </div>
 </section>
@@ -416,7 +395,7 @@ const galleryPhotos=[
 {src:'public/video/result.mp4',cat:'video',type:'video',title:'Video 1',tag:'VIDEO'},
 {src:'public/images/photo_5226781981998260340_y.jpg',cat:'gloss',title:'Глянцевый потолок 2',tag:'GLOSS'},{src:'public/images/photo_5226781981998260341_y.jpg',cat:'gloss',title:'Глянцевый потолок 3',tag:'GLOSS'},{src:'public/images/photo_5226781981998260342_y.jpg',cat:'gloss',title:'Глянцевый потолок 4',tag:'GLOSS'},{src:'public/images/photo_5226781981998260343_y.jpg',cat:'gloss',title:'Глянцевый потолок 5',tag:'GLOSS'},{src:'public/images/photo_5226781981998260344_y.jpg',cat:'gloss',title:'Глянцевый потолок 6',tag:'GLOSS'},{src:'public/images/photo_5226781981998260345_y.jpg',cat:'gloss',title:'Глянцевый потолок 7',tag:'GLOSS'},
 {src:'public/images/Плаваючі.png',cat:'float',title:'Парящий потолок 1',tag:'FLOAT'},{src:'public/images/Плаваючі2.png',cat:'float',title:'Парящий потолок 2',tag:'FLOAT'},{src:'public/images/Плаваючі3.png',cat:'float',title:'Парящий потолок 3',tag:'FLOAT'},{src:'public/images/Плаваючі4.png',cat:'float',title:'Парящий потолок 4',tag:'FLOAT'},
-{src:'public/images/Світовілінії1.jpg',cat:'led',title:'Световые линии 1',tag:'LED'},{src:'public/images/Світовілінії2.jpg',cat:'led',title:'Световые линии 2',tag:'LED'},{src:'public/images/Світовілінії3.jpg',cat:'led',title:'Световые линии 3',tag:'LED'},{src:'public/images/Світовілінії4.jpg',cat:'led',title:'Световые линии 4',tag:'LED'},{src:'public/images/Світовілінії5.jpg',cat:'led',title:'Световые линии 5',tag:'LED'}];
+{src:'public/images/Світовілінії1.jpg',cat:'led',title:'Световые линии 1',tag:'LED'},{src:'public/images/Світовілінії2.jpg',cat:'led',title:'Световые линии 2',tag:'LED'},{src:'public/images/Світовілінії3.jpg',cat:'led',title:'Световые линии 3',tag:'LED'},{src:'public/images/Світовілінії4.jpg',cat:'led',title:'Световые линии 4',tag:'LED'},{src:'public/images/Світовілінії5.jpg',cat:'led',title:'Световые линии 5',tag:'LED'},{src:'public/images/Світлолінії6.jpg',cat:'led',title:'Световые линии 6',tag:'LED'},{src:'public/images/Svitlolinii posle.jpg',cat:'led',title:'Световые линии 7',tag:'LED'},{src:'public/images/Світлолінії після.jpg',cat:'led',title:'Световые линии после',tag:'LED'}];
 let currentCat='all',visibleCount=3,currentList=[],currentIndex=0,selectedStars=5; window.selectedStars=selectedStars;
 const $=id=>document.getElementById(id);function showToast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),3600)}function toggleMobile(force){$('mobileMenu').classList.toggle('active', typeof force==='boolean'?force:undefined)}
 function toggleFilter(){buildFilter();$('filterMenu').classList.toggle('active')}function closeFilter(){$('filterMenu').classList.remove('active')}function buildFilter(){$('filterMenu').innerHTML=categories.map(c=>`<button class="${c.id===currentCat?'active':''}" onclick="setCategory('${c.id}')">${catLabel(c.id)}</button>`).join('')}function setCategory(id){currentCat=id;visibleCount=3;$('filterLabel').textContent=catLabel(id);closeFilter();renderGallery()}function filtered(){return currentCat==='all'?galleryPhotos:galleryPhotos.filter(p=>p.cat===currentCat)}
@@ -517,70 +496,76 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
 
 <script>
 (function(){
-  function setDp(card, value){
-    const before = card.querySelector('.dp-before');
-    const line = card.querySelector('.dp-line');
-    const handle = card.querySelector('.dp-handle');
-    const range = card.querySelector('.dp-range');
+  const works = [
+    {title:'Световые линии', text:'Современный свет и чистая геометрия', before:'public/images/Світлолінії до.jpg', after:'public/images/Світлолінії після.jpg'},
+    {title:'Premium потолок', text:'Аккуратный результат после монтажа', before:'public/images/1 Fajna do.jpg', after:'public/images/1 FAJNA POSLE.jpg'},
+    {title:'Ровный потолок', text:'До ремонта и финальный вид', before:'public/images/2 FAJNA DO.jpg', after:'public/images/2 FAJNA POSLE.jpg'},
+    {title:'Сложный объект', text:'Красивое решение даже для сложной формы', before:'public/images/kRISHA DO.jpg', after:'public/images/kRISHA POSLE.jpg'},
+    {title:'Световой эффект', text:'Комната выглядит дороже и современнее', before:'public/images/Svetlo do.jpg', after:'public/images/Svetlo posle.jpg'},
+    {title:'Дополнительный проект', text:'Новый пример работы в галерее до и после', before:'public/images/Світлолінії до.jpg', after:'public/images/Svitlolinii posle.jpg'}
+  ];
+
+  const card = document.getElementById('ba2Card');
+  const before = document.getElementById('ba2Before');
+  const after = document.getElementById('ba2After');
+  const line = document.getElementById('ba2Line');
+  const handle = document.getElementById('ba2Handle');
+  const range = document.getElementById('ba2Range');
+  const title = document.getElementById('ba2Title');
+  const text = document.getElementById('ba2Text');
+  const tabs = document.getElementById('ba2Tabs');
+  const side = document.getElementById('ba2Side');
+  let activeIndex = 0;
+
+  if(!card || !before || !after || !line || !handle || !range || !tabs || !side) return;
+
+  function setSlider(value){
+    value = Math.max(0, Math.min(100, Number(value) || 50));
     before.style.clipPath = 'inset(0 ' + (100 - value) + '% 0 0)';
     line.style.left = value + '%';
     handle.style.left = value + '%';
-    if(range) range.value = value;
+    range.value = value;
   }
 
-  function initDp(){
-    document.querySelectorAll('.dp-card').forEach(card=>{
-      const range = card.querySelector('.dp-range');
-      setDp(card, Number(range.value || 50));
+  function setWork(index){
+    activeIndex = index;
+    const item = works[index];
+    before.src = item.before;
+    after.src = item.after;
+    before.alt = 'До — ' + item.title;
+    after.alt = 'После — ' + item.title;
+    title.textContent = item.title;
+    text.textContent = item.text;
+    document.querySelectorAll('.ba2-tab').forEach((btn,i)=>btn.classList.toggle('active', i === index));
+    document.querySelectorAll('.ba2-small').forEach((btn,i)=>btn.classList.toggle('active', i === index));
+    setSlider(50);
+  }
 
-      range.addEventListener('input', ()=>setDp(card, Number(range.value)));
-
-      function move(clientX){
-        const rect = card.getBoundingClientRect();
-        let value = ((clientX - rect.left) / rect.width) * 100;
-        value = Math.max(0, Math.min(100, value));
-        setDp(card, value);
-      }
-
-      let active = false;
-      card.addEventListener('pointerdown', e=>{
-        active = true;
-        card.setPointerCapture(e.pointerId);
-        move(e.clientX);
-      });
-      card.addEventListener('pointermove', e=>{
-        if(active) move(e.clientX);
-      });
-      card.addEventListener('pointerup', ()=>active=false);
-      card.addEventListener('pointercancel', ()=>active=false);
+  function renderControls(){
+    tabs.innerHTML = works.map((item,i)=>'<button class="ba2-tab" type="button" data-index="'+i+'">'+item.title+'</button>').join('');
+    side.innerHTML = works.map((item,i)=>'<button class="ba2-small" type="button" data-index="'+i+'"><img src="'+item.after+'" alt="'+item.title+'"><span>'+item.title+'</span></button>').join('');
+    document.querySelectorAll('[data-index]').forEach(btn=>{
+      btn.addEventListener('click',()=>setWork(Number(btn.dataset.index)));
     });
   }
 
-  window.showMoreBeforeAfter = function(){
-    document.querySelectorAll('.dp-item').forEach(item=>item.classList.add('dp-visible'));
-    const more = document.getElementById('dpMoreBtn');
-    const hide = document.getElementById('dpHideBtn');
-    if(more) more.style.display = 'none';
-    if(hide) hide.style.display = 'inline-flex';
-  };
-
-  window.hideBeforeAfter = function(){
-    document.querySelectorAll('.dp-item').forEach((item,index)=>{
-      item.classList.toggle('dp-visible', index < 2);
-    });
-    const more = document.getElementById('dpMoreBtn');
-    const hide = document.getElementById('dpHideBtn');
-    if(more) more.style.display = 'inline-flex';
-    if(hide) hide.style.display = 'none';
-    const section = document.getElementById('before-after');
-    if(section) section.scrollIntoView({behavior:'smooth', block:'start'});
-  };
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', initDp);
-  }else{
-    initDp();
+  function move(clientX){
+    const rect = card.getBoundingClientRect();
+    setSlider(((clientX - rect.left) / rect.width) * 100);
   }
+
+  range.addEventListener('input', e=>setSlider(e.target.value));
+  card.addEventListener('pointerdown', e=>{
+    if(e.target === range) return;
+    card.setPointerCapture(e.pointerId);
+    move(e.clientX);
+  });
+  card.addEventListener('pointermove', e=>{
+    if(e.buttons) move(e.clientX);
+  });
+
+  renderControls();
+  setWork(activeIndex);
 })();
 </script>
 
