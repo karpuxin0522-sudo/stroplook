@@ -308,6 +308,328 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 @media(max-width:980px){.stba-section{padding:82px 0 62px}.stba-head{display:block}.stba-head .sub{margin-top:14px}.stba-tabs{justify-content:flex-start;margin-top:20px}.stba-layout{grid-template-columns:1fr}.stba-card{min-height:540px}.stba-side{grid-template-columns:repeat(2,1fr);max-height:none;padding-right:0}}
 @media(max-width:560px){.stba-section{padding:66px 0 50px}.stba-tab{padding:11px 13px;font-size:13px}.stba-card{min-height:450px;border-radius:28px}.stba-handle{width:62px;height:62px;font-size:22px}.stba-label{top:15px;font-size:11px}.stba-label.before{left:14px}.stba-label.after{right:14px}.stba-range{left:18px;right:18px;bottom:84px;width:calc(100% - 36px)}.stba-info{left:18px;right:18px;bottom:18px;display:block}.stba-info h3{font-size:27px}.stba-info p{font-size:14px}.stba-info .btn{margin-top:12px;width:100%}.stba-side{grid-template-columns:1fr}.stba-small{min-height:116px;border-radius:22px}}
 
+
+/* ===== PREMIUM SINGLE BEFORE / AFTER + MORE MENU ===== */
+.premium-ba{
+  padding:104px 0 86px;
+  position:relative;
+  display:block!important;
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+  overflow:hidden;
+}
+.premium-ba:before{
+  content:"";
+  position:absolute;
+  right:-180px;
+  top:40px;
+  width:560px;
+  height:560px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(216,183,122,.22),transparent 66%);
+  pointer-events:none;
+}
+.premium-ba-head{
+  text-align:center;
+  margin-bottom:42px;
+}
+.premium-ba-head h2{
+  font-family:Playfair Display,serif;
+  font-size:clamp(44px,6vw,82px);
+  line-height:.95;
+  letter-spacing:-2px;
+}
+.premium-ba-head p{
+  max-width:760px;
+  margin:16px auto 0;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7;
+}
+.ba-main-card{
+  position:relative;
+  height:min(72vh,690px);
+  min-height:560px;
+  border-radius:42px;
+  overflow:hidden;
+  background:#070604;
+  border:1px solid rgba(240,214,164,.30);
+  box-shadow:0 38px 120px rgba(0,0,0,.56);
+  user-select:none;
+  touch-action:none;
+  isolation:isolate;
+}
+.ba-main-card img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.ba-main-after{z-index:1}
+.ba-main-before{
+  z-index:2;
+  clip-path:inset(0 50% 0 0);
+}
+.ba-main-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:3;
+  background:
+    linear-gradient(to top,rgba(0,0,0,.74),transparent 48%),
+    linear-gradient(90deg,rgba(0,0,0,.24),transparent 30%,transparent 70%,rgba(0,0,0,.24));
+  pointer-events:none;
+}
+.ba-scan-glow{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  z-index:5;
+  width:4px;
+  transform:translateX(-50%);
+  background:linear-gradient(to bottom,transparent,rgba(255,255,255,.98),transparent);
+  pointer-events:none;
+  box-shadow:0 0 24px rgba(240,214,164,.95),0 0 70px rgba(216,183,122,.45);
+}
+.ba-scan-glow:before,
+.ba-scan-glow:after{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  border-radius:999px;
+  pointer-events:none;
+}
+.ba-scan-glow:before{
+  top:0;
+  width:110px;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(240,214,164,.20),transparent);
+  animation:baPulse 2.4s ease-in-out infinite;
+}
+.ba-scan-glow:after{
+  top:-18%;
+  width:22px;
+  height:34%;
+  background:linear-gradient(to bottom,transparent,rgba(255,255,255,.95),transparent);
+  filter:blur(1px);
+  animation:baLightRun 2.8s linear infinite;
+}
+@keyframes baLightRun{
+  from{top:-28%}
+  to{top:100%}
+}
+@keyframes baPulse{
+  0%,100%{opacity:.35}
+  50%{opacity:.9}
+}
+.ba-main-handle{
+  position:absolute;
+  left:50%;
+  top:50%;
+  z-index:6;
+  width:82px;
+  height:82px;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:linear-gradient(135deg,var(--champagne2),var(--champagne));
+  color:#120f0b;
+  display:grid;
+  place-items:center;
+  font-size:31px;
+  font-weight:1000;
+  box-shadow:0 18px 60px rgba(0,0,0,.50),0 0 0 9px rgba(255,255,255,.12),0 0 44px rgba(216,183,122,.42);
+  pointer-events:none;
+  animation:baHandleBreath 2.2s ease-in-out infinite;
+}
+@keyframes baHandleBreath{
+  0%,100%{box-shadow:0 18px 60px rgba(0,0,0,.50),0 0 0 9px rgba(255,255,255,.12),0 0 44px rgba(216,183,122,.42)}
+  50%{box-shadow:0 18px 60px rgba(0,0,0,.50),0 0 0 15px rgba(255,255,255,.08),0 0 70px rgba(216,183,122,.62)}
+}
+.ba-main-label{
+  position:absolute;
+  top:24px;
+  z-index:7;
+  padding:12px 17px;
+  border-radius:999px;
+  background:rgba(8,7,5,.74);
+  border:1px solid rgba(240,214,164,.35);
+  color:var(--champagne2);
+  font-size:12px;
+  font-weight:1000;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  backdrop-filter:blur(12px);
+}
+.ba-main-label.before{left:24px}
+.ba-main-label.after{right:24px}
+.ba-main-info{
+  position:absolute;
+  left:28px;
+  right:28px;
+  bottom:28px;
+  z-index:7;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:22px;
+}
+.ba-main-info h3{
+  font-family:Playfair Display,serif;
+  font-size:clamp(32px,4vw,52px);
+  line-height:1;
+  margin-bottom:8px;
+}
+.ba-main-info p{
+  color:#eadfce;
+  font-weight:850;
+  line-height:1.5;
+  max-width:620px;
+}
+.ba-main-range{
+  position:absolute;
+  left:28px;
+  right:28px;
+  bottom:112px;
+  z-index:8;
+  width:calc(100% - 56px);
+  appearance:none;
+  height:5px;
+  border-radius:999px;
+  background:rgba(255,255,255,.36);
+  outline:none;
+  cursor:ew-resize;
+  margin:0;
+  padding:0;
+}
+.ba-main-range::-webkit-slider-thumb{
+  appearance:none;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:var(--champagne);
+  border:4px solid rgba(255,255,255,.86);
+  box-shadow:0 8px 28px rgba(0,0,0,.46);
+}
+.ba-main-range::-moz-range-thumb{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:var(--champagne);
+  border:4px solid rgba(255,255,255,.86);
+  box-shadow:0 8px 28px rgba(0,0,0,.46);
+}
+.ba-more-actions{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+.ba-more-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+  margin-top:28px;
+  max-height:0;
+  opacity:0;
+  overflow:hidden;
+  transform:translateY(18px);
+  transition:max-height .75s ease, opacity .45s ease, transform .45s ease;
+}
+.ba-more-grid.open{
+  max-height:2600px;
+  opacity:1;
+  transform:none;
+}
+.ba-mini-card{
+  position:relative;
+  height:420px;
+  border-radius:30px;
+  overflow:hidden;
+  border:1px solid rgba(240,214,164,.24);
+  background:#070604;
+  box-shadow:0 28px 80px rgba(0,0,0,.38);
+  cursor:pointer;
+}
+.ba-mini-card img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:opacity .65s ease, transform .65s ease;
+}
+.ba-mini-card .mini-before{z-index:1}
+.ba-mini-card .mini-after{z-index:2;opacity:0;transform:scale(1.05)}
+.ba-mini-card:hover .mini-after,
+.ba-mini-card.active .mini-after{opacity:1;transform:scale(1)}
+.ba-mini-card:hover .mini-before,
+.ba-mini-card.active .mini-before{opacity:0;transform:scale(1.04)}
+.ba-mini-card:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:3;
+  background:linear-gradient(to top,rgba(0,0,0,.72),transparent 55%);
+  pointer-events:none;
+}
+.ba-mini-title{
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:20px;
+  z-index:4;
+}
+.ba-mini-title h3{
+  font-family:Playfair Display,serif;
+  font-size:28px;
+  line-height:1.05;
+  margin-bottom:6px;
+}
+.ba-mini-title p{
+  color:#eadfce;
+  font-weight:800;
+  line-height:1.45;
+}
+.ba-mini-pill{
+  position:absolute;
+  top:18px;
+  left:18px;
+  z-index:4;
+  padding:9px 13px;
+  border-radius:999px;
+  background:rgba(8,7,5,.70);
+  border:1px solid rgba(240,214,164,.32);
+  color:var(--champagne2);
+  font-size:12px;
+  font-weight:1000;
+}
+@media(max-width:980px){
+  .ba-main-card{height:560px;min-height:500px;border-radius:34px}
+  .ba-more-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .premium-ba{padding:70px 0 54px}
+  .premium-ba-head{text-align:left;margin-bottom:28px}
+  .premium-ba-head p{margin-left:0}
+  .ba-main-card{height:460px;min-height:430px;border-radius:28px}
+  .ba-main-handle{width:64px;height:64px;font-size:23px}
+  .ba-main-label{top:16px;font-size:11px}
+  .ba-main-label.before{left:16px}
+  .ba-main-label.after{right:16px}
+  .ba-main-info{left:18px;right:18px;bottom:18px;display:block}
+  .ba-main-info h3{font-size:28px}
+  .ba-main-info p{font-size:14px}
+  .ba-main-range{left:18px;right:18px;bottom:90px;width:calc(100% - 36px)}
+  .ba-mini-card{height:360px;border-radius:24px}
+}
+
 </style>
 </head>
 <body>
@@ -316,53 +638,6 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 <header class="hero" id="top"><div class="hero-bg"><img src="Svitlolinii posle.jpg" alt="Натяжные потолки STROP LOOK" loading="eager"></div><div class="wrap"><div class="badge">Premium napínané stropy · Bratislava</div><h1>Натяжные <span class="gold">потолки</span><br>без дешёвого вида</h1><p>Световые линии, парящие потолки, глянцевые решения и фотопечать. Аккуратный монтаж, premium-визуал и быстрая заявка прямо через сайт.</p><div class="btns"><a class="btn main" href="#request">Оставить заявку →</a><a class="btn dark" href="#gallery">Смотреть работы</a></div><div class="hero-cards"><div class="mini"><b>€</b><span>расчёт по проекту</span></div><div class="mini"><b>Clean</b><span>чистый монтаж</span></div><div class="mini"><b>SK</b><span>Bratislava и окрестности</span></div></div></div></header>
 
 <section class="section fade" id="value"><div class="wrap"><div class="head"><h2 class="title">Стоимость <span class="gold">без сюрпризов</span></h2><p class="sub">Мы не ставим случайную цену “за метр”, потому что итог зависит от комнаты, света, углов, полотна и сложности монтажа. Поэтому сначала уточняем детали и даём понятный расчёт.</p></div><div class="grid3"><div class="card"><span class="num">01</span><h3>Площадь и форма</h3><p>Размер комнаты, количество углов, трубы, ниши и сложность доступа влияют на финальную стоимость.</p></div><div class="card"><span class="num">02</span><h3>Свет и профиль</h3><p>Световые линии, парящий эффект, треки и LED-подсветка считаются индивидуально под интерьер.</p></div><div class="card"><span class="num">03</span><h3>Материал и эффект</h3><p>Матовый, глянцевый, фотопечать или комбинированное решение — подбираем под стиль квартиры.</p></div></div><div class="price-note"><b>Лучший вариант для клиента:</b> отправьте площадь, город и фото комнаты — мы быстро подскажем ориентир и предложим красивое решение без лишнего давления.</div></div></section>
-
-
-
-
-
-<section class="before-after-new" id="before-after">
-<div class="wrap">
-<h2 class="ba-title">До / После</h2>
-
-<div class="ba-grid">
-
-<div class="ba-card">
-<img src="Public/Images/svitlo-posle.jpg" class="after">
-<img src="Public/Images/svitlo-do.jpg" class="before">
-<div class="line"></div>
-<div class="handle">↔</div>
-<input type="range" min="0" max="100" value="50" class="slider">
-</div>
-
-<div class="ba-card">
-<img src="Public/Images/fajna1-posle.jpg" class="after">
-<img src="Public/Images/fajna1-do.jpg" class="before">
-<div class="line"></div>
-<div class="handle">↔</div>
-<input type="range" min="0" max="100" value="50" class="slider">
-</div>
-
-<div class="ba-card">
-<img src="Public/Images/fajna2-posle.jpg" class="after">
-<img src="Public/Images/fajna2-do.jpg" class="before">
-<div class="line"></div>
-<div class="handle">↔</div>
-<input type="range" min="0" max="100" value="50" class="slider">
-</div>
-
-<div class="ba-card">
-<img src="Public/Images/krisha-posle.jpg" class="after">
-<img src="Public/Images/krisha-do.jpg" class="before">
-<div class="line"></div>
-<div class="handle">↔</div>
-<input type="range" min="0" max="100" value="50" class="slider">
-</div>
-
-</div>
-</div>
-</section>
-
 <style>
 .before-after-new{padding:100px 0}
 .ba-title{text-align:center;font-size:70px;margin-bottom:40px;color:#fff}
@@ -394,6 +669,72 @@ update(50);
 slider.addEventListener('input',e=>update(e.target.value));
 });
 </script>
+
+
+<section class="premium-ba" id="before-after">
+  <div class="wrap">
+    <div class="premium-ba-head">
+      <h2>До / <span class="gold">После</span></h2>
+      <p>Один главный проект с красивым сравнением. Двигайте световую линию, а остальные работы открываются кнопкой ниже.</p>
+    </div>
+
+    <div class="ba-main-card" id="baMainCard">
+      <img class="ba-main-after" src="Public/Images/svitlo-posle.jpg" alt="После — световые линии">
+      <img class="ba-main-before" src="Public/Images/svitlo-do.jpg" alt="До — световые линии">
+
+      <span class="ba-main-label before">До</span>
+      <span class="ba-main-label after">После</span>
+
+      <div class="ba-scan-glow" id="baScanLine"></div>
+      <div class="ba-main-handle" id="baMainHandle">↔</div>
+
+      <input class="ba-main-range" id="baMainRange" type="range" min="0" max="100" value="50" aria-label="До и после">
+
+      <div class="ba-main-info">
+        <div>
+          <h3>Световые линии</h3>
+          <p>Современный свет, ровная геометрия и дорогой визуал комнаты после монтажа.</p>
+        </div>
+        <a class="btn main" href="#request">Хочу такой потолок</a>
+      </div>
+    </div>
+
+    <div class="ba-more-actions">
+      <button class="btn main" type="button" id="baMoreBtn">Показать ещё работы</button>
+      <button class="btn dark" type="button" id="baHideBtn" style="display:none">Скрыть обратно</button>
+    </div>
+
+    <div class="ba-more-grid" id="baMoreGrid">
+      <article class="ba-mini-card">
+        <img class="mini-before" src="Public/Images/fajna1-do.jpg" alt="До">
+        <img class="mini-after" src="Public/Images/fajna1-posle.jpg" alt="После">
+        <span class="ba-mini-pill">Нажми / наведи</span>
+        <div class="ba-mini-title"><h3>Premium потолок</h3><p>Аккуратный результат после монтажа</p></div>
+      </article>
+
+      <article class="ba-mini-card">
+        <img class="mini-before" src="Public/Images/fajna2-do.jpg" alt="До">
+        <img class="mini-after" src="Public/Images/fajna2-posle.jpg" alt="После">
+        <span class="ba-mini-pill">Нажми / наведи</span>
+        <div class="ba-mini-title"><h3>Ровный потолок</h3><p>До ремонта и финальный вид</p></div>
+      </article>
+
+      <article class="ba-mini-card">
+        <img class="mini-before" src="Public/Images/krisha-do.jpg" alt="До">
+        <img class="mini-after" src="Public/Images/krisha-posle.jpg" alt="После">
+        <span class="ba-mini-pill">Нажми / наведи</span>
+        <div class="ba-mini-title"><h3>Сложный объект</h3><p>Красивое решение для сложной формы</p></div>
+      </article>
+
+      <article class="ba-mini-card">
+        <img class="mini-before" src="Public/Images/svetlo-do.jpg" alt="До">
+        <img class="mini-after" src="Public/Images/svetlo-posle.jpg" alt="После">
+        <span class="ba-mini-pill">Нажми / наведи</span>
+        <div class="ba-mini-title"><h3>Световой эффект</h3><p>Комната выглядит дороже и современнее</p></div>
+      </article>
+    </div>
+  </div>
+</section>
 
 <section class="section fade" id="gallery"><div class="wrap"><div class="gallery-top"><div><h2 class="title">Галерея <span class="gold">работ</span></h2><p class="sub">Фильтр работает по категориям. Сначала показываются 3 фото, дальше открываются ещё.</p><div class="count" id="galleryCount">Показано 0</div></div><div class="filter-box"><button class="filter-btn" onclick="toggleFilter()"><span id="filterLabel">Все работы</span><span>▾</span></button><div class="filter-menu" id="filterMenu"></div></div></div><div class="gallery" id="galleryGrid"></div><div class="gallery-actions"><button class="btn main" id="moreBtn" onclick="loadMoreGallery()">Показать ещё</button><button class="btn dark" onclick="resetGallery()">Скрыть обратно</button></div></div></section>
 <section class="section fade"><div class="wrap"><div class="head"><h2 class="title">Как мы <span class="gold">работаем</span></h2><p class="sub">Простая схема для клиента: без лишних звонков и непонятных этапов.</p></div><div class="grid3"><div class="card step"><h3>Заявка</h3><p>Клиент оставляет номер, тип потолка и комментарий.</p></div><div class="card step"><h3>Замер</h3><p>Уточняем детали, размеры, освещение и материалы.</p></div><div class="card step"><h3>Монтаж</h3><p>Аккуратная установка и финальная проверка результата.</p></div></div></div></section>
@@ -730,6 +1071,259 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
 
     setWork(0);
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  function initPremiumBA(){
+    const card = document.getElementById('baMainCard');
+    const before = card ? card.querySelector('.ba-main-before') : null;
+    const range = document.getElementById('baMainRange');
+    const line = document.getElementById('baScanLine');
+    const handle = document.getElementById('baMainHandle');
+
+    function update(value){
+      value = Math.max(0, Math.min(100, Number(value) || 50));
+      if(before) before.style.clipPath = 'inset(0 ' + (100 - value) + '% 0 0)';
+      if(line) line.style.left = value + '%';
+      if(handle) handle.style.left = value + '%';
+      if(range) range.value = value;
+    }
+
+    if(card && before && range && line && handle){
+      update(50);
+      range.addEventListener('input', function(e){ update(e.target.value); });
+
+      let dragging = false;
+      function move(clientX){
+        const rect = card.getBoundingClientRect();
+        update(((clientX - rect.left) / rect.width) * 100);
+      }
+
+      card.addEventListener('pointerdown', function(e){
+        if(e.target === range || e.target.closest('a')) return;
+        dragging = true;
+        card.setPointerCapture(e.pointerId);
+        move(e.clientX);
+      });
+      card.addEventListener('pointermove', function(e){
+        if(dragging) move(e.clientX);
+      });
+      card.addEventListener('pointerup', function(){ dragging = false; });
+      card.addEventListener('pointercancel', function(){ dragging = false; });
+    }
+
+    const moreBtn = document.getElementById('baMoreBtn');
+    const hideBtn = document.getElementById('baHideBtn');
+    const grid = document.getElementById('baMoreGrid');
+
+    if(moreBtn && hideBtn && grid){
+      moreBtn.addEventListener('click', function(){
+        grid.classList.add('open');
+        moreBtn.style.display = 'none';
+        hideBtn.style.display = 'inline-flex';
+      });
+      hideBtn.addEventListener('click', function(){
+        grid.classList.remove('open');
+        hideBtn.style.display = 'none';
+        moreBtn.style.display = 'inline-flex';
+      });
+    }
+
+    document.querySelectorAll('.ba-mini-card').forEach(function(mini){
+      mini.addEventListener('click', function(){
+        mini.classList.toggle('active');
+      });
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initPremiumBA);
+  }else{
+    initPremiumBA();
+  }
+})();
+</script>
+
+
+<script>
+(function(){
+  const fixedGalleryItems = [
+  {
+    "type": "image",
+    "cat": "led",
+    "src": "Public/Images/svitlo-posle.jpg",
+    "title": "Svetelné línie 1"
+  },
+  {
+    "type": "image",
+    "cat": "led",
+    "src": "Public/Images/Світовілінії1.jpg",
+    "title": "Svetelné línie 2"
+  },
+  {
+    "type": "image",
+    "cat": "led",
+    "src": "Public/Images/Світовілінії2.jpg",
+    "title": "Svetelné línie 3"
+  },
+  {
+    "type": "image",
+    "cat": "led",
+    "src": "Public/Images/Світовілінії3.jpg",
+    "title": "Svetelné línie 4"
+  },
+  {
+    "type": "image",
+    "cat": "led",
+    "src": "Public/Images/Світовілінії4.jpg",
+    "title": "Svetelné línie 5"
+  },
+  {
+    "type": "image",
+    "cat": "led",
+    "src": "Public/Images/Світовілінії5.jpg",
+    "title": "Svetelné línie 6"
+  },
+  {
+    "type": "image",
+    "cat": "float",
+    "src": "Public/Images/Плаваючі.png",
+    "title": "Plávajúci strop 1"
+  },
+  {
+    "type": "image",
+    "cat": "float",
+    "src": "Public/Images/Плаваючі2.png",
+    "title": "Plávajúci strop 2"
+  },
+  {
+    "type": "image",
+    "cat": "float",
+    "src": "Public/Images/Плаваючі3.png",
+    "title": "Plávajúci strop 3"
+  },
+  {
+    "type": "image",
+    "cat": "float",
+    "src": "Public/Images/Плаваючі4.png",
+    "title": "Plávajúci strop 4"
+  },
+  {
+    "type": "image",
+    "cat": "gloss",
+    "src": "Public/Images/LUSTREA.jpg",
+    "title": "Lesklý strop"
+  },
+  {
+    "type": "image",
+    "cat": "print",
+    "src": "Public/Images/PhotoTlac1.png",
+    "title": "Fototlač 1"
+  },
+  {
+    "type": "image",
+    "cat": "print",
+    "src": "Public/Images/PhotoTlac2.png",
+    "title": "Fototlač 2"
+  },
+  {
+    "type": "image",
+    "cat": "gloss",
+    "src": "Public/Images/photo_5226781981998260339_y.jpg",
+    "title": "Realizácia 1"
+  },
+  {
+    "type": "image",
+    "cat": "gloss",
+    "src": "Public/Images/photo_5226781981998260340_y.jpg",
+    "title": "Realizácia 2"
+  },
+  {
+    "type": "image",
+    "cat": "gloss",
+    "src": "Public/Images/photo_5226781981998260341_y.jpg",
+    "title": "Realizácia 3"
+  },
+  {
+    "type": "image",
+    "cat": "gloss",
+    "src": "Public/Images/photo_5226781981998260342_y.jpg",
+    "title": "Realizácia 4"
+  },
+  {
+    "type": "image",
+    "cat": "gloss",
+    "src": "Public/Images/photo_5226781981998260343_y.jpg",
+    "title": "Realizácia 5"
+  },
+  {
+    "type": "image",
+    "cat": "gloss",
+    "src": "Public/Images/photo_5226781981998260344_y.jpg",
+    "title": "Realizácia 6"
+  },
+  {
+    "type": "image",
+    "cat": "gloss",
+    "src": "Public/Images/photo_5226781981998260345_y.jpg",
+    "title": "Realizácia 7"
+  },
+  {
+    "type": "image",
+    "cat": "gloss",
+    "src": "Public/Images/photo_5235840351493364333_y.jpg",
+    "title": "Realizácia 8"
+  },
+  {
+    "type": "image",
+    "cat": "gloss",
+    "src": "Public/Images/photo_5235840351493364335_y.jpg",
+    "title": "Realizácia 9"
+  },
+  {
+    "type": "video",
+    "cat": "video",
+    "src": "Public/Images/Video/result.mp4",
+    "title": "Video realizácie"
+  }
+];
+
+  function renderFixedGallery(){
+    const grid = document.getElementById('galleryGrid');
+    const count = document.getElementById('galleryCount');
+    if(!grid) return;
+
+    const cards = fixedGalleryItems.map((item, index) => {
+      if(item.type === 'video'){
+        return `<div class="g video-card" onclick="openPhoto(${index})">
+          <video muted playsinline preload="metadata">
+            <source src="${item.src}" type="video/mp4">
+          </video>
+          <div class="play-badge">▶</div>
+          <div class="g-info"><small>VIDEO</small><h3>${item.title}</h3></div>
+        </div>`;
+      }
+      return `<div class="g" onclick="openPhoto(${index})">
+        <img src="${item.src}" alt="${item.title}" loading="lazy" onerror="this.closest('.g').style.display='none'">
+        <div class="g-info"><small>${(item.cat || 'WORK').toUpperCase()}</small><h3>${item.title}</h3></div>
+      </div>`;
+    }).join('');
+
+    grid.innerHTML = cards;
+    if(count) count.textContent = 'Показано ' + fixedGalleryItems.length;
+    window.currentGallery = fixedGalleryItems;
+    window.galleryItems = fixedGalleryItems;
+    window.photos = fixedGalleryItems;
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderFixedGallery);
+  }else{
+    renderFixedGallery();
+  }
 })();
 </script>
 
