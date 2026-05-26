@@ -67,12 +67,54 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 @media(max-width:980px){.reviews-premium .review{flex-basis:calc((100% - 22px)/2)}}
 @media(max-width:720px){.reviews-head{margin-bottom:28px}.reviews-slider-wrap{overflow:visible}.reviews-premium .reviews-list{padding-left:2px;padding-right:2px}.reviews-premium .review{flex-basis:86%;min-height:300px;padding:30px 18px;border-radius:24px}.reviews-premium .review-stars{font-size:22px;letter-spacing:5px}.reviews-premium .review-work{font-size:22px}.reviews-premium .review p{font-size:14px}.reviews-actions .btn{width:100%}.review-arrow{width:46px;height:46px}}
 
+
+/* BEFORE / AFTER PREMIUM */
+.before-after-section{padding:96px 0 26px;position:relative;overflow:hidden}
+.before-after-section:before{content:"";position:absolute;inset:8% -10% auto auto;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(216,183,122,.18),transparent 64%);pointer-events:none}
+.ba-wrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:28px;align-items:center}
+.ba-copy{padding:34px;border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(216,183,122,.06));border:1px solid var(--line);box-shadow:var(--shadow)}
+.ba-copy h2{font-family:Playfair Display,serif;font-size:clamp(40px,5vw,70px);line-height:.96;letter-spacing:-2px;margin-bottom:18px}
+.ba-copy p{color:var(--muted);font-size:18px;line-height:1.72}
+.ba-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.ba-pill{padding:11px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-weight:900;color:#f1dfbd;font-size:13px}
+.ba-card{position:relative;border-radius:38px;overflow:hidden;border:1px solid rgba(240,214,164,.24);box-shadow:0 34px 100px rgba(0,0,0,.48);background:#070604;min-height:560px;touch-action:none;user-select:none}
+.ba-stage{position:absolute;inset:0}.ba-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.ba-after{z-index:1}.ba-before{z-index:2;clip-path:inset(0 50% 0 0)}
+.ba-gradient{position:absolute;inset:0;z-index:3;background:linear-gradient(to top,rgba(0,0,0,.58),transparent 42%),linear-gradient(90deg,rgba(0,0,0,.22),transparent 28%,transparent 72%,rgba(0,0,0,.22));pointer-events:none}
+.ba-line{position:absolute;top:0;bottom:0;left:50%;z-index:5;width:3px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.92),transparent);transform:translateX(-50%);pointer-events:none}
+.ba-handle{position:absolute;left:50%;top:50%;z-index:6;width:74px;height:74px;border-radius:50%;transform:translate(-50%,-50%);background:linear-gradient(135deg,var(--champagne2),var(--champagne));color:#15100b;display:grid;place-items:center;font-size:26px;font-weight:1000;box-shadow:0 18px 55px rgba(0,0,0,.42),0 0 0 8px rgba(255,255,255,.11);pointer-events:none}
+.ba-label{position:absolute;z-index:7;top:22px;padding:11px 15px;border-radius:999px;background:rgba(8,7,5,.68);border:1px solid rgba(240,214,164,.28);backdrop-filter:blur(14px);color:var(--champagne2);font-weight:1000;letter-spacing:1.4px;font-size:13px;text-transform:uppercase}.ba-label.before{left:22px}.ba-label.after{right:22px}
+.ba-bottom{position:absolute;left:24px;right:24px;bottom:24px;z-index:7;display:flex;align-items:end;justify-content:space-between;gap:18px}.ba-bottom h3{font-family:Playfair Display,serif;font-size:34px;line-height:1.05}.ba-bottom span{color:#eadfce;font-weight:850}.ba-range{position:absolute;left:24px;right:24px;bottom:92px;z-index:8;appearance:none;height:4px;border-radius:999px;background:rgba(255,255,255,.32);outline:0;cursor:ew-resize}.ba-range::-webkit-slider-thumb{appearance:none;width:30px;height:30px;border-radius:50%;background:var(--champagne);border:4px solid rgba(255,255,255,.72);box-shadow:0 8px 22px rgba(0,0,0,.38)}.ba-range::-moz-range-thumb{width:30px;height:30px;border-radius:50%;background:var(--champagne);border:4px solid rgba(255,255,255,.72);box-shadow:0 8px 22px rgba(0,0,0,.38)}
+@media(max-width:980px){.ba-wrap{grid-template-columns:1fr}.ba-card{min-height:520px}.ba-copy{text-align:center}.ba-pills{justify-content:center}}
+@media(max-width:560px){.before-after-section{padding:72px 0 10px}.ba-copy{padding:24px;border-radius:28px}.ba-card{min-height:470px;border-radius:30px}.ba-bottom{display:block}.ba-bottom h3{font-size:28px}.ba-handle{width:62px;height:62px;font-size:22px}.ba-label{top:16px;font-size:12px}.ba-label.before{left:14px}.ba-label.after{right:14px}.ba-range{bottom:86px;left:16px;right:16px}}
+
 </style>
 </head>
 <body>
 <nav class="nav"><div class="wrap navin"><a class="logo" href="#top"><small>BRATISLAVA</small><b>STROP <span class="gold">LOOK</span></b></a><div class="navlinks"><a href="#services">Услуги</a><a href="#gallery">Работы</a><a href="#request">Заявка</a><a href="#reviews">Отзывы</a><a href="#faq">FAQ</a></div><div class="navright"><div class="lang-box"><button class="lang-btn" onclick="toggleLang(event)">🌐 <span id="langLabel">RU</span> ▾</button><div class="lang-menu" id="langMenu"><button onclick="setLang('sk')">SK · Slovensky</button><button onclick="setLang('ua')">UA · Українська</button><button onclick="setLang('ru')">RU · Русский</button><button onclick="setLang('en')">EN · English</button></div></div><a class="ico" target="_blank" href="https://wa.me/421952277013">☏</a><a class="ico" target="_blank" href="https://www.facebook.com/people/Napínacie-stropy-SK/61572213579804/">f</a><a class="phone" href="tel:+421952277013">+421 952 277 013</a><button class="mobile-menu-btn" onclick="toggleMobile()">☰</button></div></div></nav>
 <div class="mobile-menu" id="mobileMenu"><a href="#services" onclick="toggleMobile(false)">Услуги</a><a href="#gallery" onclick="toggleMobile(false)">Работы</a><a href="#request" onclick="toggleMobile(false)">Оставить заявку</a><a href="#reviews" onclick="toggleMobile(false)">Отзывы</a></div>
 <header class="hero" id="top"><div class="hero-bg"><img src="public/images/Світовілінії1.jpg" alt="Натяжные потолки STROP LOOK" loading="eager"></div><div class="wrap"><div class="badge">Premium napínané stropy · Bratislava</div><h1>Натяжные <span class="gold">потолки</span><br>без дешёвого вида</h1><p>Световые линии, парящие потолки, глянцевые решения и фотопечать. Аккуратный монтаж, premium-визуал и быстрая заявка прямо через сайт.</p><div class="btns"><a class="btn main" href="#request">Оставить заявку →</a><a class="btn dark" href="#gallery">Смотреть работы</a></div><div class="hero-cards"><div class="mini"><b>€</b><span>расчёт по проекту</span></div><div class="mini"><b>Clean</b><span>чистый монтаж</span></div><div class="mini"><b>SK</b><span>Bratislava и окрестности</span></div></div></div></header>
+
+<section class="before-after-section fade" id="before-after">
+  <div class="wrap ba-wrap">
+    <div class="ba-copy">
+      <h2>До / <span class="gold">После</span></h2>
+      <p>Реальный пример работы STROP LOOK: было обычное помещение с люстрой, стало современное premium-решение с аккуратным потолком и световым эффектом.</p>
+      <div class="ba-pills"><span class="ba-pill">✓ Реальный объект</span><span class="ba-pill">✓ До и после</span><span class="ba-pill">✓ Premium результат</span></div>
+    </div>
+    <div class="ba-card" id="baCard" aria-label="До и после работы">
+      <div class="ba-stage">
+        <img class="ba-after" src="public/images/photo_5226781981998260345_y.jpg" alt="После работы STROP LOOK">
+        <img class="ba-before" id="baBeforeImg" src="public/images/LUSTREA.jpg" alt="До работы STROP LOOK">
+      </div>
+      <div class="ba-gradient"></div>
+      <span class="ba-label before">До</span><span class="ba-label after">После</span>
+      <div class="ba-line" id="baLine"></div><div class="ba-handle" id="baHandle">↔</div>
+      <input class="ba-range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Сравнение до и после">
+      <div class="ba-bottom"><div><h3>Преображение потолка</h3><span>Передвиньте ползунок, чтобы сравнить</span></div></div>
+    </div>
+  </div>
+</section>
+
 <section class="section services fade" id="services"><div class="wrap"><div class="head"><h2 class="title">Premium <span class="gold">решения</span></h2><p class="sub">Подбираем потолок под интерьер, освещение и бюджет. Делаем современно, чисто и надёжно.</p></div><div class="grid3"><div class="card"><span class="num">01</span><h3>Световые линии</h3><p>Современный световой акцент для кухни, гостиной, спальни и коммерческих помещений.</p></div><div class="card"><span class="num">02</span><h3>Парящие потолки</h3><p>Эффект лёгкости и дорогой подсветки по периметру комнаты.</p></div><div class="card"><span class="num">03</span><h3>Глянец и фотопечать</h3><p>Визуальное расширение пространства, индивидуальные мотивы и чистый luxury-эффект.</p></div></div></div></section>
 <section class="section fade" id="value"><div class="wrap"><div class="head"><h2 class="title">Стоимость <span class="gold">без сюрпризов</span></h2><p class="sub">Мы не ставим случайную цену “за метр”, потому что итог зависит от комнаты, света, углов, полотна и сложности монтажа. Поэтому сначала уточняем детали и даём понятный расчёт.</p></div><div class="grid3"><div class="card"><span class="num">01</span><h3>Площадь и форма</h3><p>Размер комнаты, количество углов, трубы, ниши и сложность доступа влияют на финальную стоимость.</p></div><div class="card"><span class="num">02</span><h3>Свет и профиль</h3><p>Световые линии, парящий эффект, треки и LED-подсветка считаются индивидуально под интерьер.</p></div><div class="card"><span class="num">03</span><h3>Материал и эффект</h3><p>Матовый, глянцевый, фотопечать или комбинированное решение — подбираем под стиль квартиры.</p></div></div><div class="price-note"><b>Лучший вариант для клиента:</b> отправьте площадь, город и фото комнаты — мы быстро подскажем ориентир и предложим красивое решение без лишнего давления.</div></div></section>
 <section class="section fade" id="gallery"><div class="wrap"><div class="gallery-top"><div><h2 class="title">Галерея <span class="gold">работ</span></h2><p class="sub">Фильтр работает по категориям. Сначала показываются 3 фото, дальше открываются ещё.</p><div class="count" id="galleryCount">Показано 0</div></div><div class="filter-box"><button class="filter-btn" onclick="toggleFilter()"><span id="filterLabel">Все работы</span><span>▾</span></button><div class="filter-menu" id="filterMenu"></div></div></div><div class="gallery" id="galleryGrid"></div><div class="gallery-actions"><button class="btn main" id="moreBtn" onclick="loadMoreGallery()">Показать ещё</button><button class="btn dark" onclick="resetGallery()">Скрыть обратно</button></div></div></section>
@@ -192,5 +234,19 @@ await addDoc(collection(db,'reviews'),reviewData);
 notifyTelegram({type:'review',...reviewData});
 reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}catch(err){console.error(err);showToast(LANGS[currentLang].fbErr);}finally{btn.disabled=false;btn.textContent=LANGS[currentLang].sendReview;}});
 </script>
+
+<script>
+(function(){
+  const card=document.getElementById('baCard'), range=document.getElementById('baRange'), before=document.getElementById('baBeforeImg'), line=document.getElementById('baLine'), handle=document.getElementById('baHandle');
+  if(!card||!range||!before||!line||!handle) return;
+  function setBA(v){v=Math.max(0,Math.min(100,Number(v)||50));before.style.clipPath=`inset(0 ${100-v}% 0 0)`;line.style.left=v+'%';handle.style.left=v+'%';range.value=v;}
+  function fromPoint(x){const r=card.getBoundingClientRect();setBA(((x-r.left)/r.width)*100)}
+  range.addEventListener('input',e=>setBA(e.target.value));
+  card.addEventListener('pointerdown',e=>{if(e.target===range)return;card.setPointerCapture(e.pointerId);fromPoint(e.clientX)});
+  card.addEventListener('pointermove',e=>{if(e.buttons)fromPoint(e.clientX)});
+  setBA(50);
+})();
+</script>
+
 </body>
 </html>
