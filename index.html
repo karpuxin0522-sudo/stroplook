@@ -45,7 +45,7 @@ const app=initializeApp(firebaseConfig);const db=getFirestore(app);
 
 // ВСТАВЬ СЮДА URL Google Apps Script после Deploy → Web app
 // Пример: https://script.google.com/macros/s/AKfycb.../exec
-const TELEGRAM_WEBHOOK_URL = "";
+const TELEGRAM_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwdFEvxTl3hZvrUFhFndpo1BXvJKYBm74m3eiIdDeXGSiuWNXH7Ur_CR7Sq63M5mk8ayw/exec";
 
 function notifyTelegram(payload){
   if(!TELEGRAM_WEBHOOK_URL) return;
@@ -59,10 +59,16 @@ function notifyTelegram(payload){
   }catch(e){console.warn("Telegram notify error", e)}
 }
 const esc=v=>String(v||'').replace(/[<>&"']/g,m=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#039;'}[m]));const initials=n=>(n||'S').trim().slice(0,1).toUpperCase();const stars=n=>'★'.repeat(Number(n||5));
-leadForm.addEventListener('submit',async e=>{e.preventDefault();const btn=leadForm.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent='Отправляем...';try{await addDoc(collection(db,'requests'),{name:leadName.value.trim(),phone:leadPhone.value.trim(),type:leadType.value,city:leadCity.value.trim(),message:leadMessage.value.trim(),status:'new',approved:false,createdAt:serverTimestamp(),source:'stroplook-site'});leadForm.reset();showToast('Заявка отправлена ✅');}catch(err){console.error(err);showToast('Ошибка Firebase. Проверь rules.');}finally{btn.disabled=false;btn.textContent='Отправить заявку';}});
+leadForm.addEventListener('submit',async e=>{e.preventDefault();const btn=leadForm.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent='Отправляем...';try{const requestData={name:leadName.value.trim(),phone:leadPhone.value.trim(),type:leadType.value,workType:leadType.value,city:leadCity.value.trim(),message:leadMessage.value.trim(),status:'new',approved:false,createdAt:serverTimestamp(),source:'stroplook-site'};
+await addDoc(collection(db,'requests'),requestData);
+notifyTelegram({type:'request',...requestData});
+leadForm.reset();showToast('Заявка отправлена ✅');}catch(err){console.error(err);showToast('Ошибка Firebase. Проверь rules.');}finally{btn.disabled=false;btn.textContent='Отправить заявку';}});
 function reviewCard(r){return `<div class="review"><div class="review-top"><div class="avatar">${initials(r.name)}</div><div><b>${esc(r.name||'Клиент')}</b><br><small>${esc(r.work||'STROP LOOK')}</small></div><div class="rs">${stars(r.rating)}</div></div><p>${esc(r.text)}</p></div>`}
 try{const q=query(collection(db,'reviews'),where('approved','==',true),orderBy('createdAt','desc'));onSnapshot(q,snap=>{reviewsGrid.innerHTML=snap.empty?'<div class="empty">Пока нет одобренных отзывов.</div>':snap.docs.map(d=>reviewCard(d.data())).join('')},err=>{console.error(err);reviewsGrid.innerHTML='<div class="empty">Отзывы не загрузились. Проверь Firestore index approved + createdAt.</div>'})}catch(e){console.error(e)}
-reviewForm.addEventListener('submit',async e=>{e.preventDefault();const btn=reviewForm.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent='Отправляем...';try{await addDoc(collection(db,'reviews'),{name:reviewName.value.trim(),work:reviewWork.value.trim(),text:reviewText.value.trim(),rating:window.selectedStars||5,approved:false,rejected:false,createdAt:serverTimestamp(),source:'stroplook-site'});reviewForm.reset();showToast('Отзыв отправлен на модерацию ✅');}catch(err){console.error(err);showToast('Ошибка Firebase. Проверь rules.');}finally{btn.disabled=false;btn.textContent='Отправить отзыв';}});
+reviewForm.addEventListener('submit',async e=>{e.preventDefault();const btn=reviewForm.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent='Отправляем...';try{const reviewData={name:reviewName.value.trim(),work:reviewWork.value.trim(),text:reviewText.value.trim(),rating:window.selectedStars||5,approved:false,rejected:false,createdAt:serverTimestamp(),source:'stroplook-site'};
+await addDoc(collection(db,'reviews'),reviewData);
+notifyTelegram({type:'review',...reviewData});
+reviewForm.reset();showToast('Отзыв отправлен на модерацию ✅');}catch(err){console.error(err);showToast('Ошибка Firebase. Проверь rules.');}finally{btn.disabled=false;btn.textContent='Отправить отзыв';}});
 </script>
 </body>
 </html>
