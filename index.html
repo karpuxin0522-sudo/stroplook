@@ -702,38 +702,18 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 
 
 /* ===== Floating Facebook + WhatsApp ===== */
-.float-socials{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  z-index:70;
-  display:grid;
-  gap:12px;
-}
-.float-socials a{
-  width:64px;
-  height:64px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  color:#fff;
-  text-decoration:none;
-  box-shadow:0 18px 55px rgba(0,0,0,.45);
-  transition:.25s;
-}
+.float-socials{position:fixed;right:22px;bottom:22px;z-index:80;display:grid;gap:12px}
+.float-socials a{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:#fff;text-decoration:none;box-shadow:0 18px 55px rgba(0,0,0,.45);transition:.25s}
 .float-socials a:hover{transform:translateY(-4px) scale(1.04);filter:brightness(1.06)}
 .float-fb{background:#1877F2;font-family:Arial,sans-serif;font-size:36px;font-weight:900}
 .float-wa{background:#25D366}
 .float-wa svg{width:32px;height:32px;fill:#fff}
-@media(max-width:560px){
-  .float-socials{right:14px;bottom:14px;gap:10px}
-  .float-socials a{width:58px;height:58px}
-}
+@media(max-width:560px){.float-socials{right:14px;bottom:14px;gap:10px}.float-socials a{width:58px;height:58px}}
 
 </style>
 </head>
 <body>
-<nav class="nav"><div class="wrap navin"><a class="logo" href="#top"><small>BRATISLAVA</small><b>STROP <span class="gold">LOOK</span></b></a><div class="navlinks"><a href="#services">Услуги</a><a href="#gallery">Работы</a><a href="#request">Заявка</a><a href="#reviews">Отзывы</a><a href="#faq">FAQ</a></div><div class="navright"><div class="lang-box"><button class="lang-btn" onclick="toggleLang(event)">🌐 <span id="langLabel">RU</span> ▾</button><div class="lang-menu" id="langMenu"><button onclick="setLang('sk')">SK · Slovensky</button><button onclick="setLang('ua')">UA · Українська</button><button onclick="setLang('ru')">RU · Русский</button><button onclick="setLang('en')">EN · English</button></div></div><a class="ico" target="_blank" href="https://wa.me/421952277013">☏</a><a class="ico" target="_blank" href="https://www.facebook.com/people/Napínacie-stropy-SK/61572213579804/">f</a><a class="phone" href="tel:+421952277013">+421 952 277 013</a><button class="mobile-menu-btn" onclick="toggleMobile()">☰</button></div></div></nav>
+<nav class="nav"><div class="wrap navin"><a class="logo" href="#top"><small>BRATISLAVA</small><b>STROP <span class="gold">LOOK</span></b></a><div class="navlinks"><a href="#services">Услуги</a><a href="#gallery">Работы</a><a href="#request">Заявка</a><a href="#reviews">Отзывы</a><a href="#faq">FAQ</a></div><div class="navright"><div class="lang-box"><button class="lang-btn" onclick="toggleLang(event)">🌐 <span id="langLabel">RU</span> ▾</button><div class="lang-menu" id="langMenu"><button onclick="newSetLang('sk')">SK · Slovensky</button><button onclick="newSetLang('ua')">UA · Українська</button><button onclick="newSetLang('ru')">RU · Русский</button><button onclick="newSetLang('en')">EN · English</button></div></div><a class="ico" target="_blank" href="https://wa.me/421952277013">☏</a><a class="ico" target="_blank" href="https://www.facebook.com/people/Napínacie-stropy-SK/61572213579804/">f</a><a class="phone" href="tel:+421952277013">+421 952 277 013</a><button class="mobile-menu-btn" onclick="toggleMobile()">☰</button></div></div></nav>
 <div class="mobile-menu" id="mobileMenu"><a href="#services" onclick="toggleMobile(false)">Услуги</a><a href="#gallery" onclick="toggleMobile(false)">Работы</a><a href="#request" onclick="toggleMobile(false)">Оставить заявку</a><a href="#reviews" onclick="toggleMobile(false)">Отзывы</a></div>
 <header class="hero" id="top"><div class="hero-bg"><img src="svitlo-posle.jpg" alt="Натяжные потолки STROP LOOK" loading="eager"></div><div class="wrap"><div class="badge">Premium napínané stropy · Bratislava</div><h1>Натяжные <span class="gold">потолки</span><br>без дешёвого вида</h1><p>Световые линии, парящие потолки, глянцевые решения и фотопечать. Аккуратный монтаж, premium-визуал и быстрая заявка прямо через сайт.</p><div class="btns"><a class="btn main" href="#request">Оставить заявку →</a><a class="btn dark" href="#gallery">Смотреть работы</a></div><div class="hero-cards"><div class="mini"><b>€</b><span>расчёт по проекту</span></div><div class="mini"><b>Clean</b><span>чистый монтаж</span></div><div class="mini"><b>SK</b><span>Bratislava и окрестности</span></div></div></div></header>
 
@@ -860,67 +840,7 @@ en:{valueTitle:'Price <span class="gold">without surprises</span>',valueSub:'We 
 function applyExtraLang(){const e=EXTRA_LANGS[currentLang]||EXTRA_LANGS.ru;const t=tr();const value=document.querySelector('#value');if(value){value.querySelector('.title').innerHTML=e.valueTitle;value.querySelector('.sub').textContent=e.valueSub;value.querySelectorAll('.card h3').forEach((el,i)=>el.textContent=e.valueH[i]);value.querySelectorAll('.card p').forEach((el,i)=>el.textContent=e.valueP[i]);const pn=value.querySelector('.price-note');if(pn)pn.innerHTML=e.priceNote;}const sections=document.querySelectorAll('section');const steps=sections[3];if(steps){steps.querySelector('.title').innerHTML=t.stepsTitle;steps.querySelector('.sub').textContent=t.stepsSub;steps.querySelectorAll('.card h3').forEach((el,i)=>el.textContent=t.stepH[i]);steps.querySelectorAll('.card p').forEach((el,i)=>el.textContent=t.stepP[i]);}if(window.leadArea)leadArea.placeholder=e.leadExtra[0];if(window.leadDate)leadDate.placeholder=e.leadExtra[1];document.querySelectorAll('.trust-pill').forEach((el,i)=>el.textContent=e.trust[i]);document.querySelectorAll('.footer .foot div:first-child').forEach(el=>{el.innerHTML='<b>STROP <span class="gold">LOOK</span></b><br>'+e.footer});const closeBtn=document.querySelector('.close');if(closeBtn)closeBtn.setAttribute('aria-label',e.close);const mv=document.querySelector('#modalVideo');if(mv)mv.textContent=e.videoUnsupported;}
 let currentLang=localStorage.getItem('stropLang')||'ru';
 const categories=[{id:'all'},{id:'print'},{id:'gloss'},{id:'float'},{id:'led'},{id:'video'}];
-function tr(){return LANGS[currentLang]||LANGS.ru}function catLabel(id){return tr().cats[id]||id}function photoTitle(p){const n=((p.title||'').match(/\d+/)||[''])[0];return (tr().photo[p.cat]||p.title)+(n?' '+n:'')}function toggleLang(e){e&&e.stopPropagation();$('langMenu').classList.toggle('active')}function closeLang(){$('langMenu').classList.remove('active')}function setLang(lang){currentLang=lang;localStorage.setItem('stropLang',lang);closeLang();applyLang()}
-function applyLang(){const t=tr();document.documentElement.lang=currentLang;document.title=currentLang==='sk'?'STROP LOOK | Premium napínané stropy Bratislava':currentLang==='en'?'STROP LOOK | Premium stretch ceilings Bratislava':currentLang==='ua'?'STROP LOOK | Premium натяжні стелі Bratislava':'STROP LOOK | Premium натяжные потолки Bratislava';$('langLabel').textContent=t.code;document.querySelectorAll('#langMenu button').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes(`'${currentLang}'`)));document.querySelectorAll('.navlinks a').forEach((a,i)=>a.textContent=t.nav[i]);document.querySelectorAll('#mobileMenu a').forEach((a,i)=>a.textContent=t.mobile[i]);document.querySelector('.badge').textContent=t.badge;document.querySelector('h1').innerHTML=t.heroTitle;document.querySelector('.hero p').textContent=t.heroText;document.querySelector('.hero .btns a:nth-child(1)').textContent=t.cta;document.querySelector('.hero .btns a:nth-child(2)').textContent=t.works;document.querySelectorAll('.mini span').forEach((el,i)=>el.textContent=t.mini[i]);document.querySelector('#services .title').innerHTML=t.servicesTitle;document.querySelector('#services .sub').textContent=t.servicesSub;document.querySelectorAll('#services .card h3').forEach((el,i)=>el.textContent=t.servH[i]);document.querySelectorAll('#services .card p').forEach((el,i)=>el.textContent=t.servP[i]);document.querySelector('#gallery .title').innerHTML=t.galleryTitle;document.querySelector('#gallery .sub').textContent=t.gallerySub;$('moreBtn').textContent=t.showMore;document.querySelector('#gallery .gallery-actions .dark').textContent=t.hideBack;$('filterLabel').textContent=catLabel(currentCat);document.querySelector('#request .title').innerHTML=t.requestTitle;document.querySelector('#request .head .sub').textContent=t.requestSub;document.querySelector('.request-info h3').textContent=t.calc;document.querySelector('.request-info .sub').textContent=t.calcP;document.querySelectorAll('.request-info li').forEach((el,i)=>el.textContent=t.list[i]);document.querySelector('.request-info .btn').textContent=t.wa;leadName.placeholder=t.ph[0];leadPhone.placeholder=t.ph[1];leadCity.placeholder=t.ph[2];leadMessage.placeholder=t.ph[3];Array.from(leadType.options).forEach((o,i)=>o.textContent=t.types[i]);document.querySelector('#leadForm button[type="submit"]').textContent=t.sendRequest;document.querySelector('#leadForm small').innerHTML=t.reqSmall;document.querySelector('#reviews .title').innerHTML=t.reviewsTitle;document.querySelector('#reviews .sub').textContent=t.reviewsSub;const reviewCta={ru:['Ваш отзыв важен','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.','Оставить отзыв'],sk:['Váš názor je dôležitý','Napíšte, ako prebehla montáž. Po kontrole sa recenzia zobrazí na stránke.','Pridať recenziu'],ua:['Ваш відгук важливий','Розкажіть, як пройшов монтаж. Після перевірки відгук з’явиться на сайті.','Залишити відгук'],en:['Your review matters','Tell us how the installation went. After checking, the review will appear on the website.','Leave a review']}[currentLang]||['Ваш отзыв важен','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.','Оставить отзыв'];if($('reviewCtaTitle'))$('reviewCtaTitle').textContent=reviewCta[0];if($('reviewCtaText'))$('reviewCtaText').textContent=reviewCta[1];if($('openReviewBtn'))$('openReviewBtn').textContent=reviewCta[2];document.querySelector('#reviewForm h3').textContent=t.leaveReview;reviewName.placeholder=t.reviewPh[0];reviewWork.placeholder=t.reviewPh[1];reviewText.placeholder=t.reviewPh[2];document.querySelector('#reviewForm button[type="submit"]').textContent=t.sendReview;document.querySelector('#reviewForm small').innerHTML=t.revSmall;document.querySelector('#faq .title').innerHTML=t.faqTitle;document.querySelector('#faq .sub').textContent=t.faqSub;document.querySelectorAll('#faq summary').forEach((el,i)=>el.textContent=t.faqQ[i]);document.querySelectorAll('#faq details p').forEach((el,i)=>el.textContent=t.faqA[i]);applyExtraLang();renderGallery();if(typeof renderApprovedReviews==='function')renderApprovedReviews();}
-
-
-
-const galleryPhotos=[
-{src:'Public/Images/photo_5226781981998260339_y.jpg',cat:'gloss',title:'Глянцевый потолок 1',tag:'GLOSS'},
-{src:'Public/Images/photo_5226781981998260340_y.jpg',cat:'gloss',title:'Глянцевый потолок 2',tag:'GLOSS'},
-{src:'Public/Images/photo_5226781981998260341_y.jpg',cat:'gloss',title:'Глянцевый потолок 3',tag:'GLOSS'},
-{src:'Public/Images/photo_5226781981998260342_y.jpg',cat:'gloss',title:'Глянцевый потолок 4',tag:'GLOSS'},
-{src:'Public/Images/photo_5226781981998260343_y.jpg',cat:'gloss',title:'Глянцевый потолок 5',tag:'GLOSS'},
-{src:'Public/Images/photo_5226781981998260344_y.jpg',cat:'gloss',title:'Глянцевый потолок 6',tag:'GLOSS'},
-{src:'Public/Images/photo_5226781981998260345_y.jpg',cat:'gloss',title:'Глянцевый потолок 7',tag:'GLOSS'},
-{src:'Public/Images/photo_5235840351493364333_y.jpg',cat:'gloss',title:'Глянцевый потолок 8',tag:'GLOSS'},
-{src:'Public/Images/photo_5235840351493364335_y.jpg',cat:'gloss',title:'Глянцевый потолок 9',tag:'GLOSS'},
-{src:'Public/Images/LUSTREA.jpg',cat:'gloss',title:'Premium глянец',tag:'GLOSS'},
-
-{src:'Public/Images/SvitlovaLinia1.jpg',cat:'led',title:'Световые линии 1',tag:'LED'},
-{src:'Public/Images/SvitlovaLinia2.jpg',cat:'led',title:'Световые линии 2',tag:'LED'},
-{src:'Public/Images/SvitlovaLinia3.jpg',cat:'led',title:'Световые линии 3',tag:'LED'},
-{src:'Public/Images/SvitlovaLinia4.jpg',cat:'led',title:'Световые линии 4',tag:'LED'},
-{src:'Public/Images/SvitlovaLinia5.jpg',cat:'led',title:'Световые линии 5',tag:'LED'},
-{src:'Public/Images/SvitlovaLinia 6.jpg',cat:'led',title:'Световые линии 6',tag:'LED'},
-{src:'Public/Images/SvitlovaLinia7.jpg',cat:'led',title:'Световые линии 7',tag:'LED'},
-{src:'Public/Images/SvitlovaLinia8.jpg',cat:'led',title:'Световые линии 8',tag:'LED'},
-
-{src:'Public/Images/PhotoTlac1.png',cat:'print',title:'Фотопечать 1',tag:'PRINT'},
-{src:'Public/Images/PhotoTlac2.png',cat:'print',title:'Фотопечать 2',tag:'PRINT'},
-
-{src:'Public/Images/Плаваючі.png',cat:'float',title:'Парящий потолок 1',tag:'FLOAT'},
-{src:'Public/Images/Плаваючі2.png',cat:'float',title:'Парящий потолок 2',tag:'FLOAT'},
-{src:'Public/Images/Плаваючі3.png',cat:'float',title:'Парящий потолок 3',tag:'FLOAT'},
-{src:'Public/Images/Плаваючі4.png',cat:'float',title:'Парящий потолок 4',tag:'FLOAT'},
-
-{src:'Public/Images/Video/result.mp4',cat:'video',type:'video',title:'Видео монтаж',tag:'VIDEO'}
-];
-
-let currentCat='all',visibleCount=12,currentList=[],currentIndex=0,selectedStars=5;
-
- window.selectedStars=selectedStars;
-const $=id=>document.getElementById(id);function showToast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),3600)}function toggleMobile(force){$('mobileMenu').classList.toggle('active', typeof force==='boolean'?force:undefined)}
-function toggleFilter(){buildFilter();$('filterMenu').classList.toggle('active')}function closeFilter(){$('filterMenu').classList.remove('active')}function buildFilter(){$('filterMenu').innerHTML=categories.map(c=>`<button class="${c.id===currentCat?'active':''}" onclick="setCategory('${c.id}')">${catLabel(c.id)}</button>`).join('')}function setCategory(id){currentCat=id;visibleCount=12;$('filterLabel').textContent=catLabel(id);closeFilter();renderGallery()}function filtered(){return currentCat==='all'?galleryPhotos:galleryPhotos.filter(p=>p.cat===currentCat)}
-function videoSources(){return `<source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4">`}
-function galleryMedia(p){return p.type==='video'?`<video muted playsinline preload="metadata">${videoSources()}</video><div class="play-badge">▶</div>`:`<img src="${p.src}" alt="${photoTitle(p)}" loading="lazy">`}
-function renderGallery(){buildFilter();currentList=filtered();const shown=currentList.slice(0,visibleCount);$('galleryCount').textContent=`${tr().shown} ${shown.length} ${tr().from} ${currentList.length}`;$('galleryGrid').innerHTML=shown.map((p,i)=>`<article class="g ${p.type==='video'?'video-card':''}" onclick="openPhoto(${i})">${galleryMedia(p)}<div class="g-info"><small>${p.tag}</small><h3>${photoTitle(p)}</h3></div></article>`).join('');$('moreBtn').style.display=visibleCount>=currentList.length?'none':'inline-flex'}function loadMoreGallery(){visibleCount+=6;renderGallery()}function resetGallery(){visibleCount=12;renderGallery();$('gallery').scrollIntoView({behavior:'smooth'})}
-function setModalMedia(p){const img=$('modalImg'),video=$('modalVideo');if(video){video.pause();video.innerHTML='';video.removeAttribute('src');video.load()}if(p.type==='video'){img.style.display='none';if(video){video.style.display='block';video.innerHTML=videoSources();video.load();video.play().catch(()=>{});}}else{if(video)video.style.display='none';img.style.display='block';img.src=p.src;}}
-function openPhoto(i){currentIndex=i;setModalMedia(currentList[i]);$('photoModal').classList.add('active')}function closePhoto(){$('photoModal').classList.remove('active');const video=$('modalVideo');if(video)video.pause()}function prevPhoto(){currentIndex=(currentIndex-1+currentList.length)%currentList.length;setModalMedia(currentList[currentIndex])}function nextPhoto(){currentIndex=(currentIndex+1)%currentList.length;setModalMedia(currentList[currentIndex])}
-function openReviewModal(){$('reviewModal').classList.add('active');$('reviewModal').setAttribute('aria-hidden','false')}
-function closeReviewModal(){$('reviewModal').classList.remove('active');$('reviewModal').setAttribute('aria-hidden','true')}
-document.addEventListener('click',e=>{if(!e.target.closest('.filter-box'))closeFilter();if(!e.target.closest('.lang-box'))closeLang();if(e.target&&e.target.id==='reviewModal')closeReviewModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePhoto();closeReviewModal()}if($('photoModal').classList.contains('active')&&e.key==='ArrowLeft')prevPhoto();if($('photoModal').classList.contains('active')&&e.key==='ArrowRight')nextPhoto()});renderGallery();
-const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.fade').forEach(el=>io.observe(el));
-function renderStars(){document.querySelectorAll('#stars button').forEach(b=>b.classList.toggle('active',Number(b.dataset.star)<=selectedStars))}document.querySelectorAll('#stars button').forEach(b=>b.addEventListener('click',()=>{selectedStars=Number(b.dataset.star);window.selectedStars=selectedStars;renderStars()}));renderStars();applyLang();
-
-function scrollReviews(direction){
-  const grid=document.getElementById('reviewsGrid');
-  if(!grid) return;
-  const card=grid.querySelector('.review');
-  const gap=22;
-  const step=card ? (card.getBoundingClientRect().width + gap) : Math.max(280, grid.clientWidth/3);
-  grid.scrollBy({left: direction * step, behavior:'smooth'});
-}
+function tr(){return LANGS[currentLang]||LANGS.ru}function catLabel(id){return tr().cats[id]||id}function photoTitle(p){const n=((p.title||'').match(/\d+/)||[''])[0];return (tr().photo[p.cat]||p.title)+(n?' '+n:'')}function toggleLang(e){e&&e.stopPropagation();$('langMenu').classList.toggle('active')}function closeLang(){$('langMenu').classList.remove('active')}
 window.scrollReviews=scrollReviews;
 
 </script>
@@ -1398,269 +1318,107 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
 </script>
 
 
+<script>
+/* ===== CLEAN TRANSLATOR ONLY — OLD TRANSLATOR REMOVED ===== */
+(function(){
+  const T = {"sk": {"Услуги": "Služby", "Работы": "Realizácie", "Заявка": "Žiadosť", "Отзывы": "Recenzie", "Оставить заявку": "Odoslať žiadosť", "Оставить заявку →": "Odoslať žiadosť →", "Смотреть работы": "Pozrieť práce", "Натяжные": "Napínané", "потолки": "stropy", "без дешёвого вида": "bez lacného vzhľadu", "расчёт по проекту": "výpočet podľa projektu", "чистый монтаж": "čistá montáž", "Bratislava и окрестности": "Bratislava a okolie", "Световые линии, парящие потолки, глянцевые решения и фотопечать. Аккуратный монтаж, premium-визуал и быстрая заявка прямо через сайт.": "Svetelné línie, plávajúce stropy, lesklé riešenia a fototlač. Precízna montáž, prémiový vzhľad a rýchla žiadosť priamo cez web.", "Стоимость": "Cena", "без сюрпризов": "bez prekvapení", "Мы не ставим случайную цену “за метр”, потому что итог зависит от комнаты, света, углов, полотна и сложности монтажа. Поэтому сначала уточняем детали и даём понятный расчёт.": "Nedávame náhodnú cenu „za meter“, pretože výsledok závisí od miestnosti, svetla, rohov, fólie a náročnosti montáže. Preto najprv upresníme detaily a dáme jasný výpočet.", "Площадь и форма": "Plocha a tvar", "Размер комнаты, количество углов, трубы, ниши и сложность доступа влияют на финальную стоимость.": "Veľkosť miestnosti, počet rohov, rúry, niky a náročnosť prístupu ovplyvňujú finálnu cenu.", "Свет и профиль": "Svetlo a profil", "Световые линии, парящий эффект, треки и LED-подсветка считаются индивидуально под интерьер.": "Svetelné línie, plávajúci efekt, koľajnice a LED podsvietenie sa počítajú individuálne podľa interiéru.", "Материал и эффект": "Materiál a efekt", "Матовый, глянцевый, фотопечать или комбинированное решение — подбираем под стиль квартиры.": "Matný, lesklý, fototlač alebo kombinované riešenie — vyberieme podľa štýlu bytu.", "Лучший вариант для клиента:": "Najlepšia možnosť pre klienta:", "отправьте площадь, город и фото комнаты — мы быстро подскажем ориентир и предложим красивое решение без лишнего давления.": "pošlite plochu, mesto a fotku miestnosti — rýchlo poradíme orientačnú cenu a pekné riešenie bez tlaku.", "Premium решения": "Prémiové riešenia", "Подбираем потолок под интерьер, освещение и бюджет. Делаем современно, чисто и надёжно.": "Vyberieme strop podľa interiéru, osvetlenia a rozpočtu. Robíme moderne, čisto a spoľahlivo.", "Парящие потолки": "Plávajúce stropy", "Глянец и фотопечать": "Lesk a fototlač", "Современный световой акцент для кухни, гостиной, спальни и коммерческих помещений.": "Moderný svetelný akcent do kuchyne, obývačky, spálne aj komerčných priestorov.", "Эффект лёгкости и дорогой подсветки по периметру комнаты.": "Efekt ľahkosti a luxusného podsvietenia po obvode miestnosti.", "Визуальное расширение пространства, индивидуальные мотивы и чистый luxury-эффект.": "Optické zväčšenie priestoru, individuálne motívy a čistý luxury efekt.", "До": "Pred", "После": "Po", "До / После": "Pred / Po", "Показать ещё работы": "Zobraziť ďalšie práce", "Скрыть обратно": "Skryť späť", "Один главный проект с красивым сравнением. Двигайте световую линию, а остальные работы открываются кнопкой ниже.": "Jeden hlavný projekt s pekným porovnaním. Posúvajte svetelnú líniu, ostatné práce otvoríte tlačidlom nižšie.", "Световые линии": "Svetelné línie", "Современный свет, ровная геометрия и дорогой визуал комнаты после монтажа.": "Moderné svetlo, rovná geometria a prémiový vzhľad miestnosti po montáži.", "Хочу такой потолок": "Chcem taký strop", "Нажми / наведи": "Klikni / prejdi myšou", "Premium потолок": "Prémiový strop", "Аккуратный результат после монтажа": "Precízny výsledok po montáži", "Ровный потолок": "Rovný strop", "До ремонта и финальный вид": "Pred rekonštrukciou a finálny vzhľad", "Галерея работ": "Galéria prác", "Галерея": "Galéria", "Все работы": "Všetky práce", "Фотопечать": "Fototlač", "Глянцевые": "Lesklé", "Глянцевый потолок": "Lesklý strop", "Парящий потолок": "Plávajúci strop", "Видео": "Video", "Видео монтаж": "Video montáže", "Показать ещё": "Zobraziť viac", "Показано": "Zobrazené", "из": "z", "Как мы работаем": "Ako pracujeme", "Простая схема для клиента: без лишних звонков и непонятных этапов.": "Jednoduchý proces pre klienta: bez zbytočných telefonátov a nejasných krokov.", "Замер": "Zameranie", "Монтаж": "Montáž", "Клиент оставляет номер, тип потолка и комментарий.": "Klient nechá číslo, typ stropu a komentár.", "Уточняем детали, размеры, освещение и материалы.": "Upresníme detaily, rozmery, osvetlenie a materiály.", "Аккуратная установка и финальная проверка результата.": "Precízna montáž a finálna kontrola výsledku.", "Быстрый расчёт": "Rýchly výpočet", "Оставьте заявку — мы быстро свяжемся с вами и подскажем лучший вариант потолка под ваш интерьер.": "Odošlite žiadosť — rýchlo sa vám ozveme a poradíme najlepší variant stropu pre váš interiér.", "Оставьте данные, и мы свяжемся с вами для консультации.": "Nechajte údaje a ozveme sa vám na konzultáciu.", "Имя и телефон клиента": "Meno a telefón klienta", "Тип потолка / услуги": "Typ stropu / služby", "Комментарий и город": "Komentár a mesto", "Быстрый ответ и консультация": "Rýchla odpoveď a konzultácia", "Написать в WhatsApp": "Napísať na WhatsApp", "Имя": "Meno", "Телефон": "Telefón", "Город / район": "Mesto / oblasť", "Комментарий: размеры, комната, пожелания": "Komentár: rozmery, miestnosť, želania", "Нужна консультация": "Potrebujem konzultáciu", "Отправить заявку": "Odoslať žiadosť", "Мы свяжемся с вами после получения заявки.": "Ozveme sa vám po prijatí žiadosti.", "Отзывы клиентов": "Recenzie klientov", "Ваш отзыв важен": "Váš názor je dôležitý", "Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.": "Napíšte, ako prebehla montáž. Po kontrole sa recenzia zobrazí na stránke.", "Оставить отзыв": "Pridať recenziu", "Что было сделано": "Čo bolo urobené", "Ваш отзыв": "Vaša recenzia", "Отправить отзыв": "Odoslať recenziu", "Спасибо за ваш отзыв — он появится на сайте после проверки.": "Ďakujeme za recenziu — zobrazí sa na stránke po kontrole.", "Клиент": "Klient", "Проверенный клиент": "Overený klient", "Короткие ответы на частые вопросы клиентов.": "Krátke odpovede na časté otázky klientov.", "Сколько стоит натяжной потолок?": "Koľko stojí napínaný strop?", "Можно ли сделать световые линии?": "Dajú sa urobiť svetelné línie?", "Где вы работаете?": "Kde pracujete?", "Цена зависит от площади, типа полотна, освещения, количества углов и сложности монтажа. Оставьте заявку — мы уточним детали.": "Cena závisí od plochy, typu fólie, osvetlenia, počtu rohov a náročnosti montáže. Odošlite žiadosť — upresníme detaily.", "Да, световые линии и парящие потолки — один из главных premium-вариантов для современного интерьера.": "Áno, svetelné línie a plávajúce stropy patria medzi hlavné prémiové riešenia pre moderný interiér.", "Bratislava и окрестности. Другие города можно обсудить отдельно.": "Bratislava a okolie. Iné mestá môžeme dohodnúť individuálne.", "Заявка отправлена ✅": "Žiadosť bola odoslaná ✅", "Отзыв отправлен на модерацию ✅": "Recenzia bola odoslaná na schválenie ✅", "Отправляем...": "Odosielame...", "Закрыть": "Zavrieť"}, "ua": {"Услуги": "Послуги", "Работы": "Роботи", "Заявка": "Заявка", "Отзывы": "Відгуки", "Оставить заявку": "Залишити заявку", "Оставить заявку →": "Залишити заявку →", "Смотреть работы": "Дивитися роботи", "Натяжные": "Натяжні", "потолки": "стелі", "без дешёвого вида": "без дешевого вигляду", "расчёт по проекту": "розрахунок за проєктом", "чистый монтаж": "чистий монтаж", "Bratislava и окрестности": "Братислава та околиці", "Стоимость": "Вартість", "без сюрпризов": "без сюрпризів", "Площадь и форма": "Площа і форма", "Свет и профиль": "Світло і профіль", "Материал и эффект": "Матеріал і ефект", "Premium решения": "Premium рішення", "Световые линии": "Світлові лінії", "Парящие потолки": "Плаваючі стелі", "Глянец и фотопечать": "Глянець і фотодрук", "До": "До", "После": "Після", "До / После": "До / Після", "Показать ещё работы": "Показати ще роботи", "Скрыть обратно": "Сховати назад", "Хочу такой потолок": "Хочу таку стелю", "Нажми / наведи": "Натисни / наведи", "Premium потолок": "Premium стеля", "Ровный потолок": "Рівна стеля", "Галерея работ": "Галерея робіт", "Галерея": "Галерея", "Все работы": "Усі роботи", "Фотопечать": "Фотодрук", "Глянцевые": "Глянцеві", "Глянцевый потолок": "Глянцева стеля", "Парящий потолок": "Плаваюча стеля", "Видео": "Відео", "Видео монтаж": "Відео монтажу", "Показать ещё": "Показати ще", "Показано": "Показано", "из": "з", "Как мы работаем": "Як ми працюємо", "Замер": "Замір", "Монтаж": "Монтаж", "Быстрый расчёт": "Швидкий розрахунок", "Имя": "Ім’я", "Телефон": "Телефон", "Город / район": "Місто / район", "Комментарий: размеры, комната, пожелания": "Коментар: розміри, кімната, побажання", "Нужна консультация": "Потрібна консультація", "Отправить заявку": "Надіслати заявку", "Написать в WhatsApp": "Написати в WhatsApp", "Отзывы клиентов": "Відгуки клієнтів", "Ваш отзыв важен": "Ваш відгук важливий", "Оставить отзыв": "Залишити відгук", "Что было сделано": "Що було зроблено", "Ваш отзыв": "Ваш відгук", "Отправить отзыв": "Надіслати відгук", "Клиент": "Клієнт", "Проверенный клиент": "Перевірений клієнт", "Сколько стоит натяжной потолок?": "Скільки коштує натяжна стеля?", "Можно ли сделать световые линии?": "Чи можна зробити світлові лінії?", "Где вы работаете?": "Де ви працюєте?", "Заявка отправлена ✅": "Заявку відправлено ✅", "Отзыв отправлен на модерацию ✅": "Відгук відправлено на модерацію ✅", "Отправляем...": "Відправляємо...", "Закрыть": "Закрити"}, "en": {"Услуги": "Services", "Работы": "Projects", "Заявка": "Request", "Отзывы": "Reviews", "Оставить заявку": "Send request", "Оставить заявку →": "Send request →", "Смотреть работы": "View projects", "Натяжные": "Stretch", "потолки": "ceilings", "без дешёвого вида": "without a cheap look", "расчёт по проекту": "project-based quote", "чистый монтаж": "clean installation", "Bratislava и окрестности": "Bratislava and nearby areas", "Стоимость": "Price", "без сюрпризов": "without surprises", "Площадь и форма": "Area and shape", "Свет и профиль": "Lighting and profile", "Материал и эффект": "Material and effect", "Premium решения": "Premium solutions", "Световые линии": "Light lines", "Парящие потолки": "Floating ceilings", "Глянец и фотопечать": "Gloss and photo print", "До": "Before", "После": "After", "До / После": "Before / After", "Показать ещё работы": "Show more projects", "Скрыть обратно": "Hide again", "Хочу такой потолок": "I want this ceiling", "Нажми / наведи": "Click / hover", "Premium потолок": "Premium ceiling", "Ровный потолок": "Smooth ceiling", "Галерея работ": "Project gallery", "Галерея": "Gallery", "Все работы": "All projects", "Фотопечать": "Photo print", "Глянцевые": "Glossy", "Глянцевый потолок": "Glossy ceiling", "Парящий потолок": "Floating ceiling", "Видео": "Video", "Видео монтаж": "Installation video", "Показать ещё": "Show more", "Показано": "Shown", "из": "of", "Как мы работаем": "How we work", "Замер": "Measurement", "Монтаж": "Installation", "Быстрый расчёт": "Quick quote", "Имя": "Name", "Телефон": "Phone", "Город / район": "City / area", "Комментарий: размеры, комната, пожелания": "Comment: sizes, room, wishes", "Нужна консультация": "Need consultation", "Отправить заявку": "Send request", "Написать в WhatsApp": "Message on WhatsApp", "Отзывы клиентов": "Client reviews", "Ваш отзыв важен": "Your review matters", "Оставить отзыв": "Leave a review", "Что было сделано": "What was done", "Ваш отзыв": "Your review", "Отправить отзыв": "Send review", "Клиент": "Client", "Проверенный клиент": "Verified client", "Сколько стоит натяжной потолок?": "How much does a stretch ceiling cost?", "Можно ли сделать световые линии?": "Can you make light lines?", "Где вы работаете?": "Where do you work?", "Заявка отправлена ✅": "Request sent ✅", "Отзыв отправлен на модерацию ✅": "Review sent for moderation ✅", "Отправляем...": "Sending...", "Закрыть": "Close"}};
+  const langs = ['ru','sk','ua','en'];
+  let currentLang = localStorage.getItem('strop_lang') || 'ru';
+
+  function norm(s){ return (s || '').replace(/\s+/g,' ').trim(); }
+
+  function translateText(text, lang){
+    if(!text || lang === 'ru') return text;
+    let out = text;
+    const map = T[lang] || {};
+    const exact = map[norm(out)];
+    if(exact) return exact;
+    Object.keys(map).sort((a,b)=>b.length-a.length).forEach(k=>{
+      if(out.includes(k)) out = out.split(k).join(map[k]);
+    });
+    out = out.replace(/Глянцевый потолок\s*(\d*)/g, (m,n)=> (lang==='sk'?'Lesklý strop':lang==='ua'?'Глянцева стеля':'Glossy ceiling') + (n?' '+n:''));
+    out = out.replace(/Световые линии\s*(\d*)/g, (m,n)=> (lang==='sk'?'Svetelné línie':lang==='ua'?'Світлові лінії':'Light lines') + (n?' '+n:''));
+    out = out.replace(/Фотопечать\s*(\d*)/g, (m,n)=> (lang==='sk'?'Fototlač':lang==='ua'?'Фотодрук':'Photo print') + (n?' '+n:''));
+    out = out.replace(/Парящий потолок\s*(\d*)/g, (m,n)=> (lang==='sk'?'Plávajúci strop':lang==='ua'?'Плаваюча стеля':'Floating ceiling') + (n?' '+n:''));
+    return out;
+  }
+
+  function saveOriginals(){
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p = node.parentElement;
+        if(!p || ['SCRIPT','STYLE','NOSCRIPT'].includes(p.tagName)) return NodeFilter.FILTER_REJECT;
+        if(!norm(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    let node;
+    while(node = walker.nextNode()){
+      if(!node.parentElement.hasAttribute('data-ru-text')) node.parentElement.setAttribute('data-ru-text', node.nodeValue);
+    }
+    document.querySelectorAll('input,textarea,button,option,img,a,[aria-label],[title]').forEach(el=>{
+      ['placeholder','value','alt','aria-label','title'].forEach(attr=>{
+        if(el.hasAttribute(attr) && !el.hasAttribute('data-ru-'+attr)){
+          el.setAttribute('data-ru-'+attr, el.getAttribute(attr));
+        }
+      });
+    });
+  }
+
+  function apply(lang){
+    if(!langs.includes(lang)) lang = 'ru';
+    currentLang = lang;
+    localStorage.setItem('strop_lang', lang);
+    document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
+    const label = document.getElementById('langLabel');
+    if(label) label.textContent = lang.toUpperCase();
+
+    saveOriginals();
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node){
+        const p = node.parentElement;
+        if(!p || ['SCRIPT','STYLE','NOSCRIPT'].includes(p.tagName)) return NodeFilter.FILTER_REJECT;
+        if(!norm(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    let node;
+    while(node = walker.nextNode()){
+      const ru = node.parentElement.getAttribute('data-ru-text') || node.nodeValue;
+      node.nodeValue = translateText(ru, lang);
+    }
+
+    document.querySelectorAll('input,textarea,button,option,img,a,[aria-label],[title]').forEach(el=>{
+      ['placeholder','value','alt','aria-label','title'].forEach(attr=>{
+        const ru = el.getAttribute('data-ru-'+attr);
+        if(ru !== null) el.setAttribute(attr, translateText(ru, lang));
+      });
+    });
+
+    const menu = document.getElementById('langMenu');
+    if(menu) menu.classList.remove('active');
+  }
+
+  window.newSetLang = apply;
+  window.setLang = apply;
+
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(()=>apply(currentLang), 100);
+    document.addEventListener('click', function(){
+      if(currentLang !== 'ru') setTimeout(()=>apply(currentLang), 80);
+    }, true);
+  });
+})();
+</script>
+
+
 <div class="float-socials">
   <a class="float-fb" target="_blank" rel="noopener" href="https://www.facebook.com/people/Napínacie-stropy-SK/61572213579804/?rdid=BnES0KGviN1eusKH&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CZVE275gg%2F" aria-label="Facebook">f</a>
   <a class="float-wa" target="_blank" rel="noopener" href="https://wa.me/421952277013" aria-label="WhatsApp">
     <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.19c-.29-.14-1.7-.84-1.96-.94-.26-.1-.45-.14-.64.14-.19.29-.74.94-.91 1.13-.17.19-.33.22-.62.07-.29-.14-1.21-.45-2.31-1.42-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.12-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.44s1.03 2.82 1.18 3.02c.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z"/><path d="M16.02 3C8.86 3 3.04 8.82 3.04 15.98c0 2.29.6 4.53 1.75 6.5L3 29l6.68-1.75a12.9 12.9 0 0 0 6.34 1.62C23.18 28.87 29 23.05 29 15.89 29 8.82 23.18 3 16.02 3zm0 23.68c-2.02 0-4-.54-5.73-1.57l-.41-.24-3.96 1.04 1.06-3.86-.26-.4a10.67 10.67 0 0 1-1.49-5.67c0-5.95 4.84-10.79 10.79-10.79s10.79 4.84 10.79 10.79-4.84 10.7-10.79 10.7z"/></svg>
   </a>
 </div>
-
-
-<script>
-/* ===== STROP LOOK NEW FULL TRANSLATOR v2 ===== */
-(function(){
-  const AVAILABLE = ['ru','sk','ua','en'];
-  let universalLang = localStorage.getItem('stropLang') || localStorage.getItem('siteLang') || 'ru';
-  if(!AVAILABLE.includes(universalLang)) universalLang = 'ru';
-
-  const nodeOriginal = new WeakMap();
-  const attrOriginal = new WeakMap();
-
-  const MAP = {
-    sk: {
-      'Услуги':'Služby','Работы':'Realizácie','Оставить заявку':'Odoslať žiadosť','Оставить заявку →':'Odoslať žiadosť →','Отзывы':'Recenzie','Заявка':'Žiadosť','Смотреть работы':'Pozrieť práce',
-      'Натяжные':'Napínané','потолки':'stropy','без дешёвого вида':'bez lacného vzhľadu',
-      'Световые линии, парящие потолки, глянцевые решения и фотопечать. Аккуратный монтаж, premium-визуал и быстрая заявка прямо через сайт.':'Svetelné línie, plávajúce stropy, lesklé riešenia a fototlač. Precízna montáž, prémiový vzhľad a rýchla žiadosť priamo cez web.',
-      'расчёт по проекту':'výpočet podľa projektu','чистый монтаж':'čistá montáž','Bratislava и окрестности':'Bratislava a okolie',
-      'Стоимость':'Cena','без сюрпризов':'bez prekvapení',
-      'Мы не ставим случайную цену “за метр”, потому что итог зависит от комнаты, света, углов, полотна и сложности монтажа. Поэтому сначала уточняем детали и даём понятный расчёт.':'Nedávame náhodnú cenu „za meter“, pretože výsledok závisí od miestnosti, svetla, rohov, fólie a náročnosti montáže. Preto najprv upresníme detaily a dáme jasný výpočet.',
-      'Площадь и форма':'Plocha a tvar','Размер комнаты, количество углов, трубы, ниши и сложность доступа влияют на финальную стоимость.':'Veľkosť miestnosti, počet rohov, rúry, niky a náročnosť prístupu ovplyvňujú finálnu cenu.',
-      'Свет и профиль':'Svetlo a profil','Световые линии, парящий эффект, треки и LED-подсветка считаются индивидуально под интерьер.':'Svetelné línie, plávajúci efekt, koľajnice a LED podsvietenie sa počítajú individuálne podľa interiéru.',
-      'Материал и эффект':'Materiál a efekt','Матовый, глянцевый, фотопечать или комбинированное решение — подбираем под стиль квартиры.':'Matný, lesklý, fototlač alebo kombinované riešenie — vyberieme podľa štýlu bytu.',
-      'Лучший вариант для клиента:':'Najlepšia možnosť pre klienta:','отправьте площадь, город и фото комнаты — мы быстро подскажем ориентир и предложим красивое решение без лишнего давления.':'pošlite plochu, mesto a fotku miestnosti — rýchlo poradíme orientačnú cenu a pekné riešenie bez tlaku.',
-      'Premium решения':'Prémiové riešenia','Подбираем потолок под интерьер, освещение и бюджет. Делаем современно, чисто и надёжно.':'Vyberieme strop podľa interiéru, osvetlenia a rozpočtu. Robíme moderne, čisto a spoľahlivo.',
-      'Парящие потолки':'Plávajúce stropy','Глянец и фотопечать':'Lesk a fototlač',
-      'Современный световой акцент для кухни, гостиной, спальни и коммерческих помещений.':'Moderný svetelný akcent do kuchyne, obývačky, spálne aj komerčných priestorov.',
-      'Эффект лёгкости и дорогой подсветки по периметру комнаты.':'Efekt ľahkosti a luxusného podsvietenia po obvode miestnosti.',
-      'Визуальное расширение пространства, индивидуальные мотивы и чистый luxury-эффект.':'Optické zväčšenie priestoru, individuálne motívy a čistý luxury efekt.',
-      'До':'Pred','После':'Po','До / После':'Pred / Po','До /':'Pred /','Показать ещё работы':'Zobraziť ďalšie práce','Скрыть обратно':'Skryť späť',
-      'Один главный проект с красивым сравнением. Двигайте световую линию, а остальные работы открываются кнопкой ниже.':'Jeden hlavný projekt s pekným porovnaním. Posúvajte svetelnú líniu, ostatné práce otvoríte tlačidlom nižšie.',
-      'Световые линии':'Svetelné línie','Современный свет, ровная геометрия и дорогой визуал комнаты после монтажа.':'Moderné svetlo, rovná geometria a prémiový vzhľad miestnosti po montáži.','Хочу такой потолок':'Chcem taký strop',
-      'Нажми / наведи':'Klikni / prejdi myšou','Premium потолок':'Prémiový strop','Аккуратный результат после монтажа':'Precízny výsledok po montáži','Ровный потолок':'Rovný strop','До ремонта и финальный вид':'Pred rekonštrukciou a finálny vzhľad',
-      'Галерея работ':'Galéria prác','Галерея':'Galéria','работ':'prác','Фильтр работает по категориям. Сначала показываются 3 фото, дальше открываются ещё.':'Filter funguje podľa kategórií. Najprv sa zobrazia fotografie, potom ďalšie.',
-      'Все работы':'Všetky práce','Фотопечать':'Fototlač','Глянцевые':'Lesklé','Глянцевый потолок':'Lesklý strop','Парящий потолок':'Plávajúci strop','Видео':'Video','Видео монтаж':'Video montáže','Показать ещё':'Zobraziť viac','Показано':'Zobrazené','из':'z',
-      'Как мы работаем':'Ako pracujeme','Как мы':'Ako','работаем':'pracujeme','Простая схема для клиента: без лишних звонков и непонятных этапов.':'Jednoduchý proces pre klienta: bez zbytočných telefonátov a nejasných krokov.',
-      'Замер':'Zameranie','Монтаж':'Montáž','Клиент оставляет номер, тип потолка и комментарий.':'Klient nechá číslo, typ stropu a komentár.','Уточняем детали, размеры, освещение и материалы.':'Upresníme detaily, rozmery, osvetlenie a materiály.','Аккуратная установка и финальная проверка результата.':'Precízna montáž a finálna kontrola výsledku.',
-      'Быстрый расчёт':'Rýchly výpočet','Оставьте заявку — мы быстро свяжемся с вами и подскажем лучший вариант потолка под ваш интерьер.':'Odošlite žiadosť — rýchlo sa vám ozveme a poradíme najlepší variant stropu pre váš interiér.',
-      'Оставьте данные, и мы свяжемся с вами для консультации.':'Nechajte údaje a ozveme sa vám na konzultáciu.','Имя и телефон клиента':'Meno a telefón klienta','Тип потолка / услуги':'Typ stropu / služby','Комментарий и город':'Komentár a mesto','Быстрый ответ и консультация':'Rýchla odpoveď a konzultácia','Написать в WhatsApp':'Napísať na WhatsApp',
-      'Имя':'Meno','Телефон':'Telefón','Город / район':'Mesto / oblasť','Комментарий: размеры, комната, пожелания':'Komentár: rozmery, miestnosť, želania','Световые линии':'Svetelné línie','Парящий потолок':'Plávajúci strop','Глянцевый потолок':'Lesklý strop','Нужна консультация':'Potrebujem konzultáciu','Отправить заявку':'Odoslať žiadosť','Мы свяжемся с вами после получения заявки.':'Ozveme sa vám po prijatí žiadosti.',
-      'Отзывы клиентов':'Recenzie klientov','клиентов':'klientov','Отзывы клиентов после выполненных работ.':'Recenzie klientov po dokončených prácach.','Ваш отзыв важен':'Váš názor je dôležitý','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.':'Napíšte, ako prebehla montáž. Po kontrole sa recenzia zobrazí na stránke.','Оставить отзыв':'Pridať recenziu','Что было сделано':'Čo bolo urobené','Ваш отзыв':'Vaša recenzia','Отправить отзыв':'Odoslať recenziu','Спасибо за ваш отзыв — он появится на сайте после проверки.':'Ďakujeme za recenziu — zobrazí sa na stránke po kontrole.','Клиент':'Klient','Проверенный клиент':'Overený klient',
-      'Короткие ответы на частые вопросы клиентов.':'Krátke odpovede na časté otázky klientov.','Сколько стоит натяжной потолок?':'Koľko stojí napínaný strop?','Можно ли сделать световые линии?':'Dajú sa urobiť svetelné línie?','Где вы работаете?':'Kde pracujete?','Цена зависит от площади, типа полотна, освещения, количества углов и сложности монтажа. Оставьте заявку — мы уточним детали.':'Cena závisí od plochy, typu fólie, osvetlenia, počtu rohov a náročnosti montáže. Odošlite žiadosť — upresníme detaily.','Да, световые линии и парящие потолки — один из главных premium-вариантов для современного интерьера.':'Áno, svetelné línie a plávajúce stropy patria medzi hlavné prémiové riešenia pre moderný interiér.','Bratislava и окрестности. Другие города можно обсудить отдельно.':'Bratislava a okolie. Iné mestá môžeme dohodnúť individuálne.',
-      'Заявка отправлена ✅':'Žiadosť bola odoslaná ✅','Отзыв отправлен на модерацию ✅':'Recenzia bola odoslaná na schválenie ✅','Отправляем...':'Odosielame...','Закрыть':'Zavrieť'
-    },
-    ua: {
-      'Услуги':'Послуги','Работы':'Роботи','Оставить заявку':'Залишити заявку','Оставить заявку →':'Залишити заявку →','Отзывы':'Відгуки','Заявка':'Заявка','Смотреть работы':'Дивитися роботи',
-      'Натяжные':'Натяжні','потолки':'стелі','без дешёвого вида':'без дешевого вигляду',
-      'Световые линии, парящие потолки, глянцевые решения и фотопечать. Аккуратный монтаж, premium-визуал и быстрая заявка прямо через сайт.':'Світлові лінії, плаваючі стелі, глянцеві рішення та фотодрук. Акуратний монтаж, premium-візуал і швидка заявка прямо через сайт.',
-      'расчёт по проекту':'розрахунок за проєктом','чистый монтаж':'чистий монтаж','Bratislava и окрестности':'Братислава та околиці',
-      'Стоимость':'Вартість','без сюрпризов':'без сюрпризів',
-      'Мы не ставим случайную цену “за метр”, потому что итог зависит от комнаты, света, углов, полотна и сложности монтажа. Поэтому сначала уточняем детали и даём понятный расчёт.':'Ми не ставимо випадкову ціну “за метр”, бо результат залежить від кімнати, світла, кутів, полотна та складності монтажу. Тому спочатку уточнюємо деталі й даємо зрозумілий розрахунок.',
-      'Площадь и форма':'Площа і форма','Размер комнаты, количество углов, трубы, ниши и сложность доступа влияют на финальную стоимость.':'Розмір кімнати, кількість кутів, труби, ніші та складність доступу впливають на фінальну вартість.',
-      'Свет и профиль':'Світло і профіль','Световые линии, парящий эффект, треки и LED-подсветка считаются индивидуально под интерьер.':'Світлові лінії, плаваючий ефект, треки та LED-підсвітка рахуються індивідуально під інтер’єр.',
-      'Материал и эффект':'Матеріал і ефект','Матовый, глянцевый, фотопечать или комбинированное решение — подбираем под стиль квартиры.':'Матовий, глянцевий, фотодрук або комбіноване рішення — підбираємо під стиль квартири.',
-      'Лучший вариант для клиента:':'Найкращий варіант для клієнта:','отправьте площадь, город и фото комнаты — мы быстро подскажем ориентир и предложим красивое решение без лишнего давления.':'надішліть площу, місто і фото кімнати — швидко підкажемо орієнтир і запропонуємо гарне рішення без зайвого тиску.',
-      'Premium решения':'Premium рішення','Подбираем потолок под интерьер, освещение и бюджет. Делаем современно, чисто и надёжно.':'Підбираємо стелю під інтер’єр, освітлення і бюджет. Робимо сучасно, чисто і надійно.',
-      'Парящие потолки':'Плаваючі стелі','Глянец и фотопечать':'Глянець і фотодрук',
-      'Современный световой акцент для кухни, гостиной, спальни и коммерческих помещений.':'Сучасний світловий акцент для кухні, вітальні, спальні та комерційних приміщень.',
-      'Эффект лёгкости и дорогой подсветки по периметру комнаты.':'Ефект легкості і дорогої підсвітки по периметру кімнати.',
-      'Визуальное расширение пространства, индивидуальные мотивы и чистый luxury-эффект.':'Візуальне розширення простору, індивідуальні мотиви і чистий luxury-ефект.',
-      'До':'До','После':'Після','До / После':'До / Після','Показать ещё работы':'Показати ще роботи','Скрыть обратно':'Сховати назад',
-      'Один главный проект с красивым сравнением. Двигайте световую линию, а остальные работы открываются кнопкой ниже.':'Один головний проєкт з красивим порівнянням. Рухайте світлову лінію, інші роботи відкриваються кнопкою нижче.',
-      'Световые линии':'Світлові лінії','Современный свет, ровная геометрия и дорогой визуал комнаты после монтажа.':'Сучасне світло, рівна геометрія і дорогий вигляд кімнати після монтажу.','Хочу такой потолок':'Хочу таку стелю',
-      'Нажми / наведи':'Натисни / наведи','Premium потолок':'Premium стеля','Аккуратный результат после монтажа':'Акуратний результат після монтажу','Ровный потолок':'Рівна стеля','До ремонта и финальный вид':'До ремонту і фінальний вигляд',
-      'Галерея работ':'Галерея робіт','Галерея':'Галерея','работ':'робіт','Фильтр работает по категориям. Сначала показываются 3 фото, дальше открываются ещё.':'Фільтр працює за категоріями. Спочатку показуються фото, потім відкриваються ще.',
-      'Все работы':'Усі роботи','Фотопечать':'Фотодрук','Глянцевые':'Глянцеві','Глянцевый потолок':'Глянцева стеля','Парящий потолок':'Плаваюча стеля','Видео':'Відео','Видео монтаж':'Відео монтажу','Показать ещё':'Показати ще','Показано':'Показано','из':'з',
-      'Как мы работаем':'Як ми працюємо','Как мы':'Як ми','работаем':'працюємо','Простая схема для клиента: без лишних звонков и непонятных этапов.':'Проста схема для клієнта: без зайвих дзвінків і незрозумілих етапів.',
-      'Замер':'Замір','Монтаж':'Монтаж','Клиент оставляет номер, тип потолка и комментарий.':'Клієнт залишає номер, тип стелі і коментар.','Уточняем детали, размеры, освещение и материалы.':'Уточнюємо деталі, розміри, освітлення і матеріали.','Аккуратная установка и финальная проверка результата.':'Акуратна установка і фінальна перевірка результату.',
-      'Быстрый расчёт':'Швидкий розрахунок','Оставьте заявку — мы быстро свяжемся с вами и подскажем лучший вариант потолка под ваш интерьер.':'Залиште заявку — ми швидко зв’яжемося з вами і підкажемо найкращий варіант стелі під ваш інтер’єр.',
-      'Оставьте данные, и мы свяжемся с вами для консультации.':'Залиште дані, і ми зв’яжемося з вами для консультації.','Имя и телефон клиента':'Ім’я і телефон клієнта','Тип потолка / услуги':'Тип стелі / послуги','Комментарий и город':'Коментар і місто','Быстрый ответ и консультация':'Швидка відповідь і консультація','Написать в WhatsApp':'Написати в WhatsApp',
-      'Имя':'Ім’я','Телефон':'Телефон','Город / район':'Місто / район','Комментарий: размеры, комната, пожелания':'Коментар: розміри, кімната, побажання','Парящий потолок':'Плаваюча стеля','Глянцевый потолок':'Глянцева стеля','Нужна консультация':'Потрібна консультація','Отправить заявку':'Надіслати заявку','Мы свяжемся с вами после получения заявки.':'Ми зв’яжемося з вами після отримання заявки.',
-      'Отзывы клиентов':'Відгуки клієнтів','клиентов':'клієнтів','Отзывы клиентов после выполненных работ.':'Відгуки клієнтів після виконаних робіт.','Ваш отзыв важен':'Ваш відгук важливий','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.':'Розкажіть, як пройшов монтаж. Після перевірки відгук з’явиться на сайті.','Оставить отзыв':'Залишити відгук','Что было сделано':'Що було зроблено','Ваш отзыв':'Ваш відгук','Отправить отзыв':'Надіслати відгук','Спасибо за ваш отзыв — он появится на сайте после проверки.':'Дякуємо за ваш відгук — він з’явиться на сайті після перевірки.','Клиент':'Клієнт','Проверенный клиент':'Перевірений клієнт',
-      'Короткие ответы на частые вопросы клиентов.':'Короткі відповіді на часті питання клієнтів.','Сколько стоит натяжной потолок?':'Скільки коштує натяжна стеля?','Можно ли сделать световые линии?':'Чи можна зробити світлові лінії?','Где вы работаете?':'Де ви працюєте?','Цена зависит от площади, типа полотна, освещения, количества углов и сложности монтажа. Оставьте заявку — мы уточним детали.':'Ціна залежить від площі, типу полотна, освітлення, кількості кутів і складності монтажу. Залиште заявку — ми уточнимо деталі.','Да, световые линии и парящие потолки — один из главных premium-вариантов для современного интерьера.':'Так, світлові лінії і плаваючі стелі — один із головних premium-варіантів для сучасного інтер’єру.','Bratislava и окрестности. Другие города можно обсудить отдельно.':'Братислава та околиці. Інші міста можна обговорити окремо.',
-      'Заявка отправлена ✅':'Заявку відправлено ✅','Отзыв отправлен на модерацию ✅':'Відгук відправлено на модерацію ✅','Отправляем...':'Відправляємо...','Закрыть':'Закрити'
-    },
-    en: {
-      'Услуги':'Services','Работы':'Projects','Оставить заявку':'Send request','Оставить заявку →':'Send request →','Отзывы':'Reviews','Заявка':'Request','Смотреть работы':'View projects',
-      'Натяжные':'Stretch','потолки':'ceilings','без дешёвого вида':'without a cheap look',
-      'Световые линии, парящие потолки, глянцевые решения и фотопечать. Аккуратный монтаж, premium-визуал и быстрая заявка прямо через сайт.':'Light lines, floating ceilings, glossy solutions and photo printing. Clean installation, premium look and a quick request directly through the website.',
-      'расчёт по проекту':'project-based quote','чистый монтаж':'clean installation','Bratislava и окрестности':'Bratislava and nearby areas',
-      'Стоимость':'Price','без сюрпризов':'without surprises',
-      'Мы не ставим случайную цену “за метр”, потому что итог зависит от комнаты, света, углов, полотна и сложности монтажа. Поэтому сначала уточняем детали и даём понятный расчёт.':'We do not give a random “per meter” price because the final cost depends on the room, lighting, corners, material and installation complexity. First we clarify the details and give a clear quote.',
-      'Площадь и форма':'Area and shape','Размер комнаты, количество углов, трубы, ниши и сложность доступа влияют на финальную стоимость.':'Room size, number of corners, pipes, niches and access complexity affect the final price.',
-      'Свет и профиль':'Lighting and profile','Световые линии, парящий эффект, треки и LED-подсветка считаются индивидуально под интерьер.':'Light lines, floating effect, tracks and LED lighting are calculated individually for the interior.',
-      'Материал и эффект':'Material and effect','Матовый, глянцевый, фотопечать или комбинированное решение — подбираем под стиль квартиры.':'Matte, glossy, photo print or combined solution — selected for the apartment style.',
-      'Лучший вариант для клиента:':'Best option for the client:','отправьте площадь, город и фото комнаты — мы быстро подскажем ориентир и предложим красивое решение без лишнего давления.':'send the area, city and a room photo — we will quickly suggest an estimate and a beautiful solution without pressure.',
-      'Premium решения':'Premium solutions','Подбираем потолок под интерьер, освещение и бюджет. Делаем современно, чисто и надёжно.':'We select the ceiling for the interior, lighting and budget. We work modern, clean and reliable.',
-      'Парящие потолки':'Floating ceilings','Глянец и фотопечать':'Gloss and photo print',
-      'Современный световой акцент для кухни, гостиной, спальни и коммерческих помещений.':'A modern lighting accent for kitchens, living rooms, bedrooms and commercial spaces.',
-      'Эффект лёгкости и дорогой подсветки по периметру комнаты.':'A light floating effect with premium perimeter lighting.',
-      'Визуальное расширение пространства, индивидуальные мотивы и чистый luxury-эффект.':'Visual space expansion, individual motifs and a clean luxury effect.',
-      'До':'Before','После':'After','До / После':'Before / After','До /':'Before /','Показать ещё работы':'Show more projects','Скрыть обратно':'Hide again',
-      'Один главный проект с красивым сравнением. Двигайте световую линию, а остальные работы открываются кнопкой ниже.':'One main project with a beautiful comparison. Move the light line, and open the other projects with the button below.',
-      'Световые линии':'Light lines','Современный свет, ровная геометрия и дорогой визуал комнаты после монтажа.':'Modern lighting, clean geometry and a premium room look after installation.','Хочу такой потолок':'I want this ceiling',
-      'Нажми / наведи':'Click / hover','Premium потолок':'Premium ceiling','Аккуратный результат после монтажа':'Clean result after installation','Ровный потолок':'Smooth ceiling','До ремонта и финальный вид':'Before renovation and final look',
-      'Галерея работ':'Project gallery','Галерея':'Gallery','работ':'projects','Фильтр работает по категориям. Сначала показываются 3 фото, дальше открываются ещё.':'The filter works by category. Photos are shown first, then more open.',
-      'Все работы':'All projects','Фотопечать':'Photo print','Глянцевые':'Glossy','Глянцевый потолок':'Glossy ceiling','Парящий потолок':'Floating ceiling','Видео':'Video','Видео монтаж':'Installation video','Показать ещё':'Show more','Показано':'Shown','из':'of',
-      'Как мы работаем':'How we work','Как мы':'How we','работаем':'work','Простая схема для клиента: без лишних звонков и непонятных этапов.':'A simple process for the client: no extra calls and no unclear steps.',
-      'Замер':'Measurement','Монтаж':'Installation','Клиент оставляет номер, тип потолка и комментарий.':'The client leaves a phone number, ceiling type and comment.','Уточняем детали, размеры, освещение и материалы.':'We clarify details, sizes, lighting and materials.','Аккуратная установка и финальная проверка результата.':'Careful installation and final result check.',
-      'Быстрый расчёт':'Quick quote','Оставьте заявку — мы быстро свяжемся с вами и подскажем лучший вариант потолка под ваш интерьер.':'Send a request — we will contact you quickly and suggest the best ceiling option for your interior.',
-      'Оставьте данные, и мы свяжемся с вами для консультации.':'Leave your details and we will contact you for a consultation.','Имя и телефон клиента':'Client name and phone','Тип потолка / услуги':'Ceiling type / service','Комментарий и город':'Comment and city','Быстрый ответ и консультация':'Quick answer and consultation','Написать в WhatsApp':'Message on WhatsApp',
-      'Имя':'Name','Телефон':'Phone','Город / район':'City / area','Комментарий: размеры, комната, пожелания':'Comment: sizes, room, wishes','Нужна консультация':'Need consultation','Отправить заявку':'Send request','Мы свяжемся с вами после получения заявки.':'We will contact you after receiving the request.',
-      'Отзывы клиентов':'Client reviews','клиентов':'clients','Отзывы клиентов после выполненных работ.':'Client reviews after completed projects.','Ваш отзыв важен':'Your review matters','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.':'Tell us how the installation went. After checking, the review will appear on the website.','Оставить отзыв':'Leave a review','Что было сделано':'What was done','Ваш отзыв':'Your review','Отправить отзыв':'Send review','Спасибо за ваш отзыв — он появится на сайте после проверки.':'Thank you for your review — it will appear on the website after checking.','Клиент':'Client','Проверенный клиент':'Verified client',
-      'Короткие ответы на частые вопросы клиентов.':'Short answers to frequent client questions.','Сколько стоит натяжной потолок?':'How much does a stretch ceiling cost?','Можно ли сделать световые линии?':'Can you make light lines?','Где вы работаете?':'Where do you work?','Цена зависит от площади, типа полотна, освещения, количества углов и сложности монтажа. Оставьте заявку — мы уточним детали.':'The price depends on area, material type, lighting, number of corners and installation complexity. Send a request — we will clarify the details.','Да, световые линии и парящие потолки — один из главных premium-вариантов для современного интерьера.':'Yes, light lines and floating ceilings are one of the main premium options for a modern interior.','Bratislava и окрестности. Другие города можно обсудить отдельно.':'Bratislava and nearby areas. Other cities can be discussed separately.',
-      'Заявка отправлена ✅':'Request sent ✅','Отзыв отправлен на модерацию ✅':'Review sent for moderation ✅','Отправляем...':'Sending...','Закрыть':'Close'
-    }
-  };
-
-  function norm(s){return (s || '').replace(/\s+/g,' ').trim();}
-  function trValue(value, lang){
-    if(!value || lang === 'ru') return value;
-    let out = value;
-    const table = MAP[lang] || {};
-    const exact = table[norm(out)];
-    if(exact) return exact;
-    Object.keys(table).sort((a,b)=>b.length-a.length).forEach(k=>{
-      if(out.includes(k)) out = out.split(k).join(table[k]);
-    });
-    const forms = {
-      sk: [['Глянцевый потолок','Lesklý strop'],['Световые линии','Svetelné línie'],['Фотопечать','Fototlač'],['Парящий потолок','Plávajúci strop'],['Premium глянец','Prémiový lesk']],
-      ua: [['Глянцевый потолок','Глянцева стеля'],['Световые линии','Світлові лінії'],['Фотопечать','Фотодрук'],['Парящий потолок','Плаваюча стеля'],['Premium глянец','Premium глянець']],
-      en: [['Глянцевый потолок','Glossy ceiling'],['Световые линии','Light lines'],['Фотопечать','Photo print'],['Парящий потолок','Floating ceiling'],['Premium глянец','Premium gloss']]
-    }[lang] || [];
-    forms.forEach(([a,b])=>{ out = out.replace(new RegExp(a + '(\\s*\\d*)','g'), b + '$1'); });
-    return out;
-  }
-
-  function saveOriginalTextNodes(root){
-    const walker = document.createTreeWalker(root || document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode(node){
-        if(!node.nodeValue || !norm(node.nodeValue)) return NodeFilter.FILTER_REJECT;
-        const p = node.parentElement;
-        if(!p || ['SCRIPT','STYLE','NOSCRIPT'].includes(p.tagName)) return NodeFilter.FILTER_REJECT;
-        return NodeFilter.FILTER_ACCEPT;
-      }
-    });
-    let node;
-    while(node = walker.nextNode()){
-      if(!nodeOriginal.has(node)) nodeOriginal.set(node, node.nodeValue);
-    }
-  }
-
-  function saveOriginalAttrs(root){
-    (root || document).querySelectorAll('input,textarea,button,option,img,a,[aria-label],[title]').forEach(el=>{
-      if(!attrOriginal.has(el)) attrOriginal.set(el, {});
-      const store = attrOriginal.get(el);
-      ['placeholder','value','alt','aria-label','title'].forEach(attr=>{
-        if(el.hasAttribute && el.hasAttribute(attr) && store[attr] === undefined){
-          store[attr] = el.getAttribute(attr);
-        }
-      });
-    });
-  }
-
-  function universalApply(lang){
-    if(!AVAILABLE.includes(lang)) lang='ru';
-    universalLang = lang;
-    localStorage.setItem('stropLang', lang);
-    localStorage.setItem('siteLang', lang);
-    document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
-    const label = document.getElementById('langLabel');
-    if(label) label.textContent = lang.toUpperCase();
-
-    saveOriginalTextNodes(document.body);
-    saveOriginalAttrs(document);
-
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode(node){
-        if(!node.nodeValue || !norm(node.nodeValue)) return NodeFilter.FILTER_REJECT;
-        const p = node.parentElement;
-        if(!p || ['SCRIPT','STYLE','NOSCRIPT'].includes(p.tagName)) return NodeFilter.FILTER_REJECT;
-        return NodeFilter.FILTER_ACCEPT;
-      }
-    });
-    let node;
-    while(node = walker.nextNode()){
-      const original = nodeOriginal.get(node) || node.nodeValue;
-      node.nodeValue = trValue(original, lang);
-    }
-
-    document.querySelectorAll('input,textarea,button,option,img,a,[aria-label],[title]').forEach(el=>{
-      const store = attrOriginal.get(el);
-      if(!store) return;
-      Object.keys(store).forEach(attr=>{
-        if(store[attr] !== undefined) el.setAttribute(attr, trValue(store[attr], lang));
-      });
-    });
-
-    document.querySelectorAll('#langMenu button').forEach(btn=>{
-      const txt = norm(btn.textContent).toLowerCase();
-      btn.classList.toggle('active', txt.includes(lang));
-    });
-
-    document.getElementById('langMenu')?.classList.remove('active');
-  }
-
-  function callOldAndUniversal(lang){
-    if(!AVAILABLE.includes(lang)) lang = 'ru';
-    universalLang = lang;
-    try{
-      if(window.__oldStropSetLang) window.__oldStropSetLang(lang);
-    }catch(e){}
-    setTimeout(()=>universalApply(lang), 0);
-    setTimeout(()=>universalApply(lang), 250);
-  }
-
-  function install(){
-    if(!window.__oldStropSetLang && typeof window.setLang === 'function'){
-      window.__oldStropSetLang = window.setLang;
-    }
-    window.setLang = callOldAndUniversal;
-
-    if(!window.__oldStropRenderGallery && typeof window.renderGallery === 'function'){
-      window.__oldStropRenderGallery = window.renderGallery;
-      window.renderGallery = function(){
-        const res = window.__oldStropRenderGallery.apply(this, arguments);
-        setTimeout(()=>universalApply(universalLang), 0);
-        return res;
-      };
-    }
-
-    if(!window.__oldStropRenderReviews && typeof window.renderApprovedReviews === 'function'){
-      window.__oldStropRenderReviews = window.renderApprovedReviews;
-      window.renderApprovedReviews = function(){
-        const res = window.__oldStropRenderReviews.apply(this, arguments);
-        setTimeout(()=>universalApply(universalLang), 0);
-        return res;
-      };
-    }
-
-    setTimeout(()=>callOldAndUniversal(universalLang), 0);
-    setTimeout(()=>universalApply(universalLang), 700);
-  }
-
-  const observer = new MutationObserver((mutations)=>{
-    let need = false;
-    mutations.forEach(m=>{
-      if(m.addedNodes && m.addedNodes.length) need = true;
-      if(m.type === 'characterData') need = true;
-    });
-    if(need) {
-      clearTimeout(window.__stropTranslatorTimer);
-      window.__stropTranslatorTimer = setTimeout(()=>universalApply(universalLang), 80);
-    }
-  });
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', ()=>{
-      install();
-      observer.observe(document.body,{childList:true,subtree:true,characterData:true});
-    });
-  }else{
-    install();
-    observer.observe(document.body,{childList:true,subtree:true,characterData:true});
-  }
-})();
-</script>
 
 </body>
 </html>
