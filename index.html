@@ -707,6 +707,7 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 <div class="mobile-menu" id="mobileMenu"><a href="#services" onclick="toggleMobile(false)">Услуги</a><a href="#gallery" onclick="toggleMobile(false)">Работы</a><a href="#request" onclick="toggleMobile(false)">Оставить заявку</a><a href="#reviews" onclick="toggleMobile(false)">Отзывы</a></div>
 <header class="hero" id="top"><div class="hero-bg"><img src="svitlo-posle.jpg" alt="Натяжные потолки STROP LOOK" loading="eager"></div><div class="wrap"><div class="badge">Premium napínané stropy · Bratislava</div><h1>Натяжные <span class="gold">потолки</span><br>без дешёвого вида</h1><p>Световые линии, парящие потолки, глянцевые решения и фотопечать. Аккуратный монтаж, premium-визуал и быстрая заявка прямо через сайт.</p><div class="btns"><a class="btn main" href="#request">Оставить заявку →</a><a class="btn dark" href="#gallery">Смотреть работы</a></div><div class="hero-cards"><div class="mini"><b>€</b><span>расчёт по проекту</span></div><div class="mini"><b>Clean</b><span>чистый монтаж</span></div><div class="mini"><b>SK</b><span>Bratislava и окрестности</span></div></div></div></header>
 
+<span id="services"></span>
 <section class="section fade" id="value"><div class="wrap"><div class="head"><h2 class="title">Стоимость <span class="gold">без сюрпризов</span></h2><p class="sub">Мы не ставим случайную цену “за метр”, потому что итог зависит от комнаты, света, углов, полотна и сложности монтажа. Поэтому сначала уточняем детали и даём понятный расчёт.</p></div><div class="grid3"><div class="card"><span class="num">01</span><h3>Площадь и форма</h3><p>Размер комнаты, количество углов, трубы, ниши и сложность доступа влияют на финальную стоимость.</p></div><div class="card"><span class="num">02</span><h3>Свет и профиль</h3><p>Световые линии, парящий эффект, треки и LED-подсветка считаются индивидуально под интерьер.</p></div><div class="card"><span class="num">03</span><h3>Материал и эффект</h3><p>Матовый, глянцевый, фотопечать или комбинированное решение — подбираем под стиль квартиры.</p></div></div><div class="price-note"><b>Лучший вариант для клиента:</b> отправьте площадь, город и фото комнаты — мы быстро подскажем ориентир и предложим красивое решение без лишнего давления.</div></div></section>
 <style>
 .before-after-new{padding:100px 0}
@@ -831,7 +832,100 @@ function applyExtraLang(){const e=EXTRA_LANGS[currentLang]||EXTRA_LANGS.ru;const
 let currentLang=localStorage.getItem('stropLang')||'ru';
 const categories=[{id:'all'},{id:'print'},{id:'gloss'},{id:'float'},{id:'led'},{id:'video'}];
 function tr(){return LANGS[currentLang]||LANGS.ru}function catLabel(id){return tr().cats[id]||id}function photoTitle(p){const n=((p.title||'').match(/\d+/)||[''])[0];return (tr().photo[p.cat]||p.title)+(n?' '+n:'')}function toggleLang(e){e&&e.stopPropagation();$('langMenu').classList.toggle('active')}function closeLang(){$('langMenu').classList.remove('active')}function setLang(lang){currentLang=lang;localStorage.setItem('stropLang',lang);closeLang();applyLang()}
-function applyLang(){const t=tr();document.documentElement.lang=currentLang;document.title=currentLang==='sk'?'STROP LOOK | Premium napínané stropy Bratislava':currentLang==='en'?'STROP LOOK | Premium stretch ceilings Bratislava':currentLang==='ua'?'STROP LOOK | Premium натяжні стелі Bratislava':'STROP LOOK | Premium натяжные потолки Bratislava';$('langLabel').textContent=t.code;document.querySelectorAll('#langMenu button').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes(`'${currentLang}'`)));document.querySelectorAll('.navlinks a').forEach((a,i)=>a.textContent=t.nav[i]);document.querySelectorAll('#mobileMenu a').forEach((a,i)=>a.textContent=t.mobile[i]);document.querySelector('.badge').textContent=t.badge;document.querySelector('h1').innerHTML=t.heroTitle;document.querySelector('.hero p').textContent=t.heroText;document.querySelector('.hero .btns a:nth-child(1)').textContent=t.cta;document.querySelector('.hero .btns a:nth-child(2)').textContent=t.works;document.querySelectorAll('.mini span').forEach((el,i)=>el.textContent=t.mini[i]);document.querySelector('#services .title').innerHTML=t.servicesTitle;document.querySelector('#services .sub').textContent=t.servicesSub;document.querySelectorAll('#services .card h3').forEach((el,i)=>el.textContent=t.servH[i]);document.querySelectorAll('#services .card p').forEach((el,i)=>el.textContent=t.servP[i]);document.querySelector('#gallery .title').innerHTML=t.galleryTitle;document.querySelector('#gallery .sub').textContent=t.gallerySub;$('moreBtn').textContent=t.showMore;document.querySelector('#gallery .gallery-actions .dark').textContent=t.hideBack;$('filterLabel').textContent=catLabel(currentCat);document.querySelector('#request .title').innerHTML=t.requestTitle;document.querySelector('#request .head .sub').textContent=t.requestSub;document.querySelector('.request-info h3').textContent=t.calc;document.querySelector('.request-info .sub').textContent=t.calcP;document.querySelectorAll('.request-info li').forEach((el,i)=>el.textContent=t.list[i]);document.querySelector('.request-info .btn').textContent=t.wa;leadName.placeholder=t.ph[0];leadPhone.placeholder=t.ph[1];leadCity.placeholder=t.ph[2];leadMessage.placeholder=t.ph[3];Array.from(leadType.options).forEach((o,i)=>o.textContent=t.types[i]);document.querySelector('#leadForm button[type="submit"]').textContent=t.sendRequest;document.querySelector('#leadForm small').innerHTML=t.reqSmall;document.querySelector('#reviews .title').innerHTML=t.reviewsTitle;document.querySelector('#reviews .sub').textContent=t.reviewsSub;const reviewCta={ru:['Ваш отзыв важен','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.','Оставить отзыв'],sk:['Váš názor je dôležitý','Napíšte, ako prebehla montáž. Po kontrole sa recenzia zobrazí na stránke.','Pridať recenziu'],ua:['Ваш відгук важливий','Розкажіть, як пройшов монтаж. Після перевірки відгук з’явиться на сайті.','Залишити відгук'],en:['Your review matters','Tell us how the installation went. After checking, the review will appear on the website.','Leave a review']}[currentLang]||['Ваш отзыв важен','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.','Оставить отзыв'];if($('reviewCtaTitle'))$('reviewCtaTitle').textContent=reviewCta[0];if($('reviewCtaText'))$('reviewCtaText').textContent=reviewCta[1];if($('openReviewBtn'))$('openReviewBtn').textContent=reviewCta[2];document.querySelector('#reviewForm h3').textContent=t.leaveReview;reviewName.placeholder=t.reviewPh[0];reviewWork.placeholder=t.reviewPh[1];reviewText.placeholder=t.reviewPh[2];document.querySelector('#reviewForm button[type="submit"]').textContent=t.sendReview;document.querySelector('#reviewForm small').innerHTML=t.revSmall;document.querySelector('#faq .title').innerHTML=t.faqTitle;document.querySelector('#faq .sub').textContent=t.faqSub;document.querySelectorAll('#faq summary').forEach((el,i)=>el.textContent=t.faqQ[i]);document.querySelectorAll('#faq details p').forEach((el,i)=>el.textContent=t.faqA[i]);applyExtraLang();renderGallery();if(typeof renderApprovedReviews==='function')renderApprovedReviews();}
+function applyLang(){
+  const t=tr();
+  const q=(sel)=>document.querySelector(sel);
+  const qa=(sel)=>document.querySelectorAll(sel);
+  const byId=(id)=>document.getElementById(id);
+  const setText=(sel,val)=>{const el=q(sel); if(el && val!==undefined) el.textContent=val;};
+  const setHTML=(sel,val)=>{const el=q(sel); if(el && val!==undefined) el.innerHTML=val;};
+  const setPH=(id,val)=>{const el=byId(id); if(el && val!==undefined) el.placeholder=val;};
+
+  document.documentElement.lang=currentLang;
+  document.title=currentLang==='sk'
+    ? 'STROP LOOK | Premium napínané stropy Bratislava'
+    : currentLang==='en'
+      ? 'STROP LOOK | Premium stretch ceilings Bratislava'
+      : currentLang==='ua'
+        ? 'STROP LOOK | Premium натяжні стелі Bratislava'
+        : 'STROP LOOK | Premium натяжные потолки Bratislava';
+
+  const langLabel=byId('langLabel');
+  if(langLabel) langLabel.textContent=t.code;
+
+  qa('#langMenu button').forEach(b=>{
+    const on=b.getAttribute('onclick')||'';
+    b.classList.toggle('active',on.includes(`'${currentLang}'`));
+  });
+
+  qa('.navlinks a').forEach((a,i)=>{ if(t.nav[i]) a.textContent=t.nav[i]; });
+  qa('#mobileMenu a').forEach((a,i)=>{ if(t.mobile[i]) a.textContent=t.mobile[i]; });
+
+  setText('.badge',t.badge);
+  setHTML('h1',t.heroTitle);
+  setText('.hero p',t.heroText);
+  setText('.hero .btns a:nth-child(1)',t.cta);
+  setText('.hero .btns a:nth-child(2)',t.works);
+  qa('.mini span').forEach((el,i)=>{ if(t.mini[i]) el.textContent=t.mini[i]; });
+
+  // Блок services у тебя в HTML отсутствует, поэтому тут безопасная проверка.
+  if(q('#services')){
+    setHTML('#services .title',t.servicesTitle);
+    setText('#services .sub',t.servicesSub);
+    qa('#services .card h3').forEach((el,i)=>{ if(t.servH[i]) el.textContent=t.servH[i]; });
+    qa('#services .card p').forEach((el,i)=>{ if(t.servP[i]) el.textContent=t.servP[i]; });
+  }
+
+  setHTML('#gallery .title',t.galleryTitle);
+  setText('#gallery .sub',t.gallerySub);
+  const moreBtn=byId('moreBtn'); if(moreBtn) moreBtn.textContent=t.showMore;
+  setText('#gallery .gallery-actions .dark',t.hideBack);
+  const filterLabel=byId('filterLabel'); if(filterLabel) filterLabel.textContent=catLabel(currentCat);
+
+  setHTML('#request .title',t.requestTitle);
+  setText('#request .head .sub',t.requestSub);
+  setText('.request-info h3',t.calc);
+  setText('.request-info .sub',t.calcP);
+  qa('.request-info li').forEach((el,i)=>{ if(t.list[i]) el.textContent=t.list[i]; });
+  setText('.request-info .btn',t.wa);
+
+  setPH('leadName',t.ph[0]);
+  setPH('leadPhone',t.ph[1]);
+  setPH('leadCity',t.ph[2]);
+  setPH('leadMessage',t.ph[3]);
+  const leadType=byId('leadType');
+  if(leadType) Array.from(leadType.options).forEach((o,i)=>{ if(t.types[i]) o.textContent=t.types[i]; });
+  setText('#leadForm button[type="submit"]',t.sendRequest);
+  setHTML('#leadForm small',t.reqSmall);
+
+  setHTML('#reviews .title',t.reviewsTitle);
+  setText('#reviews .sub',t.reviewsSub);
+  const reviewCta={
+    ru:['Ваш отзыв важен','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.','Оставить отзыв'],
+    sk:['Váš názor je dôležitý','Napíšte, ako prebehla montáž. Po kontrole sa recenzia zobrazí na stránke.','Pridať recenziu'],
+    ua:['Ваш відгук важливий','Розкажіть, як пройшов монтаж. Після перевірки відгук з’явиться на сайті.','Залишити відгук'],
+    en:['Your review matters','Tell us how the installation went. After checking, the review will appear on the website.','Leave a review']
+  }[currentLang]||['Ваш отзыв важен','Расскажите, как прошёл монтаж. После проверки отзыв появится на сайте.','Оставить отзыв'];
+  const reviewCtaTitle=byId('reviewCtaTitle'); if(reviewCtaTitle) reviewCtaTitle.textContent=reviewCta[0];
+  const reviewCtaText=byId('reviewCtaText'); if(reviewCtaText) reviewCtaText.textContent=reviewCta[1];
+  const openReviewBtn=byId('openReviewBtn'); if(openReviewBtn) openReviewBtn.textContent=reviewCta[2];
+
+  setText('#reviewForm h3',t.leaveReview);
+  setPH('reviewName',t.reviewPh[0]);
+  setPH('reviewWork',t.reviewPh[1]);
+  setPH('reviewText',t.reviewPh[2]);
+  setText('#reviewForm button[type="submit"]',t.sendReview);
+  setHTML('#reviewForm small',t.revSmall);
+
+  setHTML('#faq .title',t.faqTitle);
+  setText('#faq .sub',t.faqSub);
+  qa('#faq summary').forEach((el,i)=>{ if(t.faqQ[i]) el.textContent=t.faqQ[i]; });
+  qa('#faq details p').forEach((el,i)=>{ if(t.faqA[i]) el.textContent=t.faqA[i]; });
+
+  if(typeof applyExtraLang==='function') applyExtraLang();
+  if(typeof renderGallery==='function') renderGallery();
+  if(typeof renderApprovedReviews==='function') renderApprovedReviews();
+}
 
 
 
