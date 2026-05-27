@@ -755,58 +755,6 @@ body:after{content:"";position:fixed;inset:0;z-index:-3;background:url('data:ima
 
 </style>
 
-<style id="full-page-translator-css">
-#google_translate_element{
-  position:absolute!important;
-  left:-9999px!important;
-  top:-9999px!important;
-  width:1px!important;
-  height:1px!important;
-  overflow:hidden!important;
-}
-.goog-te-banner-frame,
-.goog-te-balloon-frame,
-.skiptranslate iframe{
-  display:none!important;
-}
-body{
-  top:0!important;
-}
-.goog-te-gadget{
-  font-size:0!important;
-}
-.lang-menu button.active{
-  background:linear-gradient(135deg,var(--champagne2),var(--champagne))!important;
-  color:#120f0b!important;
-}
-.translator-note{
-  position:fixed;
-  left:50%;
-  bottom:20px;
-  transform:translateX(-50%);
-  z-index:9999;
-  padding:12px 16px;
-  border-radius:999px;
-  background:rgba(18,15,11,.92);
-  border:1px solid rgba(240,214,164,.28);
-  color:#fff8ee;
-  box-shadow:0 18px 55px rgba(0,0,0,.35);
-  font-weight:900;
-  font-size:14px;
-  display:none;
-}
-.translator-note.show{display:block}
-@media(max-width:560px){
-  .translator-note{
-    left:12px;
-    right:12px;
-    transform:none;
-    text-align:center;
-    border-radius:18px;
-    bottom:12px;
-  }
-}
-</style>
 
 </head>
 <body>
@@ -945,7 +893,7 @@ const LANGS={
 
 sk:{code:'SK',nav:['Služby','Realizácie','Žiadosť','Recenzie','FAQ'],mobile:['Služby','Realizácie','Odoslať žiadosť','Recenzie'],badge:'Premium napínané stropy · Bratislava',heroTitle:'Napínané <span class="gold">stropy</span><br>prémiovej kvality',heroText:'Svetelné línie, plávajúce stropy, lesklé riešenia a fototlač. Precízna montáž, premium vzhľad a rýchla žiadosť priamo cez web.',cta:'Odoslať žiadosť →',works:'Pozrieť práce',mini:['výpočet podľa projektu','čistá montáž','Bratislava a okolie'],servicesTitle:'Premium <span class="gold">riešenia</span>',servicesSub:'Vyberieme strop podľa interiéru, osvetlenia a rozpočtu. Robíme moderne, čisto a spoľahlivo.',servH:['Svetelné línie','Plávajúce stropy','Lesk a fototlač'],servP:['Moderný svetelný akcent do kuchyne, obývačky, spálne aj komerčných priestorov.','Efekt ľahkosti a luxusného podsvietenia po obvode miestnosti.','Optické zväčšenie priestoru, individuálne motívy a čistý luxury efekt.'],galleryTitle:'Galéria <span class="gold">prác</span>',gallerySub:'Filter funguje podľa kategórií. Najprv sa zobrazia 3 fotky, potom ďalšie.',showMore:'Zobraziť viac',hideBack:'Skryť späť',shown:'Zobrazené',from:'z',cats:{all:'Všetky práce',done:'Hotové práce',print:'Fototlač',gloss:'Lesklé',float:'Plávajúce',led:'Svetelné línie',video:'Video'},photo:{done:'Hotová realizácia',print:'Fototlač',gloss:'Lesklý strop',float:'Plávajúci strop',led:'Svetelné línie',video:'Video'},stepsTitle:'Ako <span class="gold">pracujeme</span>',stepsSub:'Jednoduchý proces pre klienta: bez zbytočných telefonátov a nejasných krokov.',stepH:['Žiadosť','Zameranie','Montáž'],stepP:['Klient nechá číslo, typ stropu a komentár.','Upresníme detaily, rozmery, osvetlenie a materiály.','Precízna montáž a finálna kontrola výsledku.'],requestTitle:'Odoslať <span class="gold">žiadosť</span>',requestSub:'Pošlite žiadosť — rýchlo sa vám ozveme a poradíme najlepšie riešenie pre váš interiér.',calc:'Rýchla kalkulácia',calcP:'Nechajte údaje a ozveme sa vám na konzultáciu.',list:['Meno a telefón klienta','Typ stropu / služby','Komentár a mesto','Rýchla odpoveď a konzultácia'],wa:'Napísať na WhatsApp',ph:['Meno','Telefón','Mesto / oblasť','Komentár: rozmery, miestnosť, požiadavky'],types:['Svetelné línie','Plávajúci strop','Lesklý strop','Fototlač','Potrebujem konzultáciu'],sendRequest:'Odoslať žiadosť',reqSmall:'Po prijatí žiadosti sa vám ozveme.',reviewsTitle:'Recenzie <span class="gold">klientov</span>',reviewsSub:'Recenzie klientov po dokončených prácach.',leaveReview:'Pridať recenziu',reviewPh:['Meno','Čo bolo urobené','Vaša recenzia'],sendReview:'Odoslať recenziu',revSmall:'Ďakujeme za recenziu — po kontrole sa zobrazí na stránke.',emptyReviews:'Zatiaľ nie sú schválené recenzie.',loadingReviews:'Načítanie recenzií...',faqTitle:'FAQ',faqSub:'Krátke odpovede na časté otázky klientov.',faqQ:['Koľko stojí napínaný strop?','Dajú sa urobiť svetelné línie?','Kde pracujete?'],faqA:['Cena závisí od plochy, typu fólie, osvetlenia, počtu rohov a náročnosti montáže. Pošlite žiadosť — upresníme detaily.','Áno, svetelné línie a plávajúce stropy patria medzi hlavné premium riešenia pre moderný interiér.','Bratislava a okolie. Iné mestá vieme riešiť individuálne.'],sending:'Odosiela sa...',sentReq:'Žiadosť bola odoslaná ✅',sentRev:'Recenzia bola odoslaná na schválenie ✅',fbErr:'Chyba Firebase. Skontrolujte rules.',client:'Klient'},
 ua:{code:'UA',nav:['Послуги','Роботи','Заявка','Відгуки','FAQ'],mobile:['Послуги','Роботи','Залишити заявку','Відгуки'],badge:'Premium napínané stropy · Bratislava',heroTitle:'Натяжні <span class="gold">стелі</span><br>Premium якості',heroText:'Світлові лінії, парящі стелі, глянцеві рішення та фотодрук. Акуратний монтаж, premium-візуал і швидка заявка прямо через сайт.',cta:'Залишити заявку →',works:'Дивитись роботи',mini:['розрахунок по проєкту','чистий монтаж','Bratislava та околиці'],servicesTitle:'Premium <span class="gold">рішення</span>',servicesSub:'Підбираємо стелю під інтер’єр, освітлення та бюджет. Робимо сучасно, чисто й надійно.',servH:['Світлові лінії','Парящі стелі','Глянець і фотодрук'],servP:['Сучасний світловий акцент для кухні, вітальні, спальні та комерційних приміщень.','Ефект легкості та дорогої підсвітки по периметру кімнати.','Візуальне розширення простору, індивідуальні мотиви та чистий luxury-ефект.'],galleryTitle:'Галерея <span class="gold">робіт</span>',gallerySub:'Фільтр працює за категоріями. Спочатку показуються 3 фото, далі відкриваються ще.',showMore:'Показати ще',hideBack:'Сховати назад',shown:'Показано',from:'з',cats:{all:'Усі роботи',done:'Готові роботи',print:'Фотодрук',gloss:'Глянцеві',float:'Парящі',led:'Світлові лінії',video:'Відео'},photo:{done:'Готова робота',print:'Фотодрук',gloss:'Глянцева стеля',float:'Паряща стеля',led:'Світлові лінії',video:'Відео'},stepsTitle:'Як ми <span class="gold">працюємо</span>',stepsSub:'Проста схема для клієнта: без зайвих дзвінків і незрозумілих етапів.',stepH:['Заявка','Замір','Монтаж'],stepP:['Клієнт залишає номер, тип стелі та коментар.','Уточнюємо деталі, розміри, освітлення та матеріали.','Акуратна установка і фінальна перевірка результату.'],requestTitle:'Залишити <span class="gold">заявку</span>',requestSub:'Залиште заявку — ми швидко зв’яжемося з вами та підкажемо найкраще рішення для інтер’єру.',calc:'Швидкий розрахунок',calcP:'Залиште дані, і ми зв’яжемося з вами для консультації.',list:['Ім’я та телефон клієнта','Тип стелі / послуги','Коментар і місто','Швидка відповідь і консультація'],wa:'Написати в WhatsApp',ph:['Ім’я','Телефон','Місто / район','Коментар: розміри, кімната, побажання'],types:['Світлові лінії','Паряща стеля','Глянцева стеля','Фотодрук','Потрібна консультація'],sendRequest:'Надіслати заявку',reqSmall:'Ми зв’яжемося з вами після отримання заявки.',reviewsTitle:'Відгуки <span class="gold">клієнтів</span>',reviewsSub:'Відгуки клієнтів після виконаних робіт.',leaveReview:'Залишити відгук',reviewPh:['Ім’я','Що було зроблено','Ваш відгук'],sendReview:'Надіслати відгук',revSmall:'Дякуємо за відгук — він з’явиться на сайті після перевірки.',emptyReviews:'Поки немає схвалених відгуків.',loadingReviews:'Завантаження відгуків...',faqTitle:'FAQ',faqSub:'Короткі відповіді на часті питання клієнтів.',faqQ:['Скільки коштує натяжна стеля?','Чи можна зробити світлові лінії?','Де ви працюєте?'],faqA:['Ціна залежить від площі, типу полотна, освітлення, кількості кутів і складності монтажу. Залиште заявку — ми уточнимо деталі.','Так, світлові лінії та парящі стелі — одні з головних premium-рішень для сучасного інтер’єру.','Bratislava та околиці. Інші міста можна обговорити окремо.'],sending:'Відправляємо...',sentReq:'Заявку відправлено ✅',sentRev:'Відгук відправлено на модерацію ✅',fbErr:'Помилка Firebase. Перевір rules.',client:'Клієнт'},
-en:{code:'EN',nav:['Services','Projects','Request','Reviews','FAQ'],mobile:['Services','Projects','Leave request','Reviews'],badge:'Premium stretch ceilings · Bratislava',heroTitle:'Stretch <span class="gold">ceilings</span><br>without a cheap look',heroText:'Light lines, floating ceilings, glossy solutions and photo printing. Clean installation, premium visuals and a fast request directly through the website.',cta:'Leave request →',works:'View projects',mini:['project-based estimate','clean installation','Bratislava and nearby'],servicesTitle:'Premium <span class="gold">solutions</span>',servicesSub:'We choose the ceiling for your interior, lighting and budget. Modern, clean and reliable.',servH:['Light lines','Floating ceilings','Gloss & photo print'],servP:['A modern lighting accent for kitchens, living rooms, bedrooms and commercial spaces.','A light floating effect with premium perimeter lighting.','Visual expansion of space, custom motives and a clean luxury effect.'],galleryTitle:'Project <span class="gold">gallery</span>',gallerySub:'The filter works by categories. First 3 photos are shown, then more can be opened.',showMore:'Show more',hideBack:'Hide back',shown:'Shown',from:'of',cats:{all:'All projects',print:'Photo print',gloss:'Glossy',float:'Floating',led:'Light lines',video:'Video'},photo:{done:'Finished work',print:'Photo print',gloss:'Glossy ceiling',float:'Floating ceiling',led:'Light lines',video:'Video'},stepsTitle:'How we <span class="gold">work</span>',stepsSub:'A simple process for the client: no unnecessary calls and no confusing steps.',stepH:['Request','Measurement','Installation'],stepP:['The client leaves a phone number, ceiling type and comment.','We clarify details, sizes, lighting and materials.','Careful installation and final result check.'],requestTitle:'Leave a <span class="gold">request</span>',requestSub:'Leave a request — we will contact you quickly and recommend the best ceiling solution for your interior.',calc:'Quick estimate',calcP:'Leave your details and we will contact you for a consultation.',list:['Client name and phone','Ceiling / service type','Comment and city','Fast reply and consultation'],wa:'Write on WhatsApp',ph:['Name','Phone','City / area','Comment: sizes, room, wishes'],types:['Light lines','Floating ceiling','Glossy ceiling','Photo print','Need consultation'],sendRequest:'Send request',reqSmall:'We will contact you after receiving your request.',reviewsTitle:'Client <span class="gold">reviews</span>',reviewsSub:'Client reviews after completed projects.',leaveReview:'Leave a review',reviewPh:['Name','What was done','Your review'],sendReview:'Send review',revSmall:'Thank you for your review — it will appear on the website after checking.',emptyReviews:'No approved reviews yet.',loadingReviews:'Loading reviews...',faqTitle:'FAQ',faqSub:'Short answers to common client questions.',faqQ:['How much does a stretch ceiling cost?','Can you make light lines?','Where do you work?'],faqA:['The price depends on area, film type, lighting, number of corners and installation complexity. Leave a request — we will clarify the details.','Yes, light lines and floating ceilings are one of the main premium options for a modern interior.','Bratislava and nearby areas. Other cities can be discussed separately.'],sending:'Sending...',sentReq:'Request sent ✅',sentRev:'Review sent for moderation ✅',fbErr:'Firebase error. Check rules.',client:'Client'}};
+en:{code:'EN',nav:['Services','Projects','Request','Reviews','FAQ'],mobile:['Services','Projects','Leave request','Reviews'],badge:'Premium stretch ceilings · Bratislava',heroTitle:'Premium Quality <span class="gold">Stretch Ceilings</span>',heroText:'Light lines, floating ceilings, glossy solutions and photo printing. Clean installation, premium visuals and a fast request directly through the website.',cta:'Leave request →',works:'View projects',mini:['project-based estimate','clean installation','Bratislava and nearby'],servicesTitle:'Premium <span class="gold">solutions</span>',servicesSub:'We choose the ceiling for your interior, lighting and budget. Modern, clean and reliable.',servH:['Light lines','Floating ceilings','Gloss & photo print'],servP:['A modern lighting accent for kitchens, living rooms, bedrooms and commercial spaces.','A light floating effect with premium perimeter lighting.','Visual expansion of space, custom motives and a clean luxury effect.'],galleryTitle:'Project <span class="gold">gallery</span>',gallerySub:'The filter works by categories. First 3 photos are shown, then more can be opened.',showMore:'Show more',hideBack:'Hide back',shown:'Shown',from:'of',cats:{all:'All projects',print:'Photo print',gloss:'Glossy',float:'Floating',led:'Light lines',video:'Video'},photo:{done:'Finished work',print:'Photo print',gloss:'Glossy ceiling',float:'Floating ceiling',led:'Light lines',video:'Video'},stepsTitle:'How we <span class="gold">work</span>',stepsSub:'A simple process for the client: no unnecessary calls and no confusing steps.',stepH:['Request','Measurement','Installation'],stepP:['The client leaves a phone number, ceiling type and comment.','We clarify details, sizes, lighting and materials.','Careful installation and final result check.'],requestTitle:'Leave a <span class="gold">request</span>',requestSub:'Leave a request — we will contact you quickly and recommend the best ceiling solution for your interior.',calc:'Quick estimate',calcP:'Leave your details and we will contact you for a consultation.',list:['Client name and phone','Ceiling / service type','Comment and city','Fast reply and consultation'],wa:'Write on WhatsApp',ph:['Name','Phone','City / area','Comment: sizes, room, wishes'],types:['Light lines','Floating ceiling','Glossy ceiling','Photo print','Need consultation'],sendRequest:'Send request',reqSmall:'We will contact you after receiving your request.',reviewsTitle:'Client <span class="gold">reviews</span>',reviewsSub:'Client reviews after completed projects.',leaveReview:'Leave a review',reviewPh:['Name','What was done','Your review'],sendReview:'Send review',revSmall:'Thank you for your review — it will appear on the website after checking.',emptyReviews:'No approved reviews yet.',loadingReviews:'Loading reviews...',faqTitle:'FAQ',faqSub:'Short answers to common client questions.',faqQ:['How much does a stretch ceiling cost?','Can you make light lines?','Where do you work?'],faqA:['The price depends on area, film type, lighting, number of corners and installation complexity. Leave a request — we will clarify the details.','Yes, light lines and floating ceilings are one of the main premium options for a modern interior.','Bratislava and nearby areas. Other cities can be discussed separately.'],sending:'Sending...',sentReq:'Request sent ✅',sentRev:'Review sent for moderation ✅',fbErr:'Firebase error. Check rules.',client:'Client'}};
 
 const EXTRA_LANGS={
 
@@ -954,7 +902,7 @@ ua:{valueTitle:'Вартість <span class="gold">без сюрпризів</s
 en:{valueTitle:'Price <span class="gold">without surprises</span>',valueSub:'We do not set a random “per meter” price because the final cost depends on the room, lighting, corners, film and installation complexity. First we clarify the details, then we give a clear estimate.',valueH:['Area and shape','Lighting and profile','Material and effect'],valueP:['Room size, number of corners, pipes, niches and access complexity affect the final price.','Light lines, floating effect, tracks and LED lighting are calculated individually for the interior.','Matte, glossy, photo print or a combined solution — we choose it for the apartment style.'],priceNote:'<b>Best option for the client:</b> send the area, city and a room photo — we will quickly give an estimate and suggest a beautiful solution without pressure.',leadExtra:['Area, m²','When do you need installation?'],trust:['✓ Real clients','✓ Checked before publishing','✓ Helps new clients'],footer:'Premium stretch ceilings · Bratislava',close:'Close',videoUnsupported:'Your browser does not support video.'}
 };
 function applyExtraLang(){const e=EXTRA_LANGS[currentLang]||EXTRA_LANGS.ua;const t=tr();const value=document.querySelector('#value');if(value){value.querySelector('.title').innerHTML=e.valueTitle;value.querySelector('.sub').textContent=e.valueSub;value.querySelectorAll('.card h3').forEach((el,i)=>el.textContent=e.valueH[i]);value.querySelectorAll('.card p').forEach((el,i)=>el.textContent=e.valueP[i]);const pn=value.querySelector('.price-note');if(pn)pn.innerHTML=e.priceNote;}const sections=document.querySelectorAll('section');const steps=sections[3];if(steps){steps.querySelector('.title').innerHTML=t.stepsTitle;steps.querySelector('.sub').textContent=t.stepsSub;steps.querySelectorAll('.card h3').forEach((el,i)=>el.textContent=t.stepH[i]);steps.querySelectorAll('.card p').forEach((el,i)=>el.textContent=t.stepP[i]);}if(window.leadArea)leadArea.placeholder=e.leadExtra[0];if(window.leadDate)leadDate.placeholder=e.leadExtra[1];document.querySelectorAll('.trust-pill').forEach((el,i)=>el.textContent=e.trust[i]);document.querySelectorAll('.footer .foot div:first-child').forEach(el=>{el.innerHTML='<b>STROP <span class="gold">LOOK</span></b><br>'+e.footer});const closeBtn=document.querySelector('.close');if(closeBtn)closeBtn.setAttribute('aria-label',e.close);const mv=document.querySelector('#modalVideo');if(mv)mv.textContent=e.videoUnsupported;}
-let currentLang=localStorage.getItem('stropLang')||'ua';
+let currentLang=localStorage.getItem('stropLang')||localStorage.getItem('stropLookLang')||'ua'; if(!['sk','ua','en'].includes(currentLang)) currentLang='ua'; localStorage.setItem('stropLang', currentLang);
 const categories=[{id:'all'},{id:'done'},{id:'print'},{id:'gloss'},{id:'float'},{id:'led'},{id:'video'}];
 function tr(){return LANGS[currentLang]||LANGS.ua}function catLabel(id){return tr().cats[id]||id}function photoTitle(p){const n=((p.title||'').match(/\d+/)||[''])[0];return (tr().photo[p.cat]||p.title)+(n?' '+n:'')}function toggleLang(e){e&&e.stopPropagation();$('langMenu').classList.toggle('active')}function closeLang(){$('langMenu').classList.remove('active')}function setLang(lang){currentLang=lang;localStorage.setItem('stropLang',lang);closeLang();applyLang()}
 function applyLang(){
@@ -973,7 +921,7 @@ function applyLang(){
       ? 'STROP LOOK | Premium stretch ceilings Bratislava'
       : currentLang==='ua'
         ? 'STROP LOOK | Premium натяжні стелі Bratislava'
-        : 'STROP LOOK | Premium натяжные потолки Bratislava';
+        : 'STROP LOOK | Premium натяжні стелі Bratislava';
 
   const langLabel=byId('langLabel');
   if(langLabel) langLabel.textContent=t.code;
@@ -1608,147 +1556,5 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initDoAfterPro);else initDoAfterPro();
 })();
 </script>
-
-
-<div id="google_translate_element"></div>
-<div class="translator-note" id="translatorNote">Переклад увімкнено</div>
-
-
-<script id="full-page-translator-js">
-(function(){
-  const LANGS = {
-    sk: { google:'sk', label:'SK', note:'Slovenčina zapnutá' },
-    ua: { google:'uk', label:'UA', note:'Українську мову увімкнено' },
-    en: { google:'en', label:'EN', note:'English enabled' }
-  };
-
-  window.googleTranslateElementInit = function(){
-    try{
-      new google.translate.TranslateElement({
-        pageLanguage: 'uk',
-        includedLanguages: 'sk,uk,en',
-        autoDisplay: false,
-        multilanguagePage: true
-      }, 'google_translate_element');
-      const saved = localStorage.getItem('stropLookLang') || 'ua';
-      setTimeout(function(){ window.setLang(saved, true); }, 700);
-    }catch(e){}
-  };
-
-  function getCombo(){
-    return document.querySelector('.goog-te-combo');
-  }
-
-  function setCookie(name, value){
-    const domain = location.hostname;
-    document.cookie = name + '=' + value + ';path=/';
-    if(domain && domain.includes('.')){
-      document.cookie = name + '=' + value + ';path=/;domain=.' + domain;
-    }
-  }
-
-  function clearGoogleCookies(){
-    setCookie('googtrans', '');
-    setCookie('googtrans', '/uk/uk');
-  }
-
-  function showNote(text){
-    const note = document.getElementById('translatorNote');
-    if(!note) return;
-    note.textContent = text;
-    note.classList.add('show');
-    clearTimeout(window.__translatorNoteTimer);
-    window.__translatorNoteTimer = setTimeout(()=>note.classList.remove('show'), 1800);
-  }
-
-  function updateButtons(lang){
-    const cfg = LANGS[lang] || LANGS.ua;
-    const label = document.getElementById('langLabel');
-    if(label) label.textContent = cfg.label;
-
-    document.querySelectorAll('.lang-menu button').forEach(btn=>{
-      const text = (btn.textContent || '').toLowerCase();
-      const isActive =
-        (lang === 'sk' && text.includes('sk')) ||
-        (lang === 'ua' && (text.includes('ua') || text.includes('укра'))) ||
-        (lang === 'en' && text.includes('en'));
-      btn.classList.toggle('active', isActive);
-    });
-
-    document.documentElement.lang = cfg.google === 'uk' ? 'uk' : cfg.google;
-  }
-
-  window.toggleLang = function(event){
-    if(event) event.stopPropagation();
-    const menu = document.getElementById('langMenu');
-    if(menu) menu.classList.toggle('active');
-  };
-
-  window.setLang = function(lang, silent){
-    const cfg = LANGS[lang] || LANGS.ua;
-    localStorage.setItem('stropLookLang', lang);
-    updateButtons(lang);
-
-    const menu = document.getElementById('langMenu');
-    if(menu) menu.classList.remove('active');
-
-    if(lang === 'ua'){
-      clearGoogleCookies();
-      const combo = getCombo();
-      if(combo){
-        combo.value = 'uk';
-        combo.dispatchEvent(new Event('change'));
-      }
-      if(!silent) showNote(cfg.note);
-      return;
-    }
-
-    setCookie('googtrans', '/uk/' + cfg.google);
-    const combo = getCombo();
-    if(combo){
-      combo.value = cfg.google;
-      combo.dispatchEvent(new Event('change'));
-      if(!silent) showNote(cfg.note);
-    }else{
-      setTimeout(()=>window.setLang(lang, true), 500);
-      if(!silent) showNote('Переклад завантажується...');
-    }
-  };
-
-  document.addEventListener('click', function(e){
-    const menu = document.getElementById('langMenu');
-    const box = document.querySelector('.lang-box');
-    if(menu && box && !box.contains(e.target)) menu.classList.remove('active');
-  });
-
-  document.addEventListener('DOMContentLoaded', function(){
-    // Make all current language buttons use the full page translator.
-    const menu = document.getElementById('langMenu');
-    if(menu){
-      const buttons = Array.from(menu.querySelectorAll('button'));
-      const order = [
-        ['sk','SK · Slovensky'],
-        ['ua','UA · Українська'],
-        ['en','EN · English']
-      ];
-      buttons.forEach((btn, i)=>{
-        const item = order[i];
-        if(!item) return;
-        btn.textContent = item[1];
-        btn.onclick = function(ev){ ev.preventDefault(); ev.stopPropagation(); window.setLang(item[0]); };
-      });
-    }
-
-    updateButtons(localStorage.getItem('stropLookLang') || 'ua');
-
-    // Improve form placeholders for Google Translate by keeping them standard attributes.
-    document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(el=>{
-      el.setAttribute('data-original-placeholder', el.getAttribute('placeholder'));
-    });
-  });
-})();
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </body>
 </html>
