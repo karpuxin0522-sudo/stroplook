@@ -1026,7 +1026,10 @@ const galleryPhotos=[
 {src:'Public/Images/svetelne-ciary/Ciary4.jpg',cat:'led',title:'Световые линии 4',tag:'SVETELNÉ ČIARY'},
 {src:'Public/Images/svetelne-ciary/Ciary5.jpg',cat:'led',title:'Световые линии 5',tag:'SVETELNÉ ČIARY'},
 {src:'Public/Images/fototlac/FotoTlač.jpg',cat:'print',title:'Фотопечать 1',tag:'FOTOTLAČ'},
-{src:'Public/Images/fototlac/Fototlač2.jpg',cat:'print',title:'Фотопечать 2',tag:'FOTOTLAČ'}
+{src:'Public/Images/fototlac/Fototlač2.jpg',cat:'print',title:'Фотопечать 2',tag:'FOTOTLAČ'},
+{src:'Public/Images/Video/Video1.mp4',cat:'video',type:'video',title:'Відео 1',tag:'VIDEO'},
+{src:'Public/Images/Video/Video2.mp4',cat:'video',type:'video',title:'Відео 2',tag:'VIDEO'},
+{src:'Public/Images/Video/Video3.mp4',cat:'video',type:'video',title:'Відео 3',tag:'VIDEO'}
 ];
 
 let currentCat='all',visibleCount=3,currentList=[],currentIndex=0,selectedStars=5;
@@ -1034,10 +1037,10 @@ let currentCat='all',visibleCount=3,currentList=[],currentIndex=0,selectedStars=
  window.selectedStars=selectedStars;
 const $=id=>document.getElementById(id);function showToast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),3600)}function toggleMobile(force){$('mobileMenu').classList.toggle('active', typeof force==='boolean'?force:undefined)}
 function toggleFilter(){buildFilter();$('filterMenu').classList.toggle('active')}function closeFilter(){$('filterMenu').classList.remove('active')}function buildFilter(){$('filterMenu').innerHTML=categories.map(c=>`<button class="${c.id===currentCat?'active':''}" onclick="setCategory('${c.id}')">${catLabel(c.id)}</button>`).join('')}function setCategory(id){currentCat=id;visibleCount=3;$('filterLabel').textContent=catLabel(id);closeFilter();renderGallery()}function filtered(){return currentCat==='all'?galleryPhotos:galleryPhotos.filter(p=>p.cat===currentCat)}
-function videoSources(){return `<source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4"><source src="Public/Images/Video/result.mp4" type="video/mp4">`}
-function galleryMedia(p){return p.type==='video'?`<video muted playsinline preload="metadata">${videoSources()}</video><div class="play-badge">▶</div>`:`<img src="${p.src}" alt="${photoTitle(p)}" loading="lazy">`}
+function videoSources(p){return `<source src="${p.src}" type="video/mp4">`}
+function galleryMedia(p){return p.type==='video'?`<video muted playsinline preload="metadata">${videoSources(p)}</video><div class="play-badge">▶</div>`:`<img src="${p.src}" alt="${photoTitle(p)}" loading="lazy">`}
 function renderGallery(){buildFilter();currentList=filtered();window.currentList=currentList;window.visibleCount=visibleCount;const shown=currentList.slice(0,visibleCount);$('galleryCount').textContent=`${tr().shown} ${shown.length} ${tr().from} ${currentList.length}`;$('galleryGrid').innerHTML=shown.map((p,i)=>`<article class="g ${p.type==='video'?'video-card':''}" onclick="openPhoto(${i})">${galleryMedia(p)}<div class="g-info"><small>${p.tag}</small><h3>${photoTitle(p)}</h3></div></article>`).join('');$('moreBtn').style.display=visibleCount>=currentList.length?'none':'inline-flex';const hideBtn=document.querySelector('#gallery .gallery-actions .dark'); if(hideBtn) hideBtn.style.display=visibleCount<=3?'none':'inline-flex'}function loadMoreGallery(){visibleCount+=6;renderGallery()}function resetGallery(){visibleCount=3;renderGallery();$('gallery').scrollIntoView({behavior:'smooth',block:'start'})}
-function setModalMedia(p){const img=$('modalImg'),video=$('modalVideo');if(video){video.pause();video.innerHTML='';video.removeAttribute('src');video.load()}if(p.type==='video'){img.style.display='none';if(video){video.style.display='block';video.innerHTML=videoSources();video.load();video.play().catch(()=>{});}}else{if(video)video.style.display='none';img.style.display='block';img.src=p.src;}}
+function setModalMedia(p){const img=$('modalImg'),video=$('modalVideo');if(video){video.pause();video.innerHTML='';video.removeAttribute('src');video.load()}if(p.type==='video'){img.style.display='none';if(video){video.style.display='block';video.innerHTML=videoSources(p);video.load();video.play().catch(()=>{});}}else{if(video)video.style.display='none';img.style.display='block';img.src=p.src;}}
 function openPhoto(i){currentIndex=i;setModalMedia(currentList[i]);$('photoModal').classList.add('active')}function closePhoto(){$('photoModal').classList.remove('active');const video=$('modalVideo');if(video)video.pause()}function prevPhoto(){currentIndex=(currentIndex-1+currentList.length)%currentList.length;setModalMedia(currentList[currentIndex])}function nextPhoto(){currentIndex=(currentIndex+1)%currentList.length;setModalMedia(currentList[currentIndex])}
 function openReviewModal(){$('reviewModal').classList.add('active');$('reviewModal').setAttribute('aria-hidden','false')}
 function closeReviewModal(){$('reviewModal').classList.remove('active');$('reviewModal').setAttribute('aria-hidden','true')}
