@@ -1566,7 +1566,7 @@ reviewForm.reset();closeReviewModal();showToast(LANGS[currentLang].sentRev);}cat
     if(more&&hide&&cards.length){
       more.addEventListener('click',function(){cards.forEach(c=>c.classList.add('doafter-visible'));more.style.display='none';hide.style.display='inline-flex';});
       hide.addEventListener('click',function(){cards.forEach((c,i)=>c.classList.toggle('doafter-visible',i<5));hide.style.display='none';more.style.display='inline-flex';document.getElementById('before-after')?.scrollIntoView({behavior:'smooth',block:'start'});});
-    }
+    }1
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initDoAfterPro);else initDoAfterPro();
 })();
